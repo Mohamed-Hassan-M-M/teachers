@@ -1,0 +1,37 @@
+<?php
+
+return [
+
+    'create' => 'Create',
+    'update' => 'Update',
+    'save' => 'Save',
+    'delete' => 'Delete',
+    'edit' => 'Edit',
+    'ar' => 'in Arabic',
+    'en' => 'in English',
+    'home' => 'Home',
+    'module' => 'Module',
+    'city' => 'City',
+    'cities' => 'Cities',
+    'area' => 'Area',
+    'areas' => 'Areas',
+    'date' => 'Date',
+    'option' => 'Options',
+    'all' => 'All',
+    'new' => 'New',
+    'created' => 'Created',
+    'updated' => 'Updated',
+    'deleted' => 'Deleted',
+    'successfully' => 'Successfully',
+    'count' => 'Count',
+    'teacher' => 'Teacher',
+    'teachers' => 'Teachers',
+    'dashboard' => 'Dashboard',
+    'choose' => 'Choose',
+    'sector' => 'School Stage',
+    'sectors' => 'School Stages',
+    'classes' => 'Classroom',
+    '' => '',
+    '' => '',
+
+];
