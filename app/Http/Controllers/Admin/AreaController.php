@@ -59,7 +59,8 @@ class AreaController extends Controller
      */
     public function show($id)
     {
-        //
+        $area = Area::findOrFail($id);
+        return view('admin.area.show', compact(['area']));
     }
 
     /**

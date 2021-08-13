@@ -6,7 +6,7 @@
         <div class="container">
             <div class="row">
                 <div class="col s12 m6 l6">
-                    <h5 class="breadcrumbs-title mt-0 mb-0"><span>@lang('general.sector') @lang('general.module')</span>
+                    <h5 class="breadcrumbs-title mt-0 mb-0"><span>@lang('general.module') @lang('general.sector')</span>
                     </h5>
                 </div>
                 <div class="col s12 m6 l6 right-align-md">
@@ -29,7 +29,7 @@
                             <div class="card-content">
                                 <div class="mb-4 col s12">
                                     <h4 class="flight-card-title col s9">@lang('general.all') @lang('general.sectors')</h4>
-                                    <a class="waves-effect waves-light btn-large s4" href="{{route('admin.sectors.create')}}"><i class="material-icons left">create</i>@lang('general.create') @lang('general.city') @lang('general.new')</a>
+                                    <a class="waves-effect waves-light btn-large col s3" href="{{route('admin.sectors.create')}}"><i class="material-icons left">create</i>@lang('general.create') @lang('general.sector') @lang('general.new')</a>
                                 </div>
                                 <div class="row">
                                     <div class="col s12">
@@ -55,9 +55,10 @@
                                                     <td class="center">{{$sector->classes->count()}}</td>
                                                     <td class="center">{{$sector->created_at}}</td>
                                                     <td class="center">
-                                                        <a href="{{route('admin.sectors.edit',['sector'=>$sector->id])}}" class="btn green gradient-shadow white-text tooltipped animated bounceIn"  data-tooltip="@lang('general.edit')!"><i class="material-icons">edit</i></a>
-                                                        <form action="{{route('admin.sectors.destroy',['sector'=>$sector->id])}}" method="post" class="m-2 display-inline" type="submit">
-                                                            <button class="btn red gradient-shadow white-text tooltipped animated bounceIn"  data-tooltip="@lang('general.delete')!"><i class="material-icons">delete</i></button>
+                                                        <a href="{{route('admin.sectors.show',['sector'=>$sector->id])}}" class="btn blue gradient-shadow white-text tooltipped animated bounceIn m-1"  data-tooltip="@lang('general.show')!"><i class="material-icons">remove_red_eye</i></a>
+                                                        <a href="{{route('admin.sectors.edit',['sector'=>$sector->id])}}" class="btn green gradient-shadow white-text tooltipped animated bounceIn m-1"  data-tooltip="@lang('general.edit')!"><i class="material-icons">edit</i></a>
+                                                        <form action="{{route('admin.sectors.destroy',['sector'=>$sector->id])}}" method="post" class="display-inline m-1" type="submit">
+                                                            <button type="button" class="removeModule btn red gradient-shadow white-text tooltipped animated bounceIn"  data-tooltip="@lang('general.delete')!"><i class="material-icons">delete</i></button>
                                                             @method('DELETE')
                                                             @csrf
                                                         </form>

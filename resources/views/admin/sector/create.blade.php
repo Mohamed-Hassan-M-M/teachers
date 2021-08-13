@@ -6,7 +6,7 @@
         <div class="container">
             <div class="row">
                 <div class="col s12 m6 l6">
-                    <h5 class="breadcrumbs-title mt-0 mb-0"><span>@lang('general.sector') @lang('general.module')</span></h5>
+                    <h5 class="breadcrumbs-title mt-0 mb-0"><span>@lang('general.module') @lang('general.sector')</span></h5>
                 </div>
                 <div class="col s12 m6 l6 right-align-md">
                     <ol class="breadcrumbs mb-0">

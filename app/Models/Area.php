@@ -31,7 +31,6 @@ class Area extends Model
         return $this->belongsTo(City::class, 'city_id', 'id');
     }
 
-    /* relations*/
     public function teachers()
     {
         return $this->belongsToMany(User::class, 'teacher__areas', 'area_id', 'teacher_id')->where('type', '2');

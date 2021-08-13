@@ -57,7 +57,8 @@ class SectorController extends Controller
      */
     public function show($id)
     {
-        //
+        $sector = Sector::findOrFail($id);
+        return view('admin.sector.show', compact(['sector']));
     }
 
     /**

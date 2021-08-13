@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Admin\Classes;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Request;
 
 class UpdateRequest extends FormRequest
 {
@@ -13,7 +14,7 @@ class UpdateRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -21,10 +22,12 @@ class UpdateRequest extends FormRequest
      *
      * @return array
      */
-    public function rules()
+    public function rules(Request $request)
     {
         return [
-            //
+            'name_ar' => 'required|unique:classes,name_ar,' . $request->segment(4),
+            'name_en' => 'required|unique:classes,name_en,' . $request->segment(4),
+            'city_id' => "required|exists:sectors,id"
         ];
     }
 }

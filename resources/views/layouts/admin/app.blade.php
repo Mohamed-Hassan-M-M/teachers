@@ -24,6 +24,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset("app-assets/vendors/data-tables/extensions/responsive/css/responsive.dataTables.min.css")}}">
     <link rel="stylesheet" type="text/css" href="{{asset("app-assets/vendors/data-tables/css/select.dataTables.min.css")}}">
     <link rel="stylesheet" type="text/css" href="{{asset("app-assets/vendors/chartist-js/chartist-plugin-tooltip.css")}}">
+    <link rel="stylesheet" type="text/css" href="{{asset("app-assets/vendors/sweetalert/sweetalert.css")}}">
     <!-- END: VENDOR CSS-->
     @if (app()->getLocale() == 'ar')
         <link rel="stylesheet" type="text/css" href="{{asset("app-assets/css-rtl/style-rtl.min.css")}}">
@@ -337,6 +338,7 @@
 <script src="{{asset("app-assets/vendors/data-tables/js/jquery.dataTables.min.js")}}"></script>
 <script src="{{asset("app-assets/vendors/data-tables/extensions/responsive/js/dataTables.responsive.min.js")}}"></script>
 <script src="{{asset("app-assets/vendors/data-tables/js/dataTables.select.min.js")}}"></script>
+<script src="{{asset("app-assets/vendors/sweetalert/sweetalert.min.js")}}"></script>
 <!-- END PAGE VENDOR JS-->
 <!-- BEGIN THEME  JS-->
 <script src="{{asset("app-assets/js/plugins.min.js")}}"></script>
@@ -348,6 +350,7 @@
 <script src="{{asset("app-assets/js/scripts/dashboard-modern.js")}}"></script>
 <script src="{{asset("app-assets/js/scripts/intro.min.js")}}"></script>
 <script src="{{asset("app-assets/js/scripts/data-tables.min.js")}}"></script>
+<script src="{{asset("app-assets/js/scripts/extra-components-sweetalert.min.js")}}"></script>
 <!-- END PAGE LEVEL JS-->
 <script>
     $(document).ready( function () {
@@ -369,6 +372,42 @@
                 "lengthMenu":     "عرض _MENU_ صفوف",
             }
             @endif
+        });
+
+        $("body").on("click",".removeModule",function(e){
+            e.preventDefault();
+            var formelem = $(this).parent();
+            swal({
+                title: "@lang('general.sure')",
+                text: "@lang('general.cant recover')",
+                icon: 'warning',
+                dangerMode: true,
+                buttons: {
+                    cancel: "@lang('general.cancel')",
+                    delete: "@lang('general.delete')",
+                }
+            }).then(function (willDelete) {
+                if (willDelete) {
+                    swal("@lang('general.poof')", {
+                        icon: "success",
+                        buttons: {
+                            ok: "@lang('general.ok')"
+                        }
+                    }).then(function (yesDelete) {
+                       if (yesDelete){
+                           formelem.submit();
+                       }
+                    });
+                } else {
+                    swal("@lang('general.safe')", {
+                        title: "@lang('general.cancelled')",
+                        icon: "error",
+                        buttons: {
+                            ok: "@lang('general.ok')"
+                        }
+                    });
+                }
+            });
         });
     });
 </script>

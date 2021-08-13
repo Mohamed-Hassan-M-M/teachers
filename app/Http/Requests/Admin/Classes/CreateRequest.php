@@ -13,7 +13,7 @@ class CreateRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,9 @@ class CreateRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name_ar' => 'required|unique:classes,name_ar',
+            'name_en' => 'required|unique:classes,name_en',
+            'sector_id' => "required|exists:sectors,id"
         ];
     }
 }

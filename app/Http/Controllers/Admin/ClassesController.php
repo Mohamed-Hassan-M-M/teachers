@@ -3,10 +3,20 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\Classes\CreateRequest;
+use App\Http\Requests\Admin\Classes\UpdateRequest;
+use App\Models\Classes;
+use App\Models\Sector;
 use Illuminate\Http\Request;
 
 class ClassesController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +24,8 @@ class ClassesController extends Controller
      */
     public function index()
     {
-        //
+        $classes = Classes::with(['sector', 'subjects'])->orderBy('created_at')->get();
+        return view('admin.classes.index', compact(['classes']));
     }
 
     /**
@@ -24,7 +35,8 @@ class ClassesController extends Controller
      */
     public function create()
     {
-        //
+        $sectors = Sector::orderBy('created_at')->get();
+        return view('admin.classes.create', compact(['sectors']));
     }
 
     /**
@@ -33,9 +45,10 @@ class ClassesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateRequest $request)
     {
-        //
+        Classes::create($request->except(['_token']));
+        return redirect(route('admin.classes.index'))->with("pass", __('general.created') .' '. __('general.successfully'));
     }
 
     /**
@@ -46,7 +59,8 @@ class ClassesController extends Controller
      */
     public function show($id)
     {
-        //
+        $class = Classes::findOrFail($id);
+        return view('admin.classes.show', compact(['class']));
     }
 
     /**
@@ -57,7 +71,9 @@ class ClassesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $sectors = Sector::orderBy('created_at')->get();
+        $class = Classes::findOrFail($id);
+        return view('admin.classes.edit', compact(['class','sectors']));
     }
 
     /**
@@ -67,9 +83,11 @@ class ClassesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateRequest $request, $id)
     {
-        //
+        $class = Classes::findOrFail($id);
+        $class->update($request->all());
+        return redirect(route('admin.classes.index'))->with("pass", __('general.updated') .' '. __('general.successfully'));
     }
 
     /**
@@ -80,6 +98,8 @@ class ClassesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $class = Classes::findOrFail($id);
+        $class->delete();
+        return redirect()->route('admin.classes.index')->with("pass", __('general.deleted') .' '. __('general.successfully'));
     }
 }

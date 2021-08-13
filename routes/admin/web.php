@@ -33,6 +33,12 @@ Route::group(
         Route::resource('sectors', SectorController::class);
 
         Route::resource('classes', ClassesController::class);
+
+        Route::resource('subjects', SubjectController::class);
+
+        Route::resource('teachers', TeacherController::class);
+
+        Route::resource('students', StudentController::class);
     });
 });
 
