@@ -12,3 +12,6 @@ WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BET
 #main .section-data-tables .dataTables_wrapper table.dataTable tbody {
     height: auto;
 }
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    float: right;
+}
