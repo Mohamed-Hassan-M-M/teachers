@@ -157,6 +157,18 @@
                                                 </div>
                                             </div>
 
+                                            <div class="input-field col s6">
+                                                <i class="material-icons prefix">account_circle</i>
+                                                <input id="icon_prefix" type="text" class="validate">
+                                                <label for="icon_prefix">Facebook</label>
+                                            </div>
+
+                                            <div class="input-field col s6">
+                                                <i class="material-icons prefix">account_circle</i>
+                                                <input id="icon_prefix" type="text" class="validate">
+                                                <label for="icon_prefix">Facebook</label>
+                                            </div>
+
                                             <div class="col s12">
                                                 <input type="file" id="input-file-now" name="image" class="dropify" data-allowed-file-extensions="jpg jpeg png apng gif avif svg webp" />
                                                 @error('image')
