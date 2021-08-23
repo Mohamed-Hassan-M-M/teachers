@@ -12,51 +12,51 @@
           content="materialize, admin template, dashboard template, flat admin template, responsive admin template, eCommerce dashboard, analytic dashboard">
     <meta name="author" content="Mohamed Hassan">
     <title>@yield('title')</title>
-    <link rel="apple-touch-icon" href="{{asset("app-assets/images/favicon/apple-touch-icon-152x152.png")}}">
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset("app-assets/images/favicon/favicon-32x32.png")}}">
+    <link rel="apple-touch-icon" href="{{asset("admin-assets/images/favicon/apple-touch-icon-152x152.png")}}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset("admin-assets/images/favicon/favicon-32x32.png")}}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- BEGIN: VENDOR CSS-->
-    <link rel="stylesheet" type="text/css" href="{{asset("app-assets/vendors/vendors.min.css")}}">
-    <link rel="stylesheet" type="text/css" href="{{asset("app-assets/vendors/animate-css/animate.css")}}">
-    <link rel="stylesheet" type="text/css" href="{{asset("app-assets/vendors/chartist-js/chartist.min.css")}}">
-    <link rel="stylesheet" type="text/css" href="{{asset("app-assets/vendors/flag-icon/css/flag-icon.min.css")}}">
-    <link rel="stylesheet" type="text/css" href="{{asset("app-assets/vendors/data-tables/css/jquery.dataTables.min.css")}}">
-    <link rel="stylesheet" type="text/css" href="{{asset("app-assets/vendors/data-tables/extensions/responsive/css/responsive.dataTables.min.css")}}">
-    <link rel="stylesheet" type="text/css" href="{{asset("app-assets/vendors/data-tables/css/select.dataTables.min.css")}}">
-    <link rel="stylesheet" type="text/css" href="{{asset("app-assets/vendors/chartist-js/chartist-plugin-tooltip.css")}}">
-    <link rel="stylesheet" type="text/css" href="{{asset("app-assets/vendors/sweetalert/sweetalert.css")}}">
-    <link rel="stylesheet" href="{{asset("app-assets/vendors/select2/select2.min.css")}}" type="text/css">
-    <link rel="stylesheet" href="{{asset("app-assets/vendors/select2/select2-materialize.css")}}" type="text/css">
-    <link rel="stylesheet" type="text/css" href="{{asset("app-assets/vendors/dropify/css/dropify.min.css")}}">
+    <link rel="stylesheet" type="text/css" href="{{asset("admin-assets/vendors/vendors.min.css")}}">
+    <link rel="stylesheet" type="text/css" href="{{asset("admin-assets/vendors/animate-css/animate.css")}}">
+    <link rel="stylesheet" type="text/css" href="{{asset("admin-assets/vendors/chartist-js/chartist.min.css")}}">
+    <link rel="stylesheet" type="text/css" href="{{asset("admin-assets/vendors/flag-icon/css/flag-icon.min.css")}}">
+    <link rel="stylesheet" type="text/css" href="{{asset("admin-assets/vendors/data-tables/css/jquery.dataTables.min.css")}}">
+    <link rel="stylesheet" type="text/css" href="{{asset("admin-assets/vendors/data-tables/extensions/responsive/css/responsive.dataTables.min.css")}}">
+    <link rel="stylesheet" type="text/css" href="{{asset("admin-assets/vendors/data-tables/css/select.dataTables.min.css")}}">
+    <link rel="stylesheet" type="text/css" href="{{asset("admin-assets/vendors/chartist-js/chartist-plugin-tooltip.css")}}">
+    <link rel="stylesheet" type="text/css" href="{{asset("admin-assets/vendors/sweetalert/sweetalert.css")}}">
+    <link rel="stylesheet" href="{{asset("admin-assets/vendors/select2/select2.min.css")}}" type="text/css">
+    <link rel="stylesheet" href="{{asset("admin-assets/vendors/select2/select2-materialize.css")}}" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{{asset("admin-assets/vendors/dropify/css/dropify.min.css")}}">
     <!-- END: VENDOR CSS-->
     @if (app()->getLocale() == 'ar')
-        <link rel="stylesheet" type="text/css" href="{{asset("app-assets/css-rtl/style-rtl.min.css")}}">
+        <link rel="stylesheet" type="text/css" href="{{asset("admin-assets/css-rtl/style-rtl.min.css")}}">
         <!-- BEGIN: Page Level CSS-->
         <link rel="stylesheet" type="text/css"
-              href="{{asset("app-assets/css-rtl/themes/vertical-dark-menu-template/materialize.min.css")}}">
+              href="{{asset("admin-assets/css-rtl/themes/vertical-dark-menu-template/materialize.min.css")}}">
         <link rel="stylesheet" type="text/css"
-              href="{{asset("app-assets/css-rtl/themes/vertical-dark-menu-template/style.min.css")}}">
-        <link rel="stylesheet" type="text/css" href="{{asset("app-assets/css-rtl/pages/dashboard-modern.css")}}">
-        <link rel="stylesheet" type="text/css" href="{{asset("app-assets/css-rtl/pages/intro.min.css")}}">
-        <link rel="stylesheet" type="text/css" href="{{asset("app-assets/css/pages/data-tables.min.css")}}">
-        <link rel="stylesheet" type="text/css" href="{{asset("app-assets/css-rtl/pages/form-select2.min.css")}}">
+              href="{{asset("admin-assets/css-rtl/themes/vertical-dark-menu-template/style.min.css")}}">
+        <link rel="stylesheet" type="text/css" href="{{asset("admin-assets/css-rtl/pages/dashboard-modern.css")}}">
+        <link rel="stylesheet" type="text/css" href="{{asset("admin-assets/css-rtl/pages/intro.min.css")}}">
+        <link rel="stylesheet" type="text/css" href="{{asset("admin-assets/css/pages/data-tables.min.css")}}">
+        <link rel="stylesheet" type="text/css" href="{{asset("admin-assets/css-rtl/pages/form-select2.min.css")}}">
         <!-- END: Page Level CSS-->
         <!-- BEGIN: Custom CSS-->
-        <link rel="stylesheet" type="text/css" href="{{asset("app-assets/css-rtl/custom/custom.css")}}">
+        <link rel="stylesheet" type="text/css" href="{{asset("admin-assets/css-rtl/custom/custom.css")}}">
         <!-- END: Custom CSS-->
     @else
     <!-- BEGIN: Page Level CSS-->
         <link rel="stylesheet" type="text/css"
-              href="{{asset("app-assets/css/themes/vertical-dark-menu-template/materialize.min.css")}}">
+              href="{{asset("admin-assets/css/themes/vertical-dark-menu-template/materialize.min.css")}}">
         <link rel="stylesheet" type="text/css"
-              href="{{asset("app-assets/css/themes/vertical-dark-menu-template/style.min.css")}}">
-        <link rel="stylesheet" type="text/css" href="{{asset("app-assets/css/pages/dashboard-modern.css")}}">
-        <link rel="stylesheet" type="text/css" href="{{asset("app-assets/css/pages/intro.min.css")}}">
-        <link rel="stylesheet" type="text/css" href="{{asset("app-assets/css/pages/data-tables.min.css")}}">
-        <link rel="stylesheet" type="text/css" href="{{asset("app-assets/css/pages/form-select2.min.css")}}">
+              href="{{asset("admin-assets/css/themes/vertical-dark-menu-template/style.min.css")}}">
+        <link rel="stylesheet" type="text/css" href="{{asset("admin-assets/css/pages/dashboard-modern.css")}}">
+        <link rel="stylesheet" type="text/css" href="{{asset("admin-assets/css/pages/intro.min.css")}}">
+        <link rel="stylesheet" type="text/css" href="{{asset("admin-assets/css/pages/data-tables.min.css")}}">
+        <link rel="stylesheet" type="text/css" href="{{asset("admin-assets/css/pages/form-select2.min.css")}}">
         <!-- END: Page Level CSS-->
         <!-- BEGIN: Custom CSS-->
-        <link rel="stylesheet" type="text/css" href="{{asset("app-assets/css/custom/custom.css")}}">
+        <link rel="stylesheet" type="text/css" href="{{asset("admin-assets/css/custom/custom.css")}}">
         <!-- END: Custom CSS-->
     @endif
 
@@ -333,33 +333,33 @@
 
 <!-- END: Footer-->
 <!-- BEGIN VENDOR JS-->
-<script src="{{asset("app-assets/js/vendors.min.js")}}"></script>
+<script src="{{asset("admin-assets/js/vendors.min.js")}}"></script>
 <!-- BEGIN VENDOR JS-->
 <!-- BEGIN PAGE VENDOR JS-->
-<script src="{{asset("app-assets/vendors/chartjs/chart.min.js")}}"></script>
-<script src="{{asset("app-assets/vendors/chartist-js/chartist.min.js")}}"></script>
-<script src="{{asset("app-assets/vendors/chartist-js/chartist-plugin-tooltip.js")}}"></script>
-<script src="{{asset("app-assets/vendors/chartist-js/chartist-plugin-fill-donut.min.js")}}"></script>
-<script src="{{asset("app-assets/vendors/data-tables/js/jquery.dataTables.min.js")}}"></script>
-<script src="{{asset("app-assets/vendors/data-tables/extensions/responsive/js/dataTables.responsive.min.js")}}"></script>
-<script src="{{asset("app-assets/vendors/data-tables/js/dataTables.select.min.js")}}"></script>
-<script src="{{asset("app-assets/vendors/sweetalert/sweetalert.min.js")}}"></script>
-<script src="{{asset("app-assets/vendors/select2/select2.full.min.js")}}"></script>
-<script src="{{asset("app-assets/vendors/dropify/js/dropify.min.js")}}"></script>
+<script src="{{asset("admin-assets/vendors/chartjs/chart.min.js")}}"></script>
+<script src="{{asset("admin-assets/vendors/chartist-js/chartist.min.js")}}"></script>
+<script src="{{asset("admin-assets/vendors/chartist-js/chartist-plugin-tooltip.js")}}"></script>
+<script src="{{asset("admin-assets/vendors/chartist-js/chartist-plugin-fill-donut.min.js")}}"></script>
+<script src="{{asset("admin-assets/vendors/data-tables/js/jquery.dataTables.min.js")}}"></script>
+<script src="{{asset("admin-assets/vendors/data-tables/extensions/responsive/js/dataTables.responsive.min.js")}}"></script>
+<script src="{{asset("admin-assets/vendors/data-tables/js/dataTables.select.min.js")}}"></script>
+<script src="{{asset("admin-assets/vendors/sweetalert/sweetalert.min.js")}}"></script>
+<script src="{{asset("admin-assets/vendors/select2/select2.full.min.js")}}"></script>
+<script src="{{asset("admin-assets/vendors/dropify/js/dropify.min.js")}}"></script>
 <!-- END PAGE VENDOR JS-->
 <!-- BEGIN THEME  JS-->
-<script src="{{asset("app-assets/js/plugins.min.js")}}"></script>
-<script src="{{asset("app-assets/js/search.min.js")}}"></script>
-<script src="{{asset("app-assets/js/custom/custom-script.min.js")}}"></script>
-<script src="{{asset("app-assets/js/scripts/customizer.min.js")}}"></script>
+<script src="{{asset("admin-assets/js/plugins.min.js")}}"></script>
+<script src="{{asset("admin-assets/js/search.min.js")}}"></script>
+<script src="{{asset("admin-assets/js/custom/custom-script.min.js")}}"></script>
+<script src="{{asset("admin-assets/js/scripts/customizer.min.js")}}"></script>
 <!-- END THEME  JS-->
 <!-- BEGIN PAGE LEVEL JS-->
-<script src="{{asset("app-assets/js/scripts/dashboard-modern.js")}}"></script>
-<script src="{{asset("app-assets/js/scripts/intro.min.js")}}"></script>
-<script src="{{asset("app-assets/js/scripts/data-tables.min.js")}}"></script>
-<script src="{{asset("app-assets/js/scripts/extra-components-sweetalert.min.js")}}"></script>
-<script src="{{asset("app-assets/js/scripts/form-select2.min.js")}}"></script>
-<script src="{{asset("app-assets/js/scripts/form-file-uploads.min.js")}}"></script>
+<script src="{{asset("admin-assets/js/scripts/dashboard-modern.js")}}"></script>
+<script src="{{asset("admin-assets/js/scripts/intro.min.js")}}"></script>
+<script src="{{asset("admin-assets/js/scripts/data-tables.min.js")}}"></script>
+<script src="{{asset("admin-assets/js/scripts/extra-components-sweetalert.min.js")}}"></script>
+<script src="{{asset("admin-assets/js/scripts/form-select2.min.js")}}"></script>
+<script src="{{asset("admin-assets/js/scripts/form-file-uploads.min.js")}}"></script>
 <!-- END PAGE LEVEL JS-->
 <script>
     $(document).ready( function () {

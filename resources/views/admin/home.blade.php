@@ -83,7 +83,7 @@
                                 <p class="medium-small pt-2">Today</p>
                                 <ul class="collection mb-0">
                                     <li class="collection-item avatar">
-                                        <img src="{{asset('app-assets/images/avatar/avatar-7.png')}}" alt=""
+                                        <img src="{{asset('admin-assets/images/avatar/avatar-7.png')}}" alt=""
                                              class="circle"/>
                                         <p class="font-weight-600">John Doe</p>
                                         <p class="medium-small">18, January 2019</p>
@@ -91,7 +91,7 @@
                                                 class="material-icons">star_border</i></a>
                                     </li>
                                     <li class="collection-item avatar">
-                                        <img src="{{asset('app-assets/images/avatar/avatar-3.png')}}" alt=""
+                                        <img src="{{asset('admin-assets/images/avatar/avatar-3.png')}}" alt=""
                                              class="circle"/>
                                         <p class="font-weight-600">Adam Garza</p>
                                         <p class="medium-small">20, January 2019</p>
@@ -99,7 +99,7 @@
                                                 class="material-icons">star_border</i></a>
                                     </li>
                                     <li class="collection-item avatar">
-                                        <img src="{{asset('app-assets/images/avatar/avatar-5.png')}}" alt=""
+                                        <img src="{{asset('admin-assets/images/avatar/avatar-5.png')}}" alt=""
                                              class="circle"/>
                                         <p class="font-weight-600">Jennifer Rice</p>
                                         <p class="medium-small">25, January 2019</p>
@@ -257,7 +257,7 @@
                                         <li class="collection-item right-sidebar-chat-item sidenav-trigger display-flex avatar pl-5 pb-0"
                                             data-target="slide-out-chat">
                 <span class="avatar-status avatar-online avatar-50"><img
-                        src="{{asset('app-assets/images/avatar/avatar-7.png')}}" alt="avatar"/>
+                        src="{{asset('admin-assets/images/avatar/avatar-7.png')}}" alt="avatar"/>
                   <i></i>
                 </span>
                                             <div class="user-content">
@@ -270,7 +270,7 @@
                                         <li class="collection-item right-sidebar-chat-item sidenav-trigger display-flex avatar pl-5 pb-0"
                                             data-target="slide-out-chat">
                 <span class="avatar-status avatar-online avatar-50"><img
-                        src="{{asset('app-assets/images/avatar/avatar-1.png')}}" alt="avatar"/>
+                        src="{{asset('admin-assets/images/avatar/avatar-1.png')}}" alt="avatar"/>
                   <i></i>
                 </span>
                                             <div class="user-content">
@@ -283,7 +283,7 @@
                                         <li class="collection-item right-sidebar-chat-item sidenav-trigger display-flex avatar pl-5 pb-0"
                                             data-target="slide-out-chat">
                 <span class="avatar-status avatar-off avatar-50"><img
-                        src="{{asset('app-assets/images/avatar/avatar-2.png')}}" alt="avatar"/>
+                        src="{{asset('admin-assets/images/avatar/avatar-2.png')}}" alt="avatar"/>
                   <i></i>
                 </span>
                                             <div class="user-content">
@@ -296,7 +296,7 @@
                                         <li class="collection-item right-sidebar-chat-item sidenav-trigger display-flex avatar pl-5 pb-0"
                                             data-target="slide-out-chat">
                 <span class="avatar-status avatar-online avatar-50"><img
-                        src="{{asset('app-assets/images/avatar/avatar-3.png')}}" alt="avatar"/>
+                        src="{{asset('admin-assets/images/avatar/avatar-3.png')}}" alt="avatar"/>
                   <i></i>
                 </span>
                                             <div class="user-content">
@@ -309,7 +309,7 @@
                                         <li class="collection-item right-sidebar-chat-item sidenav-trigger display-flex avatar pl-5 pb-0"
                                             data-target="slide-out-chat">
                 <span class="avatar-status avatar-online avatar-50"><img
-                        src="{{asset('app-assets/images/avatar/avatar-4.png')}}" alt="avatar"/>
+                        src="{{asset('admin-assets/images/avatar/avatar-4.png')}}" alt="avatar"/>
                   <i></i>
                 </span>
                                             <div class="user-content">
@@ -322,7 +322,7 @@
                                         <li class="collection-item right-sidebar-chat-item sidenav-trigger display-flex avatar pl-5 pb-0"
                                             data-target="slide-out-chat">
                 <span class="avatar-status avatar-off avatar-50"><img
-                        src="{{asset('app-assets/images/avatar/avatar-5.png')}}" alt="avatar"/>
+                        src="{{asset('admin-assets/images/avatar/avatar-5.png')}}" alt="avatar"/>
                   <i></i>
                 </span>
                                             <div class="user-content">
@@ -335,7 +335,7 @@
                                         <li class="collection-item right-sidebar-chat-item sidenav-trigger display-flex avatar pl-5 pb-0"
                                             data-target="slide-out-chat">
                 <span class="avatar-status avatar-online avatar-50"><img
-                        src="{{asset('app-assets/images/avatar/avatar-6.png')}}" alt="avatar"/>
+                        src="{{asset('admin-assets/images/avatar/avatar-6.png')}}" alt="avatar"/>
                   <i></i>
                 </span>
                                             <div class="user-content">
@@ -348,7 +348,7 @@
                                         <li class="collection-item right-sidebar-chat-item sidenav-trigger display-flex avatar pl-5 pb-0"
                                             data-target="slide-out-chat">
                 <span class="avatar-status avatar-off avatar-50"><img
-                        src="{{asset('app-assets/images/avatar/avatar-7.png')}}" alt="avatar"/>
+                        src="{{asset('admin-assets/images/avatar/avatar-7.png')}}" alt="avatar"/>
                   <i></i>
                 </span>
                                             <div class="user-content">
@@ -361,7 +361,7 @@
                                         <li class="collection-item right-sidebar-chat-item sidenav-trigger display-flex avatar pl-5 pb-0"
                                             data-target="slide-out-chat">
                 <span class="avatar-status avatar-off avatar-50"><img
-                        src="{{asset('app-assets/images/avatar/avatar-8.png')}}" alt="avatar"/>
+                        src="{{asset('admin-assets/images/avatar/avatar-8.png')}}" alt="avatar"/>
                   <i></i>
                 </span>
                                             <div class="user-content">
@@ -373,7 +373,7 @@
                                         <li class="collection-item right-sidebar-chat-item sidenav-trigger display-flex avatar pl-5 pb-0"
                                             data-target="slide-out-chat">
                 <span class="avatar-status avatar-online avatar-50"><img
-                        src="{{asset('app-assets/images/avatar/avatar-1.png')}}" alt="avatar"/>
+                        src="{{asset('admin-assets/images/avatar/avatar-1.png')}}" alt="avatar"/>
                   <i></i>
                 </span>
                                             <div class="user-content">
@@ -386,7 +386,7 @@
                                         <li class="collection-item right-sidebar-chat-item sidenav-trigger display-flex avatar pl-5 pb-0"
                                             data-target="slide-out-chat">
                 <span class="avatar-status avatar-online avatar-50"><img
-                        src="{{asset('app-assets/images/avatar/avatar-9.png')}}" alt="avatar"/>
+                        src="{{asset('admin-assets/images/avatar/avatar-9.png')}}" alt="avatar"/>
                   <i></i>
                 </span>
                                             <div class="user-content">
@@ -399,7 +399,7 @@
                                         <li class="collection-item right-sidebar-chat-item sidenav-trigger display-flex avatar pl-5 pb-0"
                                             data-target="slide-out-chat">
                 <span class="avatar-status avatar-off avatar-50"><img
-                        src="{{asset('app-assets/images/avatar/avatar-10.png')}}" alt="avatar"/>
+                        src="{{asset('admin-assets/images/avatar/avatar-10.png')}}" alt="avatar"/>
                   <i></i>
                 </span>
                                             <div class="user-content">
@@ -412,7 +412,7 @@
                                         <li class="collection-item right-sidebar-chat-item sidenav-trigger display-flex avatar pl-5 pb-0"
                                             data-target="slide-out-chat">
                 <span class="avatar-status avatar-off avatar-50"><img
-                        src="{{asset('app-assets/images/avatar/avatar-11.png')}}" alt="avatar"/>
+                        src="{{asset('admin-assets/images/avatar/avatar-11.png')}}" alt="avatar"/>
                   <i></i>
                 </span>
                                             <div class="user-content">
@@ -425,7 +425,7 @@
                                         <li class="collection-item right-sidebar-chat-item sidenav-trigger display-flex avatar pl-5 pb-0"
                                             data-target="slide-out-chat">
                 <span class="avatar-status avatar-online avatar-50"><img
-                        src="{{asset('app-assets/images/avatar/avatar-12.png')}}" alt="avatar"/>
+                        src="{{asset('admin-assets/images/avatar/avatar-12.png')}}" alt="avatar"/>
                   <i></i>
                 </span>
                                             <div class="user-content">
@@ -590,7 +590,7 @@
                                             <p class="timeline-text">Here are some news feed interactions
                                                 concepts.</p>
                                             <div class="timeline-content">
-                                                <img src="{{asset('app-assets/images/icon/pdf.png')}}" alt="document"
+                                                <img src="{{asset('admin-assets/images/icon/pdf.png')}}" alt="document"
                                                      height="30" width="25"
                                                      class="mr-1">Registration.doc
                                             </div>
@@ -601,7 +601,7 @@
                                             <p class="timeline-text">Here are some news feed interactions
                                                 concepts.</p>
                                             <div class="timeline-content">
-                                                <img src="{{asset('app-assets/images/icon/pdf.png')}}" alt="document"
+                                                <img src="{{asset('admin-assets/images/icon/pdf.png')}}" alt="document"
                                                      height="30" width="25"
                                                      class="mr-1">Activity.doc
                                             </div>
@@ -635,7 +635,7 @@
                                             <p class="timeline-text">Here are some news feed interactions
                                                 concepts.</p>
                                             <div class="timeline-content">
-                                                <img src="{{asset('app-assets/images/icon/pdf.png')}}" alt="document"
+                                                <img src="{{asset('admin-assets/images/icon/pdf.png')}}" alt="document"
                                                      height="30" width="25"
                                                      class="mr-1">Database-log.doc
                                             </div>
@@ -672,7 +672,7 @@
                         <ul class="collection">
                             <li class="collection-item display-flex avatar pl-5 pb-0" data-target="slide-out-chat">
           <span class="avatar-status avatar-online avatar-50"><img
-                  src="{{asset('app-assets/images/avatar/avatar-7.png')}}"
+                  src="{{asset('admin-assets/images/avatar/avatar-7.png')}}"
                   alt="avatar"/>
           </span>
                                 <div class="user-content speech-bubble">
@@ -687,7 +687,7 @@
                             </li>
                             <li class="collection-item display-flex avatar pl-5 pb-0" data-target="slide-out-chat">
           <span class="avatar-status avatar-online avatar-50"><img
-                  src="{{asset('app-assets/images/avatar/avatar-7.png')}}"
+                  src="{{asset('admin-assets/images/avatar/avatar-7.png')}}"
                   alt="avatar"/>
           </span>
                                 <div class="user-content speech-bubble">
@@ -708,7 +708,7 @@
 
                             <li class="collection-item display-flex avatar pl-5 pb-0" data-target="slide-out-chat">
           <span class="avatar-status avatar-online avatar-50"><img
-                  src="{{asset('app-assets/images/avatar/avatar-7.png')}}"
+                  src="{{asset('admin-assets/images/avatar/avatar-7.png')}}"
                   alt="avatar"/>
           </span>
                                 <div class="user-content speech-bubble">
@@ -723,7 +723,7 @@
                             </li>
                             <li class="collection-item display-flex avatar pl-5 pb-0" data-target="slide-out-chat">
           <span class="avatar-status avatar-online avatar-50"><img
-                  src="{{asset('app-assets/images/avatar/avatar-7.png')}}"
+                  src="{{asset('admin-assets/images/avatar/avatar-7.png')}}"
                   alt="avatar"/>
           </span>
                                 <div class="user-content speech-bubble">
@@ -749,7 +749,7 @@
                             </li>
                             <li class="collection-item display-flex avatar pl-5 pb-0" data-target="slide-out-chat">
           <span class="avatar-status avatar-online avatar-50"><img
-                  src="{{asset('app-assets/images/avatar/avatar-7.png')}}"
+                  src="{{asset('admin-assets/images/avatar/avatar-7.png')}}"
                   alt="avatar"/>
           </span>
                                 <div class="user-content speech-bubble">
@@ -758,7 +758,7 @@
                             </li>
                             <li class="collection-item display-flex avatar pl-5 pb-0" data-target="slide-out-chat">
           <span class="avatar-status avatar-online avatar-50"><img
-                  src="{{asset('app-assets/images/avatar/avatar-7.png')}}"
+                  src="{{asset('admin-assets/images/avatar/avatar-7.png')}}"
                   alt="avatar"/>
           </span>
                                 <div class="user-content speech-bubble">
@@ -820,7 +820,7 @@
         {{--                                        </div>--}}
         {{--                                    </div>--}}
         {{--                                    <div class="carousel-item slide-1">--}}
-        {{--                                        <img src="{{asset('app-assets/images/gallery/intro-slide-1.png')}}" alt=""--}}
+        {{--                                        <img src="{{asset('admin-assets/images/gallery/intro-slide-1.png')}}" alt=""--}}
         {{--                                             class="responsive-img animated fadeInUp slide-1-img">--}}
         {{--                                        <h5 class="intro-step-title mt-7 center animated fadeInUp">Welcome to--}}
         {{--                                            Materialize</h5>--}}
@@ -833,7 +833,7 @@
         {{--                                            Elements.</p>--}}
         {{--                                    </div>--}}
         {{--                                    <div class="carousel-item slide-2">--}}
-        {{--                                        <img src="{{asset('app-assets/images/gallery/intro-features.png')}}" alt=""--}}
+        {{--                                        <img src="{{asset('admin-assets/images/gallery/intro-features.png')}}" alt=""--}}
         {{--                                             class="responsive-img slide-2-img">--}}
         {{--                                        <h5 class="intro-step-title mt-7 center">Example Request Information</h5>--}}
         {{--                                        <p class="intro-step-text mt-5">Lorem ipsum dolor sit amet consectetur,--}}
@@ -863,7 +863,7 @@
         {{--                                        </div>--}}
         {{--                                    </div>--}}
         {{--                                    <div class="carousel-item slide-3">--}}
-        {{--                                        <img src="{{asset('app-assets/images/gallery/intro-app.png')}}" alt=""--}}
+        {{--                                        <img src="{{asset('admin-assets/images/gallery/intro-app.png')}}" alt=""--}}
         {{--                                             class="responsive-img slide-1-img">--}}
         {{--                                        <h5 class="intro-step-title mt-7 center">Showcase App Features</h5>--}}
         {{--                                        <div class="row">--}}

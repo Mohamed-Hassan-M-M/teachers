@@ -1,7 +1,7 @@
 @extends('layouts.admin.app')
 @section('title') @lang('general.dashboard') | @lang('general.sector') @endsection
 @section('content')
-    <div id="breadcrumbs-wrapper" data-image="{{asset('app-assets/images/gallery/breadcrumb-bg.jpg')}}">
+    <div id="breadcrumbs-wrapper" data-image="{{asset('admin-assets/images/gallery/breadcrumb-bg.jpg')}}">
         <!-- Search for small screen-->
         <div class="container">
             <div class="row">
