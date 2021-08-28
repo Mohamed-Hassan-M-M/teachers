@@ -31,7 +31,7 @@
                                         <div class="dropdown-menu cart-dropdown">
                                             <ul>
                                                 <li class="clearfix">
-                                                    <img src="images/header-cart-image-01.jpg" alt="cart item" />
+                                                    <img src="{{asset('app-assets/images/header-cart-image-01.jpg')}}" alt="cart item" />
                                                     <div class="item-info">
                                                         <div class="name">
                                                             <a href="#">The Great Gatsby</a>
@@ -43,7 +43,7 @@
                                                     <a class="remove" href="#"><i class="fa fa-trash-o"></i></a>
                                                 </li>
                                                 <li class="clearfix">
-                                                    <img src="images/header-cart-image-02.jpg" alt="cart item" />
+                                                    <img src="{{asset('app-assets/images/header-cart-image-02.jpg')}}" alt="cart item" />
                                                     <div class="item-info">
                                                         <div class="name">
                                                             <a href="#">The Great Gatsby</a>
@@ -55,7 +55,7 @@
                                                     <a class="remove" href="#"><i class="fa fa-trash-o"></i></a>
                                                 </li>
                                                 <li class="clearfix">
-                                                    <img src="images/header-cart-image-03.jpg" alt="cart item" />
+                                                    <img src="{{asset('app-assets/images/header-cart-image-03.jpg')}}" alt="cart item" />
                                                     <div class="item-info">
                                                         <div class="name">
                                                             <a href="#">The Great Gatsby</a>
@@ -87,7 +87,7 @@
                                 <div class="navbar-header">
                                     <div class="navbar-brand">
                                         <a href="index.html">
-                                            <img src="images/logo-header-v1.png" alt="" />
+                                            <img src="{{asset('app-assets/images/logo-header-v1.png')}}" alt="" />
                                         </a>
                                     </div>
                                 </div>
@@ -240,7 +240,7 @@
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <figure>
-                    <img alt="Home Slide" class="d-block w-100" src="images/header-slider/home-v1/header-slide.jpg" />
+                    <img alt="Home Slide" class="d-block w-100" src="{{asset('app-assets/images/header-slider/home-v1/header-slide.jpg')}}" />
                 </figure>
                 <div class="carousel-caption" data-aos="fade-down">
                     <h3>Online Learning Anytime, Anywhere!</h3>
@@ -254,7 +254,7 @@
             </div>
             <div class="carousel-item">
                 <figure>
-                    <img alt="Home Slide" class="d-block w-100" src="images/header-slider/home-v1/header-slide.jpg" />
+                    <img alt="Home Slide" class="d-block w-100" src="{{asset('app-assets/images/header-slider/home-v1/header-slide.jpg')}}" />
                 </figure>
                 <div class="carousel-caption">
                     <h3>Online Learning Anytime, Anywhere!</h3>
@@ -268,7 +268,7 @@
             </div>
             <div class="carousel-item">
                 <figure>
-                    <img alt="Home Slide" class="d-block w-100" src="images/header-slider/home-v1/header-slide.jpg" />
+                    <img alt="Home Slide" class="d-block w-100" src="{{asset('app-assets/images/header-slider/home-v1/header-slide.jpg')}}" />
                 </figure>
                 <div class="carousel-caption">
                     <h3>Online Learning Anytime, Anywhere!</h3>
@@ -302,41 +302,38 @@
                         <h3>What are you looking for at the SKILLE?</h3>
                     </div>
                     <div class="col-md-8 col-sm-12">
-                        <form action="index.html" method="get">
+                        <form action="{{route('home.search')}}" method="POST">
+                            @csrf
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="sr-only" for="keywords">Search by Keyword</label>
-                                        <input class="form-control" placeholder="Search by Keyword" id="keywords" name="keywords" type="text">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <select name="catalog" id="catalog" class="form-control">
-                                            <option>Search the Catalog</option>
-                                            <option>Catalog 01</option>
-                                            <option>Catalog 02</option>
-                                            <option>Catalog 03</option>
-                                            <option>Catalog 04</option>
-                                            <option>Catalog 05</option>
+                                        <select name="sector_id" id="sector_id" class="form-control">
+                                            <option value="">@lang('general.all') @lang('general.sectors')</option>
+                                            @foreach($sectors as $sector)
+                                                <option value="{{$sector->id}}">{{$sector->type}} - {{$sector->name}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <select name="category" id="category" class="form-control">
-                                            <option>All Categories</option>
-                                            <option>Category 01</option>
-                                            <option>Category 02</option>
-                                            <option>Category 03</option>
-                                            <option>Category 04</option>
-                                            <option>Category 05</option>
+                                        <select name="class_id" id="class_id" class="form-control">
+                                            <option value="">@lang('general.all') @lang('general.classes')</option>
+
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <a href="#" class="btn btn-primary">Search Now<span></span></a>
+                                        <select name="subject_id" id="subject_id" class="form-control">
+                                            <option value="">@lang('general.all') @lang('general.subjects')</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <a href="#" class="btn btn-primary">@lang('general.search')<span></span></a>
                                     </div>
                                 </div>
                             </div>
@@ -362,7 +359,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="welcome-image" data-aos="fade-up-right">
-                        <img src="images/welcome-img-home-v1.jpg" class="algin-right" alt="">
+                        <img src="{{asset('app-assets/images/welcome-img-home-v1.jpg')}}" class="algin-right" alt="">
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -424,7 +421,7 @@
                 <li data-aos="fade-left">
                     <div class="feature-box">
                         <div class="image">
-                            <img src="images/features/home-v1/books-collection.jpg" alt="Books Collection" />
+                            <img src="{{asset('app-assets/images/features/home-v1/books-collection.jpg')}}" alt="Books Collection" />
                         </div>
                         <h3>Collection Of Books</h3>
                         <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
@@ -436,7 +433,7 @@
                 <li data-aos="fade-down">
                     <div class="feature-box">
                         <div class="image">
-                            <img src="images/features/home-v1/ebooks.jpg" alt="Books Collection" />
+                            <img src="{{asset('app-assets/images/features/home-v1/ebooks.jpg')}}" alt="Books Collection" />
                         </div>
                         <h3>Download or Read eBooks</h3>
                         <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
@@ -448,7 +445,7 @@
                 <li data-aos="fade-right">
                     <div class="feature-box">
                         <div class="image">
-                            <img src="images/features/home-v1/dvd.jpg" alt="Books Collection" />
+                            <img src="{{asset('app-assets/images/features/home-v1/dvd.jpg')}}" alt="Books Collection" />
                         </div>
                         <h3>Watch and Download DVDs</h3>
                         <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
@@ -460,7 +457,7 @@
                 <li data-aos="fade-left">
                     <div class="feature-box">
                         <div class="image">
-                            <img src="images/features/home-v1/magazines.jpg" alt="Books Collection" />
+                            <img src="{{asset('app-assets/images/features/home-v1/magazines.jpg')}}" alt="Books Collection" />
                         </div>
                         <h3>Variety of Magazines</h3>
                         <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
@@ -472,7 +469,7 @@
                 <li data-aos="fade-up">
                     <div class="feature-box">
                         <div class="image">
-                            <img src="images/features/home-v1/audio.jpg" alt="Books Collection" />
+                            <img src="{{asset('app-assets/images/features/home-v1/audio.jpg')}}" alt="Books Collection" />
                         </div>
                         <h3>Audio for Books & Magazine</h3>
                         <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
@@ -484,7 +481,7 @@
                 <li data-aos="fade-right">
                     <div class="feature-box">
                         <div class="image">
-                            <img src="images/features/home-v1/eaudio.jpg" alt="Books Collection" />
+                            <img src="{{asset('app-assets/images/features/home-v1/eaudio.jpg')}}" alt="Books Collection" />
                         </div>
                         <h3>eAudios</h3>
                         <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
@@ -531,7 +528,7 @@
             <div class="owl-carousel">
                 <div class="single-testimonial-box" data-aos="fade-left">
                     <div class="top-portion">
-                        <img src="images/testimonial-image-01.jpg" alt="Testimonial Image" />
+                        <img src="{{asset('app-assets/images/testimonial-image-01.jpg')}}" alt="Testimonial Image" />
                         <div class="user-comment">
                             <div class="arrow-left"></div>
                             <blockquote cite="#">
@@ -560,7 +557,7 @@
                 </div>
                 <div class="single-testimonial-box" data-aos="fade-right">
                     <div class="top-portion">
-                        <img src="images/testimonial-image-02.jpg" alt="Testimonial Image" />
+                        <img src="{{asset('app-assets/images/testimonial-image-02.jpg')}}" alt="Testimonial Image" />
                         <div class="user-comment">
                             <div class="arrow-left"></div>
                             <blockquote cite="#">
@@ -589,7 +586,7 @@
                 </div>
                 <div class="single-testimonial-box">
                     <div class="top-portion">
-                        <img src="images/testimonial-image-01.jpg" alt="Testimonial Image" />
+                        <img src="{{asset('app-assets/images/testimonial-image-01.jpg')}}" alt="Testimonial Image" />
                         <div class="user-comment">
                             <div class="arrow-left"></div>
                             <blockquote cite="#">
@@ -618,7 +615,7 @@
                 </div>
                 <div class="single-testimonial-box">
                     <div class="top-portion">
-                        <img src="images/testimonial-image-02.jpg" alt="Testimonial Image" />
+                        <img src="{{asset('app-assets/images/testimonial-image-02.jpg')}}" alt="Testimonial Image" />
                         <div class="user-comment">
                             <div class="arrow-left"></div>
                             <blockquote cite="#">
@@ -647,7 +644,7 @@
                 </div>
                 <div class="single-testimonial-box">
                     <div class="top-portion">
-                        <img src="images/testimonial-image-01.jpg" alt="Testimonial Image" />
+                        <img src="{{asset('app-assets/images/testimonial-image-01.jpg')}}" alt="Testimonial Image" />
                         <div class="user-comment">
                             <div class="arrow-left"></div>
                             <blockquote cite="#">
@@ -676,7 +673,7 @@
                 </div>
                 <div class="single-testimonial-box">
                     <div class="top-portion">
-                        <img src="images/testimonial-image-02.jpg" alt="Testimonial Image" />
+                        <img src="{{asset('app-assets/images/testimonial-image-02.jpg')}}" alt="Testimonial Image" />
                         <div class="user-comment">
                             <div class="arrow-left"></div>
                             <blockquote cite="#">
@@ -705,7 +702,7 @@
                 </div>
                 <div class="single-testimonial-box">
                     <div class="top-portion">
-                        <img src="images/testimonial-image-01.jpg" alt="Testimonial Image" />
+                        <img src="{{asset('app-assets/images/testimonial-image-01.jpg')}}" alt="Testimonial Image" />
                         <div class="user-comment">
                             <div class="arrow-left"></div>
                             <blockquote cite="#">
@@ -734,7 +731,7 @@
                 </div>
                 <div class="single-testimonial-box">
                     <div class="top-portion">
-                        <img src="images/testimonial-image-02.jpg" alt="Testimonial Image" />
+                        <img src="{{asset('app-assets/images/testimonial-image-02.jpg')}}" alt="Testimonial Image" />
                         <div class="user-comment">
                             <div class="arrow-left"></div>
                             <blockquote cite="#">
@@ -870,7 +867,7 @@
                                 <a href="blog-detail.html" class="btn btn-dark-gray">Read More</a>
                             </div>
                             <figure>
-                                <img src="images/latest-blog-img-home-v1.jpg" alt="Latest Blog">
+                                <img src="{{asset('app-assets/images/latest-blog-img-home-v1.jpg')}}" alt="Latest Blog">
                                 <figcaption>
                                     <a href="#">
                                         <span class="date">07</span>
@@ -919,7 +916,7 @@
                                 <a href="blog-detail.html" class="btn btn-dark-gray">Read More</a>
                             </div>
                             <figure>
-                                <img src="images/latest-blog-img-home-v1-2.jpg" alt="Latest Blog">
+                                <img src="{{asset('app-assets/images/latest-blog-img-home-v1-2.jpg')}}" alt="Latest Blog">
                                 <figcaption>
                                     <a href="#">
                                         <span class="date">06</span>
@@ -968,7 +965,7 @@
                                 <a href="blog-detail.html" class="btn btn-dark-gray">Read More</a>
                             </div>
                             <figure>
-                                <img src="images/latest-blog-img-home-v1.jpg" alt="Latest Blog">
+                                <img src="{{asset('app-assets/images/latest-blog-img-home-v1.jpg')}}" alt="Latest Blog">
                                 <figcaption>
                                     <a href="#">
                                         <span class="date">05</span>
@@ -1017,7 +1014,7 @@
                                 <a href="blog-detail.html" class="btn btn-dark-gray">Read More</a>
                             </div>
                             <figure>
-                                <img src="images/latest-blog-img-home-v1-2.jpg" alt="Latest Blog">
+                                <img src="{{asset('app-assets/images/latest-blog-img-home-v1-2.jpg')}}" alt="Latest Blog">
                                 <figcaption>
                                     <a href="#">
                                         <span class="date">04</span>
@@ -1066,7 +1063,7 @@
                                 <a href="blog-detail.html" class="btn btn-dark-gray">Read More</a>
                             </div>
                             <figure>
-                                <img src="images/latest-blog-img-home-v1.jpg" alt="Latest Blog">
+                                <img src="{{asset('app-assets/images/latest-blog-img-home-v1.jpg')}}" alt="Latest Blog">
                                 <figcaption>
                                     <a href="#">
                                         <span class="date">03</span>
@@ -1115,7 +1112,7 @@
                                 <a href="blog-detail.html" class="btn btn-dark-gray">Read More</a>
                             </div>
                             <figure>
-                                <img src="images/latest-blog-img-home-v1-2.jpg" alt="Latest Blog">
+                                <img src="{{asset('app-assets/images/latest-blog-img-home-v1-2.jpg')}}" alt="Latest Blog">
                                 <figcaption>
                                     <a href="#">
                                         <span class="date">02</span>
@@ -1147,7 +1144,7 @@
                     <div class="col-md-12 col-lg-5 col-xl-6">
                         <div class="single-news-event first-news-event" data-aos="fade-down">
                             <figure>
-                                <img class="rounded-border" src="images/news-event/home-news-event-01.jpg"
+                                <img class="rounded-border" src="{{asset('app-assets/images/news-event/home-news-event-01.jpg')}}"
                                      alt="News & Event" />
                             </figure>
                             <div class="content-block bottom-left-rounded">
@@ -1220,14 +1217,14 @@
                                 </div>
                             </div>
                             <figure>
-                                <img class="rounded-border" src="images/news-event/home-news-event-02.jpg"
+                                <img class="rounded-border" src="{{asset('app-assets/images/news-event/home-news-event-02.jpg')}}"
                                      alt="News & Event" />
                             </figure>
                             <div class="clearfix"></div>
                         </div>
                         <div class="single-news-event third-news-event" data-aos="fade-left">
                             <figure>
-                                <img src="images/news-event/home-news-event-03.jpg" alt="News & Event" />
+                                <img src="{{asset('app-assets/images/news-event/home-news-event-03.jpg')}}" alt="News & Event" />
                             </figure>
                             <div class="content-block bottom-right-rounded">
                                 <div class="member-info">
@@ -1320,7 +1317,7 @@
                         <div id="text-2" class="widget widget_text">
                             <div class="about-us">
                                 <a href="index.html">
-                                    <img src="images/logo-footer-v1.png" alt="LIBRARIA" />
+                                    <img src="{{asset('app-assets/images/logo-footer-v1.png')}}" alt="LIBRARIA" />
                                 </a>
                             </div>
                             <div class="textwidget">
@@ -1409,3 +1406,59 @@
     </footer>
     <!-- End: Footer -->
 @endsection
+
+@push('scripts')
+    <script>
+
+        $( document ).ready(function() {
+
+            //get classes
+            $(document).on('change', '#sector_id', function() {
+                console.log('here');
+                var sector = $(this).val();
+                $("#class_id").html("");
+                $("#class_id").html(
+                    '<option selected value="">' + "@lang('general.all') @lang('general.sectors')" + '</option>'
+                );
+                classes = "";
+                if (sector) {
+                    console.log('asff');
+                    $.ajax({
+                        url: "{{url('/') . '/class-search/'}}" + sector,
+                        type: 'GET',
+                        dataType: "json",
+                        data: {},
+                        cache: false,
+                        success: function (data){
+                            console.log('data');
+                        },
+                        error: function (reject){
+                            console.log(reject);
+                        }
+                    });
+                }
+            });//end for get classes
+
+            //get subjects
+
+
+        });//end for ready
+
+    </script>
+@endpush
+/*
+if (data.length != 0) {
+for (var x = 0; x < data.length; x++) {
+var item = data[x];
+areas +=
+'<option value="' +
+                                    item.id +
+                                    '">' +
+    item.name_en +
+    "</option>";
+}
+$("#area").append(areas);
+}
+
+
+*/

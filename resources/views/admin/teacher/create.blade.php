@@ -38,7 +38,7 @@
                                     </div>
                                 </div>
                                 <div id="html-view-validations">
-                                    <form class="formValidate0" id="formValidate0" action="{{route('admin.teachers.store')}}" method="post">
+                                    <form class="formValidate0" id="formValidate0" action="{{route('admin.teachers.store')}}" method="post" enctype="multipart/form-data">
                                         @csrf
                                         <div class="row">
                                             @foreach(['ar', 'en'] as $local)
@@ -58,7 +58,7 @@
                                             <div class="col s6">
                                                 <label for="position">@lang('teacher.position')</label>
                                                 <select id="position" name="position" required>
-                                                    <option value="" disabled selected>@lang('general.choose') @lang('teacher.position')</option>
+                                                    <option value="" selected disabled>@lang('general.choose') @lang('teacher.position')</option>
                                                     <option value="1">@lang('teacher.junior')</option>
                                                     <option value="2">@lang('teacher.senior')</option>
                                                     <option value="3">@lang('teacher.expert')</option>
@@ -99,7 +99,7 @@
 
                                             <div class="input-field col s6">
                                                 <label for="password">@lang('teacher.password')</label>
-                                                <input @error('password')class="invalid" @enderror required value="{{old('mobile')}}" id="password"
+                                                <input @error('password')class="invalid" @enderror required value="" id="password"
                                                        name="password"
                                                        type="password">
                                                 @error('password')
@@ -126,8 +126,8 @@
                                             <div class="col s12">
                                                 <label for="area_id">@lang('general.areas')</label>
                                                 <div class="input-field">
-                                                    <select id="area_id" name="area_id" class="select2 browser-default" multiple="multiple" required>
-                                                        <option value="" disabled>@lang('general.choose') @lang('general.city')</option>
+                                                    <select id="area_id" name="area_id[]" class="select2 browser-default" multiple="multiple" required>
+                                                        <option value="" disabled>@lang('general.choose') @lang('general.area')</option>
                                                         @foreach($areas as $area)
                                                             <option value="{{$area->id}}">{{$area->city->name}} -> {{$area->name}}</option>
                                                         @endforeach
@@ -143,7 +143,7 @@
                                             <div class="col s12">
                                                 <label for="subject_id">@lang('general.subjects')</label>
                                                 <div class="input-field">
-                                                    <select id="subject_id" name="subject_id" class="select2 browser-default" multiple="multiple" required>
+                                                    <select id="subject_id" name="subject_id[]" class="select2 browser-default" multiple="multiple" required>
                                                         <option value="" disabled>@lang('general.choose') @lang('general.subject')</option>
                                                         @foreach($subjects as $subject)
                                                             <option value="{{$subject->id}}">{{$subject->classes->sector->type}} -> {{$subject->classes->sector->name}} -> {{$subject->classes->name}} -> {{$subject->name}}</option>
@@ -158,15 +158,25 @@
                                             </div>
 
                                             <div class="input-field col s6">
-                                                <i class="material-icons prefix">account_circle</i>
-                                                <input id="icon_prefix" type="text" class="validate">
-                                                <label for="icon_prefix">Facebook</label>
+                                                <i class="material-icons prefix">send</i>
+                                                <input id="facebook" type="url" name="social_link[]">
+                                                <label for="facebook">@lang('teacher.account')</label>
+                                                @error('social_link.0')
+                                                <span class="red-text" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
                                             </div>
 
                                             <div class="input-field col s6">
-                                                <i class="material-icons prefix">account_circle</i>
-                                                <input id="icon_prefix" type="text" class="validate">
-                                                <label for="icon_prefix">Facebook</label>
+                                                <i class="material-icons prefix">send</i>
+                                                <input id="gmail" type="url" name="social_link[]">
+                                                <label for="gmail">@lang('teacher.account')</label>
+                                                @error('social_link.1')
+                                                <span class="red-text" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
                                             </div>
 
                                             <div class="col s12">

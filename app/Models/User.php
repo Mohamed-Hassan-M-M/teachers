@@ -6,6 +6,8 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class User extends Authenticatable
 {
@@ -38,8 +40,14 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
     protected $appends = [
-        'name', 'description'
+        'name', 'description', 'image_path'
     ];
+
+    public function getImagePathAttribute()
+    {
+        return Storage::url('public/teachers/' . $this->image);
+
+    }
 
     public function getCreatedAtAttribute($key)
     {
@@ -75,16 +83,23 @@ class User extends Authenticatable
     /* relations*/
     public function areas()
     {
-        return $this->belongsToMany(Area::class, 'teacher__areas', 'teacher_id', 'area_id');
+        return $this->belongsToMany(Area::class, 'teacher_areas', 'teacher_id', 'area_id');
     }
 
     public function cities()
     {
-        return $this->hasManyThrough(City::class, Teacher_Area::class, 'teacher_id', 'area_id','id', 'city_id');
+        $areas = Area::select('city_id')->whereIn('id', $this->areas->pluck('id'))->groupBy('city_id')->pluck('city_id');
+        return City::whereIn('id', $areas)->count();
     }
 
     public function subjects()
     {
-        return $this->belongsToMany(Subject::class, 'teacher__subjects', 'teacher_id', 'subject_id');
+        return $this->belongsToMany(Subject::class, 'teacher_subjects', 'teacher_id', 'subject_id');
     }
+
+    public function socialLink()
+    {
+        return $this->hasMany(TeacherSocial::class, 'teacher_id', 'id');
+    }
+
 }

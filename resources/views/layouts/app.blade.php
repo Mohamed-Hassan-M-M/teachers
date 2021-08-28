@@ -91,6 +91,8 @@
 <!-- Custom Scripts -->
 <script src="{{asset('app-assets/js/main.js')}}"></script>
 
+@stack('scripts')
+
 </body>
 
 </html>

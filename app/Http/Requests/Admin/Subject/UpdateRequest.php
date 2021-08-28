@@ -4,6 +4,7 @@ namespace App\Http\Requests\Admin\Subject;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class UpdateRequest extends FormRequest
 {
@@ -24,10 +25,19 @@ class UpdateRequest extends FormRequest
      */
     public function rules(Request $request)
     {
+        $class_id = $request->input('class_id');
+        $name_ar = $request->input('name_ar');
+        $name_en = $request->input('name_en');
         return [
-            'name_ar' => 'required|unique:subjects,name_ar,' . $request->segment(4),
-            'name_en' => 'required|unique:subjects,name_en,' . $request->segment(4),
-            'class_id' => "required|exists:classes,id"
+            'name_en' => [
+                'required',Rule::unique('subjects')->where(function ($query) use($name_en, $class_id) {
+                    return $query->where('name_en', $name_en)->where('class_id', $class_id);
+                })->ignore($request->segment(4))],
+            'name_ar' => [
+                'required',Rule::unique('subjects')->where(function ($query) use($name_ar, $class_id) {
+                    return $query->where('name_ar', $name_ar)->where('class_id', $class_id);
+                })->ignore($request->segment(4))],
+            'class_id' => 'required',
         ];
     }
 }

@@ -13,7 +13,7 @@ class CreateTeacherAreasTable extends Migration
      */
     public function up()
     {
-        Schema::create('teacher__areas', function (Blueprint $table) {
+        Schema::create('teacher_areas', function (Blueprint $table) {
             $table->id();
             $table->foreignId('teacher_id')
                 ->constrained("users")
@@ -32,6 +32,6 @@ class CreateTeacherAreasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('teacher__areas');
+        Schema::dropIfExists('teacher_areas');
     }
 }

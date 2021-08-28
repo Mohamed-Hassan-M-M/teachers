@@ -13,7 +13,7 @@ class CreateTeacherSubjectsTable extends Migration
      */
     public function up()
     {
-        Schema::create('teacher__subjects', function (Blueprint $table) {
+        Schema::create('teacher_subjects', function (Blueprint $table) {
             $table->id();
             $table->foreignId('teacher_id')
                 ->constrained("users")
@@ -32,6 +32,6 @@ class CreateTeacherSubjectsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('teacher__subjects');
+        Schema::dropIfExists('teacher_subjects');
     }
 }

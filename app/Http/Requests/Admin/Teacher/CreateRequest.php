@@ -13,7 +13,7 @@ class CreateRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,18 @@ class CreateRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name_ar' => 'required',
+            'name_en' => 'required',
+            'description_ar' => 'required',
+            'description_en' => 'required',
+            'position' => "required",
+            'mobile' => "required|unique:users,mobile",
+            'email' => "required|unique:users,email",
+            'password' => "required",
+            //'image' => "nullable|mimes:jpg,jpeg,png,apng,gif,avif,svg,webp",
+            'area_id.*' => "required|exists:areas,id",
+            'subject_id.*' => "required|exists:subjects,id",
+            'social_link.*' => "nullable|url",
         ];
     }
 }

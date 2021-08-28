@@ -40,6 +40,7 @@
         <link rel="stylesheet" type="text/css" href="{{asset("admin-assets/css-rtl/pages/intro.min.css")}}">
         <link rel="stylesheet" type="text/css" href="{{asset("admin-assets/css/pages/data-tables.min.css")}}">
         <link rel="stylesheet" type="text/css" href="{{asset("admin-assets/css-rtl/pages/form-select2.min.css")}}">
+        <link rel="stylesheet" type="text/css" href="{{asset("admin-assets/css/pages/advance-ui-media.min.css")}}">
         <!-- END: Page Level CSS-->
         <!-- BEGIN: Custom CSS-->
         <link rel="stylesheet" type="text/css" href="{{asset("admin-assets/css-rtl/custom/custom.css")}}">
@@ -54,6 +55,7 @@
         <link rel="stylesheet" type="text/css" href="{{asset("admin-assets/css/pages/intro.min.css")}}">
         <link rel="stylesheet" type="text/css" href="{{asset("admin-assets/css/pages/data-tables.min.css")}}">
         <link rel="stylesheet" type="text/css" href="{{asset("admin-assets/css/pages/form-select2.min.css")}}">
+        <link rel="stylesheet" type="text/css" href="{{asset("admin-assets/css/pages/advance-ui-media.min.css")}}">
         <!-- END: Page Level CSS-->
         <!-- BEGIN: Custom CSS-->
         <link rel="stylesheet" type="text/css" href="{{asset("admin-assets/css/custom/custom.css")}}">
@@ -360,44 +362,45 @@
 <script src="{{asset("admin-assets/js/scripts/extra-components-sweetalert.min.js")}}"></script>
 <script src="{{asset("admin-assets/js/scripts/form-select2.min.js")}}"></script>
 <script src="{{asset("admin-assets/js/scripts/form-file-uploads.min.js")}}"></script>
+<script src="{{asset("admin-assets/js/scripts/advance-ui-media.min.js")}}"></script>
 <!-- END PAGE LEVEL JS-->
 <script>
     $(document).ready( function () {
 
-        $('.dropify').dropify({
-            messages: {
-                'default2': '@lang("teacher.d and d")',
-                'replace': '@lang("teacher.d and d r")',
-                'remove':  '@lang("teacher.remove")',
-                'error':   '@lang("teacher.err")'
-            }
-        });
+        {{--$('.dropify').dropify({--}}
+        {{--    messages: {--}}
+        {{--        'default2': '@lang("teacher.d and d")',--}}
+        {{--        'replace': '@lang("teacher.d and d r")',--}}
+        {{--        'remove':  '@lang("teacher.remove")',--}}
+        {{--        'error':   '@lang("teacher.err")'--}}
+        {{--    }--}}
+        {{--});--}}
 
-        $('.dropify').dropify({
-            error: {
-                'imageFormat': `{{__("teacher.wrong format")}} (${value}  {{__("teacher.only")}}).`
-            }
-        });
+        {{--$('.dropify').dropify({--}}
+        {{--    error: {--}}
+        {{--        'imageFormat': `{{__("teacher.wrong format")}} (${value}  {{__("teacher.only")}}).`--}}
+        {{--    }--}}
+        {{--});--}}
 
-        $('.dropify').dropify({
-            tpl: {
-                wrap:            '<div class="dropify-wrapper"></div>',
-                loader:          '<div class="dropify-loader"></div>',
-                message:         `<div class="dropify-message"><span class="file-icon" /> <p>${default2}</p></div>`,
-                preview:         `<div class="dropify-preview"><span class="dropify-render"></span><div class="dropify-infos"><div class="dropify-infos-inner"><p class="dropify-infos-message">${replace}</p></div></div></div>`,
-                filename:        '<p class="dropify-filename"><span class="file-icon"></span> <span class="dropify-filename-inner"></span></p>',
-                clearButton:     `<button type="button" class="dropify-clear">${remove}</button>`,
-                errorLine:       `<p class="dropify-error">${error}</p>`,
-                errorsContainer: '<div class="dropify-errors-container"><ul></ul></div>'
-            }
-        });
+        {{--$('.dropify').dropify({--}}
+        {{--    tpl: {--}}
+        {{--        wrap:            '<div class="dropify-wrapper"></div>',--}}
+        {{--        loader:          '<div class="dropify-loader"></div>',--}}
+        {{--        message:         `<div class="dropify-message"><span class="file-icon" /> <p>${default2}</p></div>`,--}}
+        {{--        preview:         `<div class="dropify-preview"><span class="dropify-render"></span><div class="dropify-infos"><div class="dropify-infos-inner"><p class="dropify-infos-message">${replace}</p></div></div></div>`,--}}
+        {{--        filename:        '<p class="dropify-filename"><span class="file-icon"></span> <span class="dropify-filename-inner"></span></p>',--}}
+        {{--        clearButton:     `<button type="button" class="dropify-clear">${remove}</button>`,--}}
+        {{--        errorLine:       `<p class="dropify-error">${error}</p>`,--}}
+        {{--        errorsContainer: '<div class="dropify-errors-container"><ul></ul></div>'--}}
+        {{--    }--}}
+        {{--});--}}
 
-        var quill = new Quill('#editor', {
-            modules: {
-                toolbar: '#toolbar'
-            },
-            theme: 'snow'
-        });
+        // var quill = new Quill('#editor', {
+        //     modules: {
+        //         toolbar: '#toolbar'
+        //     },
+        //     theme: 'snow'
+        // });
 
         $("#page-length-option").dataTable().fnDestroy();
         $('#page-length-option').DataTable({

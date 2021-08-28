@@ -39,6 +39,15 @@ Route::group(
         Route::resource('teachers', TeacherController::class);
 
         Route::resource('students', StudentController::class);
+
+        Route::resource('blogs', BlogController::class);
+
+        Route::resource('events', EventController::class);
+
+        Route::resource('cat_events', CategoryEventController::class);
+
+        Route::resource('contacts', ContactUsController::class);
+
     });
 });
 

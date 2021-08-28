@@ -33,7 +33,7 @@ class Subject extends Model
 
     public function teachers()
     {
-        return $this->belongsToMany(User::class, 'teacher__subjects', 'subject_id', 'teacher_id')->where('type', '2');
+        return $this->belongsToMany(User::class, 'teacher_subjects', 'subject_id', 'teacher_id')->where('type', '2');
     }
 
 }

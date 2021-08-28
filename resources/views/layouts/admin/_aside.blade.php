@@ -18,6 +18,14 @@
         </li>
         <li class="bold"><a class="waves-effect waves-cyan @if(request()->segment(3) == 'areas') active @endif " href="{{route('admin.areas.index')}}"><i class="material-icons">domain</i><span class="menu-title" data-i18n="Calendar">@lang('general.areas')</span><span class="badge badge pill pink accent-2 float-right mr-2">{{\App\Models\Area::count()}}</span></a>
         </li>
+        <li class="bold"><a class="waves-effect waves-cyan @if(request()->segment(3) == 'cat_events') active @endif " href="{{route('admin.cat_events.index')}}"><i class="material-icons">bookmark</i><span class="menu-title" data-i18n="Calendar">@lang('general.cat_events')</span><span class="badge badge pill pink accent-2 float-right mr-2">{{\App\Models\EventCategory::count()}}</span></a>
+        </li>
+        <li class="bold"><a class="waves-effect waves-cyan @if(request()->segment(3) == 'events') active @endif " href="{{route('admin.events.index')}}"><i class="material-icons">perm_media</i><span class="menu-title" data-i18n="Calendar">@lang('general.events')</span><span class="badge badge pill pink accent-2 float-right mr-2">{{\App\Models\Event::count()}}</span></a>
+        </li>
+        <li class="bold"><a class="waves-effect waves-cyan @if(request()->segment(3) == 'blogs') active @endif " href="{{route('admin.blogs.index')}}"><i class="material-icons">burst_mode</i><span class="menu-title" data-i18n="Calendar">@lang('general.blogs')</span><span class="badge badge pill pink accent-2 float-right mr-2">{{\App\Models\Blog::count()}}</span></a>
+        </li>
+        <li class="bold"><a class="waves-effect waves-cyan @if(request()->segment(3) == 'contacts') active @endif " href="{{route('admin.contacts.index')}}"><i class="material-icons">contacts</i><span class="menu-title" data-i18n="Calendar">@lang('general.contacts')</span><span class="badge badge pill pink accent-2 float-right mr-2">{{\App\Models\Contact_us::count()}}</span></a>
+        </li>
 
     </ul>
     <div class="navigation-background"></div><a class="sidenav-trigger btn-sidenav-toggle btn-floating btn-medium waves-effect waves-light hide-on-large-only" href="#" data-target="slide-out"><i class="material-icons">menu</i></a>

@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Admin\Teacher;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Request;
 
 class UpdateRequest extends FormRequest
 {
@@ -13,7 +14,7 @@ class UpdateRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -21,10 +22,20 @@ class UpdateRequest extends FormRequest
      *
      * @return array
      */
-    public function rules()
+    public function rules(Request $request)
     {
         return [
-            //
+            'name_ar' => 'required',
+            'name_en' => 'required',
+            'description_ar' => 'required',
+            'description_en' => 'required',
+            'position' => "required",
+            'mobile' => "required|unique:users,mobile," . $request->segment(4),
+            'email' => "required|unique:users,email," . $request->segment(4),
+            //'image' => "nullable|mimes:jpg,jpeg,png,apng,gif,avif,svg,webp",
+            'area_id.*' => "required|exists:areas,id",
+            'subject_id.*' => "required|exists:subjects,id",
+            'social_link.*' => "nullable|url",
         ];
     }
 }

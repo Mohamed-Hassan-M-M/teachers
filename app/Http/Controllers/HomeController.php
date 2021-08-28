@@ -2,6 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
+use App\Models\Classes;
+use App\Models\Event;
+use App\Models\Sector;
+use App\Models\Subject;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -13,7 +18,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+
     }
 
     /**
@@ -23,6 +28,37 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $sectors = Sector::all();
+        $classes = Classes::all();
+        $subjects = Subject::all();
+        $blogs = Blog::all();
+        $events = Event::all();
+        return view('home', compact(['sectors', 'classes', 'subjects', 'blogs', 'events']));
+    }
+
+    public function getClasses($id)
+    {
+        $classes = Classes::where('sector_id', $id)->get();
+        return response()->json([
+            'status' => 'success',
+            'msg' => 'classes',
+            'data' => $classes
+        ]);
+    }
+
+    public function getSubjects($id)
+    {
+        $subjects = Subject::where('sector_id', $id)->get();
+        return response()->json([
+            'status' => 'success',
+            'msg' => 'subjects',
+            'data' => $subjects
+        ]);
+    }
+
+    public function search(Request $request)
+    {
+
+        return view('search');
     }
 }

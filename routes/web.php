@@ -13,10 +13,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/test', function () {
-    return view('admin.home');
+Route::group(
+    [
+        'prefix' => LaravelLocalization::setLocale(),
+        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
+    ], function(){
+
+    Auth::routes();
+
+    //home
+    Route::get('/', 'HomeController@index')->name('home');
+
+    // home search
+    Route::get('/home-search', 'HomeController@search')->name('home.search');
+    Route::get('/class-search/{id}', 'HomeController@getClasses');
+    Route::get('/class-subject/{id}', 'HomeController@getSubjects');
+
 });
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
