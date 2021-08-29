@@ -308,9 +308,9 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <select name="sector_id" id="sector_id" class="form-control">
-                                            <option value="">@lang('general.all') @lang('general.sectors')</option>
+                                            <option value="" dType="sector">@lang('general.all') @lang('general.sectors')</option>
                                             @foreach($sectors as $sector)
-                                                <option value="{{$sector->id}}">{{$sector->type}} - {{$sector->name}}</option>
+                                                <option value="{{$sector->id}}" dType="sector">{{$sector->type}} - {{$sector->name}}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -1413,24 +1413,34 @@
         $( document ).ready(function() {
 
             //get classes
-            $(document).on('change', '#sector_id', function() {
-                console.log('here');
-                var sector = $(this).val();
+            $('body').on('mouseup', 'li', function() {
+                var sector = $(this).attr('rel');
                 $("#class_id").html("");
                 $("#class_id").html(
-                    '<option selected value="">' + "@lang('general.all') @lang('general.sectors')" + '</option>'
+                    '<option value="" dType="classes">' + "@lang('general.all') @lang('general.classes')" + '</option>'
                 );
-                classes = "";
+                var classes = "";
                 if (sector) {
-                    console.log('asff');
                     $.ajax({
                         url: "{{url('/') . '/class-search/'}}" + sector,
                         type: 'GET',
                         dataType: "json",
                         data: {},
-                        cache: false,
                         success: function (data){
-                            console.log('data');
+                            console.log(data.length)
+                            if (data.length != 0) {
+                                for (var x = 0; x < data.length; x++) {
+                                    var item = data[x];
+                                    classes +=
+                                        '<option dType="classes" value="' +
+                                        item.id +
+                                        '">' +
+                                        item['name_' + {{app()->getLocale()}}] +
+                                        "</option>";
+                                    console.log(classes);
+                                }
+                                $("#class_id").append(classes);
+                            }
                         },
                         error: function (reject){
                             console.log(reject);
@@ -1446,19 +1456,3 @@
 
     </script>
 @endpush
-/*
-if (data.length != 0) {
-for (var x = 0; x < data.length; x++) {
-var item = data[x];
-areas +=
-'<option value="' +
-                                    item.id +
-                                    '">' +
-    item.name_en +
-    "</option>";
-}
-$("#area").append(areas);
-}
-
-
-*/

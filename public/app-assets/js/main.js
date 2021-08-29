@@ -137,7 +137,8 @@ $(function () {
     for (var i = 0; i < numberOfOptions; i++) {
       $('<li />', {
         text: $this.children('option').eq(i).text(),
-        rel: $this.children('option').eq(i).val()
+        rel: $this.children('option').eq(i).val(),
+        dType: $this.children('option').eq(i).attr('dType')
       }).appendTo($list);
     }
 
@@ -361,7 +362,7 @@ $(function () {
   });
 
   // Count Down Timmer for days News & Event Detail
-  //--------------------------------------------------------  
+  //--------------------------------------------------------
   if ($('#countdown').length > 0) {
     const second = 1000,
       minute = second * 60,
