@@ -13316,7 +13316,7 @@ padding: 100px 0 70px 0;
     width: 100%;
     position: absolute;
     height: 244px;
-    background: url(../images/bg-curve.png) no-repeat;
+    /*background: url(../images/bg-curve.png) no-repeat;*/
     bottom: -30px;
     left: 0;
     z-index: 1; }

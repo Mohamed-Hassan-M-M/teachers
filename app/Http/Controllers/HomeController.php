@@ -38,7 +38,7 @@ class HomeController extends Controller
 
     public function getClasses($id)
     {
-        $classes = Classes::where('sector_id', $id)->get();
+        $classes = Classes::where('sector_id', $id)->get()->toArray();
         return response()->json([
             'status' => 'success',
             'msg' => 'classes',
@@ -48,7 +48,7 @@ class HomeController extends Controller
 
     public function getSubjects($id)
     {
-        $subjects = Subject::where('sector_id', $id)->get();
+        $subjects = Subject::where('class_id', $id)->get()->toArray();
         return response()->json([
             'status' => 'success',
             'msg' => 'subjects',
@@ -58,7 +58,7 @@ class HomeController extends Controller
 
     public function search(Request $request)
     {
-
+        dd($request->all());
         return view('search');
     }
 }

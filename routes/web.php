@@ -25,8 +25,8 @@ Route::group(
     Route::get('/', 'HomeController@index')->name('home');
 
     // home search
-    Route::get('/home-search', 'HomeController@search')->name('home.search');
+    Route::post('/home-search', 'HomeController@search')->name('home.search');
     Route::get('/class-search/{id}', 'HomeController@getClasses');
-    Route::get('/class-subject/{id}', 'HomeController@getSubjects');
+    Route::get('/subject-search/{id}', 'HomeController@getSubjects');
 
 });

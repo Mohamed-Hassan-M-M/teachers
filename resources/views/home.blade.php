@@ -316,7 +316,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-group">
+                                    <div class="form-group" id="class">
                                         <select name="class_id" id="class_id" class="form-control">
                                             <option value="">@lang('general.all') @lang('general.classes')</option>
 
@@ -324,7 +324,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-group">
+                                    <div class="form-group" id="subject">
                                         <select name="subject_id" id="subject_id" class="form-control">
                                             <option value="">@lang('general.all') @lang('general.subjects')</option>
 
@@ -333,7 +333,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <a href="#" class="btn btn-primary">@lang('general.search')<span></span></a>
+                                        <button class="btn btn-primary">@lang('general.search')</button>
                                     </div>
                                 </div>
                             </div>
@@ -1173,7 +1173,7 @@
                                             </a>
                                         </li>
                                     </ul>
-                                    <h3><a href="news-events-detail.html">It uses a dictionary of over 200 Latin word</a></h3>
+                                    <h3><a href="">It uses a dictionary of over 200 Latin word</a></h3>
                                     <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution
                                         of
                                         letters, as opposed to using 'Content here, content here', making it look like
@@ -1413,13 +1413,67 @@
         $( document ).ready(function() {
 
             //get classes
-            $('body').on('mouseup', 'li', function() {
+            $('body').on('mouseup', 'li[dtype="sector"]', function() {
                 var sector = $(this).attr('rel');
-                $("#class_id").html("");
-                $("#class_id").html(
-                    '<option value="" dType="classes">' + "@lang('general.all') @lang('general.classes')" + '</option>'
+                $("#class").html("");
+                $("#class").html(
+                    '<select name="class_id" id="class_id" class="form-control"><option value="" dType="classes">' + "@lang('general.all') @lang('general.classes')" + '</option>'
                 );
-                var classes = "";
+
+                //clear subject
+                $("#subject").html("");
+                $("#subject").html(
+                    '<select name="subject_id" id="subject_id" class="form-control"><option value="" dType="subjects">' + "@lang('general.all') @lang('general.subjects')" + '</option></select>'
+                );
+                var selectObj = $('select#subject_id');
+                var selectListObj = $('ul.select-list');
+                selectObj.each(function () {
+                    var $this = $(this), numberOfOptions = $(this).children('option').length;
+
+                    $this.addClass('select-hidden');
+                    $this.wrap('<div class="select"></div>');
+                    $this.after('<div class="select-styled"></div>');
+
+                    var $styledSelect = $this.next('div.select-styled');
+                    $styledSelect.text($this.children('option').eq(0).text());
+
+                    var $list = $('<ul />', {
+                        'class': 'select-list'
+                    }).insertAfter($styledSelect);
+
+                    for (var i = 0; i < numberOfOptions; i++) {
+                        $('<li />', {
+                            text: $this.children('option').eq(i).text(),
+                            rel: $this.children('option').eq(i).val(),
+                            dType: $this.children('option').eq(i).attr('dType')
+                        }).appendTo($list);
+                    }
+
+                    var $listItems = $list.children('li');
+
+                    $styledSelect.on('click', function (e) {
+                        e.stopPropagation();
+                        $('div.select-styled.active').not(this).each(function () {
+                            $(this).removeClass('active').next(selectListObj).hide();
+                        });
+                        $(this).toggleClass('active').next(selectListObj).toggle();
+                    });
+
+                    $listItems.on('click', function (e) {
+                        e.stopPropagation();
+                        $styledSelect.text($(this).text()).removeClass('active');
+                        $this.val($(this).attr('rel'));
+                        $list.hide();
+                    });
+
+                    $(document).on('click', function () {
+                        $styledSelect.removeClass('active');
+                        $list.hide();
+                    });
+
+                });
+
+                let classes = "";
                 if (sector) {
                     $.ajax({
                         url: "{{url('/') . '/class-search/'}}" + sector,
@@ -1427,7 +1481,7 @@
                         dataType: "json",
                         data: {},
                         success: function (data){
-                            console.log(data.length)
+                            data = data.data;
                             if (data.length != 0) {
                                 for (var x = 0; x < data.length; x++) {
                                     var item = data[x];
@@ -1435,11 +1489,108 @@
                                         '<option dType="classes" value="' +
                                         item.id +
                                         '">' +
-                                        item['name_' + {{app()->getLocale()}}] +
+                                        item['name_{{app()->getLocale()}}'] +
                                         "</option>";
-                                    console.log(classes);
                                 }
                                 $("#class_id").append(classes);
+                                $("#class").append('</select>');
+                                var selectObj = $('select#class_id');
+                                var selectListObj = $('ul.select-list');
+                                selectObj.each(function () {
+                                    var $this = $(this), numberOfOptions = $(this).children('option').length;
+
+                                    $this.addClass('select-hidden');
+                                    $this.wrap('<div class="select"></div>');
+                                    $this.after('<div class="select-styled"></div>');
+
+                                    var $styledSelect = $this.next('div.select-styled');
+                                    $styledSelect.text($this.children('option').eq(0).text());
+
+                                    var $list = $('<ul />', {
+                                        'class': 'select-list'
+                                    }).insertAfter($styledSelect);
+
+                                    for (var i = 0; i < numberOfOptions; i++) {
+                                        $('<li />', {
+                                            text: $this.children('option').eq(i).text(),
+                                            rel: $this.children('option').eq(i).val(),
+                                            dType: $this.children('option').eq(i).attr('dType')
+                                        }).appendTo($list);
+                                    }
+
+                                    var $listItems = $list.children('li');
+
+                                    $styledSelect.on('click', function (e) {
+                                        e.stopPropagation();
+                                        $('div.select-styled.active').not(this).each(function () {
+                                            $(this).removeClass('active').next(selectListObj).hide();
+                                        });
+                                        $(this).toggleClass('active').next(selectListObj).toggle();
+                                    });
+
+                                    $listItems.on('click', function (e) {
+                                        e.stopPropagation();
+                                        $styledSelect.text($(this).text()).removeClass('active');
+                                        $this.val($(this).attr('rel'));
+                                        $list.hide();
+                                    });
+
+                                    $(document).on('click', function () {
+                                        $styledSelect.removeClass('active');
+                                        $list.hide();
+                                    });
+
+                                });
+                            }
+                            else {
+                                $("#class").append('</select>');
+                                var selectObj = $('select#class_id');
+                                var selectListObj = $('ul.select-list');
+                                selectObj.each(function () {
+                                    var $this = $(this), numberOfOptions = $(this).children('option').length;
+
+                                    $this.addClass('select-hidden');
+                                    $this.wrap('<div class="select"></div>');
+                                    $this.after('<div class="select-styled"></div>');
+
+                                    var $styledSelect = $this.next('div.select-styled');
+                                    $styledSelect.text($this.children('option').eq(0).text());
+
+                                    var $list = $('<ul />', {
+                                        'class': 'select-list'
+                                    }).insertAfter($styledSelect);
+
+                                    for (var i = 0; i < numberOfOptions; i++) {
+                                        $('<li />', {
+                                            text: $this.children('option').eq(i).text(),
+                                            rel: $this.children('option').eq(i).val(),
+                                            dType: $this.children('option').eq(i).attr('dType')
+                                        }).appendTo($list);
+                                    }
+
+                                    var $listItems = $list.children('li');
+
+                                    $styledSelect.on('click', function (e) {
+                                        e.stopPropagation();
+                                        $('div.select-styled.active').not(this).each(function () {
+                                            $(this).removeClass('active').next(selectListObj).hide();
+                                        });
+                                        $(this).toggleClass('active').next(selectListObj).toggle();
+                                    });
+
+                                    $listItems.on('click', function (e) {
+                                        e.stopPropagation();
+                                        $styledSelect.text($(this).text()).removeClass('active');
+                                        $this.val($(this).attr('rel'));
+                                        $list.hide();
+                                    });
+
+                                    $(document).on('click', function () {
+                                        $styledSelect.removeClass('active');
+                                        $list.hide();
+                                    });
+
+                                });
                             }
                         },
                         error: function (reject){
@@ -1450,7 +1601,138 @@
             });//end for get classes
 
             //get subjects
+            $('body').on('mouseup', 'li[dtype="classes"]', function() {
+                var classe = $(this).attr('rel');
+                $("#subject").html("");
+                $("#subject").html(
+                    '<select name="subject_id" id="subject_id" class="form-control"><option value="" dType="subjects">' + "@lang('general.all') @lang('general.subjects')" + '</option>'
+                );
+                let subjects = "";
+                if (classe) {
+                    $.ajax({
+                        url: "{{url('/') . '/subject-search/'}}" + classe,
+                        type: 'GET',
+                        dataType: "json",
+                        data: {},
+                        success: function (data){
+                            data = data.data;
+                            if (data.length != 0) {
+                                for (var x = 0; x < data.length; x++) {
+                                    var item = data[x];
+                                    subjects +=
+                                        '<option dType="subjects" value="' +
+                                        item.id +
+                                        '">' +
+                                        item['name_{{app()->getLocale()}}'] +
+                                        "</option>";
+                                }
+                                $("#subject_id").append(subjects);
+                                $("#subject").append('</select>');
+                                var selectObj = $('select#subject_id');
+                                var selectListObj = $('ul.select-list');
+                                selectObj.each(function () {
+                                    var $this = $(this), numberOfOptions = $(this).children('option').length;
 
+                                    $this.addClass('select-hidden');
+                                    $this.wrap('<div class="select"></div>');
+                                    $this.after('<div class="select-styled"></div>');
+
+                                    var $styledSelect = $this.next('div.select-styled');
+                                    $styledSelect.text($this.children('option').eq(0).text());
+
+                                    var $list = $('<ul />', {
+                                        'class': 'select-list'
+                                    }).insertAfter($styledSelect);
+
+                                    for (var i = 0; i < numberOfOptions; i++) {
+                                        $('<li />', {
+                                            text: $this.children('option').eq(i).text(),
+                                            rel: $this.children('option').eq(i).val(),
+                                            dType: $this.children('option').eq(i).attr('dType')
+                                        }).appendTo($list);
+                                    }
+
+                                    var $listItems = $list.children('li');
+
+                                    $styledSelect.on('click', function (e) {
+                                        e.stopPropagation();
+                                        $('div.select-styled.active').not(this).each(function () {
+                                            $(this).removeClass('active').next(selectListObj).hide();
+                                        });
+                                        $(this).toggleClass('active').next(selectListObj).toggle();
+                                    });
+
+                                    $listItems.on('click', function (e) {
+                                        e.stopPropagation();
+                                        $styledSelect.text($(this).text()).removeClass('active');
+                                        $this.val($(this).attr('rel'));
+                                        $list.hide();
+                                    });
+
+                                    $(document).on('click', function () {
+                                        $styledSelect.removeClass('active');
+                                        $list.hide();
+                                    });
+
+                                });
+                            }
+                            else {
+                                $("#subject").append('</select>');
+                                var selectObj = $('select#subject_id');
+                                var selectListObj = $('ul.select-list');
+                                selectObj.each(function () {
+                                    var $this = $(this), numberOfOptions = $(this).children('option').length;
+
+                                    $this.addClass('select-hidden');
+                                    $this.wrap('<div class="select"></div>');
+                                    $this.after('<div class="select-styled"></div>');
+
+                                    var $styledSelect = $this.next('div.select-styled');
+                                    $styledSelect.text($this.children('option').eq(0).text());
+
+                                    var $list = $('<ul />', {
+                                        'class': 'select-list'
+                                    }).insertAfter($styledSelect);
+
+                                    for (var i = 0; i < numberOfOptions; i++) {
+                                        $('<li />', {
+                                            text: $this.children('option').eq(i).text(),
+                                            rel: $this.children('option').eq(i).val(),
+                                            dType: $this.children('option').eq(i).attr('dType')
+                                        }).appendTo($list);
+                                    }
+
+                                    var $listItems = $list.children('li');
+
+                                    $styledSelect.on('click', function (e) {
+                                        e.stopPropagation();
+                                        $('div.select-styled.active').not(this).each(function () {
+                                            $(this).removeClass('active').next(selectListObj).hide();
+                                        });
+                                        $(this).toggleClass('active').next(selectListObj).toggle();
+                                    });
+
+                                    $listItems.on('click', function (e) {
+                                        e.stopPropagation();
+                                        $styledSelect.text($(this).text()).removeClass('active');
+                                        $this.val($(this).attr('rel'));
+                                        $list.hide();
+                                    });
+
+                                    $(document).on('click', function () {
+                                        $styledSelect.removeClass('active');
+                                        $list.hide();
+                                    });
+
+                                });
+                            }
+                        },
+                        error: function (reject){
+                            console.log(reject);
+                        }
+                    });
+                }
+            });//end for get subjects
 
         });//end for ready
 
