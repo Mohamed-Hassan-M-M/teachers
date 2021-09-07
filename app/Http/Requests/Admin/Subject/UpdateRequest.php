@@ -37,7 +37,7 @@ class UpdateRequest extends FormRequest
                 'required',Rule::unique('subjects')->where(function ($query) use($name_ar, $class_id) {
                     return $query->where('name_ar', $name_ar)->where('class_id', $class_id);
                 })->ignore($request->segment(4))],
-            'class_id' => 'required',
+            'class_id' => 'required|exists:classes,id',
         ];
     }
 }

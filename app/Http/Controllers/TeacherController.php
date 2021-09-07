@@ -37,9 +37,8 @@ class TeacherController extends Controller
         else{
             $teachers = User::where('type', '2')->paginate(12);
         }
-        $types = Sector::groupBy('type')->pluck('type');
         $cities = City::all();
-        return view('teacherFilter', compact(['types', 'teachers', 'cities']));
+        return view('teacherFilter', compact(['teachers', 'cities']));
     }
 
     public function getAreas($id)
@@ -79,6 +78,28 @@ class TeacherController extends Controller
             'status' => 'success',
             'msg' => 'subjects',
             'data' => $subjects
+        ]);
+    }
+
+    public function getTeachers($area_id = null, $subject_id = null)
+    {
+        $teachers = User::query();
+        $teachers->where('type', '2');
+        if($area_id != null && $area_id != ''){
+            $teachers->whereHas('areas', function($area) use($area_id) {
+                return $area->where('id', $area_id);
+            });
+        }
+        if($subject_id != null && $subject_id != ''){
+            $teachers->whereHas('subjects', function($subject) use($subject_id) {
+                return $subject->whereIn('id', $subject_id);
+            });
+        }
+        $teachers->get()->toArray();
+        return response()->json([
+            'status' => 'success',
+            'msg' => 'subjects',
+            'data' => $teachers
         ]);
     }
 

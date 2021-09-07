@@ -3,6 +3,8 @@
 namespace App\Http\Requests\Admin\Area;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class CreateRequest extends FormRequest
 {
@@ -21,11 +23,20 @@ class CreateRequest extends FormRequest
      *
      * @return array
      */
-    public function rules()
+    public function rules(Request $request)
     {
+        $city_id = $request->input('city_id');
+        $name_ar = $request->input('name_ar');
+        $name_en = $request->input('name_en');
         return [
-            'name_ar' => 'required|unique:areas,name_ar',
-            'name_en' => 'required|unique:areas,name_en',
+            'name_en' => [
+                'required',Rule::unique('areas')->where(function ($query) use($name_en, $city_id) {
+                    return $query->where('name_en', $name_en)->where('city_id', $city_id);
+                })],
+            'name_ar' => [
+                'required',Rule::unique('areas')->where(function ($query) use($name_ar, $city_id) {
+                    return $query->where('name_ar', $name_ar)->where('city_id', $city_id);
+                })],
             'city_id' => "required|exists:cities,id"
         ];
     }

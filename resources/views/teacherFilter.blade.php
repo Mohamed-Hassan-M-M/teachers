@@ -185,31 +185,7 @@
             <main id="main" class="site-main">
                 <div class="books-media-list">
                     <div class="container">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="event-search-filter">
-                                    <input type="text" placeholder="Search by Keyword" />
-                                    <select name="category" id="event-category" class="form-control">
-                                        <option>Select Any Category</option>
-                                        <option>Category</option>
-                                        <option>Category</option>
-                                        <option>Category</option>
-                                        <option>Category</option>
-                                        <option>Category</option>
-                                    </select>
-                                    <select name="category" id="event-catelog" class="form-control">
-                                        <option>Select Any Catelog</option>
-                                        <option>Catelog</option>
-                                        <option>Catelog</option>
-                                        <option>Catelog</option>
-                                        <option>Catelog</option>
-                                        <option>Catelog</option>
-                                    </select>
-                                    <button type="submit" class="btn btn-secondary"><i
-                                            class="fa fa-search"></i></button>
-                                </div>
-                            </div>
-                        </div>
+
                         <div class="row">
                             <div class="col-md-12 col-lg-3">
                                 <aside id="secondary" class="sidebar widget-area" data-accordion-group>
@@ -245,236 +221,37 @@
                                         </div>
                                     </div>
                                     <div class="widget widget_related_search" data-accordion-group="">
-                                        <div data-content>
+                                        <div>
                                             <div class="single-data-accordion open" data-accordion>
-                                                <h5 class="widget-sub-title" data-control>Subject</h5>
+                                                <h5 class="widget-sub-title" data-control>@lang('sector.type')</h5>
                                                 <div class="widget_checkbox_list" data-content>
-                                                    <form>
-                                                        <div class="form-group">
-                                                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                                            <label class="form-check-label" for="exampleCheck1">Love
-                                                                stories <span>(18)</span></label>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input type="checkbox" class="form-check-input" id="exampleCheck2">
-                                                            <label class="form-check-label" for="exampleCheck2">Texas
-                                                                <span>(04)</span></label>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input type="checkbox" class="form-check-input" id="exampleCheck3">
-                                                            <label class="form-check-label" for="exampleCheck3">Rich
-                                                                people <span>(03)</span></label>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input type="checkbox" class="form-check-input" id="exampleCheck4">
-                                                            <label class="form-check-label" for="exampleCheck4">Humorous
-                                                                stories <span>(02)</span></label>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input type="checkbox" class="form-check-input" id="exampleCheck5">
-                                                            <label class="form-check-label" for="exampleCheck5">Widows
-                                                                <span>(02)</span></label>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input type="checkbox" class="form-check-input" id="exampleCheck6">
-                                                            <label class="form-check-label" for="exampleCheck6">Women
-                                                                <span>(11)</span></label>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input type="checkbox" class="form-check-input" id="exampleCheck7">
-                                                            <label class="form-check-label" for="exampleCheck7">Babysitters
-                                                                <span>(25)</span></label>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input type="checkbox" class="form-check-input" id="exampleCheck8">
-                                                            <label class="form-check-label" for="exampleCheck8">Law
-                                                                firms <span>(09)</span></label>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                            <div class="single-data-accordion" data-accordion>
-                                                <h5 class="widget-sub-title" data-control>Categories</h5>
-                                                <div class="widget_checkbox_list" data-content>
-                                                    <form>
-                                                        <div class="form-group">
-                                                            <input type="checkbox" class="form-check-input" id="exampleCheck01">
-                                                            <label class="form-check-label" for="exampleCheck01">Love
-                                                                stories <span>(18)</span></label>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input type="checkbox" class="form-check-input" id="exampleCheck02">
-                                                            <label class="form-check-label" for="exampleCheck02">Texas
-                                                                <span>(04)</span></label>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input type="checkbox" class="form-check-input" id="exampleCheck03">
-                                                            <label class="form-check-label" for="exampleCheck03">Rich
-                                                                people <span>(03)</span></label>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input type="checkbox" class="form-check-input" id="exampleCheck04">
-                                                            <label class="form-check-label" for="exampleCheck04">Humorous
-                                                                stories <span>(02)</span></label>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input type="checkbox" class="form-check-input" id="exampleCheck05">
-                                                            <label class="form-check-label" for="exampleCheck05">Widows
-                                                                <span>(02)</span></label>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input type="checkbox" class="form-check-input" id="exampleCheck06">
-                                                            <label class="form-check-label" for="exampleCheck06">Women
-                                                                <span>(11)</span></label>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input type="checkbox" class="form-check-input" id="exampleCheck07">
-                                                            <label class="form-check-label" for="exampleCheck07">Babysitters
-                                                                <span>(25)</span></label>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input type="checkbox" class="form-check-input" id="exampleCheck08">
-                                                            <label class="form-check-label" for="exampleCheck08">Law
-                                                                firms <span>(09)</span></label>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                            <div class="single-data-accordion" data-accordion>
-                                                <h5 class="widget-sub-title" data-control>Price Filter</h5>
-                                                <div class="price-filter-range" data-content>
-                                                    <div id="slider-range"></div>
-                                                    <form>
-                                                        <p>
-                                                            <input type="text" id="amount" readonly>
-                                                        </p>
-                                                        <button class="btn btn-secondary">Filter</button>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                            <div class="single-data-accordion" data-accordion>
-                                                <h5 class="widget-sub-title" data-control>Authors</h5>
-                                                <div class="widget_checkbox_list" data-content>
-                                                    <form>
-                                                        <div class="form-group">
-                                                            <input type="checkbox" class="form-check-input" id="exampleCheck001">
-                                                            <label class="form-check-label" for="exampleCheck001">Love
-                                                                stories <span>(18)</span></label>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input type="checkbox" class="form-check-input" id="exampleCheck002">
-                                                            <label class="form-check-label" for="exampleCheck002">Texas
-                                                                <span>(04)</span></label>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input type="checkbox" class="form-check-input" id="exampleCheck003">
-                                                            <label class="form-check-label" for="exampleCheck003">Rich
-                                                                people <span>(03)</span></label>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input type="checkbox" class="form-check-input" id="exampleCheck004">
-                                                            <label class="form-check-label" for="exampleCheck004">Humorous
-                                                                stories <span>(02)</span></label>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input type="checkbox" class="form-check-input" id="exampleCheck005">
-                                                            <label class="form-check-label" for="exampleCheck005">Widows
-                                                                <span>(02)</span></label>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input type="checkbox" class="form-check-input" id="exampleCheck006">
-                                                            <label class="form-check-label" for="exampleCheck006">Women
-                                                                <span>(11)</span></label>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input type="checkbox" class="form-check-input" id="exampleCheck007">
-                                                            <label class="form-check-label" for="exampleCheck007">Babysitters
-                                                                <span>(25)</span></label>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input type="checkbox" class="form-check-input" id="exampleCheck008">
-                                                            <label class="form-check-label" for="exampleCheck008">Law
-                                                                firms <span>(09)</span></label>
-                                                        </div>
-                                                    </form>
+                                                    <div class="form-group">
+                                                        <input value="1" type="checkbox" id="type1" class="form-check-input type">
+                                                        <label class="form-check-label" for="type1">@lang('sector.governmental')</label>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input value="2" id="type2" type="checkbox" class="form-check-input type">
+                                                        <label class="form-check-label" for="type2">@lang('sector.special')</label>
+                                                    </div>
                                                 </div>
                                                 <div class="clearfix"></div>
                                             </div>
                                             <div class="single-data-accordion" data-accordion>
-                                                <h5 class="widget-sub-title" data-control>Language</h5>
-                                                <div class="widget_checkbox_list" data-content>
-                                                    <form>
-                                                        <div class="form-group">
-                                                            <input type="checkbox" class="form-check-input" id="exampleCheck0001">
-                                                            <label class="form-check-label" for="exampleCheck0001">Love
-                                                                stories <span>(18)</span></label>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input type="checkbox" class="form-check-input" id="exampleCheck0002">
-                                                            <label class="form-check-label" for="exampleCheck0002">Texas
-                                                                <span>(04)</span></label>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input type="checkbox" class="form-check-input" id="exampleCheck0003">
-                                                            <label class="form-check-label" for="exampleCheck0003">Rich
-                                                                people <span>(03)</span></label>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input type="checkbox" class="form-check-input" id="exampleCheck0004">
-                                                            <label class="form-check-label" for="exampleCheck0004">Humorous
-                                                                stories <span>(02)</span></label>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input type="checkbox" class="form-check-input" id="exampleCheck0005">
-                                                            <label class="form-check-label" for="exampleCheck0005">Widows
-                                                                <span>(02)</span></label>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input type="checkbox" class="form-check-input" id="exampleCheck0006">
-                                                            <label class="form-check-label" for="exampleCheck0006">Women
-                                                                <span>(11)</span></label>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input type="checkbox" class="form-check-input" id="exampleCheck0007">
-                                                            <label class="form-check-label" for="exampleCheck0007">Babysitters
-                                                                <span>(25)</span></label>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input type="checkbox" class="form-check-input" id="exampleCheck0008">
-                                                            <label class="form-check-label" for="exampleCheck0008">Law
-                                                                firms <span>(09)</span></label>
-                                                        </div>
-                                                    </form>
+                                                <h5 class="widget-sub-title" data-control>@lang('general.sector')</h5>
+                                                <div class="widget_checkbox_list" id="sectors" data-content>
+
                                                 </div>
                                             </div>
                                             <div class="single-data-accordion" data-accordion>
-                                                <h5 class="widget-sub-title" data-control>Publishing Date</h5>
-                                                <div class="widget_checkbox_list" data-content>
+                                                <h5 class="widget-sub-title" data-control>@lang('general.class')</h5>
+                                                <div class="widget_checkbox_list" id="classes" data-content>
+
                                                 </div>
                                             </div>
                                             <div class="single-data-accordion" data-accordion>
-                                                <h5 class="widget-sub-title" data-control>On-Order Items</h5>
-                                                <div class="widget_order_item" data-content>
-                                                    <ul>
-                                                        <li><a href="#"><img
-                                                                    src="{{asset('app-assets/images/books-media/gird-view/on-order-01.jpg')}}"
-                                                                    alt=""></a></li>
-                                                        <li><a href="#"><img
-                                                                    src="{{asset('app-assets/images/books-media/gird-view/on-order-02.jpg')}}"
-                                                                    alt=""></a></li>
-                                                        <li><a href="#"><img
-                                                                    src="{{asset('app-assets/images/books-media/gird-view/on-order-03.jpg')}}"
-                                                                    alt=""></a></li>
-                                                        <li><a href="#"><img
-                                                                    src="{{asset('app-assets/images/books-media/gird-view/on-order-04.jpg')}}"
-                                                                    alt=""></a></li>
-                                                        <li><a href="#"><img
-                                                                    src="{{asset('app-assets/images/books-media/gird-view/on-order-05.jpg')}}"
-                                                                    alt=""></a></li>
-                                                        <li><a href="#"><img
-                                                                    src="{{asset('app-assets/images/books-media/gird-view/on-order-06.jpg')}}"
-                                                                    alt=""></a></li>
-                                                    </ul>
+                                                <h5 class="widget-sub-title" data-control>@lang('general.subject')</h5>
+                                                <div class="widget_checkbox_list" id="subjects" data-content>
+
                                                 </div>
                                             </div>
                                         </div>
@@ -1196,568 +973,132 @@
                 }
             });//end for get area
 
-            //get sector
-            $('body').on('mouseup', 'li[dtype="type"]', function() {
-                var type = $(this).attr('rel');
-                $("#sector").html("");
-                $("#sector").html(
-                    '<select name="sector_id" id="sector_id" class="form-control"><option value="" dType="sectors">' + "@lang('general.all') @lang('general.sectors')" + '</option>'
-                );
+            //check type and get sectors
+            $('body').on('change', '.type', function (){
+                if($(this).prop('checked') == true){
+                    $('.type').prop('checked', false);
+                    $(this).prop('checked', true);
 
-                //clear class
-                $("#class").html("");
-                $("#class").html(
-                    '<select name="class_id" id="class_id" class="form-control"><option value="" dType="classes">' + "@lang('general.all') @lang('general.classes')" + '</option></select>'
-                );
-                var selectObj = $('select#class_id');
-                var selectListObj = $('ul.select-list');
-                selectObj.each(function () {
-                    var $this = $(this), numberOfOptions = $(this).children('option').length;
+                    //clear all
+                    $('#sectors').html('');
+                    $('#classes').html('');
+                    $('#subjects').html('');
 
-                    $this.addClass('select-hidden');
-                    $this.wrap('<div class="select"></div>');
-                    $this.after('<div class="select-styled"></div>');
+                    var type = $(this).val();
+                    let sectors = '';
+                    if (type) {
+                        $.ajax({
+                            url: "{{url('/') . '/get-sector/'}}" + type,
+                            type: 'GET',
+                            dataType: "json",
+                            data: {},
+                            success: function (data){
+                                data = data.data;
+                                if (data.length != 0) {
+                                    for (var x = 0; x < data.length; x++) {
+                                        var item = data[x];
+                                        sectors += '<div class="form-group">';
+                                        sectors += '<input type="checkbox" class="form-check-input sector" value="'
+                                            + item.id + '" id="sector' + item.id + '">';
+                                        sectors += '<label class="form-check-label" for="sector'+ item.id +'">'
+                                            + item['name_{{app()->getLocale()}}'] + '</label>';
+                                        sectors += '</div>'
+                                    }
+                                    $("#sectors").append(sectors);
+                                }
+                            },
+                            error: function (reject){
+                                console.log(reject);
+                            }
+                        });
+                    }
+                }
+            });
 
-                    var $styledSelect = $this.next('div.select-styled');
-                    $styledSelect.text($this.children('option').eq(0).text());
+            //check sector and get classes
+            $('body').on('change', '.sector', function (){
+                if($(this).prop('checked') == true){
+                    $('.sector').prop('checked', false);
+                    $(this).prop('checked', true);
 
-                    var $list = $('<ul />', {
-                        'class': 'select-list'
-                    }).insertAfter($styledSelect);
+                    //clear all
+                    $('#classes').html('');
+                    $('#subjects').html('');
 
-                    for (var i = 0; i < numberOfOptions; i++) {
-                        $('<li />', {
-                            text: $this.children('option').eq(i).text(),
-                            rel: $this.children('option').eq(i).val(),
-                            dType: $this.children('option').eq(i).attr('dType')
-                        }).appendTo($list);
+                    var sector = $(this).val();
+                    let classes = '';
+                    if (sector) {
+                        $.ajax({
+                            url: "{{url('/') . '/get-class/'}}" + sector,
+                            type: 'GET',
+                            dataType: "json",
+                            data: {},
+                            success: function (data){
+                                data = data.data;
+                                if (data.length != 0) {
+                                    for (var x = 0; x < data.length; x++) {
+                                        var item = data[x];
+                                        classes += '<div class="form-group">';
+                                        classes += '<input type="checkbox" class="form-check-input class" value="'
+                                            + item.id + '" id="class' + item.id + '">';
+                                        classes += '<label class="form-check-label" for="class'+ item.id +'">'
+                                            + item['name_{{app()->getLocale()}}'] + '</label>';
+                                        classes += '</div>'
+                                    }
+                                    $("#classes").append(classes);
+                                }
+                            },
+                            error: function (reject){
+                                console.log(reject);
+                            }
+                        });
                     }
 
-                    var $listItems = $list.children('li');
 
-                    $styledSelect.on('click', function (e) {
-                        e.stopPropagation();
-                        $('div.select-styled.active').not(this).each(function () {
-                            $(this).removeClass('active').next(selectListObj).hide();
+                }
+            });
+
+            //check class and get subjects
+            $('body').on('change', '.class', function (){
+                if($(this).prop('checked') == true){
+                    $('.class').prop('checked', false);
+                    $(this).prop('checked', true);
+
+                    //clear all
+                    $('#subjects').html('');
+
+                    var classe = $(this).val();
+                    let subjects = '';
+                    if (classe) {
+                        $.ajax({
+                            url: "{{url('/') . '/get-subject/'}}" + classe,
+                            type: 'GET',
+                            dataType: "json",
+                            data: {},
+                            success: function (data){
+                                data = data.data;
+                                if (data.length != 0) {
+                                    for (var x = 0; x < data.length; x++) {
+                                        var item = data[x];
+                                        subjects += '<div class="form-group">';
+                                        subjects += '<input type="checkbox" class="form-check-input subject" value="'
+                                            + item.id + '" id="subject' + item.id + '">';
+                                        subjects += '<label class="form-check-label" for="subject'+ item.id +'">'
+                                            + item['name_{{app()->getLocale()}}'] + '</label>';
+                                        subjects += '</div>'
+                                    }
+                                    $("#subjects").append(subjects);
+                                }
+                            },
+                            error: function (reject){
+                                console.log(reject);
+                            }
                         });
-                        $(this).toggleClass('active').next(selectListObj).toggle();
-                    });
-
-                    $listItems.on('click', function (e) {
-                        e.stopPropagation();
-                        $styledSelect.text($(this).text()).removeClass('active');
-                        $this.val($(this).attr('rel'));
-                        $list.hide();
-                    });
-
-                    $(document).on('click', function () {
-                        $styledSelect.removeClass('active');
-                        $list.hide();
-                    });
-
-                });
-
-                //clear subject
-                $("#subject").html("");
-                $("#subject").html(
-                    '<select name="subject_id" id="subject_id" class="form-control"><option value="" dType="subjects">' + "@lang('general.all') @lang('general.subjects')" + '</option></select>'
-                );
-                var selectObj = $('select#subject_id');
-                var selectListObj = $('ul.select-list');
-                selectObj.each(function () {
-                    var $this = $(this), numberOfOptions = $(this).children('option').length;
-
-                    $this.addClass('select-hidden');
-                    $this.wrap('<div class="select"></div>');
-                    $this.after('<div class="select-styled"></div>');
-
-                    var $styledSelect = $this.next('div.select-styled');
-                    $styledSelect.text($this.children('option').eq(0).text());
-
-                    var $list = $('<ul />', {
-                        'class': 'select-list'
-                    }).insertAfter($styledSelect);
-
-                    for (var i = 0; i < numberOfOptions; i++) {
-                        $('<li />', {
-                            text: $this.children('option').eq(i).text(),
-                            rel: $this.children('option').eq(i).val(),
-                            dType: $this.children('option').eq(i).attr('dType')
-                        }).appendTo($list);
                     }
 
-                    var $listItems = $list.children('li');
 
-                    $styledSelect.on('click', function (e) {
-                        e.stopPropagation();
-                        $('div.select-styled.active').not(this).each(function () {
-                            $(this).removeClass('active').next(selectListObj).hide();
-                        });
-                        $(this).toggleClass('active').next(selectListObj).toggle();
-                    });
-
-                    $listItems.on('click', function (e) {
-                        e.stopPropagation();
-                        $styledSelect.text($(this).text()).removeClass('active');
-                        $this.val($(this).attr('rel'));
-                        $list.hide();
-                    });
-
-                    $(document).on('click', function () {
-                        $styledSelect.removeClass('active');
-                        $list.hide();
-                    });
-
-                });
-
-                let sectors = "";
-                if (type) {
-                    $.ajax({
-                        url: "{{url('/') . '/sector-get/'}}" + type,
-                        type: 'GET',
-                        dataType: "json",
-                        data: {},
-                        success: function (data){
-                            data = data.data;
-                            if (data.length != 0) {
-                                for (var x = 0; x < data.length; x++) {
-                                    var item = data[x];
-                                    sectors +=
-                                        '<option dType="sectors" value="' +
-                                        item.id +
-                                        '">' +
-                                        item['name_{{app()->getLocale()}}'] +
-                                        "</option>";
-                                }
-                                $("#sector_id").append(sectors);
-                                $("#sector").append('</select>');
-                                var selectObj = $('select#sector_id');
-                                var selectListObj = $('ul.select-list');
-                                selectObj.each(function () {
-                                    var $this = $(this), numberOfOptions = $(this).children('option').length;
-
-                                    $this.addClass('select-hidden');
-                                    $this.wrap('<div class="select"></div>');
-                                    $this.after('<div class="select-styled"></div>');
-
-                                    var $styledSelect = $this.next('div.select-styled');
-                                    $styledSelect.text($this.children('option').eq(0).text());
-
-                                    var $list = $('<ul />', {
-                                        'class': 'select-list'
-                                    }).insertAfter($styledSelect);
-
-                                    for (var i = 0; i < numberOfOptions; i++) {
-                                        $('<li />', {
-                                            text: $this.children('option').eq(i).text(),
-                                            rel: $this.children('option').eq(i).val(),
-                                            dType: $this.children('option').eq(i).attr('dType')
-                                        }).appendTo($list);
-                                    }
-
-                                    var $listItems = $list.children('li');
-
-                                    $styledSelect.on('click', function (e) {
-                                        e.stopPropagation();
-                                        $('div.select-styled.active').not(this).each(function () {
-                                            $(this).removeClass('active').next(selectListObj).hide();
-                                        });
-                                        $(this).toggleClass('active').next(selectListObj).toggle();
-                                    });
-
-                                    $listItems.on('click', function (e) {
-                                        e.stopPropagation();
-                                        $styledSelect.text($(this).text()).removeClass('active');
-                                        $this.val($(this).attr('rel'));
-                                        $list.hide();
-                                    });
-
-                                    $(document).on('click', function () {
-                                        $styledSelect.removeClass('active');
-                                        $list.hide();
-                                    });
-
-                                });
-                            }
-                            else {
-                                $("#sector").append('</select>');
-                                var selectObj = $('select#sector_id');
-                                var selectListObj = $('ul.select-list');
-                                selectObj.each(function () {
-                                    var $this = $(this), numberOfOptions = $(this).children('option').length;
-
-                                    $this.addClass('select-hidden');
-                                    $this.wrap('<div class="select"></div>');
-                                    $this.after('<div class="select-styled"></div>');
-
-                                    var $styledSelect = $this.next('div.select-styled');
-                                    $styledSelect.text($this.children('option').eq(0).text());
-
-                                    var $list = $('<ul />', {
-                                        'class': 'select-list'
-                                    }).insertAfter($styledSelect);
-
-                                    for (var i = 0; i < numberOfOptions; i++) {
-                                        $('<li />', {
-                                            text: $this.children('option').eq(i).text(),
-                                            rel: $this.children('option').eq(i).val(),
-                                            dType: $this.children('option').eq(i).attr('dType')
-                                        }).appendTo($list);
-                                    }
-
-                                    var $listItems = $list.children('li');
-
-                                    $styledSelect.on('click', function (e) {
-                                        e.stopPropagation();
-                                        $('div.select-styled.active').not(this).each(function () {
-                                            $(this).removeClass('active').next(selectListObj).hide();
-                                        });
-                                        $(this).toggleClass('active').next(selectListObj).toggle();
-                                    });
-
-                                    $listItems.on('click', function (e) {
-                                        e.stopPropagation();
-                                        $styledSelect.text($(this).text()).removeClass('active');
-                                        $this.val($(this).attr('rel'));
-                                        $list.hide();
-                                    });
-
-                                    $(document).on('click', function () {
-                                        $styledSelect.removeClass('active');
-                                        $list.hide();
-                                    });
-
-                                });
-                            }
-                        },
-                        error: function (reject){
-                            console.log(reject);
-                        }
-                    });
                 }
-            });//end for get sector
-
-            //get classes
-            $('body').on('mouseup', 'li[dtype="sector"]', function() {
-                var sector = $(this).attr('rel');
-                $("#class").html("");
-                $("#class").html(
-                    '<select name="class_id" id="class_id" class="form-control"><option value="" dType="classes">' + "@lang('general.all') @lang('general.classes')" + '</option>'
-                );
-
-                //clear subject
-                $("#subject").html("");
-                $("#subject").html(
-                    '<select name="subject_id" id="subject_id" class="form-control"><option value="" dType="subjects">' + "@lang('general.all') @lang('general.subjects')" + '</option></select>'
-                );
-                var selectObj = $('select#subject_id');
-                var selectListObj = $('ul.select-list');
-                selectObj.each(function () {
-                    var $this = $(this), numberOfOptions = $(this).children('option').length;
-
-                    $this.addClass('select-hidden');
-                    $this.wrap('<div class="select"></div>');
-                    $this.after('<div class="select-styled"></div>');
-
-                    var $styledSelect = $this.next('div.select-styled');
-                    $styledSelect.text($this.children('option').eq(0).text());
-
-                    var $list = $('<ul />', {
-                        'class': 'select-list'
-                    }).insertAfter($styledSelect);
-
-                    for (var i = 0; i < numberOfOptions; i++) {
-                        $('<li />', {
-                            text: $this.children('option').eq(i).text(),
-                            rel: $this.children('option').eq(i).val(),
-                            dType: $this.children('option').eq(i).attr('dType')
-                        }).appendTo($list);
-                    }
-
-                    var $listItems = $list.children('li');
-
-                    $styledSelect.on('click', function (e) {
-                        e.stopPropagation();
-                        $('div.select-styled.active').not(this).each(function () {
-                            $(this).removeClass('active').next(selectListObj).hide();
-                        });
-                        $(this).toggleClass('active').next(selectListObj).toggle();
-                    });
-
-                    $listItems.on('click', function (e) {
-                        e.stopPropagation();
-                        $styledSelect.text($(this).text()).removeClass('active');
-                        $this.val($(this).attr('rel'));
-                        $list.hide();
-                    });
-
-                    $(document).on('click', function () {
-                        $styledSelect.removeClass('active');
-                        $list.hide();
-                    });
-
-                });
-
-                let classes = "";
-                if (sector) {
-                    $.ajax({
-                        url: "{{url('/') . '/get-class/'}}" + sector,
-                        type: 'GET',
-                        dataType: "json",
-                        data: {},
-                        success: function (data){
-                            data = data.data;
-                            if (data.length != 0) {
-                                for (var x = 0; x < data.length; x++) {
-                                    var item = data[x];
-                                    classes +=
-                                        '<option dType="classes" value="' +
-                                        item.id +
-                                        '">' +
-                                        item['name_{{app()->getLocale()}}'] +
-                                        "</option>";
-                                }
-                                $("#class_id").append(classes);
-                                $("#class").append('</select>');
-                                var selectObj = $('select#class_id');
-                                var selectListObj = $('ul.select-list');
-                                selectObj.each(function () {
-                                    var $this = $(this), numberOfOptions = $(this).children('option').length;
-
-                                    $this.addClass('select-hidden');
-                                    $this.wrap('<div class="select"></div>');
-                                    $this.after('<div class="select-styled"></div>');
-
-                                    var $styledSelect = $this.next('div.select-styled');
-                                    $styledSelect.text($this.children('option').eq(0).text());
-
-                                    var $list = $('<ul />', {
-                                        'class': 'select-list'
-                                    }).insertAfter($styledSelect);
-
-                                    for (var i = 0; i < numberOfOptions; i++) {
-                                        $('<li />', {
-                                            text: $this.children('option').eq(i).text(),
-                                            rel: $this.children('option').eq(i).val(),
-                                            dType: $this.children('option').eq(i).attr('dType')
-                                        }).appendTo($list);
-                                    }
-
-                                    var $listItems = $list.children('li');
-
-                                    $styledSelect.on('click', function (e) {
-                                        e.stopPropagation();
-                                        $('div.select-styled.active').not(this).each(function () {
-                                            $(this).removeClass('active').next(selectListObj).hide();
-                                        });
-                                        $(this).toggleClass('active').next(selectListObj).toggle();
-                                    });
-
-                                    $listItems.on('click', function (e) {
-                                        e.stopPropagation();
-                                        $styledSelect.text($(this).text()).removeClass('active');
-                                        $this.val($(this).attr('rel'));
-                                        $list.hide();
-                                    });
-
-                                    $(document).on('click', function () {
-                                        $styledSelect.removeClass('active');
-                                        $list.hide();
-                                    });
-
-                                });
-                            }
-                            else {
-                                $("#class").append('</select>');
-                                var selectObj = $('select#class_id');
-                                var selectListObj = $('ul.select-list');
-                                selectObj.each(function () {
-                                    var $this = $(this), numberOfOptions = $(this).children('option').length;
-
-                                    $this.addClass('select-hidden');
-                                    $this.wrap('<div class="select"></div>');
-                                    $this.after('<div class="select-styled"></div>');
-
-                                    var $styledSelect = $this.next('div.select-styled');
-                                    $styledSelect.text($this.children('option').eq(0).text());
-
-                                    var $list = $('<ul />', {
-                                        'class': 'select-list'
-                                    }).insertAfter($styledSelect);
-
-                                    for (var i = 0; i < numberOfOptions; i++) {
-                                        $('<li />', {
-                                            text: $this.children('option').eq(i).text(),
-                                            rel: $this.children('option').eq(i).val(),
-                                            dType: $this.children('option').eq(i).attr('dType')
-                                        }).appendTo($list);
-                                    }
-
-                                    var $listItems = $list.children('li');
-
-                                    $styledSelect.on('click', function (e) {
-                                        e.stopPropagation();
-                                        $('div.select-styled.active').not(this).each(function () {
-                                            $(this).removeClass('active').next(selectListObj).hide();
-                                        });
-                                        $(this).toggleClass('active').next(selectListObj).toggle();
-                                    });
-
-                                    $listItems.on('click', function (e) {
-                                        e.stopPropagation();
-                                        $styledSelect.text($(this).text()).removeClass('active');
-                                        $this.val($(this).attr('rel'));
-                                        $list.hide();
-                                    });
-
-                                    $(document).on('click', function () {
-                                        $styledSelect.removeClass('active');
-                                        $list.hide();
-                                    });
-
-                                });
-                            }
-                        },
-                        error: function (reject){
-                            console.log(reject);
-                        }
-                    });
-                }
-            });//end for get classes
-
-            //get subjects
-            $('body').on('mouseup', 'li[dtype="classes"]', function() {
-                var classe = $(this).attr('rel');
-                $("#subject").html("");
-                $("#subject").html(
-                    '<select name="subject_id" id="subject_id" class="form-control"><option value="" dType="subjects">' + "@lang('general.all') @lang('general.subjects')" + '</option>'
-                );
-                let subjects = "";
-                if (classe) {
-                    $.ajax({
-                        url: "{{url('/') . '/get-subject/'}}" + classe,
-                        type: 'GET',
-                        dataType: "json",
-                        data: {},
-                        success: function (data){
-                            data = data.data;
-                            if (data.length != 0) {
-                                for (var x = 0; x < data.length; x++) {
-                                    var item = data[x];
-                                    subjects +=
-                                        '<option dType="subjects" value="' +
-                                        item.id +
-                                        '">' +
-                                        item['name_{{app()->getLocale()}}'] +
-                                        "</option>";
-                                }
-                                $("#subject_id").append(subjects);
-                                $("#subject").append('</select>');
-                                var selectObj = $('select#subject_id');
-                                var selectListObj = $('ul.select-list');
-                                selectObj.each(function () {
-                                    var $this = $(this), numberOfOptions = $(this).children('option').length;
-
-                                    $this.addClass('select-hidden');
-                                    $this.wrap('<div class="select"></div>');
-                                    $this.after('<div class="select-styled"></div>');
-
-                                    var $styledSelect = $this.next('div.select-styled');
-                                    $styledSelect.text($this.children('option').eq(0).text());
-
-                                    var $list = $('<ul />', {
-                                        'class': 'select-list'
-                                    }).insertAfter($styledSelect);
-
-                                    for (var i = 0; i < numberOfOptions; i++) {
-                                        $('<li />', {
-                                            text: $this.children('option').eq(i).text(),
-                                            rel: $this.children('option').eq(i).val(),
-                                            dType: $this.children('option').eq(i).attr('dType')
-                                        }).appendTo($list);
-                                    }
-
-                                    var $listItems = $list.children('li');
-
-                                    $styledSelect.on('click', function (e) {
-                                        e.stopPropagation();
-                                        $('div.select-styled.active').not(this).each(function () {
-                                            $(this).removeClass('active').next(selectListObj).hide();
-                                        });
-                                        $(this).toggleClass('active').next(selectListObj).toggle();
-                                    });
-
-                                    $listItems.on('click', function (e) {
-                                        e.stopPropagation();
-                                        $styledSelect.text($(this).text()).removeClass('active');
-                                        $this.val($(this).attr('rel'));
-                                        $list.hide();
-                                    });
-
-                                    $(document).on('click', function () {
-                                        $styledSelect.removeClass('active');
-                                        $list.hide();
-                                    });
-
-                                });
-                            }
-                            else {
-                                $("#subject").append('</select>');
-                                var selectObj = $('select#subject_id');
-                                var selectListObj = $('ul.select-list');
-                                selectObj.each(function () {
-                                    var $this = $(this), numberOfOptions = $(this).children('option').length;
-
-                                    $this.addClass('select-hidden');
-                                    $this.wrap('<div class="select"></div>');
-                                    $this.after('<div class="select-styled"></div>');
-
-                                    var $styledSelect = $this.next('div.select-styled');
-                                    $styledSelect.text($this.children('option').eq(0).text());
-
-                                    var $list = $('<ul />', {
-                                        'class': 'select-list'
-                                    }).insertAfter($styledSelect);
-
-                                    for (var i = 0; i < numberOfOptions; i++) {
-                                        $('<li />', {
-                                            text: $this.children('option').eq(i).text(),
-                                            rel: $this.children('option').eq(i).val(),
-                                            dType: $this.children('option').eq(i).attr('dType')
-                                        }).appendTo($list);
-                                    }
-
-                                    var $listItems = $list.children('li');
-
-                                    $styledSelect.on('click', function (e) {
-                                        e.stopPropagation();
-                                        $('div.select-styled.active').not(this).each(function () {
-                                            $(this).removeClass('active').next(selectListObj).hide();
-                                        });
-                                        $(this).toggleClass('active').next(selectListObj).toggle();
-                                    });
-
-                                    $listItems.on('click', function (e) {
-                                        e.stopPropagation();
-                                        $styledSelect.text($(this).text()).removeClass('active');
-                                        $this.val($(this).attr('rel'));
-                                        $list.hide();
-                                    });
-
-                                    $(document).on('click', function () {
-                                        $styledSelect.removeClass('active');
-                                        $list.hide();
-                                    });
-
-                                });
-                            }
-                        },
-                        error: function (reject){
-                            console.log(reject);
-                        }
-                    });
-                }
-            });//end for get subjects
+            });
 
         });//end for ready
 

@@ -25,19 +25,19 @@ class UpdateRequest extends FormRequest
      */
     public function rules(Request $request)
     {
-        $city_id = $request->input('city_id');
+        $sector_id = $request->input('sector_id');
         $name_ar = $request->input('name_ar');
         $name_en = $request->input('name_en');
         return [
             'name_en' => [
-                'required',Rule::unique('classes')->where(function ($query) use($name_en, $city_id) {
-                    return $query->where('name_en', $name_en)->where('city_id', $city_id);
+                'required',Rule::unique('classes')->where(function ($query) use($name_en, $sector_id) {
+                    return $query->where('name_en', $name_en)->where('sector_id', $sector_id);
                 })->ignore($request->segment(4))],
             'name_ar' => [
-                'required',Rule::unique('classes')->where(function ($query) use($name_ar, $city_id) {
-                    return $query->where('name_ar', $name_ar)->where('city_id', $city_id);
+                'required',Rule::unique('classes')->where(function ($query) use($name_ar, $sector_id) {
+                    return $query->where('name_ar', $name_ar)->where('sector_id', $sector_id);
                 })->ignore($request->segment(4))],
-            'city_id' => 'required',
+            'sector_id' => 'required|exists:sectors,id',
         ];
     }
 }
