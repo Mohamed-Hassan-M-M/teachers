@@ -490,488 +490,67 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group mb-0">
                                                         <div class="select">
-                                                            <select name="popularity" class="form-control select-hidden">
-                                                                <option>Sort by Popularity</option>
-                                                                <option>Popularity 01</option>
-                                                                <option>Popularity 02</option>
-                                                                <option>Popularity 03</option>
-                                                                <option>Popularity 04</option>
-                                                                <option>Popularity 05</option>
+                                                            <select name="city_id" id="city_id" class="form-control">
+                                                                <option value="" dType="city">@lang('general.all') @lang('general.cities')</option>
+                                                                @foreach($cities as $city)
+                                                                    <option value="{{$city->id}}" dType="city">{{$city->name}}</option>
+                                                                @endforeach
                                                             </select>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <div class="form-group mb-0">
+                                                    <div class="form-group mb-0" id="area">
                                                         <div class="select">
-                                                            <select name="Publishing" class="form-control select-hidden">
-                                                                <option>Publishing Date</option>
-                                                                <option>Publishing Date 01</option>
-                                                                <option>Publishing Date 02</option>
-                                                                <option>Publishing Date 03</option>
-                                                                <option>Publishing Date 04</option>
-                                                                <option>Publishing Date 05</option>
+                                                            <select name="area_id" id="area_id" class="form-control">
+                                                                <option value="">@lang('general.all') @lang('general.areas')</option>
+
                                                             </select>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-4 d-flex justify-content-end align-items-center">
-                                            <a href="books-media-v3.html"><img src="{{asset('app-assets/images/icons/grid-icon.png')}}"
-                                                                               alt=""></a>
-                                            <a href="books-media-list-view.html"><img src="{{asset('app-assets/images/icons/list-icon.png')}}"
-                                                                                      alt=""></a>
-                                        </div>
                                     </div>
                                 </div>
                                 <div class="books-media-listing">
                                     <div class="row">
-                                        <div class="col-sm-6 col-lg-6 col-xl-4">
-                                            <div class="single-book-media">
-                                                <div class="book-thumb">
-                                                    <span class="price-tag">Free</span>
-                                                    <img src="{{asset('app-assets/images/books-media/gird-view/book-media-1.jpg')}}" alt="">
-                                                </div>
-                                                <div class="book-detail">
-                                                    <div class="mb-2">
-                                                        <div class="rating">
-                                                            <input type="radio" id="star5" name="rating" value="5" /><label class="full" for="star5" title="Awesome - 5 stars"></label>
-                                                            <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
-                                                            <input type="radio" id="star4" name="rating" value="4" /><label class="full" for="star4" title="Pretty good - 4 stars"></label>
-                                                            <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
-                                                            <input type="radio" id="star3" name="rating" value="3" /><label class="full" for="star3" title="Meh - 3 stars"></label>
-                                                            <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
-                                                            <input type="radio" id="star2" name="rating" value="2" /><label class="full" for="star2" title="Kinda bad - 2 stars"></label>
-                                                            <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
-                                                            <input type="radio" id="star1" name="rating" value="1" /><label class="full" for="star1" title="Sucks big time - 1 star"></label>
-                                                            <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
-                                                        </div>
-                                                        <a class="category-tags bg-light-blue">Book</a>
+                                        @foreach($teachers as $teacher)
+                                            <div class="col-sm-6 col-lg-6 col-xl-4">
+                                                <div class="single-book-media">
+                                                    <div class="book-thumb" style="height: 250px">
+                                                        <img src="{{$teacher->image_path}}" class="w-100 h-100" alt="">
                                                     </div>
-                                                    <h3 class="book-media-title"><a href="#">The Possible World</a></h3>
-                                                    <p><strong>Author:</strong> F. Scott Fitzgerald</p>
-                                                    <p><strong>ISBN:</strong> 9781581573268</p>
-                                                    <div class="card-links">
-                                                        <a href="#" class="btn btn-primary"><img
-                                                                src="{{asset('app-assets/images/icons/cat-filter-cart-icon.png')}}" alt=""> Add
-                                                            To Cart</a>
-                                                        <a href="books-media-detail-v1.html" class="read-more"><img
-                                                                src="{{asset('app-assets/images/link-arrow.png')}}" alt=""></a>
+                                                    <div class="book-detail">
+                                                        <div class="mb-2">
+                                                            <div class="rating">
+                                                                <input type="radio" id="star5" name="rating" value="5" /><label class="full" for="star5" title="Awesome - 5 stars"></label>
+                                                                <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                                                                <input type="radio" id="star4" name="rating" value="4" /><label class="full" for="star4" title="Pretty good - 4 stars"></label>
+                                                                <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                                                                <input type="radio" id="star3" name="rating" value="3" /><label class="full" for="star3" title="Meh - 3 stars"></label>
+                                                                <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                                                                <input type="radio" id="star2" name="rating" value="2" /><label class="full" for="star2" title="Kinda bad - 2 stars"></label>
+                                                                <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                                                                <input type="radio" id="star1" name="rating" value="1" /><label class="full" for="star1" title="Sucks big time - 1 star"></label>
+                                                                <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                                                            </div>
+                                                        </div>
+                                                        <h3 class="book-media-title"><a href="#">{{$teacher->name}}</a></h3>
+                                                        <p><strong>@lang('general.phone'):</strong> {{$teacher->mobile}}</p>
+                                                        <div class="card-links">
+                                                            <a href="#" class="btn btn-primary"><img
+                                                                    src="{{asset('app-assets/images/icons/cat-filter-cart-icon.png')}}" alt=""> @lang('general.read_more')</a>
+                                                            <a href="#" class="read-more"><img
+                                                                    src="{{asset('app-assets/images/link-arrow.png')}}" alt=""></a>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="col-sm-6 col-lg-6 col-xl-4">
-                                            <div class="single-book-media">
-                                                <div class="book-thumb">
-                                                    <span class="price-tag">$39.00</span>
-                                                    <img src="{{asset('app-assets/images/books-media/gird-view/book-media-2.jpg')}}" alt="">
-                                                </div>
-                                                <div class="book-detail">
-                                                    <div class="mb-2">
-                                                        <div class="rating">
-                                                            <input type="radio" name="rating" value="5" /><label class="full" for="star5" title="Awesome - 5 stars"></label>
-                                                            <input type="radio" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
-                                                            <input type="radio" name="rating" value="4" /><label class="full" for="star4" title="Pretty good - 4 stars"></label>
-                                                            <input type="radio" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
-                                                            <input type="radio" name="rating" value="3" /><label class="full" for="star3" title="Meh - 3 stars"></label>
-                                                            <input type="radio" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
-                                                            <input type="radio" name="rating" value="2" /><label class="full" for="star2" title="Kinda bad - 2 stars"></label>
-                                                            <input type="radio" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
-                                                            <input type="radio" name="rating" value="1" /><label class="full" for="star1" title="Sucks big time - 1 star"></label>
-                                                            <input type="radio" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
-                                                        </div>
-                                                        <a class="category-tags bg-purple">Audio</a>
-                                                    </div>
-                                                    <h3 class="book-media-title"><a href="#">Out Of The Box</a></h3>
-                                                    <p><strong>Author:</strong> F. Scott Fitzgerald</p>
-                                                    <p><strong>ISBN:</strong> 9781581573268</p>
-                                                    <div class="card-links">
-                                                        <a href="#" class="btn btn-primary"><img
-                                                                src="{{asset('app-assets/images/icons/cat-filter-cart-icon.png')}}" alt=""> Add
-                                                            To Cart</a>
-                                                        <a href="books-media-detail-v1.html" class="read-more"><img
-                                                                src="{{asset('app-assets/images/link-arrow.png')}}" alt=""></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 col-lg-6 col-xl-4">
-                                            <div class="single-book-media">
-                                                <div class="book-thumb">
-                                                    <span class="price-tag">$41.70</span>
-                                                    <img src="{{asset('app-assets/images/books-media/gird-view/book-media-3.jpg')}}" alt="">
-                                                </div>
-                                                <div class="book-detail">
-                                                    <div class="mb-2">
-                                                        <div class="rating">
-                                                            <input type="radio" name="rating" value="5" /><label class="full" for="star5" title="Awesome - 5 stars"></label>
-                                                            <input type="radio" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
-                                                            <input type="radio" name="rating" value="4" /><label class="full" for="star4" title="Pretty good - 4 stars"></label>
-                                                            <input type="radio" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
-                                                            <input type="radio" name="rating" value="3" /><label class="full" for="star3" title="Meh - 3 stars"></label>
-                                                            <input type="radio" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
-                                                            <input type="radio" name="rating" value="2" /><label class="full" for="star2" title="Kinda bad - 2 stars"></label>
-                                                            <input type="radio" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
-                                                            <input type="radio" name="rating" value="1" /><label class="full" for="star1" title="Sucks big time - 1 star"></label>
-                                                            <input type="radio" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
-                                                        </div>
-                                                        <a class="category-tags bg-pink">Video</a>
-                                                    </div>
-                                                    <h3 class="book-media-title"><a href="#">How To Help Someone</a>
-                                                    </h3>
-                                                    <p><strong>Author:</strong> F. Scott Fitzgerald</p>
-                                                    <p><strong>ISBN:</strong> 9781581573268</p>
-                                                    <div class="card-links">
-                                                        <a href="#" class="btn btn-primary"><img
-                                                                src="{{asset('app-assets/images/icons/cat-filter-cart-icon.png')}}" alt=""> Add
-                                                            To Cart</a>
-                                                        <a href="books-media-detail-v1.html" class="read-more"><img
-                                                                src="{{asset('app-assets/images/link-arrow.png')}}" alt=""></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 col-lg-6 col-xl-4">
-                                            <div class="single-book-media">
-                                                <div class="book-thumb">
-                                                    <span class="price-tag">$57.00</span>
-                                                    <img src="{{asset('app-assets/images/books-media/gird-view/book-media-4.jpg')}}" alt="">
-                                                </div>
-                                                <div class="book-detail">
-                                                    <div class="mb-2">
-                                                        <div class="rating">
-                                                            <input type="radio" name="rating" value="5" /><label class="full" for="star5" title="Awesome - 5 stars"></label>
-                                                            <input type="radio" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
-                                                            <input type="radio" name="rating" value="4" /><label class="full" for="star4" title="Pretty good - 4 stars"></label>
-                                                            <input type="radio" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
-                                                            <input type="radio" name="rating" value="3" /><label class="full" for="star3" title="Meh - 3 stars"></label>
-                                                            <input type="radio" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
-                                                            <input type="radio" name="rating" value="2" /><label class="full" for="star2" title="Kinda bad - 2 stars"></label>
-                                                            <input type="radio" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
-                                                            <input type="radio" name="rating" value="1" /><label class="full" for="star1" title="Sucks big time - 1 star"></label>
-                                                            <input type="radio" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
-                                                        </div>
-                                                        <a class="category-tags bg-orange">Eaudio</a>
-                                                    </div>
-                                                    <h3 class="book-media-title"><a href="#">Swept From The Sea</a></h3>
-                                                    <p><strong>Author:</strong> F. Scott Fitzgerald</p>
-                                                    <p><strong>ISBN:</strong> 9781581573268</p>
-                                                    <div class="card-links">
-                                                        <a href="#" class="btn btn-primary"><img
-                                                                src="{{asset('app-assets/images/icons/cat-filter-cart-icon.png')}}" alt=""> Add
-                                                            To Cart</a>
-                                                        <a href="books-media-detail-v1.html" class="read-more"><img
-                                                                src="{{asset('app-assets/images/link-arrow.png')}}" alt=""></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 col-lg-6 col-xl-4">
-                                            <div class="single-book-media">
-                                                <div class="book-thumb">
-                                                    <span class="price-tag">$75.90</span>
-                                                    <img src="{{asset('app-assets/images/books-media/gird-view/book-media-5.jpg')}}" alt="">
-                                                </div>
-                                                <div class="book-detail">
-                                                    <div class="mb-2">
-                                                        <div class="rating">
-                                                            <input type="radio" name="rating" value="5" /><label class="full" for="star5" title="Awesome - 5 stars"></label>
-                                                            <input type="radio" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
-                                                            <input type="radio" name="rating" value="4" /><label class="full" for="star4" title="Pretty good - 4 stars"></label>
-                                                            <input type="radio" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
-                                                            <input type="radio" name="rating" value="3" /><label class="full" for="star3" title="Meh - 3 stars"></label>
-                                                            <input type="radio" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
-                                                            <input type="radio" name="rating" value="2" /><label class="full" for="star2" title="Kinda bad - 2 stars"></label>
-                                                            <input type="radio" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
-                                                            <input type="radio" name="rating" value="1" /><label class="full" for="star1" title="Sucks big time - 1 star"></label>
-                                                            <input type="radio" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
-                                                        </div>
-                                                        <a class="category-tags bg-orange">EAudio</a>
-                                                    </div>
-                                                    <h3 class="book-media-title"><a href="#">Freedom Is Space</a></h3>
-                                                    <p><strong>Author:</strong> F. Scott Fitzgerald</p>
-                                                    <p><strong>ISBN:</strong> 9781581573268</p>
-                                                    <div class="card-links">
-                                                        <a href="#" class="btn btn-primary"><img
-                                                                src="{{asset('app-assets/images/icons/cat-filter-cart-icon.png')}}" alt=""> Add
-                                                            To Cart</a>
-                                                        <a href="books-media-detail-v1.html" class="read-more"><img
-                                                                src="{{asset('app-assets/images/link-arrow.png')}}" alt=""></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 col-lg-6 col-xl-4">
-                                            <div class="single-book-media">
-                                                <div class="book-thumb">
-                                                    <span class="price-tag">Free</span>
-                                                    <img src="{{asset('app-assets/images/books-media/gird-view/book-media-6.jpg')}}" alt="">
-                                                </div>
-                                                <div class="book-detail">
-                                                    <div class="mb-2">
-                                                        <div class="rating">
-                                                            <input type="radio" name="rating" value="5" /><label class="full" for="star5" title="Awesome - 5 stars"></label>
-                                                            <input type="radio" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
-                                                            <input type="radio" name="rating" value="4" /><label class="full" for="star4" title="Pretty good - 4 stars"></label>
-                                                            <input type="radio" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
-                                                            <input type="radio" name="rating" value="3" /><label class="full" for="star3" title="Meh - 3 stars"></label>
-                                                            <input type="radio" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
-                                                            <input type="radio" name="rating" value="2" /><label class="full" for="star2" title="Kinda bad - 2 stars"></label>
-                                                            <input type="radio" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
-                                                            <input type="radio" name="rating" value="1" /><label class="full" for="star1" title="Sucks big time - 1 star"></label>
-                                                            <input type="radio" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
-                                                        </div>
-                                                        <a class="category-tags bg-pink">Video</a>
-                                                    </div>
-                                                    <h3 class="book-media-title"><a href="#">The Winter Folly</a></h3>
-                                                    <p><strong>Author:</strong> F. Scott Fitzgerald</p>
-                                                    <p><strong>ISBN:</strong> 9781581573268</p>
-                                                    <div class="card-links">
-                                                        <a href="#" class="btn btn-primary"><img
-                                                                src="{{asset('app-assets/images/icons/cat-filter-cart-icon.png')}}" alt=""> Add
-                                                            To Cart</a>
-                                                        <a href="books-media-detail-v1.html" class="read-more"><img
-                                                                src="{{asset('app-assets/images/link-arrow.png')}}" alt=""></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 col-lg-6 col-xl-4">
-                                            <div class="single-book-media">
-                                                <div class="book-thumb">
-                                                    <span class="price-tag">$45.50</span>
-                                                    <img src="{{asset('app-assets/images/books-media/gird-view/book-media-7.jpg')}}" alt="">
-                                                </div>
-                                                <div class="book-detail">
-                                                    <div class="mb-2">
-                                                        <div class="rating">
-                                                            <input type="radio" name="rating" value="5" /><label class="full" for="star5" title="Awesome - 5 stars"></label>
-                                                            <input type="radio" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
-                                                            <input type="radio" name="rating" value="4" /><label class="full" for="star4" title="Pretty good - 4 stars"></label>
-                                                            <input type="radio" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
-                                                            <input type="radio" name="rating" value="3" /><label class="full" for="star3" title="Meh - 3 stars"></label>
-                                                            <input type="radio" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
-                                                            <input type="radio" name="rating" value="2" /><label class="full" for="star2" title="Kinda bad - 2 stars"></label>
-                                                            <input type="radio" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
-                                                            <input type="radio" name="rating" value="1" /><label class="full" for="star1" title="Sucks big time - 1 star"></label>
-                                                            <input type="radio" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
-                                                        </div>
-                                                        <a class="category-tags bg-yellow">Magazine</a>
-                                                    </div>
-                                                    <h3 class="book-media-title"><a href="#">The Cerulean</a></h3>
-                                                    <p><strong>Author:</strong> F. Scott Fitzgerald</p>
-                                                    <p><strong>ISBN:</strong> 9781581573268</p>
-                                                    <div class="card-links">
-                                                        <a href="#" class="btn btn-primary"><img
-                                                                src="{{asset('app-assets/images/icons/cat-filter-cart-icon.png')}}" alt=""> Add
-                                                            To Cart</a>
-                                                        <a href="books-media-detail-v1.html" class="read-more"><img
-                                                                src="{{asset('app-assets/images/link-arrow.png')}}" alt=""></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 col-lg-6 col-xl-4">
-                                            <div class="single-book-media">
-                                                <div class="book-thumb">
-                                                    <span class="price-tag">Free</span>
-                                                    <img src="{{asset('app-assets/images/books-media/gird-view/book-media-8.jpg')}}" alt="">
-                                                </div>
-                                                <div class="book-detail">
-                                                    <div class="mb-2">
-                                                        <div class="rating">
-                                                            <input type="radio" name="rating" value="5" /><label class="full" for="star5" title="Awesome - 5 stars"></label>
-                                                            <input type="radio" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
-                                                            <input type="radio" name="rating" value="4" /><label class="full" for="star4" title="Pretty good - 4 stars"></label>
-                                                            <input type="radio" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
-                                                            <input type="radio" name="rating" value="3" /><label class="full" for="star3" title="Meh - 3 stars"></label>
-                                                            <input type="radio" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
-                                                            <input type="radio" name="rating" value="2" /><label class="full" for="star2" title="Kinda bad - 2 stars"></label>
-                                                            <input type="radio" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
-                                                            <input type="radio" name="rating" value="1" /><label class="full" for="star1" title="Sucks big time - 1 star"></label>
-                                                            <input type="radio" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
-                                                        </div>
-                                                        <a class="category-tags bg-light-blue">Book</a>
-                                                    </div>
-                                                    <h3 class="book-media-title"><a href="#">Red Queen</a></h3>
-                                                    <p><strong>Author:</strong> F. Scott Fitzgerald</p>
-                                                    <p><strong>ISBN:</strong> 9781581573268</p>
-                                                    <div class="card-links">
-                                                        <a href="#" class="btn btn-primary"><img
-                                                                src="{{asset('app-assets/images/icons/cat-filter-cart-icon.png')}}" alt=""> Add
-                                                            To Cart</a>
-                                                        <a href="books-media-detail-v1.html" class="read-more"><img
-                                                                src="{{asset('app-assets/images/link-arrow.png')}}" alt=""></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 col-lg-6 col-xl-4">
-                                            <div class="single-book-media">
-                                                <div class="book-thumb">
-                                                    <span class="price-tag">$29.10</span>
-                                                    <img src="{{asset('app-assets/images/books-media/gird-view/book-media-9.jpg')}}" alt="">
-                                                </div>
-                                                <div class="book-detail">
-                                                    <div class="mb-2">
-                                                        <div class="rating">
-                                                            <input type="radio" name="rating" value="5" /><label class="full" for="star5" title="Awesome - 5 stars"></label>
-                                                            <input type="radio" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
-                                                            <input type="radio" name="rating" value="4" /><label class="full" for="star4" title="Pretty good - 4 stars"></label>
-                                                            <input type="radio" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
-                                                            <input type="radio" name="rating" value="3" /><label class="full" for="star3" title="Meh - 3 stars"></label>
-                                                            <input type="radio" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
-                                                            <input type="radio" name="rating" value="2" /><label class="full" for="star2" title="Kinda bad - 2 stars"></label>
-                                                            <input type="radio" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
-                                                            <input type="radio" name="rating" value="1" /><label class="full" for="star1" title="Sucks big time - 1 star"></label>
-                                                            <input type="radio" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
-                                                        </div>
-                                                        <a class="category-tags bg-light-blue">Book</a>
-                                                    </div>
-                                                    <h3 class="book-media-title"><a href="#">A Boy In Winter</a></h3>
-                                                    <p><strong>Author:</strong> F. Scott Fitzgerald</p>
-                                                    <p><strong>ISBN:</strong> 9781581573268</p>
-                                                    <div class="card-links">
-                                                        <a href="#" class="btn btn-primary"><img
-                                                                src="{{asset('app-assets/images/icons/cat-filter-cart-icon.png')}}" alt=""> Add
-                                                            To Cart</a>
-                                                        <a href="books-media-detail-v1.html" class="read-more"><img
-                                                                src="{{asset('app-assets/images/link-arrow.png')}}" alt=""></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 col-lg-6 col-xl-4">
-                                            <div class="single-book-media">
-                                                <div class="book-thumb">
-                                                    <span class="price-tag">Free</span>
-                                                    <img src="{{asset('app-assets/images/books-media/gird-view/book-media-10.jpg')}}" alt="">
-                                                </div>
-                                                <div class="book-detail">
-                                                    <div class="mb-2">
-                                                        <div class="rating">
-                                                            <input type="radio" name="rating" value="5" /><label class="full" for="star5" title="Awesome - 5 stars"></label>
-                                                            <input type="radio" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
-                                                            <input type="radio" name="rating" value="4" /><label class="full" for="star4" title="Pretty good - 4 stars"></label>
-                                                            <input type="radio" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
-                                                            <input type="radio" name="rating" value="3" /><label class="full" for="star3" title="Meh - 3 stars"></label>
-                                                            <input type="radio" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
-                                                            <input type="radio" name="rating" value="2" /><label class="full" for="star2" title="Kinda bad - 2 stars"></label>
-                                                            <input type="radio" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
-                                                            <input type="radio" name="rating" value="1" /><label class="full" for="star1" title="Sucks big time - 1 star"></label>
-                                                            <input type="radio" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
-                                                        </div>
-                                                        <a class="category-tags bg-light-blue">Book</a>
-                                                    </div>
-                                                    <h3 class="book-media-title"><a href="#">These Fragile Things</a>
-                                                    </h3>
-                                                    <p><strong>Author:</strong> F. Scott Fitzgerald</p>
-                                                    <p><strong>ISBN:</strong> 9781581573268</p>
-                                                    <div class="card-links">
-                                                        <a href="#" class="btn btn-primary"><img
-                                                                src="{{asset('app-assets/images/icons/cat-filter-cart-icon.png')}}" alt=""> Add
-                                                            To Cart</a>
-                                                        <a href="books-media-detail-v1.html" class="read-more"><img
-                                                                src="{{asset('app-assets/images/link-arrow.png')}}" alt=""></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 col-lg-6 col-xl-4">
-                                            <div class="single-book-media">
-                                                <div class="book-thumb">
-                                                    <span class="price-tag">$62.35</span>
-                                                    <img src="{{asset('app-assets/images/books-media/gird-view/book-media-11.jpg')}}" alt="">
-                                                </div>
-                                                <div class="book-detail">
-                                                    <div class="mb-2">
-                                                        <div class="rating">
-                                                            <input type="radio" name="rating" value="5" /><label class="full" for="star5" title="Awesome - 5 stars"></label>
-                                                            <input type="radio" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
-                                                            <input type="radio" name="rating" value="4" /><label class="full" for="star4" title="Pretty good - 4 stars"></label>
-                                                            <input type="radio" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
-                                                            <input type="radio" name="rating" value="3" /><label class="full" for="star3" title="Meh - 3 stars"></label>
-                                                            <input type="radio" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
-                                                            <input type="radio" name="rating" value="2" /><label class="full" for="star2" title="Kinda bad - 2 stars"></label>
-                                                            <input type="radio" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
-                                                            <input type="radio" name="rating" value="1" /><label class="full" for="star1" title="Sucks big time - 1 star"></label>
-                                                            <input type="radio" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
-                                                        </div>
-                                                        <a class="category-tags bg-purple">Audio</a>
-                                                    </div>
-                                                    <h3 class="book-media-title"><a href="#">My Kind Of People</a></h3>
-                                                    <p><strong>Author:</strong> F. Scott Fitzgerald</p>
-                                                    <p><strong>ISBN:</strong> 9781581573268</p>
-                                                    <div class="card-links">
-                                                        <a href="#" class="btn btn-primary"><img
-                                                                src="{{asset('app-assets/images/icons/cat-filter-cart-icon.png')}}" alt=""> Add
-                                                            To Cart</a>
-                                                        <a href="books-media-detail-v1.html" class="read-more"><img
-                                                                src="{{asset('app-assets/images/link-arrow.png')}}" alt=""></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 col-lg-6 col-xl-4">
-                                            <div class="single-book-media">
-                                                <div class="book-thumb">
-                                                    <span class="price-tag">$45.50</span>
-                                                    <img src="{{asset('app-assets/images/books-media/gird-view/book-media-12.jpg')}}" alt="">
-                                                </div>
-                                                <div class="book-detail">
-                                                    <div class="mb-2">
-                                                        <div class="rating">
-                                                            <input type="radio" name="rating" value="5" /><label class="full" for="star5" title="Awesome - 5 stars"></label>
-                                                            <input type="radio" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
-                                                            <input type="radio" name="rating" value="4" /><label class="full" for="star4" title="Pretty good - 4 stars"></label>
-                                                            <input type="radio" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
-                                                            <input type="radio" name="rating" value="3" /><label class="full" for="star3" title="Meh - 3 stars"></label>
-                                                            <input type="radio" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
-                                                            <input type="radio" name="rating" value="2" /><label class="full" for="star2" title="Kinda bad - 2 stars"></label>
-                                                            <input type="radio" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
-                                                            <input type="radio" name="rating" value="1" /><label class="full" for="star1" title="Sucks big time - 1 star"></label>
-                                                            <input type="radio" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
-                                                        </div>
-                                                        <a class="category-tags bg-pink">Video</a>
-                                                    </div>
-                                                    <h3 class="book-media-title"><a href="#">The Twelfth Child</a></h3>
-                                                    <p><strong>Author:</strong> F. Scott Fitzgerald</p>
-                                                    <p><strong>ISBN:</strong> 9781581573268</p>
-                                                    <div class="card-links">
-                                                        <a href="#" class="btn btn-primary"><img
-                                                                src="{{asset('app-assets/images/icons/cat-filter-cart-icon.png')}}" alt=""> Add
-                                                            To Cart</a>
-                                                        <a href="books-media-detail-v1.html" class="read-more"><img
-                                                                src="{{asset('app-assets/images/link-arrow.png')}}" alt=""></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        @endforeach
                                     </div>
                                 </div>
-                                <nav aria-label="Page navigation example">
-                                    <ul class="pagination justify-content-center">
-                                        <li class="page-item first-page-link">
-                                            <a class="page-link" href="#" aria-label="Previous">
-                                                <span aria-hidden="true"><i class="fa fa-long-arrow-left"></i>
-                                                    Previous</span>
-                                                <span class="sr-only"></span>
-                                            </a>
-                                        </li>
-                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                        <li class="page-item last-page-link">
-                                            <a class="page-link" href="#" aria-label="Next">
-                                                <span aria-hidden="true">Next <i
-                                                        class="fa fa-long-arrow-right"></i></span>
-                                                <span class="sr-only"></span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </nav>
+                                {{ $teachers->links() }}
                             </div>
                         </div>
                     </div>
@@ -1482,6 +1061,382 @@
 
         $( document ).ready(function() {
 
+            //get area
+            $('body').on('mouseup', 'li[dtype="city"]', function() {
+                var city = $(this).attr('rel');
+                $("#area").html("");
+                $("#area").html(
+                    '<select name="area_id" id="area_id" class="form-control"><option value="" dType="areas">' + "@lang('general.all') @lang('general.areas')" + '</option>'
+                );
+
+                let areas = "";
+                if (city) {
+                    $.ajax({
+                        url: "{{url('/') . '/get-area/'}}" + city,
+                        type: 'GET',
+                        dataType: "json",
+                        data: {},
+                        success: function (data){
+                            data = data.data;
+                            if (data.length != 0) {
+                                for (var x = 0; x < data.length; x++) {
+                                    var item = data[x];
+                                    areas +=
+                                        '<option dType="areas" value="' +
+                                        item.id +
+                                        '">' +
+                                        item['name_{{app()->getLocale()}}'] +
+                                        "</option>";
+                                }
+                                $("#area_id").append(areas);
+                                $("#area").append('</select>');
+                                var selectObj = $('select#area_id');
+                                var selectListObj = $('ul.select-list');
+                                selectObj.each(function () {
+                                    var $this = $(this), numberOfOptions = $(this).children('option').length;
+
+                                    $this.addClass('select-hidden');
+                                    $this.wrap('<div class="select"></div>');
+                                    $this.after('<div class="select-styled"></div>');
+
+                                    var $styledSelect = $this.next('div.select-styled');
+                                    $styledSelect.text($this.children('option').eq(0).text());
+
+                                    var $list = $('<ul />', {
+                                        'class': 'select-list'
+                                    }).insertAfter($styledSelect);
+
+                                    for (var i = 0; i < numberOfOptions; i++) {
+                                        $('<li />', {
+                                            text: $this.children('option').eq(i).text(),
+                                            rel: $this.children('option').eq(i).val(),
+                                            dType: $this.children('option').eq(i).attr('dType')
+                                        }).appendTo($list);
+                                    }
+
+                                    var $listItems = $list.children('li');
+
+                                    $styledSelect.on('click', function (e) {
+                                        e.stopPropagation();
+                                        $('div.select-styled.active').not(this).each(function () {
+                                            $(this).removeClass('active').next(selectListObj).hide();
+                                        });
+                                        $(this).toggleClass('active').next(selectListObj).toggle();
+                                    });
+
+                                    $listItems.on('click', function (e) {
+                                        e.stopPropagation();
+                                        $styledSelect.text($(this).text()).removeClass('active');
+                                        $this.val($(this).attr('rel'));
+                                        $list.hide();
+                                    });
+
+                                    $(document).on('click', function () {
+                                        $styledSelect.removeClass('active');
+                                        $list.hide();
+                                    });
+
+                                });
+                            }
+                            else {
+                                $("#area").append('</select>');
+                                var selectObj = $('select#area_id');
+                                var selectListObj = $('ul.select-list');
+                                selectObj.each(function () {
+                                    var $this = $(this), numberOfOptions = $(this).children('option').length;
+
+                                    $this.addClass('select-hidden');
+                                    $this.wrap('<div class="select"></div>');
+                                    $this.after('<div class="select-styled"></div>');
+
+                                    var $styledSelect = $this.next('div.select-styled');
+                                    $styledSelect.text($this.children('option').eq(0).text());
+
+                                    var $list = $('<ul />', {
+                                        'class': 'select-list'
+                                    }).insertAfter($styledSelect);
+
+                                    for (var i = 0; i < numberOfOptions; i++) {
+                                        $('<li />', {
+                                            text: $this.children('option').eq(i).text(),
+                                            rel: $this.children('option').eq(i).val(),
+                                            dType: $this.children('option').eq(i).attr('dType')
+                                        }).appendTo($list);
+                                    }
+
+                                    var $listItems = $list.children('li');
+
+                                    $styledSelect.on('click', function (e) {
+                                        e.stopPropagation();
+                                        $('div.select-styled.active').not(this).each(function () {
+                                            $(this).removeClass('active').next(selectListObj).hide();
+                                        });
+                                        $(this).toggleClass('active').next(selectListObj).toggle();
+                                    });
+
+                                    $listItems.on('click', function (e) {
+                                        e.stopPropagation();
+                                        $styledSelect.text($(this).text()).removeClass('active');
+                                        $this.val($(this).attr('rel'));
+                                        $list.hide();
+                                    });
+
+                                    $(document).on('click', function () {
+                                        $styledSelect.removeClass('active');
+                                        $list.hide();
+                                    });
+
+                                });
+                            }
+                        },
+                        error: function (reject){
+                            console.log(reject);
+                        }
+                    });
+                }
+            });//end for get area
+
+            //get sector
+            $('body').on('mouseup', 'li[dtype="type"]', function() {
+                var type = $(this).attr('rel');
+                $("#sector").html("");
+                $("#sector").html(
+                    '<select name="sector_id" id="sector_id" class="form-control"><option value="" dType="sectors">' + "@lang('general.all') @lang('general.sectors')" + '</option>'
+                );
+
+                //clear class
+                $("#class").html("");
+                $("#class").html(
+                    '<select name="class_id" id="class_id" class="form-control"><option value="" dType="classes">' + "@lang('general.all') @lang('general.classes')" + '</option></select>'
+                );
+                var selectObj = $('select#class_id');
+                var selectListObj = $('ul.select-list');
+                selectObj.each(function () {
+                    var $this = $(this), numberOfOptions = $(this).children('option').length;
+
+                    $this.addClass('select-hidden');
+                    $this.wrap('<div class="select"></div>');
+                    $this.after('<div class="select-styled"></div>');
+
+                    var $styledSelect = $this.next('div.select-styled');
+                    $styledSelect.text($this.children('option').eq(0).text());
+
+                    var $list = $('<ul />', {
+                        'class': 'select-list'
+                    }).insertAfter($styledSelect);
+
+                    for (var i = 0; i < numberOfOptions; i++) {
+                        $('<li />', {
+                            text: $this.children('option').eq(i).text(),
+                            rel: $this.children('option').eq(i).val(),
+                            dType: $this.children('option').eq(i).attr('dType')
+                        }).appendTo($list);
+                    }
+
+                    var $listItems = $list.children('li');
+
+                    $styledSelect.on('click', function (e) {
+                        e.stopPropagation();
+                        $('div.select-styled.active').not(this).each(function () {
+                            $(this).removeClass('active').next(selectListObj).hide();
+                        });
+                        $(this).toggleClass('active').next(selectListObj).toggle();
+                    });
+
+                    $listItems.on('click', function (e) {
+                        e.stopPropagation();
+                        $styledSelect.text($(this).text()).removeClass('active');
+                        $this.val($(this).attr('rel'));
+                        $list.hide();
+                    });
+
+                    $(document).on('click', function () {
+                        $styledSelect.removeClass('active');
+                        $list.hide();
+                    });
+
+                });
+
+                //clear subject
+                $("#subject").html("");
+                $("#subject").html(
+                    '<select name="subject_id" id="subject_id" class="form-control"><option value="" dType="subjects">' + "@lang('general.all') @lang('general.subjects')" + '</option></select>'
+                );
+                var selectObj = $('select#subject_id');
+                var selectListObj = $('ul.select-list');
+                selectObj.each(function () {
+                    var $this = $(this), numberOfOptions = $(this).children('option').length;
+
+                    $this.addClass('select-hidden');
+                    $this.wrap('<div class="select"></div>');
+                    $this.after('<div class="select-styled"></div>');
+
+                    var $styledSelect = $this.next('div.select-styled');
+                    $styledSelect.text($this.children('option').eq(0).text());
+
+                    var $list = $('<ul />', {
+                        'class': 'select-list'
+                    }).insertAfter($styledSelect);
+
+                    for (var i = 0; i < numberOfOptions; i++) {
+                        $('<li />', {
+                            text: $this.children('option').eq(i).text(),
+                            rel: $this.children('option').eq(i).val(),
+                            dType: $this.children('option').eq(i).attr('dType')
+                        }).appendTo($list);
+                    }
+
+                    var $listItems = $list.children('li');
+
+                    $styledSelect.on('click', function (e) {
+                        e.stopPropagation();
+                        $('div.select-styled.active').not(this).each(function () {
+                            $(this).removeClass('active').next(selectListObj).hide();
+                        });
+                        $(this).toggleClass('active').next(selectListObj).toggle();
+                    });
+
+                    $listItems.on('click', function (e) {
+                        e.stopPropagation();
+                        $styledSelect.text($(this).text()).removeClass('active');
+                        $this.val($(this).attr('rel'));
+                        $list.hide();
+                    });
+
+                    $(document).on('click', function () {
+                        $styledSelect.removeClass('active');
+                        $list.hide();
+                    });
+
+                });
+
+                let sectors = "";
+                if (type) {
+                    $.ajax({
+                        url: "{{url('/') . '/sector-get/'}}" + type,
+                        type: 'GET',
+                        dataType: "json",
+                        data: {},
+                        success: function (data){
+                            data = data.data;
+                            if (data.length != 0) {
+                                for (var x = 0; x < data.length; x++) {
+                                    var item = data[x];
+                                    sectors +=
+                                        '<option dType="sectors" value="' +
+                                        item.id +
+                                        '">' +
+                                        item['name_{{app()->getLocale()}}'] +
+                                        "</option>";
+                                }
+                                $("#sector_id").append(sectors);
+                                $("#sector").append('</select>');
+                                var selectObj = $('select#sector_id');
+                                var selectListObj = $('ul.select-list');
+                                selectObj.each(function () {
+                                    var $this = $(this), numberOfOptions = $(this).children('option').length;
+
+                                    $this.addClass('select-hidden');
+                                    $this.wrap('<div class="select"></div>');
+                                    $this.after('<div class="select-styled"></div>');
+
+                                    var $styledSelect = $this.next('div.select-styled');
+                                    $styledSelect.text($this.children('option').eq(0).text());
+
+                                    var $list = $('<ul />', {
+                                        'class': 'select-list'
+                                    }).insertAfter($styledSelect);
+
+                                    for (var i = 0; i < numberOfOptions; i++) {
+                                        $('<li />', {
+                                            text: $this.children('option').eq(i).text(),
+                                            rel: $this.children('option').eq(i).val(),
+                                            dType: $this.children('option').eq(i).attr('dType')
+                                        }).appendTo($list);
+                                    }
+
+                                    var $listItems = $list.children('li');
+
+                                    $styledSelect.on('click', function (e) {
+                                        e.stopPropagation();
+                                        $('div.select-styled.active').not(this).each(function () {
+                                            $(this).removeClass('active').next(selectListObj).hide();
+                                        });
+                                        $(this).toggleClass('active').next(selectListObj).toggle();
+                                    });
+
+                                    $listItems.on('click', function (e) {
+                                        e.stopPropagation();
+                                        $styledSelect.text($(this).text()).removeClass('active');
+                                        $this.val($(this).attr('rel'));
+                                        $list.hide();
+                                    });
+
+                                    $(document).on('click', function () {
+                                        $styledSelect.removeClass('active');
+                                        $list.hide();
+                                    });
+
+                                });
+                            }
+                            else {
+                                $("#sector").append('</select>');
+                                var selectObj = $('select#sector_id');
+                                var selectListObj = $('ul.select-list');
+                                selectObj.each(function () {
+                                    var $this = $(this), numberOfOptions = $(this).children('option').length;
+
+                                    $this.addClass('select-hidden');
+                                    $this.wrap('<div class="select"></div>');
+                                    $this.after('<div class="select-styled"></div>');
+
+                                    var $styledSelect = $this.next('div.select-styled');
+                                    $styledSelect.text($this.children('option').eq(0).text());
+
+                                    var $list = $('<ul />', {
+                                        'class': 'select-list'
+                                    }).insertAfter($styledSelect);
+
+                                    for (var i = 0; i < numberOfOptions; i++) {
+                                        $('<li />', {
+                                            text: $this.children('option').eq(i).text(),
+                                            rel: $this.children('option').eq(i).val(),
+                                            dType: $this.children('option').eq(i).attr('dType')
+                                        }).appendTo($list);
+                                    }
+
+                                    var $listItems = $list.children('li');
+
+                                    $styledSelect.on('click', function (e) {
+                                        e.stopPropagation();
+                                        $('div.select-styled.active').not(this).each(function () {
+                                            $(this).removeClass('active').next(selectListObj).hide();
+                                        });
+                                        $(this).toggleClass('active').next(selectListObj).toggle();
+                                    });
+
+                                    $listItems.on('click', function (e) {
+                                        e.stopPropagation();
+                                        $styledSelect.text($(this).text()).removeClass('active');
+                                        $this.val($(this).attr('rel'));
+                                        $list.hide();
+                                    });
+
+                                    $(document).on('click', function () {
+                                        $styledSelect.removeClass('active');
+                                        $list.hide();
+                                    });
+
+                                });
+                            }
+                        },
+                        error: function (reject){
+                            console.log(reject);
+                        }
+                    });
+                }
+            });//end for get sector
+
             //get classes
             $('body').on('mouseup', 'li[dtype="sector"]', function() {
                 var sector = $(this).attr('rel');
@@ -1546,7 +1501,7 @@
                 let classes = "";
                 if (sector) {
                     $.ajax({
-                        url: "{{url('/') . '/class-search/'}}" + sector,
+                        url: "{{url('/') . '/get-class/'}}" + sector,
                         type: 'GET',
                         dataType: "json",
                         data: {},
@@ -1680,7 +1635,7 @@
                 let subjects = "";
                 if (classe) {
                     $.ajax({
-                        url: "{{url('/') . '/subject-search/'}}" + classe,
+                        url: "{{url('/') . '/get-subject/'}}" + classe,
                         type: 'GET',
                         dataType: "json",
                         data: {},

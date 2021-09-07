@@ -302,12 +302,12 @@
                         <h3>What are you looking for at the SKILLE?</h3>
                     </div>
                     <div class="col-md-8 col-sm-12">
-                        <form action="{{route('home.search')}}" method="POST">
+                        <form action="{{route('home.search')}}" id="search" method="POST">
                             @csrf
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <select name="sector_id" id="sector_id" class="form-control">
+                                        <select name="sector_id" id="sector_id" class="form-control" required>
                                             <option value="" dType="sector">@lang('general.all') @lang('general.sectors')</option>
                                             @foreach($sectors as $sector)
                                                 <option value="{{$sector->id}}" dType="sector">{{$sector->type}} - {{$sector->name}}</option>
@@ -317,7 +317,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group" id="class">
-                                        <select name="class_id" id="class_id" class="form-control">
+                                        <select name="class_id" id="class_id" class="form-control" required>
                                             <option value="">@lang('general.all') @lang('general.classes')</option>
 
                                         </select>
@@ -325,15 +325,16 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group" id="subject">
-                                        <select name="subject_id" id="subject_id" class="form-control">
+                                        <select name="subject_id" id="subject_id" class="form-control" required>
                                             <option value="">@lang('general.all') @lang('general.subjects')</option>
 
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <button class="btn btn-primary">@lang('general.search')</button>
+                                    <div class="form-group text-center">
+                                        <button id="btn_search" class="btn btn-primary">@lang('general.search')</button>
+                                        <span id="error_subject" class="text-danger" style="display: none; font-weight: bolder;">select subject first</span>
                                     </div>
                                 </div>
                             </div>
@@ -1733,6 +1734,17 @@
                     });
                 }
             });//end for get subjects
+
+            $('#btn_search').on('click', function (e){
+                e.preventDefault();
+                if($('#subject_id').val() != '' && $('#subject_id').val() != null){
+                    $('#search').submit();
+                    $('#error_subject').hide();
+                }
+                else{
+                    $('#error_subject').show();
+                }
+            });//submit form
 
         });//end for ready
 

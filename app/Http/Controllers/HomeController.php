@@ -7,6 +7,7 @@ use App\Models\Classes;
 use App\Models\Event;
 use App\Models\Sector;
 use App\Models\Subject;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -58,7 +59,9 @@ class HomeController extends Controller
 
     public function search(Request $request)
     {
-        dd($request->all());
-        return view('search');
+        $teachers = User::where('type', '2')->whereHas('subjects' , function($subject) use ($request){
+            return $subject->where('subjects.id', $request->subject_id);
+        })->orderBy('position', 'asc')->pluck('id');
+        return redirect()->route('teacher.grid', $teachers);
     }
 }

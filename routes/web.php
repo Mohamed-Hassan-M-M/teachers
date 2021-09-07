@@ -30,6 +30,11 @@ Route::group(
     Route::get('/subject-search/{id}', 'HomeController@getSubjects');
 
     // teacher
-    Route::get('/teacher-grid', 'TeacherController@index')->name('home');
+    Route::get('/teacher-grid/{id?}', 'TeacherController@index')->name('teacher.grid');
+    Route::get('/get-area/{id}', 'TeacherController@getAreas');
+    Route::get('/get-sector/{id}', 'TeacherController@getSectors');
+    Route::get('/get-class/{id}', 'TeacherController@getClasses');
+    Route::get('/get-subject/{id}', 'TeacherController@getSubjects');
+
 
 });

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Area;
 use App\Models\Blog;
 use App\Models\City;
 use App\Models\Classes;
@@ -28,14 +29,57 @@ class TeacherController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index($ids = null)
     {
-        $sectors = Sector::all();
-        $classes = Classes::all();
-        $subjects = Subject::all();
-        $teachers = User::where('type', '2')->get();
+        if($ids != null){
+            $teachers = User::where('type', '2')->whereIn('id', array_values(json_decode($ids)))->paginate(12);
+        }
+        else{
+            $teachers = User::where('type', '2')->paginate(12);
+        }
         $types = Sector::groupBy('type')->pluck('type');
-        return view('teacherFilter', compact(['sectors', 'classes', 'subjects', 'types', 'teachers']));
+        $cities = City::all();
+        return view('teacherFilter', compact(['types', 'teachers', 'cities']));
+    }
+
+    public function getAreas($id)
+    {
+        $areas = Area::where('city_id', $id)->get()->toArray();
+        return response()->json([
+            'status' => 'success',
+            'msg' => 'areas',
+            'data' => $areas
+        ]);
+    }
+
+    public function getSectors($id)
+    {
+        $sectors = Sector::where('type', $id)->get()->toArray();
+        return response()->json([
+            'status' => 'success',
+            'msg' => 'sectors',
+            'data' => $sectors
+        ]);
+    }
+
+    public function getClasses($id)
+    {
+        $classes = Classes::where('sector_id', $id)->get()->toArray();
+        return response()->json([
+            'status' => 'success',
+            'msg' => 'classes',
+            'data' => $classes
+        ]);
+    }
+
+    public function getSubjects($id)
+    {
+        $subjects = Subject::where('class_id', $id)->get()->toArray();
+        return response()->json([
+            'status' => 'success',
+            'msg' => 'subjects',
+            'data' => $subjects
+        ]);
     }
 
 }
