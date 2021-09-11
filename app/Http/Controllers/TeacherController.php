@@ -83,19 +83,21 @@ class TeacherController extends Controller
 
     public function getTeachers($area_id = null, $subject_id = null)
     {
+
         $teachers = User::query();
         $teachers->where('type', '2');
-        if($area_id != null && $area_id != ''){
-            $teachers->whereHas('areas', function($area) use($area_id) {
+        if($area_id != null && $area_id != 'empty'){
+            $teachers = $teachers->whereHas('areas', function($area) use($area_id) {
                 return $area->where('id', $area_id);
             });
         }
-        if($subject_id != null && $subject_id != ''){
-            $teachers->whereHas('subjects', function($subject) use($subject_id) {
-                return $subject->whereIn('id', $subject_id);
+        if($subject_id != null && $subject_id != 'empty'){
+            $subject_id = json_decode($subject_id);
+            $teachers = $teachers->whereHas('subjects', function($subject) use($subject_id) {
+                return $subject->whereIn('subjects.id', $subject_id);
             });
         }
-        $teachers->get()->toArray();
+        $teachers = $teachers->get()->toArray();
         return response()->json([
             'status' => 'success',
             'msg' => 'subjects',

@@ -291,7 +291,7 @@
                                     </div>
                                 </div>
                                 <div class="books-media-listing">
-                                    <div class="row">
+                                    <div class="row" id="teachers">
                                         @foreach($teachers as $teacher)
                                             <div class="col-sm-6 col-lg-6 col-xl-4">
                                                 <div class="single-book-media">
@@ -1098,6 +1098,71 @@
 
 
                 }
+            });
+
+            //get teachers
+            $('body').on('change', '.subject', function (){
+
+                var recordIds = [];
+                $.each($(".subject:checked"), function () {
+                    recordIds.push($(this).val());
+                });
+                console.log(JSON.stringify(recordIds));
+                var teachers = '';
+                $.ajax({
+                    url: "{{url('/') . '/get-teacher/'}}" + 'empty' + '/' + JSON.stringify(recordIds),
+                    type: 'GET',
+                    dataType: "json",
+                    data: {},
+                    success: function (data){
+                        data = data.data;
+                        if (data.length != 0) {
+                            for (var x = 0; x < data.length; x++) {
+                                var item = data[x];
+                                teachers += '<div class="col-sm-6 col-lg-6 col-xl-4">';
+                                teachers += '<div class="single-book-media">';
+                                teachers += '<div class="book-thumb" style="height: 250px">';
+                                teachers += '<img src="'
+                                    + item['image_path'] + '" class="w-100 h-100" alt="">';
+                                teachers += '</div>';
+                                teachers += '<div class="book-detail">';
+                                teachers += '<div class="mb-2">';
+                                teachers += '<div class="rating">';
+                                teachers += '<input type="radio" id="star5" name="rating" value="5" /><label class="full" for="star5" title="Awesome - 5 stars"></label>';
+                                teachers += '<input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>';
+                                teachers += '<input type="radio" id="star4" name="rating" value="4" /><label class="full" for="star4" title="Pretty good - 4 stars"></label>';
+                                teachers += '<input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>';
+                                teachers += '<input type="radio" id="star3" name="rating" value="3" /><label class="full" for="star3" title="Meh - 3 stars"></label>';
+                                teachers += '<input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>';
+                                teachers += '<input type="radio" id="star2" name="rating" value="2" /><label class="full" for="star2" title="Kinda bad - 2 stars"></label>';
+                                teachers += '<input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>';
+                                teachers += '<input type="radio" id="star1" name="rating" value="1" /><label class="full" for="star1" title="Sucks big time - 1 star"></label>';
+                                teachers += '<input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>';
+                                teachers += '</div>';
+                                teachers += '</div>';
+                                teachers += '<h3 class="book-media-title"><a href="#">'
+                                    + item['name_{{app()->getLocale()}}'] + '</a></h3>';
+                                teachers += '<p><strong>@lang('general.phone'):</strong> '
+                                    + item['mobile'] + '</p>';
+                                teachers += '<div class="card-links">';
+                                teachers += '<a href="#" class="btn btn-primary"><img src="{{asset('app-assets/images/icons/cat-filter-cart-icon.png')}}" alt=""> @lang('general.read_more')</a>';
+                                teachers += '<a href="#" class="read-more"><img src="{{asset('app-assets/images/link-arrow.png')}}" alt=""></a>';
+                                teachers += '</div>';
+                                teachers += '</div>';
+                                teachers += '</div>';
+                                teachers += '</div>';
+                            }
+                            $("#teachers").html('');
+                            $("#teachers").append(teachers);
+                        }else {
+                            $("#teachers").html('');
+                        }
+                    },
+                    error: function (reject){
+                        console.log(reject);
+                    }
+                });
+
             });
 
         });//end for ready

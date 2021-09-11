@@ -120,6 +120,8 @@ class TeacherController extends Controller
     {
         $teacher = User::findOrFail($id);
 
+        $requestInputs = $request->except(['_token', 'subject_id', 'area_id', 'social_link', 'password', 'image']);
+
         if ($request->has('image')){
             $image = $request->file('image')->store('public/teachers');
             $requestInputs['image']  =  $request->image->hashName();
@@ -154,8 +156,6 @@ class TeacherController extends Controller
                 TeacherSubject::create(['teacher_id' => $teacher->id, 'subject_id' => $subject]);
             }
         }
-
-        $requestInputs = $request->except(['_token', 'subject_id', 'area_id', 'social_link', 'password', 'image']);
 
         $teacher->update($requestInputs);
 
