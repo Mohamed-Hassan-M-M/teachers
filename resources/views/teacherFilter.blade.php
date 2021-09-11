@@ -327,7 +327,7 @@
                                         @endforeach
                                     </div>
                                 </div>
-                                {{ $teachers->links() }}
+                                <div id="pagination">{{ $teachers->links() }}</div>
                             </div>
                         </div>
                     </div>
@@ -1157,6 +1157,7 @@
                         }else {
                             $("#teachers").html('');
                         }
+                        $("#pagination").html('');
                     },
                     error: function (reject){
                         console.log(reject);
