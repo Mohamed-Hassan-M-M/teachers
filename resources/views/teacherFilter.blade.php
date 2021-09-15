@@ -194,16 +194,26 @@
                                                     <div class="book-detail">
                                                         <div class="mb-2">
                                                             <div class="rating">
-                                                                <input type="radio" id="star5" name="rating" value="5" /><label class="full" for="star5" title="Awesome - 5 stars"></label>
-                                                                <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
-                                                                <input type="radio" id="star4" name="rating" value="4" /><label class="full" for="star4" title="Pretty good - 4 stars"></label>
-                                                                <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
-                                                                <input type="radio" id="star3" name="rating" value="3" /><label class="full" for="star3" title="Meh - 3 stars"></label>
-                                                                <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
-                                                                <input type="radio" id="star2" name="rating" value="2" /><label class="full" for="star2" title="Kinda bad - 2 stars"></label>
-                                                                <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
-                                                                <input type="radio" id="star1" name="rating" value="1" /><label class="full" for="star1" title="Sucks big time - 1 star"></label>
-                                                                <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                                                                @php
+                                                                    $intRate = intVal($teacher->rating);
+                                                                    $half = false;
+                                                                    if($intRate < $teacher->rating){
+                                                                        $half = true;
+                                                                    }
+                                                                @endphp
+                                                                @for($i = 0; $i < $intRate; $i++)
+                                                                    <i class="fa fa-star" style="color: gold"></i>
+                                                                @endfor
+                                                                @if($half)
+                                                                    <i class="fa fa-star-half-full" style="color: gold"></i>
+                                                                    @for($i = 0; $i < (4-$intRate); $i++)
+                                                                        <i class="fa fa-star"></i>
+                                                                    @endfor
+                                                                @else
+                                                                    @for($i = 0; $i < (5-$intRate); $i++)
+                                                                        <i class="fa fa-star"></i>
+                                                                    @endfor
+                                                                @endif
                                                             </div>
                                                         </div>
                                                         <h3 class="book-media-title"><a href="#">{{$teacher->name}}</a></h3>
@@ -535,16 +545,28 @@
                                 teachers += '<div class="book-detail">';
                                 teachers += '<div class="mb-2">';
                                 teachers += '<div class="rating">';
-                                teachers += '<input type="radio" id="star5" name="rating" value="5" /><label class="full" for="star5" title="Awesome - 5 stars"></label>';
-                                teachers += '<input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>';
-                                teachers += '<input type="radio" id="star4" name="rating" value="4" /><label class="full" for="star4" title="Pretty good - 4 stars"></label>';
-                                teachers += '<input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>';
-                                teachers += '<input type="radio" id="star3" name="rating" value="3" /><label class="full" for="star3" title="Meh - 3 stars"></label>';
-                                teachers += '<input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>';
-                                teachers += '<input type="radio" id="star2" name="rating" value="2" /><label class="full" for="star2" title="Kinda bad - 2 stars"></label>';
-                                teachers += '<input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>';
-                                teachers += '<input type="radio" id="star1" name="rating" value="1" /><label class="full" for="star1" title="Sucks big time - 1 star"></label>';
-                                teachers += '<input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>';
+
+                                var intRate = parseInt(item['rating']);
+                                var half = false;
+                                if(intRate < item['rating']){
+                                    half = true;
+                                }
+
+                                for($i = 0; $i < intRate; $i++){
+                                    teachers += '<i class="fa fa-star" style="color: gold"></i>';
+                                }
+                                if(half){
+                                    teachers += '<i class="fa fa-star-half-full" style="color: gold"></i>';
+                                    for($i = 0; $i < (4-intRate); $i++){
+                                        teachers += '<i class="fa fa-star"></i>';
+                                    }
+                                }
+                                else{
+                                    for($i = 0; $i < (5-intRate); $i++){
+                                        teachers += '<i class="fa fa-star"></i>';
+                                    }
+                                }
+
                                 teachers += '</div>';
                                 teachers += '</div>';
                                 teachers += '<h3 class="book-media-title"><a href="#">'
@@ -606,16 +628,26 @@
                                 teachers += '<div class="book-detail">';
                                 teachers += '<div class="mb-2">';
                                 teachers += '<div class="rating">';
-                                teachers += '<input type="radio" id="star5" name="rating" value="5" /><label class="full" for="star5" title="Awesome - 5 stars"></label>';
-                                teachers += '<input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>';
-                                teachers += '<input type="radio" id="star4" name="rating" value="4" /><label class="full" for="star4" title="Pretty good - 4 stars"></label>';
-                                teachers += '<input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>';
-                                teachers += '<input type="radio" id="star3" name="rating" value="3" /><label class="full" for="star3" title="Meh - 3 stars"></label>';
-                                teachers += '<input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>';
-                                teachers += '<input type="radio" id="star2" name="rating" value="2" /><label class="full" for="star2" title="Kinda bad - 2 stars"></label>';
-                                teachers += '<input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>';
-                                teachers += '<input type="radio" id="star1" name="rating" value="1" /><label class="full" for="star1" title="Sucks big time - 1 star"></label>';
-                                teachers += '<input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>';
+                                var intRate = parseInt(item['rating']);
+                                var half = false;
+                                if(intRate < item['rating']){
+                                    half = true;
+                                }
+
+                                for($i = 0; $i < intRate; $i++){
+                                    teachers += '<i class="fa fa-star" style="color: gold"></i>';
+                                }
+                                if(half){
+                                    teachers += '<i class="fa fa-star-half-full" style="color: gold"></i>';
+                                    for($i = 0; $i < (4-intRate); $i++){
+                                        teachers += '<i class="fa fa-star"></i>';
+                                    }
+                                }
+                                else{
+                                    for($i = 0; $i < (5-intRate); $i++){
+                                        teachers += '<i class="fa fa-star"></i>';
+                                    }
+                                }
                                 teachers += '</div>';
                                 teachers += '</div>';
                                 teachers += '<h3 class="book-media-title"><a href="#">'
