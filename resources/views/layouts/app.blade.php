@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="{{app()->getLocale()}}" dir="@if(app()->getLocale() == 'ar') rtl @else ltr @endif">
 
 <head>
 
@@ -16,16 +16,38 @@
     <!-- Fonts -->
     <link href="{{asset('app-assets/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css" />
 
-    <!-- Animation-->
-    <link href="{{asset('app-assets/css/aos.css')}}" rel="stylesheet" type="text/css" />
+    @if(app()->getLocale() == 'ar')
 
-    <!-- Mobile Menu -->
-    <link href="{{asset('app-assets/css/mmenu.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{asset('app-assets/css/mmenu.positioning.css')}}" rel="stylesheet" type="text/css" />
+        <!-- Fonts -->
+        <link href="{{asset('app-assets/cssRtl/font-awesome.min.css')}}" rel="stylesheet" type="text/css" />
 
-    <!-- Stylesheet -->
-    <link href="{{asset('app-assets/css/jquery-ui.min.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{asset('app-assets/css/style.css')}}" rel="stylesheet" type="text/css" />
+        <!-- Animation-->
+        <link href="{{asset('app-assets/cssRtl/aos.css')}}" rel="stylesheet" type="text/css" />
+
+        <!-- Mobile Menu -->
+        <link href="{{asset('app-assets/cssRtl/mmenu.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{asset('app-assets/cssRtl/mmenu.positioning.css')}}" rel="stylesheet" type="text/css" />
+
+        <!-- Stylesheet -->
+        <link href="{{asset('app-assets/cssRtl/jquery-ui.min.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{asset('app-assets/cssRtl/style.css')}}" rel="stylesheet" type="text/css" />
+
+    @else
+
+        <!-- Fonts -->
+        <link href="{{asset('app-assets/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css" />
+
+        <!-- Animation-->
+        <link href="{{asset('app-assets/css/aos.css')}}" rel="stylesheet" type="text/css" />
+
+        <!-- Mobile Menu -->
+        <link href="{{asset('app-assets/css/mmenu.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{asset('app-assets/css/mmenu.positioning.css')}}" rel="stylesheet" type="text/css" />
+
+        <!-- Stylesheet -->
+        <link href="{{asset('app-assets/css/jquery-ui.min.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{asset('app-assets/css/style.css')}}" rel="stylesheet" type="text/css" />
+    @endif
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

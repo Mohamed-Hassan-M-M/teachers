@@ -52,7 +52,7 @@
                                             <a class="nav-link" href="{{route('teacher.grid')}}">@lang('general.aboutUs')</a>
                                         </li>
                                         <li class="nav-item ">
-                                            <a class="nav-link" href="{{route('teacher.grid')}}">@lang('general.teacher')</a>
+                                            <a class="nav-link" href="{{route('teacher.grid')}}">@lang('general.teachers')</a>
                                         </li>
                                         <li class="nav-item ">
                                             <a class="nav-link" href="{{route('teacher.grid')}}">@lang('general.events')</a>
@@ -87,7 +87,7 @@
                                         <a href="{{route('teacher.grid')}}">@lang('general.aboutUs')</a>
                                     </li>
                                     <li>
-                                        <a href="{{route('teacher.grid')}}">@lang('general.teacher')</a>
+                                        <a href="{{route('teacher.grid')}}">@lang('general.teachers')</a>
                                     </li>
                                     <li>
                                         <a href="{{route('teacher.grid')}}">@lang('general.events')</a>
@@ -124,10 +124,10 @@
                 <div class="carousel-caption" data-aos="fade-down">
                     <h3>Online Learning Anytime, Anywhere!</h3>
                     <h2>Discover Your Roots</h2>
-                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humor, or randomized words.</p>
-                    <div class="slide-buttons hidden-sm hidden-xs">
-                        <a href="signin.html" class="btn btn-primary">Get Started Now!<span></span></a>
-                        <a href="signup.html" class="btn btn-light">Join Now<span></span></a>
+                    <p @if(app()->getLocale() == 'ar') style="float: right; direction: rtl" @endif >There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humor, or randomized words.</p>
+                    <div class="slide-buttons hidden-sm hidden-xs" @if(app()->getLocale() == 'ar') style="clear: both" @endif >
+                        <a href="{{route('login')}}" class="btn btn-primary">Get Started Now!<span></span></a>
+                        <a href="{{route('register')}}" class="btn btn-light">Join Now<span></span></a>
                     </div>
                 </div>
             </div>
@@ -138,10 +138,10 @@
                 <div class="carousel-caption">
                     <h3>Online Learning Anytime, Anywhere!</h3>
                     <h2>Discover Your Roots</h2>
-                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humor, or randomized words.</p>
-                    <div class="slide-buttons hidden-sm hidden-xs">
-                        <a href="signin.html" class="btn btn-primary">Get Started Now!<span></span></a>
-                        <a href="signup.html" class="btn btn-light">Join Now<span></span></a>
+                    <p @if(app()->getLocale() == 'ar') style="float: right; direction: rtl" @endif >There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humor, or randomized words.</p>
+                    <div class="slide-buttons hidden-sm hidden-xs" @if(app()->getLocale() == 'ar') style="clear: both" @endif >
+                        <a href="{{route('login')}}" class="btn btn-primary">Get Started Now!<span></span></a>
+                        <a href="{{route('register')}}" class="btn btn-light">Join Now<span></span></a>
                     </div>
                 </div>
             </div>
@@ -152,23 +152,34 @@
                 <div class="carousel-caption">
                     <h3>Online Learning Anytime, Anywhere!</h3>
                     <h2>Discover Your Roots</h2>
-                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humor, or randomized words.</p>
-                    <div class="slide-buttons hidden-sm hidden-xs">
-                        <a href="signin.html" class="btn btn-primary">Get Started Now!<span></span></a>
-                        <a href="signup.html" class="btn btn-light">Join Now<span></span></a>
+                    <p @if(app()->getLocale() == 'ar') style="float: right; direction: rtl" @endif >There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humor, or randomized words.</p>
+                    <div class="slide-buttons hidden-sm hidden-xs" @if(app()->getLocale() == 'ar') style="clear: both" @endif >
+                        <a href="{{route('login')}}" class="btn btn-primary">Get Started Now!<span></span></a>
+                        <a href="{{route('register')}}" class="btn btn-light">Join Now<span></span></a>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Controls -->
-        <a class="carousel-control-prev" href="#home-v1-header-carousel" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#home-v1-header-carousel" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
+        @if(app()->getLocale() == 'ar')
+            <a class="carousel-control-prev" href="#home-v1-header-carousel" role="button" data-slide="prev">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+            <a class="carousel-control-next" href="#home-v1-header-carousel" role="button" data-slide="next">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+        @else
+            <a class="carousel-control-prev" href="#home-v1-header-carousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#home-v1-header-carousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        @endif
     </div>
     <!-- End: Slider Section -->
 

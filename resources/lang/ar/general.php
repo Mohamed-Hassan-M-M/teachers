@@ -63,7 +63,7 @@ return [
     'quickLinks' => 'جميع الصفحات',
     'aboutUs' => 'عنا',
     'contact' => 'اتصل بنا',
-    'signIn/register' => 'دخول/تسجيل حساب',
+    'signIn/register' => 'دخول/ تسجيل حساب',
     'sun' => 'الأحد',
     'thu' => 'الخميس',
     'fri' => 'الجمعه',

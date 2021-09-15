@@ -37,7 +37,7 @@
                         <h3 class="footer-widget-title">Timing</h3>
                         <div class="timming-text-widget">
                             <time datetime="">@lang('general.sun') - @lang('general.thu'): 9 @lang('general.am') - 9 @lang('general.pm')</time>
-                            <time datetime="">@lang('general.fri') - @lang('general.sat'): @lang('general.sun')</time>
+                            <time datetime="">@lang('general.fri') - @lang('general.sat'): @lang('general.close')</time>
                         </div>
                     </div>
                 </div>

@@ -5,7 +5,7 @@
     <header id="header" class="inner-navbar-wrapper navbar-wrapper">
         <button id="myBtn" title="Go to top"><span>&#8593;</span></button>
         <div class="container-fluid">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <nav @if(app()->getLocale() == 'ar') style="direction: rtl" @endif class="navbar navbar-expand-lg navbar-light bg-light">
                 <a class="navbar-brand" href="{{route('home')}}">
                     <img src="{{asset('app-assets/images/logo-header-v1.png')}}" alt="Skille" />
                 </a>
@@ -91,7 +91,7 @@
             <div class="banner-header">
                 <h2>@lang('general.teacherList')</h2>
                 <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb justify-content-center">
+                    <ol class="breadcrumb justify-content-center" @if(app()->getLocale() == 'ar') style="direction: rtl" @endif >
                         <li class="breadcrumb-item"><a href="{{route('home')}}">@lang('general.home')</a></li>
                         <li class="breadcrumb-item active" aria-current="page">@lang('general.teacher')</li>
                     </ol>
@@ -149,7 +149,6 @@
                                             </div>
                                         </div>
                                     </div>
-
                                 </aside>
                             </div>
                             <div class="col-md-12 col-lg-9">

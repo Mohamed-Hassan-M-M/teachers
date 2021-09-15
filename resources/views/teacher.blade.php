@@ -6,7 +6,7 @@
     <header id="header" class="inner-navbar-wrapper navbar-wrapper">
         <button id="myBtn" title="Go to top"><span>&#8593;</span></button>
         <div class="container-fluid">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <nav @if(app()->getLocale() == 'ar') style="direction: rtl" @endif class="navbar navbar-expand-lg navbar-light bg-light">
                 <a class="navbar-brand" href="{{route('home')}}">
                     <img src="{{asset('app-assets/images/logo-header-v1.png')}}" alt="Skille" />
                 </a>
@@ -92,7 +92,7 @@
             <div class="banner-header">
                 <h2>@lang('general.teacherDetail')</h2>
                 <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb justify-content-center">
+                    <ol class="breadcrumb justify-content-center" @if(app()->getLocale() == 'ar') style="direction: rtl" @endif>
                         <li class="breadcrumb-item"><a href="{{route('home')}}">@lang('general.home')</a></li>
                         <li class="breadcrumb-item active" aria-current="page">@lang('general.teacherDetail')</li>
                     </ol>
@@ -113,8 +113,8 @@
                                 <div class="blog-detail">
                                     <div class="single-blog-post">
                                         <div class="blog-content pt-5">
-                                            <div class="blog-user-info" style="align-items: flex-start;">
-                                                <div style="margin-right: 15px;display: flex; flex-direction: column">
+                                            <div class="blog-user-info" style="align-items: flex-start; @if(app()->getLocale() == 'ar') justify-content: right; @endif ">
+                                                <div style=" @if(app()->getLocale() == 'en') margin-right: 15px; @else margin-left: 15px; @endif display: flex; flex-direction: column">
                                                     <img class="rounded m-0" style="width: 200px; height: 200px;" src="{{$teacher->image_path}}" alt="">
                                                     <div class="text-center">
                                                         <div class="rating">
@@ -149,7 +149,7 @@
                                                 <div style="display: flex; flex-direction: column">
                                                     <span>
                                                         <strong style="font-size: 20px;">{{$teacher->name}}</strong>
-                                                        <small>@lang('teacher.position'): {{$teacher->position}}</small>
+                                                        <small>@lang('teacher.position'): @lang('general.teacher') {{$teacher->position}}</small>
                                                     </span>
                                                     <p>{{$teacher['description_'.app()->getLocale()]}}</p>
                                                     <ul>
