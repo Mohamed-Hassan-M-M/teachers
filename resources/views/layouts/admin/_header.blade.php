@@ -20,10 +20,10 @@
                 <ul class="dropdown-content" id="translation-dropdown">
                     @if(LaravelLocalization::getCurrentLocaleName() == 'Arabic')
                         <li class="dropdown-item"><a class="grey-text text-darken-1" href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}" data-language="en"><i
-                                    class="flag-icon flag-icon-gb"></i> English</a></li>
+                                    class="flag-icon flag-icon-gb"></i> @lang('general.english')</a></li>
                     @else
                         <li class="dropdown-item"><a class="grey-text text-darken-1" href="{{ LaravelLocalization::getLocalizedURL('ar', null, [], true) }}" data-language="en"><i
-                                    class="flag-icon flag-icon-eg"></i> Arabic</a></li>
+                                    class="flag-icon flag-icon-eg"></i> @lang('general.arabic')</a></li>
                     @endif
                 </ul>
                 <!-- notifications-dropdown-->

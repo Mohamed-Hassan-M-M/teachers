@@ -37,5 +37,8 @@ Route::group(
     Route::get('/get-subject/{id}', 'TeacherController@getSubjects');
     Route::get('/get-teacher/{area?}/{subject?}', 'TeacherController@getTeachers');
 
+    //teacher page
+    Route::get('/teacher/{id?}', 'TeacherController@teacherPage')->name('teacher.page');
+
 
 });

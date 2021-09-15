@@ -11,6 +11,7 @@ use App\Models\Sector;
 use App\Models\Subject;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TeacherController extends Controller
 {
@@ -39,6 +40,17 @@ class TeacherController extends Controller
         }
         $cities = City::all();
         return view('teacherFilter', compact(['teachers', 'cities']));
+    }
+
+    public function teacherPage($id)
+    {
+        $teacher = User::findOrFail($id);
+        $subjects = Subject::whereIn('id', $teacher->subjects)->distinct()->get();
+        $classes = Subject::select('class_id')->whereIn('id', $teacher->subjects->pluck('id'))->groupBy('class_id')->pluck('class_id');
+        $classes = Classes::whereIn('id', $classes)->distinct()->get();
+        $sectors = Classes::select('sector_id')->whereIn('id', $classes->pluck('id'))->groupBy('sector_id')->pluck('sector_id');
+        $sectors = Sector::whereIn('id', $sectors)->distinct()->get();
+        return view('teacher', compact(['teacher', 'classes', 'sectors', 'subjects']));
     }
 
     public function getAreas($id)
@@ -88,7 +100,7 @@ class TeacherController extends Controller
         $teachers->where('type', '2');
         if($area_id != null && $area_id != 'empty'){
             $teachers = $teachers->whereHas('areas', function($area) use($area_id) {
-                return $area->where('id', $area_id);
+                return $area->where('areas.id', $area_id);
             });
         }
         if($subject_id != null && $subject_id != 'empty'){

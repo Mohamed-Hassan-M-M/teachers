@@ -39,6 +39,8 @@
 
 @yield('content')
 
+@include('layouts.footer')
+
 <!-- jQuery Latest Version 1.x -->
 <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 

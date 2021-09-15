@@ -51,7 +51,7 @@
                                         <div class="col s6">
                                             <label for="position">@lang('teacher.position')</label>
                                             <select id="position" name="position" disabled>
-                                                <option value="" selected>{{$teacher->type}}</option>
+                                                <option value="" selected>{{$teacher->position}}</option>
                                             </select>
                                             <div class="input-field">
                                             </div>

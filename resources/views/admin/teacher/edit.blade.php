@@ -60,10 +60,10 @@
                                                 <label for="position">@lang('teacher.position')</label>
                                                 <select id="position" name="position" required>
                                                     <option value="" disabled >@lang('general.choose') @lang('teacher.position')</option>
-                                                    <option value="1" @if($teacher->type == __('teacher.junior')) selected @endif>@lang('teacher.junior')</option>
-                                                    <option value="2" @if($teacher->type == __('teacher.senior')) selected @endif>@lang('teacher.senior')</option>
-                                                    <option value="3" @if($teacher->type == __('teacher.expert')) selected @endif>@lang('teacher.expert')</option>
-                                                    <option value="4" @if($teacher->type == __('teacher.great')) selected @endif>@lang('teacher.great')</option>
+                                                    <option value="1" @if($teacher->position == __('teacher.junior')) selected @endif>@lang('teacher.junior')</option>
+                                                    <option value="2" @if($teacher->position == __('teacher.senior')) selected @endif>@lang('teacher.senior')</option>
+                                                    <option value="3" @if($teacher->position == __('teacher.expert')) selected @endif>@lang('teacher.expert')</option>
+                                                    <option value="4" @if($teacher->position == __('teacher.great')) selected @endif>@lang('teacher.great')</option>
                                                 </select>
                                                 <div class="input-field">
                                                 </div>

@@ -64,15 +64,15 @@ class User extends Authenticatable
         return $this->attributes['description_'.app()->getLocale()];
     }
 
-    public function getTypeAttribute($key)
+    public function getPositionAttribute($key)
     {
-        if($this->attributes['type'] == '1'){
+        if($this->attributes['position'] == '1'){
             return __('teacher.junior');
         }
-        elseif($this->attributes['type'] == '2'){
+        elseif($this->attributes['position'] == '2'){
             return __('teacher.senior');
         }
-        elseif($this->attributes['type'] == '3'){
+        elseif($this->attributes['position'] == '3'){
             return __('teacher.expert');
         }
         else{
