@@ -32,8 +32,8 @@ class HomeController extends Controller
         $sectors = Sector::all();
         $classes = Classes::all();
         $subjects = Subject::all();
-        $blogs = Blog::all();
-        $events = Event::all();
+        $blogs = Blog::latest()->get();
+        $events = Event::latest()->take(3)->get();
         return view('home', compact(['sectors', 'classes', 'subjects', 'blogs', 'events']));
     }
 

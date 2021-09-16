@@ -20,16 +20,16 @@
                             <a class="nav-link" href="{{route('home')}}">@lang('general.home')</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link" href="{{route('teacher.grid')}}">@lang('general.aboutUs')</a>
+                            <a class="nav-link" href="{{route('teacher.about')}}">@lang('general.aboutUs')</a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="{{route('teacher.grid')}}">@lang('general.teachers')</a>
+                            <a class="nav-link active" href="{{route('teacher.grid')}}">@lang('general.teachers')</a>
                         </li>
-                        <li class="nav-item ">
-                            <a class="nav-link" href="{{route('teacher.grid')}}">@lang('general.events')</a>
-                        </li>
+{{--                        <li class="nav-item ">--}}
+{{--                            <a class="nav-link" href="{{route('teacher.grid')}}">@lang('general.events')</a>--}}
+{{--                        </li>--}}
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('teacher.grid')}}">@lang('general.contact')</a>
+                            <a class="nav-link" href="{{route('teacher.contact.page')}}">@lang('general.contact')</a>
                         </li>
                         <li class="nav-item">
                             @if(app()->getLocale() == 'en')
@@ -40,10 +40,16 @@
 
                         </li>
                     </ul>
-                    <div class="header-login-btn">
-                        <a href="" class="btn btn-light"><i class="fa fa-user"></i>
-                            @lang('general.login')</a>
-                    </div>
+                    @if(auth()->check() && auth()->user()->type == '3')
+                        <div class="header-login-btn">
+                            <a class="btn btn-light active" style="cursor: none">{{auth()->user()->username}}</a>
+                        </div>
+                    @else
+                        <div class="header-login-btn">
+                            <a href="" class="btn btn-light"><i class="fa fa-user"></i>
+                                @lang('general.login')</a>
+                        </div>
+                    @endif
                 </div>
             </nav>
             <!-- Header Main Navigation End-->
@@ -60,16 +66,16 @@
                             <a href="{{route('home')}}">@lang('general.home')</a>
                         </li>
                         <li>
-                            <a href="{{route('teacher.grid')}}">@lang('general.aboutUs')</a>
+                            <a href="{{route('teacher.about')}}">@lang('general.aboutUs')</a>
                         </li>
                         <li>
                             <a href="{{route('teacher.grid')}}">@lang('general.teachers')</a>
                         </li>
+{{--                        <li>--}}
+{{--                            <a href="{{route('teacher.grid')}}">@lang('general.events')</a>--}}
+{{--                        </li>--}}
                         <li>
-                            <a href="{{route('teacher.grid')}}">@lang('general.events')</a>
-                        </li>
-                        <li>
-                            <a href="{{route('teacher.grid')}}">@lang('general.contact')</a>
+                            <a href="{{route('teacher.contact.page')}}">@lang('general.contact')</a>
                         </li>
                         <li>
                             @if(app()->getLocale() == 'en')

@@ -6,6 +6,7 @@ use App\Models\Area;
 use App\Models\Blog;
 use App\Models\City;
 use App\Models\Classes;
+use App\Models\Contact_us;
 use App\Models\Event;
 use App\Models\Sector;
 use App\Models\Subject;
@@ -51,6 +52,22 @@ class TeacherController extends Controller
         $sectors = Classes::select('sector_id')->whereIn('id', $classes->pluck('id'))->groupBy('sector_id')->pluck('sector_id');
         $sectors = Sector::whereIn('id', $sectors)->distinct()->get();
         return view('teacher', compact(['teacher', 'classes', 'sectors', 'subjects']));
+    }
+
+    public function about()
+    {
+        return view('about');
+    }
+
+    public function contactPage()
+    {
+        return view('contact');
+    }
+
+    public function contact(Request $request)
+    {
+        Contact_us::create($request->all());
+        return redirect()->route('teacher.contact.page');
     }
 
     public function getAreas($id)

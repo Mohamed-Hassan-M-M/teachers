@@ -20,13 +20,13 @@
                         <h3 class="footer-widget-title">@lang('quickLinks')</h3>
                         <div class="menu-quick-links-container">
                             <ul id="menu-quick-links" class="menu">
-                                <li><a href="#">@lang('general.home')</a></li>
-                                <li><a href="#">@lang('general.aboutUs')</a></li>
-                                <li><a href="#">@lang('general.teacher')</a></li>
-                                <li><a href="#">@lang('general.contact')</a></li>
-                                <li><a href="#">@lang('general.events')</a></li>
+                                <li><a href="{{route('home')}}">@lang('general.home')</a></li>
+                                <li><a href="{{route('teacher.about')}}">@lang('general.aboutUs')</a></li>
+                                <li><a href="{{route('teacher.grid')}}">@lang('general.teacher')</a></li>
+                                <li><a href="{{route('teacher.contact.page')}}">@lang('general.contact')</a></li>
+{{--                                <li><a href="">@lang('general.events')</a></li>--}}
                                 @if(!auth()->check())
-                                    <li><a href="#">@lang('general.signIn/register')</a></li>
+                                    <li><a href="{{route('login')}}">@lang('general.signIn/register')</a></li>
                                 @endif
                             </ul>
                         </div>

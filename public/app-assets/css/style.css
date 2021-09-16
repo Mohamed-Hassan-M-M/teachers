@@ -15421,6 +15421,7 @@ body,
       border-right: 1px solid #323232;
       flex: 1 1 100%;
       padding: 45px 30px 40px;
+        text-align: center;
       color: #fff; }
       .about-company-detail ul > li:first-child {
         padding-left: 0; }
@@ -15429,6 +15430,7 @@ body,
         padding-right: 0; }
       .about-company-detail ul > li img {
         display: block;
+          margin: auto;
         margin-bottom: 27px; }
       .about-company-detail ul > li h6 {
         color: #fff;

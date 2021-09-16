@@ -23,8 +23,8 @@
                                     @if(auth()->check() && auth()->user()->type == '3')
                                     <span><i class="fa fa-user"></i> {{auth()->user()->username}}</span>
                                     @else
-                                        <a href="signin.html"><i class="fa fa-lock"></i>@lang('general.login')</a>
-                                        <a href="signup.html">@lang('general.register')</a>
+                                        <a href="{{route('login')}}"><i class="fa fa-lock"></i>@lang('general.login')</a>
+                                        <a href="{{route('register')}}">@lang('general.register')</a>
                                     @endif
                                 </div>
                             </div>
@@ -49,16 +49,16 @@
                                             <a class="nav-link" href="{{route('home')}}">@lang('general.home')</a>
                                         </li>
                                         <li class="nav-item ">
-                                            <a class="nav-link" href="{{route('teacher.grid')}}">@lang('general.aboutUs')</a>
+                                            <a class="nav-link" href="{{route('teacher.about')}}">@lang('general.aboutUs')</a>
                                         </li>
                                         <li class="nav-item ">
                                             <a class="nav-link" href="{{route('teacher.grid')}}">@lang('general.teachers')</a>
                                         </li>
-                                        <li class="nav-item ">
-                                            <a class="nav-link" href="{{route('teacher.grid')}}">@lang('general.events')</a>
-                                        </li>
+{{--                                        <li class="nav-item ">--}}
+{{--                                            <a class="nav-link" href="{{route('teacher.grid')}}">@lang('general.events')</a>--}}
+{{--                                        </li>--}}
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{route('teacher.grid')}}">@lang('general.contact')</a>
+                                            <a class="nav-link" href="{{route('teacher.contact.page')}}">@lang('general.contact')</a>
                                         </li>
                                         <li class="nav-item">
                                             @if(app()->getLocale() == 'en')
@@ -84,16 +84,16 @@
                                         <a href="{{route('home')}}">@lang('general.home')</a>
                                     </li>
                                     <li>
-                                        <a href="{{route('teacher.grid')}}">@lang('general.aboutUs')</a>
+                                        <a href="{{route('teacher.about')}}">@lang('general.aboutUs')</a>
                                     </li>
                                     <li>
                                         <a href="{{route('teacher.grid')}}">@lang('general.teachers')</a>
                                     </li>
+{{--                                    <li>--}}
+{{--                                        <a href="{{route('teacher.grid')}}">@lang('general.events')</a>--}}
+{{--                                    </li>--}}
                                     <li>
-                                        <a href="{{route('teacher.grid')}}">@lang('general.events')</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{route('teacher.grid')}}">@lang('general.contact')</a>
+                                        <a href="{{route('teacher.contact.page')}}">@lang('general.contact')</a>
                                     </li>
                                     <li>
                                         @if(app()->getLocale() == 'en')
@@ -402,12 +402,6 @@
                                         </li>
                                         <li>
                                             <a href="#" target="_blank">
-                                                <i class="fa fa-clock-o"></i>
-                                                10:15 AM - 10:15 PM
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" target="_blank">
                                                 <i class="fa fa-map-marker"></i>
                                                 New York, USA
                                             </a>
@@ -421,7 +415,7 @@
                                         English. Many desktop publishing packages and web page editors now use Lorem
                                         Ipsum as
                                         their default model.</p>
-                                    <a class="btn btn-secondary" href="news-events-detail.html">Read More</a>
+                                    <a class="btn btn-secondary" style="visibility: hidden" href="news-events-detail.html">Read More</a>
                                 </div>
                             </div>
                             <div class="clearfix"></div>
@@ -453,7 +447,7 @@
                                     <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution
                                         of
                                         letters, as opposed to using 'Content here, content here', </p>
-                                    <a class="btn btn-secondary" href="news-events-detail.html">Read More</a>
+                                    <a class="btn btn-secondary" style="visibility: hidden" href="news-events-detail.html">Read More</a>
                                 </div>
                             </div>
                             <figure>
@@ -490,7 +484,7 @@
                                     <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution
                                         of
                                         letters, as opposed to using 'Content here, content here', </p>
-                                    <a href="news-events-detail.html" class="btn btn-secondary">Read More</a>
+                                    <a href="news-events-detail.html" style="visibility: hidden" class="btn btn-secondary">Read More</a>
                                 </div>
                             </div>
                         </div>

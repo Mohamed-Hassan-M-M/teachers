@@ -40,5 +40,12 @@ Route::group(
     //teacher page
     Route::get('/teacher/{id?}', 'TeacherController@teacherPage')->name('teacher.page');
 
+    //contact page
+    Route::get('/contact-us', 'TeacherController@contactPage')->name('teacher.contact.page');
+    Route::post('/contact-us', 'TeacherController@contact')->name('teacher.contact');
+
+    //about page
+    Route::get('/about-us', 'TeacherController@about')->name('teacher.about');
+
 
 });
