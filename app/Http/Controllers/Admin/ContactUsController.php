@@ -3,10 +3,17 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Contact_us;
 use Illuminate\Http\Request;
 
 class ContactUsController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +21,8 @@ class ContactUsController extends Controller
      */
     public function index()
     {
-        //
+        $contacts = Contact_us::orderBy('created_at')->get();
+        return view('admin.contact.index', compact(['contacts']));
     }
 
     /**
@@ -46,7 +54,8 @@ class ContactUsController extends Controller
      */
     public function show($id)
     {
-        //
+        $contact = Contact_us::findOrFail($id);
+        return view('admin.contact.show', compact(['contact']));
     }
 
     /**
@@ -57,7 +66,8 @@ class ContactUsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $contact = Contact_us::findOrFail($id);
+        return view('admin.contact.edit', compact(['contact']));
     }
 
     /**
@@ -80,6 +90,8 @@ class ContactUsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $contact = Contact_us::findOrFail($id);
+        $contact->delete();
+        return redirect()->route('admin.contacts.index')->with("pass", __('general.deleted') .' '. __('general.successfully'));
     }
 }

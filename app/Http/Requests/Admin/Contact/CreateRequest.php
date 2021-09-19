@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Admin\Student;
+namespace App\Http\Requests\Admin\Contact;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -24,10 +24,7 @@ class CreateRequest extends FormRequest
     public function rules()
     {
         return [
-            'username' => "required",
-            'mobile' => "required|unique:users,mobile",
-            'email' => "unique:users,email",
-            'password' => "required",
+
         ];
     }
 }

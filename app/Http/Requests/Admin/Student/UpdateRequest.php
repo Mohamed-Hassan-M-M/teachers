@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Admin\Student;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Request;
 
 class UpdateRequest extends FormRequest
 {
@@ -13,7 +14,7 @@ class UpdateRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -21,10 +22,12 @@ class UpdateRequest extends FormRequest
      *
      * @return array
      */
-    public function rules()
+    public function rules(Request $request)
     {
         return [
-            //
+            'username' => "required",
+            'mobile' => "required|unique:users,mobile," . $request->segment(4),
+            'email' => "nullable|unique:users,email," . $request->segment(4),
         ];
     }
 }
