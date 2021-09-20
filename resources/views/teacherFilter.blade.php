@@ -5,14 +5,15 @@
     <header id="header" class="inner-navbar-wrapper navbar-wrapper">
         <button id="myBtn" title="Go to top"><span>&#8593;</span></button>
         <div class="container-fluid">
-            <nav @if(app()->getLocale() == 'ar') style="direction: rtl" @endif class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="{{route('home')}}">
-                    <img src="{{asset('app-assets/images/logo-header-v1.png')}}" alt="Skille" />
+            <nav @if(app()->getLocale() == 'ar') style="direction: rtl"
+                 @endif class="navbar navbar-expand-lg navbar-light bg-light">
+                <a style="width:15%" class="navbar-brand" href="{{route('home')}}">
+                    <img src="{{asset('app-assets/images/logo.png')}}" alt="Skille"/>
                 </a>
-{{--                <div class="inner-header-search">--}}
-{{--                    <input class="form-control" type="text" placeholder="Search Anything">--}}
-{{--                    <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>--}}
-{{--                </div>--}}
+                {{--                <div class="inner-header-search">--}}
+                {{--                    <input class="form-control" type="text" placeholder="Search Anything">--}}
+                {{--                    <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>--}}
+                {{--                </div>--}}
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="nav navbar-nav ml-auto">
                         <li class="nav-item">
@@ -24,17 +25,19 @@
                         <li class="nav-item active">
                             <a class="nav-link" href="{{route('teacher.grid')}}">@lang('general.teachers')</a>
                         </li>
-{{--                        <li class="nav-item ">--}}
-{{--                            <a class="nav-link" href="{{route('teacher.grid')}}">@lang('general.events')</a>--}}
-{{--                        </li>--}}
+                        {{--                        <li class="nav-item ">--}}
+                        {{--                            <a class="nav-link" href="{{route('teacher.grid')}}">@lang('general.events')</a>--}}
+                        {{--                        </li>--}}
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('teacher.contact.page')}}">@lang('general.contact')</a>
                         </li>
                         <li class="nav-item">
                             @if(app()->getLocale() == 'en')
-                                <a class="nav-link" style="text-decoration: underline;text-transform: lowercase" href="{{ LaravelLocalization::getLocalizedURL('ar', null, [], true) }}">@lang('general.arabic')</a>
+                                <a class="nav-link" style="text-decoration: underline;text-transform: lowercase"
+                                   href="{{ LaravelLocalization::getLocalizedURL('ar', null, [], true) }}">@lang('general.arabic')</a>
                             @else
-                                <a class="nav-link" style="text-decoration: underline;text-transform: lowercase" href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}">@lang('general.english')</a>
+                                <a class="nav-link" style="text-decoration: underline;text-transform: lowercase"
+                                   href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}">@lang('general.english')</a>
                             @endif
 
                         </li>
@@ -45,7 +48,7 @@
                         </div>
                     @else
                         <div class="header-login-btn">
-                            <a href="" class="btn btn-light"><i class="fa fa-user"></i>
+                            <a href="{{route('login')}}" class="btn btn-light"><i class="fa fa-user"></i>
                                 @lang('general.login')</a>
                         </div>
                     @endif
@@ -70,17 +73,19 @@
                         <li>
                             <a href="{{route('teacher.grid')}}">@lang('general.teachers')</a>
                         </li>
-{{--                        <li>--}}
-{{--                            <a href="{{route('teacher.grid')}}">@lang('general.events')</a>--}}
-{{--                        </li>--}}
+                        {{--                        <li>--}}
+                        {{--                            <a href="{{route('teacher.grid')}}">@lang('general.events')</a>--}}
+                        {{--                        </li>--}}
                         <li>
                             <a href="{{route('teacher.contact.page')}}">@lang('general.contact')</a>
                         </li>
                         <li>
                             @if(app()->getLocale() == 'en')
-                                <a style="text-decoration: underline;text-transform: lowercase" href="{{ LaravelLocalization::getLocalizedURL('ar', null, [], true) }}">@lang('general.arabic')</a>
+                                <a style="text-decoration: underline;text-transform: lowercase"
+                                   href="{{ LaravelLocalization::getLocalizedURL('ar', null, [], true) }}">@lang('general.arabic')</a>
                             @else
-                                <a style="text-decoration: underline;text-transform: lowercase" href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}">@lang('general.english')</a>
+                                <a style="text-decoration: underline;text-transform: lowercase"
+                                   href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}">@lang('general.english')</a>
                             @endif
                         </li>
                     </ul>
@@ -97,7 +102,8 @@
             <div class="banner-header">
                 <h2>@lang('general.teacherList')</h2>
                 <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb justify-content-center" @if(app()->getLocale() == 'ar') style="direction: rtl" @endif >
+                    <ol class="breadcrumb justify-content-center"
+                        @if(app()->getLocale() == 'ar') style="direction: rtl" @endif >
                         <li class="breadcrumb-item"><a href="{{route('home')}}">@lang('general.home')</a></li>
                         <li class="breadcrumb-item active" aria-current="page">@lang('general.teacher')</li>
                     </ol>
@@ -117,7 +123,8 @@
                         <div class="row">
                             <div class="col-md-12 col-lg-3">
                                 <aside id="secondary" class="sidebar widget-area" data-accordion-group>
-                                    <span data-toggle="collapse" data-target="#collapsefilter" aria-controls="collapsefilter" class="show-hide-filters"><img
+                                    <span data-toggle="collapse" data-target="#collapsefilter"
+                                          aria-controls="collapsefilter" class="show-hide-filters"><img
                                             src="{{asset('app-assets/images/icons/hide-filter-icon.png')}}" alt=""> @lang('general.filters')</span>
                                     <div class="widget widget_related_search" data-accordion-group="">
                                         <div>
@@ -125,12 +132,16 @@
                                                 <h5 class="widget-sub-title" data-control>@lang('sector.type')</h5>
                                                 <div class="widget_checkbox_list" data-content>
                                                     <div class="form-group">
-                                                        <input value="1" type="checkbox" id="type1" class="form-check-input type">
-                                                        <label class="form-check-label" for="type1">@lang('sector.governmental')</label>
+                                                        <input value="1" type="checkbox" id="type1"
+                                                               class="form-check-input type">
+                                                        <label class="form-check-label"
+                                                               for="type1">@lang('sector.governmental')</label>
                                                     </div>
                                                     <div class="form-group">
-                                                        <input value="2" id="type2" type="checkbox" class="form-check-input type">
-                                                        <label class="form-check-label" for="type2">@lang('sector.special')</label>
+                                                        <input value="2" id="type2" type="checkbox"
+                                                               class="form-check-input type">
+                                                        <label class="form-check-label"
+                                                               for="type2">@lang('sector.special')</label>
                                                     </div>
                                                 </div>
                                                 <div class="clearfix"></div>
@@ -166,9 +177,11 @@
                                                     <div class="form-group mb-0">
                                                         <div class="select">
                                                             <select name="city_id" id="city_id" class="form-control">
-                                                                <option value="" dType="city">@lang('general.all') @lang('general.cities')</option>
+                                                                <option value=""
+                                                                        dType="city">@lang('general.all') @lang('general.cities')</option>
                                                                 @foreach($cities as $city)
-                                                                    <option value="{{$city->id}}" dType="city">{{$city->name}}</option>
+                                                                    <option value="{{$city->id}}"
+                                                                            dType="city">{{$city->name}}</option>
                                                                 @endforeach
                                                             </select>
                                                         </div>
@@ -178,7 +191,8 @@
                                                     <div class="form-group mb-0" id="area">
                                                         <div class="select">
                                                             <select name="area_id" id="area_id" class="form-control">
-                                                                <option value="">@lang('general.all') @lang('general.areas')</option>
+                                                                <option
+                                                                    value="">@lang('general.all') @lang('general.areas')</option>
 
                                                             </select>
                                                         </div>
@@ -210,7 +224,8 @@
                                                                     <i class="fa fa-star" style="color: gold"></i>
                                                                 @endfor
                                                                 @if($half)
-                                                                    <i class="fa fa-star-half-full" style="color: gold"></i>
+                                                                    <i class="fa fa-star-half-full"
+                                                                       style="color: gold"></i>
                                                                     @for($i = 0; $i < (4-$intRate); $i++)
                                                                         <i class="fa fa-star"></i>
                                                                     @endfor
@@ -221,12 +236,17 @@
                                                                 @endif
                                                             </div>
                                                         </div>
-                                                        <h3 class="book-media-title"><a href="#">{{$teacher->name}}</a></h3>
-                                                        <p><strong>@lang('general.phone'):</strong> {{$teacher->mobile}}</p>
+                                                        <h3 class="book-media-title"><a href="#">{{$teacher->name}}</a>
+                                                        </h3>
+                                                        <p><strong>@lang('general.phone'):</strong> {{$teacher->mobile}}
+                                                        </p>
                                                         <div class="card-links">
-                                                            <a href="{{route('teacher.page', $teacher->id)}}" class="btn btn-primary"> @lang('general.read_more')</a>
-                                                            <a href="{{route('teacher.page', $teacher->id)}}" class="read-more"><img
-                                                                    src="{{asset('app-assets/images/link-arrow.png')}}" alt=""></a>
+                                                            <a href="{{route('teacher.page', $teacher->id)}}"
+                                                               class="btn btn-primary"> @lang('general.read_more')</a>
+                                                            <a href="{{route('teacher.page', $teacher->id)}}"
+                                                               class="read-more"><img
+                                                                    src="{{asset('app-assets/images/link-arrow.png')}}"
+                                                                    alt=""></a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -249,10 +269,10 @@
 @push('scripts')
     <script>
 
-        $( document ).ready(function() {
+        $(document).ready(function () {
 
             //get area
-            $('body').on('mouseup', 'li[dtype="city"]', function() {
+            $('body').on('mouseup', 'li[dtype="city"]', function () {
                 var city = $(this).attr('rel');
                 $("#area").html("");
                 $("#area").html(
@@ -266,7 +286,7 @@
                         type: 'GET',
                         dataType: "json",
                         data: {},
-                        success: function (data){
+                        success: function (data) {
                             data = data.data;
                             if (data.length != 0) {
                                 for (var x = 0; x < data.length; x++) {
@@ -327,8 +347,7 @@
                                     });
 
                                 });
-                            }
-                            else {
+                            } else {
                                 $("#area").append('</select>');
                                 var selectObj = $('select#area_id');
                                 var selectListObj = $('ul.select-list');
@@ -379,7 +398,7 @@
                                 });
                             }
                         },
-                        error: function (reject){
+                        error: function (reject) {
                             console.log(reject);
                         }
                     });
@@ -387,8 +406,8 @@
             });//end for get area
 
             //check type and get sectors
-            $('body').on('change', '.type', function (){
-                if($(this).prop('checked') == true){
+            $('body').on('change', '.type', function () {
+                if ($(this).prop('checked') == true) {
                     $('.type').prop('checked', false);
                     $(this).prop('checked', true);
 
@@ -405,7 +424,7 @@
                             type: 'GET',
                             dataType: "json",
                             data: {},
-                            success: function (data){
+                            success: function (data) {
                                 data = data.data;
                                 if (data.length != 0) {
                                     for (var x = 0; x < data.length; x++) {
@@ -413,14 +432,14 @@
                                         sectors += '<div class="form-group">';
                                         sectors += '<input type="checkbox" class="form-check-input sector" value="'
                                             + item.id + '" id="sector' + item.id + '">';
-                                        sectors += '<label class="form-check-label" for="sector'+ item.id +'">'
+                                        sectors += '<label class="form-check-label" for="sector' + item.id + '">'
                                             + item['name_{{app()->getLocale()}}'] + '</label>';
                                         sectors += '</div>'
                                     }
                                     $("#sectors").append(sectors);
                                 }
                             },
-                            error: function (reject){
+                            error: function (reject) {
                                 console.log(reject);
                             }
                         });
@@ -429,8 +448,8 @@
             });
 
             //check sector and get classes
-            $('body').on('change', '.sector', function (){
-                if($(this).prop('checked') == true){
+            $('body').on('change', '.sector', function () {
+                if ($(this).prop('checked') == true) {
                     $('.sector').prop('checked', false);
                     $(this).prop('checked', true);
 
@@ -446,7 +465,7 @@
                             type: 'GET',
                             dataType: "json",
                             data: {},
-                            success: function (data){
+                            success: function (data) {
                                 data = data.data;
                                 if (data.length != 0) {
                                     for (var x = 0; x < data.length; x++) {
@@ -454,14 +473,14 @@
                                         classes += '<div class="form-group">';
                                         classes += '<input type="checkbox" class="form-check-input class" value="'
                                             + item.id + '" id="class' + item.id + '">';
-                                        classes += '<label class="form-check-label" for="class'+ item.id +'">'
+                                        classes += '<label class="form-check-label" for="class' + item.id + '">'
                                             + item['name_{{app()->getLocale()}}'] + '</label>';
                                         classes += '</div>'
                                     }
                                     $("#classes").append(classes);
                                 }
                             },
-                            error: function (reject){
+                            error: function (reject) {
                                 console.log(reject);
                             }
                         });
@@ -472,8 +491,8 @@
             });
 
             //check class and get subjects
-            $('body').on('change', '.class', function (){
-                if($(this).prop('checked') == true){
+            $('body').on('change', '.class', function () {
+                if ($(this).prop('checked') == true) {
                     $('.class').prop('checked', false);
                     $(this).prop('checked', true);
 
@@ -488,7 +507,7 @@
                             type: 'GET',
                             dataType: "json",
                             data: {},
-                            success: function (data){
+                            success: function (data) {
                                 data = data.data;
                                 if (data.length != 0) {
                                     for (var x = 0; x < data.length; x++) {
@@ -496,14 +515,14 @@
                                         subjects += '<div class="form-group">';
                                         subjects += '<input type="checkbox" class="form-check-input subject" value="'
                                             + item.id + '" id="subject' + item.id + '">';
-                                        subjects += '<label class="form-check-label" for="subject'+ item.id +'">'
+                                        subjects += '<label class="form-check-label" for="subject' + item.id + '">'
                                             + item['name_{{app()->getLocale()}}'] + '</label>';
                                         subjects += '</div>'
                                     }
                                     $("#subjects").append(subjects);
                                 }
                             },
-                            error: function (reject){
+                            error: function (reject) {
                                 console.log(reject);
                             }
                         });
@@ -514,20 +533,19 @@
             });
 
             //get teachers
-            $('body').on('change', '.subject', function (){
+            $('body').on('change', '.subject', function () {
 
                 var recordIds = [];
                 $.each($(".subject:checked"), function () {
                     recordIds.push($(this).val());
                 });
-                if (recordIds.length > 0){
+                if (recordIds.length > 0) {
                     recordIds = JSON.stringify(recordIds);
-                }
-                else {
+                } else {
                     recordIds = 'empty'
                 }
                 var area = 'empty';
-                if($('#area_id').val()){
+                if ($('#area_id').val()) {
                     area = $('#area_id').val();
                 }
                 var teachers = '';
@@ -536,7 +554,7 @@
                     type: 'GET',
                     dataType: "json",
                     data: {},
-                    success: function (data){
+                    success: function (data) {
                         data = data.data;
                         if (data.length != 0) {
                             for (var x = 0; x < data.length; x++) {
@@ -553,21 +571,20 @@
 
                                 var intRate = parseInt(item['rating']);
                                 var half = false;
-                                if(intRate < item['rating']){
+                                if (intRate < item['rating']) {
                                     half = true;
                                 }
 
-                                for($i = 0; $i < intRate; $i++){
+                                for ($i = 0; $i < intRate; $i++) {
                                     teachers += '<i class="fa fa-star" style="color: gold"></i>';
                                 }
-                                if(half){
+                                if (half) {
                                     teachers += '<i class="fa fa-star-half-full" style="color: gold"></i>';
-                                    for($i = 0; $i < (4-intRate); $i++){
+                                    for ($i = 0; $i < (4 - intRate); $i++) {
                                         teachers += '<i class="fa fa-star"></i>';
                                     }
-                                }
-                                else{
-                                    for($i = 0; $i < (5-intRate); $i++){
+                                } else {
+                                    for ($i = 0; $i < (5 - intRate); $i++) {
                                         teachers += '<i class="fa fa-star"></i>';
                                     }
                                 }
@@ -588,12 +605,12 @@
                             }
                             $("#teachers").html('');
                             $("#teachers").append(teachers);
-                        }else {
+                        } else {
                             $("#teachers").html('');
                         }
                         $("#pagination").html('');
                     },
-                    error: function (reject){
+                    error: function (reject) {
                         console.log(reject);
                     }
                 });
@@ -601,15 +618,14 @@
             });
 
             //get area
-            $('body').on('mouseup', 'li[dtype="areas"]', function() {
+            $('body').on('mouseup', 'li[dtype="areas"]', function () {
                 var recordIds = [];
                 $.each($(".subject:checked"), function () {
                     recordIds.push($(this).val());
                 });
-                if(recordIds.length > 0){
+                if (recordIds.length > 0) {
                     recordIds = JSON.stringify(recordIds);
-                }
-                else {
+                } else {
                     recordIds = 'empty'
                 }
                 var area = $(this).attr('rel');
@@ -619,7 +635,7 @@
                     type: 'GET',
                     dataType: "json",
                     data: {},
-                    success: function (data){
+                    success: function (data) {
                         data = data.data;
                         if (data.length != 0) {
                             for (var x = 0; x < data.length; x++) {
@@ -635,21 +651,20 @@
                                 teachers += '<div class="rating">';
                                 var intRate = parseInt(item['rating']);
                                 var half = false;
-                                if(intRate < item['rating']){
+                                if (intRate < item['rating']) {
                                     half = true;
                                 }
 
-                                for($i = 0; $i < intRate; $i++){
+                                for ($i = 0; $i < intRate; $i++) {
                                     teachers += '<i class="fa fa-star" style="color: gold"></i>';
                                 }
-                                if(half){
+                                if (half) {
                                     teachers += '<i class="fa fa-star-half-full" style="color: gold"></i>';
-                                    for($i = 0; $i < (4-intRate); $i++){
+                                    for ($i = 0; $i < (4 - intRate); $i++) {
                                         teachers += '<i class="fa fa-star"></i>';
                                     }
-                                }
-                                else{
-                                    for($i = 0; $i < (5-intRate); $i++){
+                                } else {
+                                    for ($i = 0; $i < (5 - intRate); $i++) {
                                         teachers += '<i class="fa fa-star"></i>';
                                     }
                                 }
@@ -669,12 +684,12 @@
                             }
                             $("#teachers").html('');
                             $("#teachers").append(teachers);
-                        }else {
+                        } else {
                             $("#teachers").html('');
                         }
                         $("#pagination").html('');
                     },
-                    error: function (reject){
+                    error: function (reject) {
                         console.log(reject);
                     }
                 });

@@ -14,16 +14,18 @@
                                     <a href="tel:+20222611181"><i class="fa fa-phone"></i>@lang('general.callUs')
                                         +2 (02) 22611181</a>
                                     <span>/</span>
-                                    <a href="mailto:info@212solutions.net"><i class="fa fa-envelope"></i>@lang('general.emailNow')
+                                    <a href="mailto:info@212solutions.net"><i
+                                            class="fa fa-envelope"></i>@lang('general.emailNow')
                                         info@212solutions.net</a>
                                 </div>
                             </div>
                             <div class="col-sm-6 col-md-4">
                                 <div class="topbar-links">
                                     @if(auth()->check() && auth()->user()->type == '3')
-                                    <span><i class="fa fa-user"></i> {{auth()->user()->username}}</span>
+                                        <span><i class="fa fa-user"></i> {{auth()->user()->username}}</span>
                                     @else
-                                        <a href="{{route('login')}}"><i class="fa fa-lock"></i>@lang('general.login')</a>
+                                        <a href="{{route('login')}}"><i class="fa fa-lock"></i>@lang('general.login')
+                                        </a>
                                         <a href="{{route('register')}}">@lang('general.register')</a>
                                     @endif
                                 </div>
@@ -36,35 +38,42 @@
                                 <div class="navbar-header">
                                     <div class="navbar-brand">
                                         <a href="{{route('home')}}">
-                                            <img src="{{asset('app-assets/images/logo-header-v1.png')}}" alt="" />
+                                            <img src="{{asset('app-assets/images/logo.png')}}" alt=""/>
                                         </a>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-9">
                                 <!-- Header Topbar -->
-                                <div class="collapse navbar-collapse hidden-sm hidden-xs">
+                                <div class="collapse navbar-collapse hidden-sm hidden-xs mt-2">
                                     <ul class="nav navbar-nav m-auto">
                                         <li class="nav-item active">
                                             <a class="nav-link" href="{{route('home')}}">@lang('general.home')</a>
                                         </li>
                                         <li class="nav-item ">
-                                            <a class="nav-link" href="{{route('teacher.about')}}">@lang('general.aboutUs')</a>
+                                            <a class="nav-link"
+                                               href="{{route('teacher.about')}}">@lang('general.aboutUs')</a>
                                         </li>
                                         <li class="nav-item ">
-                                            <a class="nav-link" href="{{route('teacher.grid')}}">@lang('general.teachers')</a>
+                                            <a class="nav-link"
+                                               href="{{route('teacher.grid')}}">@lang('general.teachers')</a>
                                         </li>
-{{--                                        <li class="nav-item ">--}}
-{{--                                            <a class="nav-link" href="{{route('teacher.grid')}}">@lang('general.events')</a>--}}
-{{--                                        </li>--}}
+                                        {{--                                        <li class="nav-item ">--}}
+                                        {{--                                            <a class="nav-link" href="{{route('teacher.grid')}}">@lang('general.events')</a>--}}
+                                        {{--                                        </li>--}}
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{route('teacher.contact.page')}}">@lang('general.contact')</a>
+                                            <a class="nav-link"
+                                               href="{{route('teacher.contact.page')}}">@lang('general.contact')</a>
                                         </li>
                                         <li class="nav-item">
                                             @if(app()->getLocale() == 'en')
-                                                <a class="nav-link" style="text-decoration: underline;text-transform: lowercase" href="{{ LaravelLocalization::getLocalizedURL('ar', null, [], true) }}">@lang('general.arabic')</a>
+                                                <a class="nav-link"
+                                                   style="text-decoration: underline;text-transform: lowercase"
+                                                   href="{{ LaravelLocalization::getLocalizedURL('ar', null, [], true) }}">@lang('general.arabic')</a>
                                             @else
-                                                <a class="nav-link" style="text-decoration: underline;text-transform: lowercase" href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}">@lang('general.english')</a>
+                                                <a class="nav-link"
+                                                   style="text-decoration: underline;text-transform: lowercase"
+                                                   href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}">@lang('general.english')</a>
                                             @endif
 
                                         </li>
@@ -89,17 +98,19 @@
                                     <li>
                                         <a href="{{route('teacher.grid')}}">@lang('general.teachers')</a>
                                     </li>
-{{--                                    <li>--}}
-{{--                                        <a href="{{route('teacher.grid')}}">@lang('general.events')</a>--}}
-{{--                                    </li>--}}
+                                    {{--                                    <li>--}}
+                                    {{--                                        <a href="{{route('teacher.grid')}}">@lang('general.events')</a>--}}
+                                    {{--                                    </li>--}}
                                     <li>
                                         <a href="{{route('teacher.contact.page')}}">@lang('general.contact')</a>
                                     </li>
                                     <li>
                                         @if(app()->getLocale() == 'en')
-                                            <a style="text-decoration: underline;text-transform: lowercase" href="{{ LaravelLocalization::getLocalizedURL('ar', null, [], true) }}">@lang('general.arabic')</a>
+                                            <a style="text-decoration: underline;text-transform: lowercase"
+                                               href="{{ LaravelLocalization::getLocalizedURL('ar', null, [], true) }}">@lang('general.arabic')</a>
                                         @else
-                                            <a style="text-decoration: underline;text-transform: lowercase" href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}">@lang('general.english')</a>
+                                            <a style="text-decoration: underline;text-transform: lowercase"
+                                               href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}">@lang('general.english')</a>
                                         @endif
 
                                     </li>
@@ -114,18 +125,23 @@
     <!-- End: Header Section -->
 
     <!-- Start: Slider Section -->
-    <div data-ride="carousel" class="carousel slide" id="home-v1-header-carousel" data-interval="false" data-pause="hover">
+    <div data-ride="carousel" class="carousel slide" id="home-v1-header-carousel" data-interval="false"
+         data-pause="hover">
         <!-- Carousel slides -->
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <figure>
-                    <img alt="Home Slide" class="d-block w-100" src="{{asset('app-assets/images/header-slider/home-v1/header-slide.jpg')}}" />
+                    <img alt="Home Slide" class="d-block w-100"
+                         src="{{asset('app-assets/images/header-slider/home-v1/header-slide.jpg')}}"/>
                 </figure>
                 <div class="carousel-caption" data-aos="fade-down">
-                    <h3>Online Learning Anytime, Anywhere!</h3>
-                    <h2>Discover Your Roots</h2>
-                    <p @if(app()->getLocale() == 'ar') style="float: right; direction: rtl" @endif >There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humor, or randomized words.</p>
-                    <div class="slide-buttons hidden-sm hidden-xs" @if(app()->getLocale() == 'ar') style="clear: both" @endif >
+                    <h3>Find Your teachers Anytime, Anywhere!</h3>
+                    <h2>Discover High Qualified Teachers</h2>
+                    <p @if(app()->getLocale() == 'ar') style="float: right; direction: rtl" @endif >With Mo3allemy, We
+                        can guid you through our Teachers DataBase allover Egypt,To help you find the Good fit teacher
+                        who matches your requirements.</p>
+                    <div class="slide-buttons hidden-sm hidden-xs"
+                         @if(app()->getLocale() == 'ar') style="clear: both" @endif >
                         <a href="{{route('login')}}" class="btn btn-primary">Get Started Now!<span></span></a>
                         <a href="{{route('register')}}" class="btn btn-light">Join Now<span></span></a>
                     </div>
@@ -133,13 +149,17 @@
             </div>
             <div class="carousel-item">
                 <figure>
-                    <img alt="Home Slide" class="d-block w-100" src="{{asset('app-assets/images/header-slider/home-v1/header-slide.jpg')}}" />
+                    <img alt="Home Slide" class="d-block w-100"
+                         src="{{asset('app-assets/images/header-slider/home-v1/header-slide.jpg')}}"/>
                 </figure>
                 <div class="carousel-caption">
                     <h3>Online Learning Anytime, Anywhere!</h3>
                     <h2>Discover Your Roots</h2>
-                    <p @if(app()->getLocale() == 'ar') style="float: right; direction: rtl" @endif >There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humor, or randomized words.</p>
-                    <div class="slide-buttons hidden-sm hidden-xs" @if(app()->getLocale() == 'ar') style="clear: both" @endif >
+                    <p @if(app()->getLocale() == 'ar') style="float: right; direction: rtl" @endif >There are many
+                        variations of passages of Lorem Ipsum available, but the majority have suffered alteration in
+                        some form, by injected humor, or randomized words.</p>
+                    <div class="slide-buttons hidden-sm hidden-xs"
+                         @if(app()->getLocale() == 'ar') style="clear: both" @endif >
                         <a href="{{route('login')}}" class="btn btn-primary">Get Started Now!<span></span></a>
                         <a href="{{route('register')}}" class="btn btn-light">Join Now<span></span></a>
                     </div>
@@ -147,13 +167,17 @@
             </div>
             <div class="carousel-item">
                 <figure>
-                    <img alt="Home Slide" class="d-block w-100" src="{{asset('app-assets/images/header-slider/home-v1/header-slide.jpg')}}" />
+                    <img alt="Home Slide" class="d-block w-100"
+                         src="{{asset('app-assets/images/header-slider/home-v1/header-slide.jpg')}}"/>
                 </figure>
                 <div class="carousel-caption">
                     <h3>Online Learning Anytime, Anywhere!</h3>
                     <h2>Discover Your Roots</h2>
-                    <p @if(app()->getLocale() == 'ar') style="float: right; direction: rtl" @endif >There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humor, or randomized words.</p>
-                    <div class="slide-buttons hidden-sm hidden-xs" @if(app()->getLocale() == 'ar') style="clear: both" @endif >
+                    <p @if(app()->getLocale() == 'ar') style="float: right; direction: rtl" @endif >There are many
+                        variations of passages of Lorem Ipsum available, but the majority have suffered alteration in
+                        some form, by injected humor, or randomized words.</p>
+                    <div class="slide-buttons hidden-sm hidden-xs"
+                         @if(app()->getLocale() == 'ar') style="clear: both" @endif >
                         <a href="{{route('login')}}" class="btn btn-primary">Get Started Now!<span></span></a>
                         <a href="{{route('register')}}" class="btn btn-light">Join Now<span></span></a>
                     </div>
@@ -198,9 +222,11 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <select name="sector_id" id="sector_id" class="form-control" required>
-                                            <option value="" dType="sector">@lang('general.all') @lang('general.sectors')</option>
+                                            <option value=""
+                                                    dType="sector">@lang('general.all') @lang('general.sectors')</option>
                                             @foreach($sectors as $sector)
-                                                <option value="{{$sector->id}}" dType="sector">{{$sector->type}} - {{$sector->name}}</option>
+                                                <option value="{{$sector->id}}" dType="sector">{{$sector->type}}
+                                                    - {{$sector->name}}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -224,7 +250,8 @@
                                 <div class="col-md-6">
                                     <div class="form-group text-center">
                                         <button id="btn_search" class="btn btn-primary">@lang('general.search')</button>
-                                        <span id="error_subject" class="text-danger" style="display: none; font-weight: bolder;">select subject first</span>
+                                        <span id="error_subject" class="text-danger"
+                                              style="display: none; font-weight: bolder;">select subject first</span>
                                     </div>
                                 </div>
                             </div>
@@ -292,9 +319,15 @@
                     </div>
                     <div class="welcome-wrap" data-aos="fade-down">
                         <div class="welcome-text">
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humor, or randomized words which don't look even slightly believable. If you are going to use
-                                a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the
-                                first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore
+                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have
+                                suffered alteration in some form, by injected humor, or randomized words which don't
+                                look even slightly believable. If you are going to use
+                                a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden
+                                in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat
+                                predefined chunks as necessary, making this the
+                                first true generator on the Internet. It uses a dictionary of over 200 Latin words,
+                                combined with a handful of model sentence structures, to generate Lorem Ipsum which
+                                looks reasonable. The generated Lorem Ipsum is therefore
                                 always free from repetition, injected humor, or non-characteristic words etc.</p>
                             <a class="btn btn-primary" href="signup.html">Free Join Now<span></span></a>
                         </div>
@@ -312,55 +345,66 @@
                 <li data-aos="fade-left">
                     <div class="feature-box">
                         <div class="image">
-                            <img src="{{asset('app-assets/images/features/home-v1/books-collection.jpg')}}" alt="Books Collection" />
+                            <img src="{{asset('app-assets/images/features/home-v1/books-collection.jpg')}}"
+                                 alt="Books Collection"/>
                         </div>
                         <h3>Collection Of Books</h3>
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                        <p>It is a long established fact that a reader will be distracted by the readable content of a
+                            page when looking at its layout.</p>
                     </div>
                 </li>
                 <li data-aos="fade-down">
                     <div class="feature-box">
                         <div class="image">
-                            <img src="{{asset('app-assets/images/features/home-v1/ebooks.jpg')}}" alt="Books Collection" />
+                            <img src="{{asset('app-assets/images/features/home-v1/ebooks.jpg')}}"
+                                 alt="Books Collection"/>
                         </div>
                         <h3>Download or Read eBooks</h3>
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                        <p>It is a long established fact that a reader will be distracted by the readable content of a
+                            page when looking at its layout.</p>
                     </div>
                 </li>
                 <li data-aos="fade-right">
                     <div class="feature-box">
                         <div class="image">
-                            <img src="{{asset('app-assets/images/features/home-v1/dvd.jpg')}}" alt="Books Collection" />
+                            <img src="{{asset('app-assets/images/features/home-v1/dvd.jpg')}}" alt="Books Collection"/>
                         </div>
                         <h3>Watch and Download DVDs</h3>
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                        <p>It is a long established fact that a reader will be distracted by the readable content of a
+                            page when looking at its layout.</p>
                     </div>
                 </li>
                 <li data-aos="fade-left">
                     <div class="feature-box">
                         <div class="image">
-                            <img src="{{asset('app-assets/images/features/home-v1/magazines.jpg')}}" alt="Books Collection" />
+                            <img src="{{asset('app-assets/images/features/home-v1/magazines.jpg')}}"
+                                 alt="Books Collection"/>
                         </div>
                         <h3>Variety of Magazines</h3>
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                        <p>It is a long established fact that a reader will be distracted by the readable content of a
+                            page when looking at its layout.</p>
                     </div>
                 </li>
                 <li data-aos="fade-up">
                     <div class="feature-box">
                         <div class="image">
-                            <img src="{{asset('app-assets/images/features/home-v1/audio.jpg')}}" alt="Books Collection" />
+                            <img src="{{asset('app-assets/images/features/home-v1/audio.jpg')}}"
+                                 alt="Books Collection"/>
                         </div>
                         <h3>Audio for Books & Magazine</h3>
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                        <p>It is a long established fact that a reader will be distracted by the readable content of a
+                            page when looking at its layout.</p>
                     </div>
                 </li>
                 <li data-aos="fade-right">
                     <div class="feature-box">
                         <div class="image">
-                            <img src="{{asset('app-assets/images/features/home-v1/eaudio.jpg')}}" alt="Books Collection" />
+                            <img src="{{asset('app-assets/images/features/home-v1/eaudio.jpg')}}"
+                                 alt="Books Collection"/>
                         </div>
                         <h3>eAudios</h3>
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                        <p>It is a long established fact that a reader will be distracted by the readable content of a
+                            page when looking at its layout.</p>
                     </div>
                 </li>
             </ul>
@@ -384,8 +428,9 @@
                     <div class="col-md-12 col-lg-5 col-xl-6">
                         <div class="single-news-event first-news-event" data-aos="fade-down">
                             <figure>
-                                <img class="rounded-border" src="{{asset('app-assets/images/news-event/home-news-event-01.jpg')}}"
-                                     alt="News & Event" />
+                                <img class="rounded-border"
+                                     src="{{asset('app-assets/images/news-event/home-news-event-01.jpg')}}"
+                                     alt="News & Event"/>
                             </figure>
                             <div class="content-block bottom-left-rounded">
                                 <div class="member-info">
@@ -415,7 +460,8 @@
                                         English. Many desktop publishing packages and web page editors now use Lorem
                                         Ipsum as
                                         their default model.</p>
-                                    <a class="btn btn-secondary" style="visibility: hidden" href="news-events-detail.html">Read More</a>
+                                    <a class="btn btn-secondary" style="visibility: hidden"
+                                       href="news-events-detail.html">Read More</a>
                                 </div>
                             </div>
                             <div class="clearfix"></div>
@@ -443,22 +489,26 @@
                                             </a>
                                         </li>
                                     </ul>
-                                    <h3><a href="news-events-detail.html">It uses a dictionary of over 200 Latin word</a></h3>
+                                    <h3><a href="news-events-detail.html">It uses a dictionary of over 200 Latin
+                                            word</a></h3>
                                     <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution
                                         of
                                         letters, as opposed to using 'Content here, content here', </p>
-                                    <a class="btn btn-secondary" style="visibility: hidden" href="news-events-detail.html">Read More</a>
+                                    <a class="btn btn-secondary" style="visibility: hidden"
+                                       href="news-events-detail.html">Read More</a>
                                 </div>
                             </div>
                             <figure>
-                                <img class="rounded-border" src="{{asset('app-assets/images/news-event/home-news-event-02.jpg')}}"
-                                     alt="News & Event" />
+                                <img class="rounded-border"
+                                     src="{{asset('app-assets/images/news-event/home-news-event-02.jpg')}}"
+                                     alt="News & Event"/>
                             </figure>
                             <div class="clearfix"></div>
                         </div>
                         <div class="single-news-event third-news-event" data-aos="fade-left">
                             <figure>
-                                <img src="{{asset('app-assets/images/news-event/home-news-event-03.jpg')}}" alt="News & Event" />
+                                <img src="{{asset('app-assets/images/news-event/home-news-event-03.jpg')}}"
+                                     alt="News & Event"/>
                             </figure>
                             <div class="content-block bottom-right-rounded">
                                 <div class="member-info">
@@ -480,11 +530,13 @@
                                             </a>
                                         </li>
                                     </ul>
-                                    <h3><a href="news-events-detail.html">It uses a dictionary of over 200 Latin word</a></h3>
+                                    <h3><a href="news-events-detail.html">It uses a dictionary of over 200 Latin
+                                            word</a></h3>
                                     <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution
                                         of
                                         letters, as opposed to using 'Content here, content here', </p>
-                                    <a href="news-events-detail.html" style="visibility: hidden" class="btn btn-secondary">Read More</a>
+                                    <a href="news-events-detail.html" style="visibility: hidden"
+                                       class="btn btn-secondary">Read More</a>
                                 </div>
                             </div>
                         </div>
@@ -509,7 +561,7 @@
             <div class="owl-carousel">
                 <div class="single-testimonial-box" data-aos="fade-left">
                     <div class="top-portion">
-                        <img src="{{asset('app-assets/images/testimonial-image-01.jpg')}}" alt="Testimonial Image" />
+                        <img src="{{asset('app-assets/images/testimonial-image-01.jpg')}}" alt="Testimonial Image"/>
                         <div class="user-comment">
                             <div class="arrow-left"></div>
                             <blockquote cite="#">
@@ -538,7 +590,7 @@
                 </div>
                 <div class="single-testimonial-box" data-aos="fade-right">
                     <div class="top-portion">
-                        <img src="{{asset('app-assets/images/testimonial-image-02.jpg')}}" alt="Testimonial Image" />
+                        <img src="{{asset('app-assets/images/testimonial-image-02.jpg')}}" alt="Testimonial Image"/>
                         <div class="user-comment">
                             <div class="arrow-left"></div>
                             <blockquote cite="#">
@@ -567,7 +619,7 @@
                 </div>
                 <div class="single-testimonial-box">
                     <div class="top-portion">
-                        <img src="{{asset('app-assets/images/testimonial-image-01.jpg')}}" alt="Testimonial Image" />
+                        <img src="{{asset('app-assets/images/testimonial-image-01.jpg')}}" alt="Testimonial Image"/>
                         <div class="user-comment">
                             <div class="arrow-left"></div>
                             <blockquote cite="#">
@@ -596,7 +648,7 @@
                 </div>
                 <div class="single-testimonial-box">
                     <div class="top-portion">
-                        <img src="{{asset('app-assets/images/testimonial-image-02.jpg')}}" alt="Testimonial Image" />
+                        <img src="{{asset('app-assets/images/testimonial-image-02.jpg')}}" alt="Testimonial Image"/>
                         <div class="user-comment">
                             <div class="arrow-left"></div>
                             <blockquote cite="#">
@@ -625,7 +677,7 @@
                 </div>
                 <div class="single-testimonial-box">
                     <div class="top-portion">
-                        <img src="{{asset('app-assets/images/testimonial-image-01.jpg')}}" alt="Testimonial Image" />
+                        <img src="{{asset('app-assets/images/testimonial-image-01.jpg')}}" alt="Testimonial Image"/>
                         <div class="user-comment">
                             <div class="arrow-left"></div>
                             <blockquote cite="#">
@@ -654,7 +706,7 @@
                 </div>
                 <div class="single-testimonial-box">
                     <div class="top-portion">
-                        <img src="{{asset('app-assets/images/testimonial-image-02.jpg')}}" alt="Testimonial Image" />
+                        <img src="{{asset('app-assets/images/testimonial-image-02.jpg')}}" alt="Testimonial Image"/>
                         <div class="user-comment">
                             <div class="arrow-left"></div>
                             <blockquote cite="#">
@@ -683,7 +735,7 @@
                 </div>
                 <div class="single-testimonial-box">
                     <div class="top-portion">
-                        <img src="{{asset('app-assets/images/testimonial-image-01.jpg')}}" alt="Testimonial Image" />
+                        <img src="{{asset('app-assets/images/testimonial-image-01.jpg')}}" alt="Testimonial Image"/>
                         <div class="user-comment">
                             <div class="arrow-left"></div>
                             <blockquote cite="#">
@@ -712,7 +764,7 @@
                 </div>
                 <div class="single-testimonial-box">
                     <div class="top-portion">
-                        <img src="{{asset('app-assets/images/testimonial-image-02.jpg')}}" alt="Testimonial Image" />
+                        <img src="{{asset('app-assets/images/testimonial-image-02.jpg')}}" alt="Testimonial Image"/>
                         <div class="user-comment">
                             <div class="arrow-left"></div>
                             <blockquote cite="#">
@@ -744,370 +796,370 @@
     </section>
     <!-- End: Our Community Section -->
 
-{{--    <!-- Start: Latest Blog -->--}}
-{{--    <section class="latest-blog section-padding banner">--}}
-{{--        <div class="container">--}}
-{{--            <div class="title-content text-center" data-aos="fade-up">--}}
-{{--                <div class="row">--}}
-{{--                    <div class="col-md-8 mx-auto text-center">--}}
-{{--                        <h6 class="sub-title">Our Blog</h6>--}}
-{{--                        <h2 class="section-title">Latest Blog Posts</h2>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            <div class="tabs-container">--}}
-{{--                <div class="tabs-menu">--}}
-{{--                    <ul>--}}
-{{--                        <li class="active">--}}
-{{--                            <a href="#" class="bg-light-blue top-left-rounded">--}}
-{{--                                <div class="title">--}}
-{{--                                    <i class="yellow"></i>--}}
-{{--                                    <h3>Books</h3>--}}
-{{--                                </div>--}}
-{{--                            </a>--}}
-{{--                        </li>--}}
-{{--                        <li>--}}
-{{--                            <a href="#" class="bg-purple">--}}
-{{--                                <div class="title">--}}
-{{--                                    <i class="light-green"></i>--}}
-{{--                                    <h3>eBooks</h3>--}}
-{{--                                </div>--}}
-{{--                            </a>--}}
-{{--                        </li>--}}
-{{--                        <li>--}}
-{{--                            <a href="#" class="bg-pink">--}}
-{{--                                <div class="title">--}}
-{{--                                    <i class="blue"></i>--}}
-{{--                                    <h3>DVDS</h3>--}}
-{{--                                </div>--}}
-{{--                            </a>--}}
-{{--                        </li>--}}
-{{--                        <li>--}}
-{{--                            <a href="#" class="bg-yellow">--}}
-{{--                                <div class="title">--}}
-{{--                                    <i class="red"></i>--}}
-{{--                                    <h3>Magazines</h3>--}}
-{{--                                </div>--}}
-{{--                            </a>--}}
-{{--                        </li>--}}
-{{--                        <li>--}}
-{{--                            <a href="#" class="bg-indigo bottom-left-rounded">--}}
-{{--                                <div class="title">--}}
-{{--                                    <i class="violet"></i>--}}
-{{--                                    <h3>Audio</h3>--}}
-{{--                                </div>--}}
-{{--                            </a>--}}
-{{--                        </li>--}}
-{{--                        <li>--}}
-{{--                            <a href="#" class="bg-orange">--}}
-{{--                                <div class="title">--}}
-{{--                                    <i class="green"></i>--}}
-{{--                                    <h3>eAudio</h3>--}}
-{{--                                </div>--}}
-{{--                            </a>--}}
-{{--                        </li>--}}
-{{--                    </ul>--}}
-{{--                </div>--}}
-{{--                <div class="tabs-list">--}}
-{{--                    <div class="tab-content active">--}}
-{{--                        <article>--}}
-{{--                            <div class="post-detail">--}}
-{{--                                <div class="info-bar">--}}
-{{--                                    <div class="comments">--}}
-{{--                                        <a href="#">--}}
-{{--                                            <i class="fa fa-comment"></i> 37--}}
-{{--                                        </a>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="likes">--}}
-{{--                                        <a href="#">--}}
-{{--                                            <i class="fa fa-thumbs-o-up"></i> 110--}}
-{{--                                        </a>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="viewed">--}}
-{{--                                        <a href="#">--}}
-{{--                                            <i class="fa fa-eye"></i> 180--}}
-{{--                                        </a>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="share">--}}
-{{--                                        <a href="#">--}}
-{{--                                            <i class="fa fa-share-alt"></i> Share--}}
-{{--                                        </a>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                <h4>It uses dictionary over 200 Latin</h4>--}}
-{{--                                <div class="author">--}}
-{{--                                    <a href="#">--}}
-{{--                                        <i class="fa fa-user"></i> Adrey Pachai--}}
-{{--                                    </a>--}}
-{{--                                </div>--}}
-{{--                                <p>Etiam posuere ultrices mauris vitae tincidunt. Cras lacinia, lectus quis ullamcorper--}}
-{{--                                    auctor, mauris lacus imperdiet turpis, et semper enim massa ut diam. Sed at--}}
-{{--                                    malesuada urna. Mauris quis venenatis leo. Proin a malesuada purus. Suspendisse odio--}}
-{{--                                    diam, ornare sit amet interdum ut, vehicula a lorem. Donec a sem erat. Etiam--}}
-{{--                                    condimentum semper mauris vitae porttitor.</p>--}}
-{{--                                <a href="blog-detail.html" class="btn btn-dark-gray">Read More</a>--}}
-{{--                            </div>--}}
-{{--                            <figure>--}}
-{{--                                <img src="{{asset('app-assets/images/latest-blog-img-home-v1.jpg')}}" alt="Latest Blog">--}}
-{{--                                <figcaption>--}}
-{{--                                    <a href="#">--}}
-{{--                                        <span class="date">07</span>--}}
-{{--                                        <span class="month">Mar</span>--}}
-{{--                                    </a>--}}
-{{--                                </figcaption>--}}
-{{--                            </figure>--}}
-{{--                        </article>--}}
-{{--                    </div>--}}
-{{--                    <div class="tab-content">--}}
-{{--                        <article>--}}
-{{--                            <div class="post-detail">--}}
-{{--                                <div class="info-bar">--}}
-{{--                                    <div class="comments">--}}
-{{--                                        <a href="#">--}}
-{{--                                            <i class="fa fa-comment"></i> 37--}}
-{{--                                        </a>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="likes">--}}
-{{--                                        <a href="#">--}}
-{{--                                            <i class="fa fa-thumbs-o-up"></i> 110--}}
-{{--                                        </a>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="viewed">--}}
-{{--                                        <a href="#">--}}
-{{--                                            <i class="fa fa-eye"></i> 180--}}
-{{--                                        </a>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="share">--}}
-{{--                                        <a href="#">--}}
-{{--                                            <i class="fa fa-share-alt"></i> Share--}}
-{{--                                        </a>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                <h4>eBooks</h4>--}}
-{{--                                <div class="author">--}}
-{{--                                    <a href="#">--}}
-{{--                                        <i class="fa fa-user"></i> Adrey Pachai--}}
-{{--                                    </a>--}}
-{{--                                </div>--}}
-{{--                                <p>Sed at malesuada urna. Mauris quis venenatis leo. Proin a malesuada purus.--}}
-{{--                                    Suspendisse odio diam, ornare sit amet interdum ut, vehicula a lorem. Donec a sem--}}
-{{--                                    erat. Etiam condimentum semper mauris vitae porttitor. Etiam posuere ultrices mauris--}}
-{{--                                    vitae tincidunt. Cras lacinia, lectus quis ullamcorper auctor, mauris lacus--}}
-{{--                                    imperdiet turpis, et semper enim massa ut.</p>--}}
-{{--                                <a href="blog-detail.html" class="btn btn-dark-gray">Read More</a>--}}
-{{--                            </div>--}}
-{{--                            <figure>--}}
-{{--                                <img src="{{asset('app-assets/images/latest-blog-img-home-v1-2.jpg')}}" alt="Latest Blog">--}}
-{{--                                <figcaption>--}}
-{{--                                    <a href="#">--}}
-{{--                                        <span class="date">06</span>--}}
-{{--                                        <span class="month">Mar</span>--}}
-{{--                                    </a>--}}
-{{--                                </figcaption>--}}
-{{--                            </figure>--}}
-{{--                        </article>--}}
-{{--                    </div>--}}
-{{--                    <div class="tab-content">--}}
-{{--                        <article>--}}
-{{--                            <div class="post-detail">--}}
-{{--                                <div class="info-bar">--}}
-{{--                                    <div class="comments">--}}
-{{--                                        <a href="#">--}}
-{{--                                            <i class="fa fa-comment"></i> 37--}}
-{{--                                        </a>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="likes">--}}
-{{--                                        <a href="#">--}}
-{{--                                            <i class="fa fa-thumbs-o-up"></i> 110--}}
-{{--                                        </a>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="viewed">--}}
-{{--                                        <a href="#">--}}
-{{--                                            <i class="fa fa-eye"></i> 180--}}
-{{--                                        </a>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="share">--}}
-{{--                                        <a href="#">--}}
-{{--                                            <i class="fa fa-share-alt"></i> Share--}}
-{{--                                        </a>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                <h4>DVDS</h4>--}}
-{{--                                <div class="author">--}}
-{{--                                    <a href="#">--}}
-{{--                                        <i class="fa fa-user"></i> Adrey Pachai--}}
-{{--                                    </a>--}}
-{{--                                </div>--}}
-{{--                                <p>Etiam posuere ultrices mauris vitae tincidunt. Cras lacinia, lectus quis ullamcorper--}}
-{{--                                    auctor, mauris lacus imperdiet turpis, et semper enim massa ut diam. Sed at--}}
-{{--                                    malesuada urna. Mauris quis venenatis leo. Proin a malesuada purus. Suspendisse odio--}}
-{{--                                    diam, ornare sit amet interdum ut, vehicula a lorem. Donec a sem erat. Etiam--}}
-{{--                                    condimentum semper mauris vitae porttitor.</p>--}}
-{{--                                <a href="blog-detail.html" class="btn btn-dark-gray">Read More</a>--}}
-{{--                            </div>--}}
-{{--                            <figure>--}}
-{{--                                <img src="{{asset('app-assets/images/latest-blog-img-home-v1.jpg')}}" alt="Latest Blog">--}}
-{{--                                <figcaption>--}}
-{{--                                    <a href="#">--}}
-{{--                                        <span class="date">05</span>--}}
-{{--                                        <span class="month">Mar</span>--}}
-{{--                                    </a>--}}
-{{--                                </figcaption>--}}
-{{--                            </figure>--}}
-{{--                        </article>--}}
-{{--                    </div>--}}
-{{--                    <div class="tab-content">--}}
-{{--                        <article>--}}
-{{--                            <div class="post-detail">--}}
-{{--                                <div class="info-bar">--}}
-{{--                                    <div class="comments">--}}
-{{--                                        <a href="#">--}}
-{{--                                            <i class="fa fa-comment"></i> 37--}}
-{{--                                        </a>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="likes">--}}
-{{--                                        <a href="#">--}}
-{{--                                            <i class="fa fa-thumbs-o-up"></i> 110--}}
-{{--                                        </a>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="viewed">--}}
-{{--                                        <a href="#">--}}
-{{--                                            <i class="fa fa-eye"></i> 180--}}
-{{--                                        </a>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="share">--}}
-{{--                                        <a href="#">--}}
-{{--                                            <i class="fa fa-share-alt"></i> Share--}}
-{{--                                        </a>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                <h4>Magazines</h4>--}}
-{{--                                <div class="author">--}}
-{{--                                    <a href="#">--}}
-{{--                                        <i class="fa fa-user"></i> Adrey Pachai--}}
-{{--                                    </a>--}}
-{{--                                </div>--}}
-{{--                                <p>Sed at malesuada urna. Mauris quis venenatis leo. Proin a malesuada purus.--}}
-{{--                                    Suspendisse odio diam, ornare sit amet interdum ut, vehicula a lorem. Donec a sem--}}
-{{--                                    erat. Etiam condimentum semper mauris vitae porttitor. Etiam posuere ultrices mauris--}}
-{{--                                    vitae tincidunt. Cras lacinia, lectus quis ullamcorper auctor, mauris lacus--}}
-{{--                                    imperdiet turpis, et semper enim massa ut.</p>--}}
-{{--                                <a href="blog-detail.html" class="btn btn-dark-gray">Read More</a>--}}
-{{--                            </div>--}}
-{{--                            <figure>--}}
-{{--                                <img src="{{asset('app-assets/images/latest-blog-img-home-v1-2.jpg')}}" alt="Latest Blog">--}}
-{{--                                <figcaption>--}}
-{{--                                    <a href="#">--}}
-{{--                                        <span class="date">04</span>--}}
-{{--                                        <span class="month">Mar</span>--}}
-{{--                                    </a>--}}
-{{--                                </figcaption>--}}
-{{--                            </figure>--}}
-{{--                        </article>--}}
-{{--                    </div>--}}
-{{--                    <div class="tab-content">--}}
-{{--                        <article>--}}
-{{--                            <div class="post-detail">--}}
-{{--                                <div class="info-bar">--}}
-{{--                                    <div class="comments">--}}
-{{--                                        <a href="#">--}}
-{{--                                            <i class="fa fa-comment"></i> 37--}}
-{{--                                        </a>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="likes">--}}
-{{--                                        <a href="#">--}}
-{{--                                            <i class="fa fa-thumbs-o-up"></i> 110--}}
-{{--                                        </a>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="viewed">--}}
-{{--                                        <a href="#">--}}
-{{--                                            <i class="fa fa-eye"></i> 180--}}
-{{--                                        </a>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="share">--}}
-{{--                                        <a href="#">--}}
-{{--                                            <i class="fa fa-share-alt"></i> Share--}}
-{{--                                        </a>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                <h4>Audio</h4>--}}
-{{--                                <div class="author">--}}
-{{--                                    <a href="#">--}}
-{{--                                        <i class="fa fa-user"></i> Adrey Pachai--}}
-{{--                                    </a>--}}
-{{--                                </div>--}}
-{{--                                <p>Etiam posuere ultrices mauris vitae tincidunt. Cras lacinia, lectus quis ullamcorper--}}
-{{--                                    auctor, mauris lacus imperdiet turpis, et semper enim massa ut diam. Sed at--}}
-{{--                                    malesuada urna. Mauris quis venenatis leo. Proin a malesuada purus. Suspendisse odio--}}
-{{--                                    diam, ornare sit amet interdum ut, vehicula a lorem. Donec a sem erat. Etiam--}}
-{{--                                    condimentum semper mauris vitae porttitor.</p>--}}
-{{--                                <a href="blog-detail.html" class="btn btn-dark-gray">Read More</a>--}}
-{{--                            </div>--}}
-{{--                            <figure>--}}
-{{--                                <img src="{{asset('app-assets/images/latest-blog-img-home-v1.jpg')}}" alt="Latest Blog">--}}
-{{--                                <figcaption>--}}
-{{--                                    <a href="#">--}}
-{{--                                        <span class="date">03</span>--}}
-{{--                                        <span class="month">Mar</span>--}}
-{{--                                    </a>--}}
-{{--                                </figcaption>--}}
-{{--                            </figure>--}}
-{{--                        </article>--}}
-{{--                    </div>--}}
-{{--                    <div class="tab-content">--}}
-{{--                        <article>--}}
-{{--                            <div class="post-detail">--}}
-{{--                                <div class="info-bar">--}}
-{{--                                    <div class="comments">--}}
-{{--                                        <a href="#">--}}
-{{--                                            <i class="fa fa-comment"></i> 37--}}
-{{--                                        </a>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="likes">--}}
-{{--                                        <a href="#">--}}
-{{--                                            <i class="fa fa-thumbs-o-up"></i> 110--}}
-{{--                                        </a>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="viewed">--}}
-{{--                                        <a href="#">--}}
-{{--                                            <i class="fa fa-eye"></i> 180--}}
-{{--                                        </a>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="share">--}}
-{{--                                        <a href="#">--}}
-{{--                                            <i class="fa fa-share-alt"></i> Share--}}
-{{--                                        </a>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                <h4>eAudio</h4>--}}
-{{--                                <div class="author">--}}
-{{--                                    <a href="#">--}}
-{{--                                        <i class="fa fa-user"></i> Adrey Pachai--}}
-{{--                                    </a>--}}
-{{--                                </div>--}}
-{{--                                <p>Sed at malesuada urna. Mauris quis venenatis leo. Proin a malesuada purus.--}}
-{{--                                    Suspendisse odio diam, ornare sit amet interdum ut, vehicula a lorem. Donec a sem--}}
-{{--                                    erat. Etiam condimentum semper mauris vitae porttitor. Etiam posuere ultrices mauris--}}
-{{--                                    vitae tincidunt. Cras lacinia, lectus quis ullamcorper auctor, mauris lacus--}}
-{{--                                    imperdiet turpis, et semper enim massa ut.</p>--}}
-{{--                                <a href="blog-detail.html" class="btn btn-dark-gray">Read More</a>--}}
-{{--                            </div>--}}
-{{--                            <figure>--}}
-{{--                                <img src="{{asset('app-assets/images/latest-blog-img-home-v1-2.jpg')}}" alt="Latest Blog">--}}
-{{--                                <figcaption>--}}
-{{--                                    <a href="#">--}}
-{{--                                        <span class="date">02</span>--}}
-{{--                                        <span class="month">Mar</span>--}}
-{{--                                    </a>--}}
-{{--                                </figcaption>--}}
-{{--                            </figure>--}}
-{{--                        </article>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </section>--}}
-{{--    <!-- End: Latest Blog -->--}}
+    {{--    <!-- Start: Latest Blog -->--}}
+    {{--    <section class="latest-blog section-padding banner">--}}
+    {{--        <div class="container">--}}
+    {{--            <div class="title-content text-center" data-aos="fade-up">--}}
+    {{--                <div class="row">--}}
+    {{--                    <div class="col-md-8 mx-auto text-center">--}}
+    {{--                        <h6 class="sub-title">Our Blog</h6>--}}
+    {{--                        <h2 class="section-title">Latest Blog Posts</h2>--}}
+    {{--                    </div>--}}
+    {{--                </div>--}}
+    {{--            </div>--}}
+    {{--            <div class="tabs-container">--}}
+    {{--                <div class="tabs-menu">--}}
+    {{--                    <ul>--}}
+    {{--                        <li class="active">--}}
+    {{--                            <a href="#" class="bg-light-blue top-left-rounded">--}}
+    {{--                                <div class="title">--}}
+    {{--                                    <i class="yellow"></i>--}}
+    {{--                                    <h3>Books</h3>--}}
+    {{--                                </div>--}}
+    {{--                            </a>--}}
+    {{--                        </li>--}}
+    {{--                        <li>--}}
+    {{--                            <a href="#" class="bg-purple">--}}
+    {{--                                <div class="title">--}}
+    {{--                                    <i class="light-green"></i>--}}
+    {{--                                    <h3>eBooks</h3>--}}
+    {{--                                </div>--}}
+    {{--                            </a>--}}
+    {{--                        </li>--}}
+    {{--                        <li>--}}
+    {{--                            <a href="#" class="bg-pink">--}}
+    {{--                                <div class="title">--}}
+    {{--                                    <i class="blue"></i>--}}
+    {{--                                    <h3>DVDS</h3>--}}
+    {{--                                </div>--}}
+    {{--                            </a>--}}
+    {{--                        </li>--}}
+    {{--                        <li>--}}
+    {{--                            <a href="#" class="bg-yellow">--}}
+    {{--                                <div class="title">--}}
+    {{--                                    <i class="red"></i>--}}
+    {{--                                    <h3>Magazines</h3>--}}
+    {{--                                </div>--}}
+    {{--                            </a>--}}
+    {{--                        </li>--}}
+    {{--                        <li>--}}
+    {{--                            <a href="#" class="bg-indigo bottom-left-rounded">--}}
+    {{--                                <div class="title">--}}
+    {{--                                    <i class="violet"></i>--}}
+    {{--                                    <h3>Audio</h3>--}}
+    {{--                                </div>--}}
+    {{--                            </a>--}}
+    {{--                        </li>--}}
+    {{--                        <li>--}}
+    {{--                            <a href="#" class="bg-orange">--}}
+    {{--                                <div class="title">--}}
+    {{--                                    <i class="green"></i>--}}
+    {{--                                    <h3>eAudio</h3>--}}
+    {{--                                </div>--}}
+    {{--                            </a>--}}
+    {{--                        </li>--}}
+    {{--                    </ul>--}}
+    {{--                </div>--}}
+    {{--                <div class="tabs-list">--}}
+    {{--                    <div class="tab-content active">--}}
+    {{--                        <article>--}}
+    {{--                            <div class="post-detail">--}}
+    {{--                                <div class="info-bar">--}}
+    {{--                                    <div class="comments">--}}
+    {{--                                        <a href="#">--}}
+    {{--                                            <i class="fa fa-comment"></i> 37--}}
+    {{--                                        </a>--}}
+    {{--                                    </div>--}}
+    {{--                                    <div class="likes">--}}
+    {{--                                        <a href="#">--}}
+    {{--                                            <i class="fa fa-thumbs-o-up"></i> 110--}}
+    {{--                                        </a>--}}
+    {{--                                    </div>--}}
+    {{--                                    <div class="viewed">--}}
+    {{--                                        <a href="#">--}}
+    {{--                                            <i class="fa fa-eye"></i> 180--}}
+    {{--                                        </a>--}}
+    {{--                                    </div>--}}
+    {{--                                    <div class="share">--}}
+    {{--                                        <a href="#">--}}
+    {{--                                            <i class="fa fa-share-alt"></i> Share--}}
+    {{--                                        </a>--}}
+    {{--                                    </div>--}}
+    {{--                                </div>--}}
+    {{--                                <h4>It uses dictionary over 200 Latin</h4>--}}
+    {{--                                <div class="author">--}}
+    {{--                                    <a href="#">--}}
+    {{--                                        <i class="fa fa-user"></i> Adrey Pachai--}}
+    {{--                                    </a>--}}
+    {{--                                </div>--}}
+    {{--                                <p>Etiam posuere ultrices mauris vitae tincidunt. Cras lacinia, lectus quis ullamcorper--}}
+    {{--                                    auctor, mauris lacus imperdiet turpis, et semper enim massa ut diam. Sed at--}}
+    {{--                                    malesuada urna. Mauris quis venenatis leo. Proin a malesuada purus. Suspendisse odio--}}
+    {{--                                    diam, ornare sit amet interdum ut, vehicula a lorem. Donec a sem erat. Etiam--}}
+    {{--                                    condimentum semper mauris vitae porttitor.</p>--}}
+    {{--                                <a href="blog-detail.html" class="btn btn-dark-gray">Read More</a>--}}
+    {{--                            </div>--}}
+    {{--                            <figure>--}}
+    {{--                                <img src="{{asset('app-assets/images/latest-blog-img-home-v1.jpg')}}" alt="Latest Blog">--}}
+    {{--                                <figcaption>--}}
+    {{--                                    <a href="#">--}}
+    {{--                                        <span class="date">07</span>--}}
+    {{--                                        <span class="month">Mar</span>--}}
+    {{--                                    </a>--}}
+    {{--                                </figcaption>--}}
+    {{--                            </figure>--}}
+    {{--                        </article>--}}
+    {{--                    </div>--}}
+    {{--                    <div class="tab-content">--}}
+    {{--                        <article>--}}
+    {{--                            <div class="post-detail">--}}
+    {{--                                <div class="info-bar">--}}
+    {{--                                    <div class="comments">--}}
+    {{--                                        <a href="#">--}}
+    {{--                                            <i class="fa fa-comment"></i> 37--}}
+    {{--                                        </a>--}}
+    {{--                                    </div>--}}
+    {{--                                    <div class="likes">--}}
+    {{--                                        <a href="#">--}}
+    {{--                                            <i class="fa fa-thumbs-o-up"></i> 110--}}
+    {{--                                        </a>--}}
+    {{--                                    </div>--}}
+    {{--                                    <div class="viewed">--}}
+    {{--                                        <a href="#">--}}
+    {{--                                            <i class="fa fa-eye"></i> 180--}}
+    {{--                                        </a>--}}
+    {{--                                    </div>--}}
+    {{--                                    <div class="share">--}}
+    {{--                                        <a href="#">--}}
+    {{--                                            <i class="fa fa-share-alt"></i> Share--}}
+    {{--                                        </a>--}}
+    {{--                                    </div>--}}
+    {{--                                </div>--}}
+    {{--                                <h4>eBooks</h4>--}}
+    {{--                                <div class="author">--}}
+    {{--                                    <a href="#">--}}
+    {{--                                        <i class="fa fa-user"></i> Adrey Pachai--}}
+    {{--                                    </a>--}}
+    {{--                                </div>--}}
+    {{--                                <p>Sed at malesuada urna. Mauris quis venenatis leo. Proin a malesuada purus.--}}
+    {{--                                    Suspendisse odio diam, ornare sit amet interdum ut, vehicula a lorem. Donec a sem--}}
+    {{--                                    erat. Etiam condimentum semper mauris vitae porttitor. Etiam posuere ultrices mauris--}}
+    {{--                                    vitae tincidunt. Cras lacinia, lectus quis ullamcorper auctor, mauris lacus--}}
+    {{--                                    imperdiet turpis, et semper enim massa ut.</p>--}}
+    {{--                                <a href="blog-detail.html" class="btn btn-dark-gray">Read More</a>--}}
+    {{--                            </div>--}}
+    {{--                            <figure>--}}
+    {{--                                <img src="{{asset('app-assets/images/latest-blog-img-home-v1-2.jpg')}}" alt="Latest Blog">--}}
+    {{--                                <figcaption>--}}
+    {{--                                    <a href="#">--}}
+    {{--                                        <span class="date">06</span>--}}
+    {{--                                        <span class="month">Mar</span>--}}
+    {{--                                    </a>--}}
+    {{--                                </figcaption>--}}
+    {{--                            </figure>--}}
+    {{--                        </article>--}}
+    {{--                    </div>--}}
+    {{--                    <div class="tab-content">--}}
+    {{--                        <article>--}}
+    {{--                            <div class="post-detail">--}}
+    {{--                                <div class="info-bar">--}}
+    {{--                                    <div class="comments">--}}
+    {{--                                        <a href="#">--}}
+    {{--                                            <i class="fa fa-comment"></i> 37--}}
+    {{--                                        </a>--}}
+    {{--                                    </div>--}}
+    {{--                                    <div class="likes">--}}
+    {{--                                        <a href="#">--}}
+    {{--                                            <i class="fa fa-thumbs-o-up"></i> 110--}}
+    {{--                                        </a>--}}
+    {{--                                    </div>--}}
+    {{--                                    <div class="viewed">--}}
+    {{--                                        <a href="#">--}}
+    {{--                                            <i class="fa fa-eye"></i> 180--}}
+    {{--                                        </a>--}}
+    {{--                                    </div>--}}
+    {{--                                    <div class="share">--}}
+    {{--                                        <a href="#">--}}
+    {{--                                            <i class="fa fa-share-alt"></i> Share--}}
+    {{--                                        </a>--}}
+    {{--                                    </div>--}}
+    {{--                                </div>--}}
+    {{--                                <h4>DVDS</h4>--}}
+    {{--                                <div class="author">--}}
+    {{--                                    <a href="#">--}}
+    {{--                                        <i class="fa fa-user"></i> Adrey Pachai--}}
+    {{--                                    </a>--}}
+    {{--                                </div>--}}
+    {{--                                <p>Etiam posuere ultrices mauris vitae tincidunt. Cras lacinia, lectus quis ullamcorper--}}
+    {{--                                    auctor, mauris lacus imperdiet turpis, et semper enim massa ut diam. Sed at--}}
+    {{--                                    malesuada urna. Mauris quis venenatis leo. Proin a malesuada purus. Suspendisse odio--}}
+    {{--                                    diam, ornare sit amet interdum ut, vehicula a lorem. Donec a sem erat. Etiam--}}
+    {{--                                    condimentum semper mauris vitae porttitor.</p>--}}
+    {{--                                <a href="blog-detail.html" class="btn btn-dark-gray">Read More</a>--}}
+    {{--                            </div>--}}
+    {{--                            <figure>--}}
+    {{--                                <img src="{{asset('app-assets/images/latest-blog-img-home-v1.jpg')}}" alt="Latest Blog">--}}
+    {{--                                <figcaption>--}}
+    {{--                                    <a href="#">--}}
+    {{--                                        <span class="date">05</span>--}}
+    {{--                                        <span class="month">Mar</span>--}}
+    {{--                                    </a>--}}
+    {{--                                </figcaption>--}}
+    {{--                            </figure>--}}
+    {{--                        </article>--}}
+    {{--                    </div>--}}
+    {{--                    <div class="tab-content">--}}
+    {{--                        <article>--}}
+    {{--                            <div class="post-detail">--}}
+    {{--                                <div class="info-bar">--}}
+    {{--                                    <div class="comments">--}}
+    {{--                                        <a href="#">--}}
+    {{--                                            <i class="fa fa-comment"></i> 37--}}
+    {{--                                        </a>--}}
+    {{--                                    </div>--}}
+    {{--                                    <div class="likes">--}}
+    {{--                                        <a href="#">--}}
+    {{--                                            <i class="fa fa-thumbs-o-up"></i> 110--}}
+    {{--                                        </a>--}}
+    {{--                                    </div>--}}
+    {{--                                    <div class="viewed">--}}
+    {{--                                        <a href="#">--}}
+    {{--                                            <i class="fa fa-eye"></i> 180--}}
+    {{--                                        </a>--}}
+    {{--                                    </div>--}}
+    {{--                                    <div class="share">--}}
+    {{--                                        <a href="#">--}}
+    {{--                                            <i class="fa fa-share-alt"></i> Share--}}
+    {{--                                        </a>--}}
+    {{--                                    </div>--}}
+    {{--                                </div>--}}
+    {{--                                <h4>Magazines</h4>--}}
+    {{--                                <div class="author">--}}
+    {{--                                    <a href="#">--}}
+    {{--                                        <i class="fa fa-user"></i> Adrey Pachai--}}
+    {{--                                    </a>--}}
+    {{--                                </div>--}}
+    {{--                                <p>Sed at malesuada urna. Mauris quis venenatis leo. Proin a malesuada purus.--}}
+    {{--                                    Suspendisse odio diam, ornare sit amet interdum ut, vehicula a lorem. Donec a sem--}}
+    {{--                                    erat. Etiam condimentum semper mauris vitae porttitor. Etiam posuere ultrices mauris--}}
+    {{--                                    vitae tincidunt. Cras lacinia, lectus quis ullamcorper auctor, mauris lacus--}}
+    {{--                                    imperdiet turpis, et semper enim massa ut.</p>--}}
+    {{--                                <a href="blog-detail.html" class="btn btn-dark-gray">Read More</a>--}}
+    {{--                            </div>--}}
+    {{--                            <figure>--}}
+    {{--                                <img src="{{asset('app-assets/images/latest-blog-img-home-v1-2.jpg')}}" alt="Latest Blog">--}}
+    {{--                                <figcaption>--}}
+    {{--                                    <a href="#">--}}
+    {{--                                        <span class="date">04</span>--}}
+    {{--                                        <span class="month">Mar</span>--}}
+    {{--                                    </a>--}}
+    {{--                                </figcaption>--}}
+    {{--                            </figure>--}}
+    {{--                        </article>--}}
+    {{--                    </div>--}}
+    {{--                    <div class="tab-content">--}}
+    {{--                        <article>--}}
+    {{--                            <div class="post-detail">--}}
+    {{--                                <div class="info-bar">--}}
+    {{--                                    <div class="comments">--}}
+    {{--                                        <a href="#">--}}
+    {{--                                            <i class="fa fa-comment"></i> 37--}}
+    {{--                                        </a>--}}
+    {{--                                    </div>--}}
+    {{--                                    <div class="likes">--}}
+    {{--                                        <a href="#">--}}
+    {{--                                            <i class="fa fa-thumbs-o-up"></i> 110--}}
+    {{--                                        </a>--}}
+    {{--                                    </div>--}}
+    {{--                                    <div class="viewed">--}}
+    {{--                                        <a href="#">--}}
+    {{--                                            <i class="fa fa-eye"></i> 180--}}
+    {{--                                        </a>--}}
+    {{--                                    </div>--}}
+    {{--                                    <div class="share">--}}
+    {{--                                        <a href="#">--}}
+    {{--                                            <i class="fa fa-share-alt"></i> Share--}}
+    {{--                                        </a>--}}
+    {{--                                    </div>--}}
+    {{--                                </div>--}}
+    {{--                                <h4>Audio</h4>--}}
+    {{--                                <div class="author">--}}
+    {{--                                    <a href="#">--}}
+    {{--                                        <i class="fa fa-user"></i> Adrey Pachai--}}
+    {{--                                    </a>--}}
+    {{--                                </div>--}}
+    {{--                                <p>Etiam posuere ultrices mauris vitae tincidunt. Cras lacinia, lectus quis ullamcorper--}}
+    {{--                                    auctor, mauris lacus imperdiet turpis, et semper enim massa ut diam. Sed at--}}
+    {{--                                    malesuada urna. Mauris quis venenatis leo. Proin a malesuada purus. Suspendisse odio--}}
+    {{--                                    diam, ornare sit amet interdum ut, vehicula a lorem. Donec a sem erat. Etiam--}}
+    {{--                                    condimentum semper mauris vitae porttitor.</p>--}}
+    {{--                                <a href="blog-detail.html" class="btn btn-dark-gray">Read More</a>--}}
+    {{--                            </div>--}}
+    {{--                            <figure>--}}
+    {{--                                <img src="{{asset('app-assets/images/latest-blog-img-home-v1.jpg')}}" alt="Latest Blog">--}}
+    {{--                                <figcaption>--}}
+    {{--                                    <a href="#">--}}
+    {{--                                        <span class="date">03</span>--}}
+    {{--                                        <span class="month">Mar</span>--}}
+    {{--                                    </a>--}}
+    {{--                                </figcaption>--}}
+    {{--                            </figure>--}}
+    {{--                        </article>--}}
+    {{--                    </div>--}}
+    {{--                    <div class="tab-content">--}}
+    {{--                        <article>--}}
+    {{--                            <div class="post-detail">--}}
+    {{--                                <div class="info-bar">--}}
+    {{--                                    <div class="comments">--}}
+    {{--                                        <a href="#">--}}
+    {{--                                            <i class="fa fa-comment"></i> 37--}}
+    {{--                                        </a>--}}
+    {{--                                    </div>--}}
+    {{--                                    <div class="likes">--}}
+    {{--                                        <a href="#">--}}
+    {{--                                            <i class="fa fa-thumbs-o-up"></i> 110--}}
+    {{--                                        </a>--}}
+    {{--                                    </div>--}}
+    {{--                                    <div class="viewed">--}}
+    {{--                                        <a href="#">--}}
+    {{--                                            <i class="fa fa-eye"></i> 180--}}
+    {{--                                        </a>--}}
+    {{--                                    </div>--}}
+    {{--                                    <div class="share">--}}
+    {{--                                        <a href="#">--}}
+    {{--                                            <i class="fa fa-share-alt"></i> Share--}}
+    {{--                                        </a>--}}
+    {{--                                    </div>--}}
+    {{--                                </div>--}}
+    {{--                                <h4>eAudio</h4>--}}
+    {{--                                <div class="author">--}}
+    {{--                                    <a href="#">--}}
+    {{--                                        <i class="fa fa-user"></i> Adrey Pachai--}}
+    {{--                                    </a>--}}
+    {{--                                </div>--}}
+    {{--                                <p>Sed at malesuada urna. Mauris quis venenatis leo. Proin a malesuada purus.--}}
+    {{--                                    Suspendisse odio diam, ornare sit amet interdum ut, vehicula a lorem. Donec a sem--}}
+    {{--                                    erat. Etiam condimentum semper mauris vitae porttitor. Etiam posuere ultrices mauris--}}
+    {{--                                    vitae tincidunt. Cras lacinia, lectus quis ullamcorper auctor, mauris lacus--}}
+    {{--                                    imperdiet turpis, et semper enim massa ut.</p>--}}
+    {{--                                <a href="blog-detail.html" class="btn btn-dark-gray">Read More</a>--}}
+    {{--                            </div>--}}
+    {{--                            <figure>--}}
+    {{--                                <img src="{{asset('app-assets/images/latest-blog-img-home-v1-2.jpg')}}" alt="Latest Blog">--}}
+    {{--                                <figcaption>--}}
+    {{--                                    <a href="#">--}}
+    {{--                                        <span class="date">02</span>--}}
+    {{--                                        <span class="month">Mar</span>--}}
+    {{--                                    </a>--}}
+    {{--                                </figcaption>--}}
+    {{--                            </figure>--}}
+    {{--                        </article>--}}
+    {{--                    </div>--}}
+    {{--                </div>--}}
+    {{--            </div>--}}
+    {{--        </div>--}}
+    {{--    </section>--}}
+    {{--    <!-- End: Latest Blog -->--}}
 
     <!-- Start: Social Network -->
 
@@ -1162,10 +1214,10 @@
 @push('scripts')
     <script>
 
-        $( document ).ready(function() {
+        $(document).ready(function () {
 
             //get classes
-            $('body').on('mouseup', 'li[dtype="sector"]', function() {
+            $('body').on('mouseup', 'li[dtype="sector"]', function () {
                 var sector = $(this).attr('rel');
                 $("#class").html("");
                 $("#class").html(
@@ -1232,7 +1284,7 @@
                         type: 'GET',
                         dataType: "json",
                         data: {},
-                        success: function (data){
+                        success: function (data) {
                             data = data.data;
                             if (data.length != 0) {
                                 for (var x = 0; x < data.length; x++) {
@@ -1293,8 +1345,7 @@
                                     });
 
                                 });
-                            }
-                            else {
+                            } else {
                                 $("#class").append('</select>');
                                 var selectObj = $('select#class_id');
                                 var selectListObj = $('ul.select-list');
@@ -1345,7 +1396,7 @@
                                 });
                             }
                         },
-                        error: function (reject){
+                        error: function (reject) {
                             console.log(reject);
                         }
                     });
@@ -1353,7 +1404,7 @@
             });//end for get classes
 
             //get subjects
-            $('body').on('mouseup', 'li[dtype="classes"]', function() {
+            $('body').on('mouseup', 'li[dtype="classes"]', function () {
                 var classe = $(this).attr('rel');
                 $("#subject").html("");
                 $("#subject").html(
@@ -1366,7 +1417,7 @@
                         type: 'GET',
                         dataType: "json",
                         data: {},
-                        success: function (data){
+                        success: function (data) {
                             data = data.data;
                             if (data.length != 0) {
                                 for (var x = 0; x < data.length; x++) {
@@ -1427,8 +1478,7 @@
                                     });
 
                                 });
-                            }
-                            else {
+                            } else {
                                 $("#subject").append('</select>');
                                 var selectObj = $('select#subject_id');
                                 var selectListObj = $('ul.select-list');
@@ -1479,20 +1529,19 @@
                                 });
                             }
                         },
-                        error: function (reject){
+                        error: function (reject) {
                             console.log(reject);
                         }
                     });
                 }
             });//end for get subjects
 
-            $('#btn_search').on('click', function (e){
+            $('#btn_search').on('click', function (e) {
                 e.preventDefault();
-                if($('#subject_id').val() != '' && $('#subject_id').val() != null){
+                if ($('#subject_id').val() != '' && $('#subject_id').val() != null) {
                     $('#search').submit();
                     $('#error_subject').hide();
-                }
-                else{
+                } else {
                     $('#error_subject').show();
                 }
             });//submit form
