@@ -25,6 +25,7 @@ class CreateUsersTable extends Migration
             $table->text('description_ar')->nullable();
             $table->text('description_en')->nullable();
             $table->float('rating', 2, 1)->nullable()->default(0.0);
+            $table->integer('count_rate')->nullable();
             $table->enum('type', ['1', '2', '3'])->comment("[admin, teacher, student]");
             $table->enum('position', ['1', '2', '3', '4'])->nullable()->comment("[junior, senior, expert, great]");
             $table->string('image')->nullable();

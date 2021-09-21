@@ -7,7 +7,7 @@
                     <div id="text-2" class="widget widget_text">
                         <div class="about-us">
                             <a href="{{route('home')}}">
-                                <img src="{{asset('app-assets/images/logo-footer-v1.png')}}" alt="LIBRARIA" />
+                                <img style="width:200px" src="{{asset('app-assets/images/logoFooter.png')}}" alt="LIBRARIA" />
                             </a>
                         </div>
                         <div class="textwidget">

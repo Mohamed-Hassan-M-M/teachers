@@ -34,7 +34,8 @@ class HomeController extends Controller
         $subjects = Subject::all();
         $blogs = Blog::latest()->get();
         $events = Event::latest()->take(3)->get();
-        return view('home', compact(['sectors', 'classes', 'subjects', 'blogs', 'events']));
+        $teachers = User::where('type', '2')->orderBy('rating', 'DESC')->take(6)->get();
+        return view('home', compact(['teachers', 'sectors', 'classes', 'subjects', 'blogs', 'events']));
     }
 
     public function getClasses($id)

@@ -11,7 +11,7 @@
     <title>..:: SKILLE - Online Courses and Library ::..</title>
 
     <!-- Favicon -->
-    <link href="{{asset('app-assets/images/favicon.ico')}}" rel="icon" type="image/x-icon" />
+    <link href="{{asset('app-assets/images/logo.png')}}" rel="icon" type="image/x-icon" />
 
     <!-- Fonts -->
     <link href="{{asset('app-assets/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css" />

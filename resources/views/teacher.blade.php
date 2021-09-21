@@ -132,7 +132,7 @@
                                                     <img class="rounded m-0" style="width: 200px; height: 200px;"
                                                          src="{{$teacher->image_path}}" alt="">
                                                     <div class="text-center">
-                                                        <div class="rating">
+                                                        <div class="rating m-auto">
                                                             @php
                                                                 $intRate = intVal($teacher->rating);
                                                                 $half = false;
@@ -156,8 +156,11 @@
                                                         </div>
                                                     </div>
                                                     <ul class="m-auto">
-                                                        <li><a href="#"><i class="fa fa-comment"></i> 37</a></li>
-                                                        <li><a href="#"><i class="fa fa-thumbs-up"></i> 110</a></li>
+                                                        @foreach($teacher->socialLink as $social)
+                                                            <li><a href="{{$social->social_link}}"><i
+                                                                        class="fa @if(strpos($social->social_link, 'facebook')) fa-facebook @elseif(strpos($social->social_link, 'google')) fa-google-plus @elseif(strpos($social->social_link, 'youtube')) fa-youtube-play @endif"></i></a>
+                                                            </li>
+                                                        @endforeach
                                                     </ul>
                                                 </div>
 
@@ -167,13 +170,6 @@
                                                         <small>@lang('teacher.position'): @lang('general.teacher') {{$teacher->position}}</small>
                                                     </span>
                                                     <p>{{$teacher['description_'.app()->getLocale()]}}</p>
-                                                    <ul>
-                                                        @foreach($teacher->socialLink as $social)
-                                                            <li><a href="{{$social->social_link}}"><i
-                                                                        class="fa @if(strpos($social->social_link, 'facebook')) fa-facebook @elseif(strpos($social->social_link, 'google')) fa-google-plus @elseif(strpos($social->social_link, 'youtube')) fa-youtube-play @endif"></i></a>
-                                                            </li>
-                                                        @endforeach
-                                                    </ul>
                                                     <div class="detail-page-cat">
                                                         <a>@lang('general.sectors')</a>
                                                         <ul class="mr-2 ml-2">
@@ -214,77 +210,117 @@
                                 </div>
 
                                 <div class="comments-area" id="comments">
-                                    <div class="comment-bg">
-                                        <small class="comment-small-heading">@lang('general.feedback')</small>
-                                        <h4 class="comments-title">People’s Coments
-                                        </h4>
-                                        <ol class="comment-list">
-                                            <li class="comment parent">
-                                                <div class="comment-body">
-                                                    <div class="comment-author vcard">
-                                                        <img
-                                                            src="{{asset('app-assets/images/blog/blog-comment-01.png')}}"
-                                                            alt="Comment Author">
-                                                    </div>
-                                                    <footer class="comment-meta">
-                                                        <div class="comment-metadata">
-                                                            <b class="fn">
-                                                                <a class="url" href="#">Rachael Towers</a>
-                                                            </b>
-                                                            <div class="comment-rating">
-                                                                <a>
-                                                                    <time datetime="2016-01-17">
-                                                                        <b>Nov 20, 2020</b>
-                                                                    </time>
-                                                                </a>
+                                    @if($teacher->reviews->count() > 0)
+                                        <div class="comment-bg">
+                                            <small class="comment-small-heading">@lang('general.feedback')</small>
+                                            <h4 class="comments-title">People’s Coments
+                                            </h4>
+                                            <ol class="comment-list">
+                                                @foreach($teacher->reviews as $review)
+                                                    <li class="comment parent">
+                                                        <div class="comment-body">
+                                                            <div class="comment-author vcard">
+                                                                <img
+                                                                    @if($review->student->gender == 'male') src="{{asset('app-assets/images/man.png')}}" @else src="{{asset('app-assets/images/woman.png')}}" @endif
+                                                                    alt="Comment Author">
                                                             </div>
+                                                            <footer class="comment-meta">
+                                                                <div class="comment-metadata">
+                                                                    <b class="fn">
+                                                                        <a class="url">{{$review->student->username}}</a>
+                                                                    </b>
+                                                                    <div class="comment-rating">
+                                                                        <a>
+                                                                            <time datetime="2016-01-17">
+                                                                                <b>{{$review->created_at}}</b>
+                                                                            </time>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="comment-content">
+                                                                    <p>{{$review->message}}
+                                                                    </p>
+                                                                </div>
+                                                            </footer>
                                                         </div>
-                                                        <div class="comment-content">
-                                                            <p>Vestibulum hendrerit tortor vel nunc dapibus egestas.
-                                                                Etiam et aliquam urna, at lacinia metus. Vestibulum
-                                                                iaculis libero eu dui tristique viverra. Ut sit amet
-                                                                interdum enim. Nam quam felis, egestas
-                                                                id ipsum vel, bibendum tempor metus. Donec tristique
-                                                                purus nec orci tempus, sit amet consectetur.
-                                                            </p>
-                                                        </div>
-                                                    </footer>
-                                                </div>
-                                            </li>
-                                        </ol>
-                                    </div>
-                                    <div class="comment-respond" id="respond">
+                                                    </li>
+                                                @endforeach
+                                            </ol>
+                                        </div>
+                                    @endif
+                                    @if(auth()->check() && auth()->user()->type == '3')
+                                        <div class="comment-respond" id="respond">
                                         <h4 class="comments-title">Write Your Comment</h4>
+                                        @if (\Session::has('success'))
+                                        <div class="alert alert-success text-center">{!! \Session::get('success') !!}</div>
+                                        @endif
                                         <form class="comment-form" id="commentform" method="post"
-                                              action="blog-detail.html">
+                                              action="{{route('review')}}">
+                                            @csrf
                                             <div class="row">
-                                                <div class="col-md-6">
-                                                    <p class="comment-form-author input-required">
-                                                        <input name="author" id="author" type="text"
-                                                               placeholder="Your Name">
+                                                <div class="col-md-12">
+                                                    <fieldset class="rating" dir="ltr">
+                                                        <input type="radio" id="star5" name="rating" value="5"/>
+                                                        <label class="full" for="star5"
+                                                               title="Awesome - 5 stars"></label>
+                                                        <input type="radio" id="star4half" name="rating"
+                                                               value="4.5"/><label class="half" for="star4half"
+                                                                                   title="Pretty good - 4.5 stars"></label>
+                                                        <input type="radio" id="star4" name="rating" value="4"/><label
+                                                            class="full" for="star4"
+                                                            title="Pretty good - 4 stars"></label> <input type="radio"
+                                                                                                          id="star3half"
+                                                                                                          name="rating"
+                                                                                                          value="3.5"/><label
+                                                            class="half" for="star3half"
+                                                            title="Meh - 3.5 stars"></label> <input type="radio"
+                                                                                                    id="star3"
+                                                                                                    name="rating"
+                                                                                                    value="3"/><label
+                                                            class="full" for="star3" title="Meh - 3 stars"></label>
+                                                        <input type="radio" id="star2half" name="rating"
+                                                               value="2.5"/><label class="half" for="star2half"
+                                                                                   title="Kinda bad - 2.5 stars"></label>
+                                                        <input type="radio" id="star2" name="rating" value="2"/><label
+                                                            class="full" for="star2"
+                                                            title="Kinda bad - 2 stars"></label> <input type="radio"
+                                                                                                        id="star1half"
+                                                                                                        name="rating"
+                                                                                                        value="1.5"/><label
+                                                            class="half" for="star1half"
+                                                            title="Meh - 1.5 stars"></label> <input type="radio"
+                                                                                                    id="star1"
+                                                                                                    name="rating"
+                                                                                                    value="1"/><label
+                                                            class="full" for="star1"
+                                                            title="Sucks big time - 1 star"></label> <input type="radio"
+                                                                                                            id="starhalf"
+                                                                                                            name="rating"
+                                                                                                            value="0.5"/><label
+                                                            class="half" for="starhalf"
+                                                            title="Sucks big time - 0.5 stars"></label>
+                                                    </fieldset>
+                                                    <p class="comment-form-comment">
+                                                        <textarea name="comment" id="comment"
+                                                                  placeholder="Your review" required></textarea>
                                                     </p>
-                                                    <p class="comment-form-email input-required">
-                                                        <input name="email" id="email" type="email"
-                                                               placeholder="Your Email">
-                                                    </p>
-                                                    <p class="form-submit d-none d-md-block">
-                                                        <input value="POST YOUR COMMENT" class="submit" id="submit"
+                                                    <input type="hidden" id="rate" name="rate">
+                                                    <input type="hidden" id="teacher_id" name="teacher_id" value="{{$teacher->id}}">
+                                                    <p class="form-submit d-md-none">
+                                                        <input value="POST YOUR COMMENT" class="submit" id="submit1"
                                                                name="submit" type="submit">
                                                     </p>
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <p class="comment-form-comment">
-                                                        <textarea name="comment" id="comment"
-                                                                  placeholder="Your review"></textarea>
-                                                    </p>
-                                                    <p class="form-submit d-md-none">
-                                                        <input value="POST YOUR COMMENT" class="submit" id="submit1"
+                                                    <p class="form-submit d-none d-md-block">
+                                                        <input value="POST YOUR COMMENT" class="submit" id="submit"
                                                                name="submit" type="submit">
                                                     </p>
                                                 </div>
                                             </div>
                                         </form>
                                     </div>
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -300,8 +336,12 @@
 @push('scripts')
     <script>
 
-        $(document).ready(function () {
+        $(document).ready(function(){
 
+            $("input[type='radio']").click(function(){
+                var sim = $("input[type='radio']:checked").val();
+                $('#rate').val(sim);
+            });
         });
 
     </script>

@@ -19,7 +19,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'username', 'name_ar', 'name_en', 'description_ar', 'description_en', 'rating', 'type', 'image', 'position', 'email', 'mobile','password', 'gender'
+        'username', 'name_ar', 'name_en', 'description_ar', 'description_en', 'rating', 'type', 'image', 'position', 'email', 'mobile','password', 'gender', 'count_rate'
     ];
 
     /**
@@ -100,6 +100,11 @@ class User extends Authenticatable
     public function socialLink()
     {
         return $this->hasMany(TeacherSocial::class, 'teacher_id', 'id');
+    }
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class, 'teacher_id', 'id');
     }
 
 }

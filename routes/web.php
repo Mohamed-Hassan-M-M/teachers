@@ -48,6 +48,9 @@ Route::group(
     Route::get('/contact-us', 'TeacherController@contactPage')->name('teacher.contact.page');
     Route::post('/contact-us', 'TeacherController@contact')->name('teacher.contact');
 
+    //review
+    Route::post('/review', 'TeacherController@review')->name('review');
+
     //about page
     Route::get('/about-us', 'TeacherController@about')->name('teacher.about');
 

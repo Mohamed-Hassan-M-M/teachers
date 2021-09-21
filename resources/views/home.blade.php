@@ -559,27 +559,27 @@
             <div class="owl-carousel">
                 <div class="single-testimonial-box" data-aos="fade-left">
                     <div class="top-portion">
-                        <img src="{{asset('app-assets/images/testimonial-image-01.jpg')}}" alt="Testimonial Image"/>
-                        <div class="user-comment">
+                        <img style="width: 35%; height: 252px;" src="{{$teachers[0]->image_path}}" alt="Testimonial Image"/>
+                        <div class="user-comment" style="width: 65%">
                             <div class="arrow-left"></div>
-                            <blockquote cite="#">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna magna, rhoncus
-                                eget commodo et, dignissim non nulla. Sed sit amet vestibulum ex. Donec dolor velit
+                            <blockquote class="w-100" cite="#">
+                                <p class="m-0" style="display: -webkit-box;-webkit-line-clamp: 4;-webkit-box-orient: vertical;overflow: hidden;" >{{$teachers[0]->description}}</p>
                             </blockquote>
                         </div>
                         <div class="clear"></div>
                     </div>
                     <div class="bottom-portion">
-                        <a href="#" class="author">
-                            Adrey Pachai <small>(Student )</small>
+                        <a href="{{route('teacher.page', $teachers[0]->id)}}" class="author">
+                            {{$teachers[0]->name}} <small>(@lang('general.teacher'))</small>
                         </a>
                         <div class="social-share-links">
                             <ul>
-                                <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                                @foreach($teachers[0]->socialLink as $social)
+                                    <li><a href="{{$social->social_link}}"><i
+                                                class="fa @if(strpos($social->social_link, 'facebook')) fa-facebook @elseif(strpos($social->social_link, 'google')) fa-google-plus @elseif(strpos($social->social_link, 'youtube')) fa-youtube-play @endif"></i></a>
+                                    </li>
+                                @endforeach
+
                             </ul>
                         </div>
                         <div class="clearfix"></div>
