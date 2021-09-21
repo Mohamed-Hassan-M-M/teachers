@@ -26,18 +26,18 @@
                         <li class="nav-item ">
                             <a class="nav-link" href="{{route('teacher.grid')}}">@lang('general.teachers')</a>
                         </li>
-                        {{--                        <li class="nav-item ">--}}
-                        {{--                            <a class="nav-link" href="{{route('teacher.grid')}}">@lang('general.events')</a>--}}
-                        {{--                        </li>--}}
+                        <li class="nav-item ">
+                            <a class="nav-link" href="{{route('event.grid')}}">@lang('general.events')</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('teacher.contact.page')}}">@lang('general.contact')</a>
                         </li>
                         <li class="nav-item">
                             @if(app()->getLocale() == 'en')
-                                <a class="nav-link" style="text-decoration: underline;text-transform: lowercase"
+                                <a class="nav-link" style="text-decoration: underline;"
                                    href="{{ LaravelLocalization::getLocalizedURL('ar', null, [], true) }}">@lang('general.arabic')</a>
                             @else
-                                <a class="nav-link" style="text-decoration: underline;text-transform: lowercase"
+                                <a class="nav-link" style="text-decoration: underline;"
                                    href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}">@lang('general.english')</a>
                             @endif
 
@@ -74,18 +74,18 @@
                         <li>
                             <a href="{{route('teacher.grid')}}">@lang('general.teachers')</a>
                         </li>
-                        {{--                        <li>--}}
-                        {{--                            <a href="{{route('teacher.grid')}}">@lang('general.events')</a>--}}
-                        {{--                        </li>--}}
+                        <li>
+                            <a href="{{route('event.grid')}}">@lang('general.events')</a>
+                        </li>
                         <li>
                             <a href="{{route('teacher.contact.page')}}">@lang('general.contact')</a>
                         </li>
                         <li>
                             @if(app()->getLocale() == 'en')
-                                <a style="text-decoration: underline;text-transform: lowercase"
+                                <a style="text-decoration: underline;"
                                    href="{{ LaravelLocalization::getLocalizedURL('ar', null, [], true) }}">@lang('general.arabic')</a>
                             @else
-                                <a style="text-decoration: underline;text-transform: lowercase"
+                                <a style="text-decoration: underline;"
                                    href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}">@lang('general.english')</a>
                             @endif
                         </li>

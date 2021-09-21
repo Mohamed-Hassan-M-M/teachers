@@ -29,10 +29,10 @@ class Event extends Model
 
     public function getDateAttribute($key)
     {
-        return Carbon::parse($this->attributes['date'])->format('Y-m-d');
+        return Carbon::parse($this->attributes['date'])->format('d M, Y');
     }
 
-    public function getNameAttribute($key)
+    public function getTitleAttribute($key)
     {
         return $this->attributes['title_'.app()->getLocale()];
     }

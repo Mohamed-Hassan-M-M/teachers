@@ -58,9 +58,9 @@
                                             <a class="nav-link"
                                                href="{{route('teacher.grid')}}">@lang('general.teachers')</a>
                                         </li>
-                                        {{--                                        <li class="nav-item ">--}}
-                                        {{--                                            <a class="nav-link" href="{{route('teacher.grid')}}">@lang('general.events')</a>--}}
-                                        {{--                                        </li>--}}
+                                        <li class="nav-item ">
+                                            <a class="nav-link" href="{{route('event.grid')}}">@lang('general.events')</a>
+                                        </li>
                                         <li class="nav-item">
                                             <a class="nav-link"
                                                href="{{route('teacher.contact.page')}}">@lang('general.contact')</a>
@@ -68,11 +68,11 @@
                                         <li class="nav-item">
                                             @if(app()->getLocale() == 'en')
                                                 <a class="nav-link"
-                                                   style="text-decoration: underline;text-transform: lowercase"
+                                                   style="text-decoration: underline;"
                                                    href="{{ LaravelLocalization::getLocalizedURL('ar', null, [], true) }}">@lang('general.arabic')</a>
                                             @else
                                                 <a class="nav-link"
-                                                   style="text-decoration: underline;text-transform: lowercase"
+                                                   style="text-decoration: underline;"
                                                    href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}">@lang('general.english')</a>
                                             @endif
 
@@ -98,18 +98,18 @@
                                     <li>
                                         <a href="{{route('teacher.grid')}}">@lang('general.teachers')</a>
                                     </li>
-                                    {{--                                    <li>--}}
-                                    {{--                                        <a href="{{route('teacher.grid')}}">@lang('general.events')</a>--}}
-                                    {{--                                    </li>--}}
+                                    <li>
+                                        <a href="{{route('event.grid')}}">@lang('general.events')</a>
+                                    </li>
                                     <li>
                                         <a href="{{route('teacher.contact.page')}}">@lang('general.contact')</a>
                                     </li>
                                     <li>
                                         @if(app()->getLocale() == 'en')
-                                            <a style="text-decoration: underline;text-transform: lowercase"
+                                            <a style="text-decoration: underline;"
                                                href="{{ LaravelLocalization::getLocalizedURL('ar', null, [], true) }}">@lang('general.arabic')</a>
                                         @else
-                                            <a style="text-decoration: underline;text-transform: lowercase"
+                                            <a style="text-decoration: underline;"
                                                href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}">@lang('general.english')</a>
                                         @endif
 
@@ -142,8 +142,8 @@
                         who matches your requirements.</p>
                     <div class="slide-buttons hidden-sm hidden-xs"
                          @if(app()->getLocale() == 'ar') style="clear: both" @endif >
-                        <a href="{{route('login')}}" class="btn btn-primary">Get Started Now!<span></span></a>
-                        <a href="{{route('register')}}" class="btn btn-light">Join Now<span></span></a>
+                        <a href="{{route('register')}}" class="btn btn-primary">Register Now!<span></span></a>
+                        <a href="{{route('login')}}" class="btn btn-light">Login Now<span></span></a>
                     </div>
                 </div>
             </div>
@@ -160,8 +160,8 @@
                         some form, by injected humor, or randomized words.</p>
                     <div class="slide-buttons hidden-sm hidden-xs"
                          @if(app()->getLocale() == 'ar') style="clear: both" @endif >
-                        <a href="{{route('login')}}" class="btn btn-primary">Get Started Now!<span></span></a>
-                        <a href="{{route('register')}}" class="btn btn-light">Join Now<span></span></a>
+                        <a href="{{route('register')}}" class="btn btn-primary">Register Now!<span></span></a>
+                        <a href="{{route('login')}}" class="btn btn-light">Login Now<span></span></a>
                     </div>
                 </div>
             </div>
@@ -178,8 +178,8 @@
                         some form, by injected humor, or randomized words.</p>
                     <div class="slide-buttons hidden-sm hidden-xs"
                          @if(app()->getLocale() == 'ar') style="clear: both" @endif >
-                        <a href="{{route('login')}}" class="btn btn-primary">Get Started Now!<span></span></a>
-                        <a href="{{route('register')}}" class="btn btn-light">Join Now<span></span></a>
+                        <a href="{{route('register')}}" class="btn btn-primary">Register Now!<span></span></a>
+                        <a href="{{route('login')}}" class="btn btn-light">Login Now<span></span></a>
                     </div>
                 </div>
             </div>
@@ -329,7 +329,7 @@
                                 combined with a handful of model sentence structures, to generate Lorem Ipsum which
                                 looks reasonable. The generated Lorem Ipsum is therefore
                                 always free from repetition, injected humor, or non-characteristic words etc.</p>
-                            <a class="btn btn-primary" href="signup.html">Free Join Now<span></span></a>
+                            <a class="btn btn-primary" href="{{route('register')}}">Free Join Now<span></span></a>
                         </div>
                     </div>
                 </div>
@@ -429,39 +429,36 @@
                         <div class="single-news-event first-news-event" data-aos="fade-down">
                             <figure>
                                 <img class="rounded-border"
-                                     src="{{asset('app-assets/images/news-event/home-news-event-01.jpg')}}"
+                                     src="{{$events[0]->image_path}}" style="width: 555px; height: 340px"
                                      alt="News & Event"/>
                             </figure>
-                            <div class="content-block bottom-left-rounded">
+                            <div class="content-block bottom-left-rounded" style="height: 340px">
                                 <div class="member-info">
                                     <div class="content_meta_category">
                                         <span class="arrow-right"></span>
-                                        <a href="#" rel="category tag">EVENT</a>
+                                        <a href="{{route('event.grid')}}" rel="category tag">@lang('general.events')</a>
                                     </div>
                                     <ul class="news-event-info">
                                         <li>
                                             <a href="#" target="_blank">
                                                 <i class="fa fa-calendar"></i>
-                                                July 25, 2016
+                                                {{$events[0]->date}}
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#" target="_blank">
-                                                <i class="fa fa-map-marker"></i>
-                                                New York, USA
-                                            </a>
+                                            @foreach($events[0]->areas as $area)
+                                                <a>
+                                                    <i class="fa fa-map-marker"></i>
+                                                    {{$area->city->name}} , {{$area->name}}
+                                                </a>
+                                            @endforeach
                                         </li>
                                     </ul>
-                                    <h3><a href="">It uses a dictionary of over 200 Latin word</a></h3>
-                                    <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution
-                                        of
-                                        letters, as opposed to using 'Content here, content here', making it look like
-                                        readable
-                                        English. Many desktop publishing packages and web page editors now use Lorem
-                                        Ipsum as
-                                        their default model.</p>
-                                    <a class="btn btn-secondary" style="visibility: hidden"
-                                       href="news-events-detail.html">Read More</a>
+                                    <h3><a href="{{route('event.page', $events[0]->id)}}">{{$events[0]->title}}
+                                            word</a></h3>
+                                    <p>{{$events[0]->description}}</p>
+                                    <a href="{{route('event.page', $events[0]->id)}}"
+                                       class="btn btn-secondary">Read More</a>
                                 </div>
                             </div>
                             <div class="clearfix"></div>
@@ -469,73 +466,74 @@
                     </div>
                     <div class="col-md-12 col-lg-7 col-xl-6">
                         <div class="single-news-event second-news-event" data-aos="fade-right">
-                            <div class="content-block">
+                            <div class="content-block" style="height: 302px">
                                 <div class="member-info">
                                     <div class="content_meta_category">
                                         <span class="arrow-right"></span>
-                                        <a href="#" rel="category tag">EVENT</a>
+                                        <a href="{{route('event.grid')}}" rel="category tag">@lang('general.events')</a>
                                     </div>
                                     <ul class="news-event-info">
                                         <li>
                                             <a href="#" target="_blank">
                                                 <i class="fa fa-calendar"></i>
-                                                July 25, 2016
+                                                {{$events[0]->date}}
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#" target="_blank">
-                                                <i class="fa fa-map-marker"></i>
-                                                New York, USA
-                                            </a>
+                                            @foreach($events[0]->areas as $area)
+                                                <a>
+                                                    <i class="fa fa-map-marker"></i>
+                                                    {{$area->city->name}} , {{$area->name}}
+                                                </a>
+                                            @endforeach
                                         </li>
                                     </ul>
-                                    <h3><a href="news-events-detail.html">It uses a dictionary of over 200 Latin
+                                    <h3><a href="{{route('event.page', $events[0]->id)}}">{{$events[0]->title}}
                                             word</a></h3>
-                                    <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution
-                                        of
-                                        letters, as opposed to using 'Content here, content here', </p>
-                                    <a class="btn btn-secondary" style="visibility: hidden"
-                                       href="news-events-detail.html">Read More</a>
+                                    <p>{{$events[0]->description}}</p>
+                                    <a href="{{route('event.page', $events[0]->id)}}"
+                                       class="btn btn-secondary">Read More</a>
                                 </div>
                             </div>
                             <figure>
                                 <img class="rounded-border"
-                                     src="{{asset('app-assets/images/news-event/home-news-event-02.jpg')}}"
+                                     src="{{$events[0]->image_path}}" style="width: 276px; height: 338px"
                                      alt="News & Event"/>
                             </figure>
                             <div class="clearfix"></div>
                         </div>
                         <div class="single-news-event third-news-event" data-aos="fade-left">
                             <figure>
-                                <img src="{{asset('app-assets/images/news-event/home-news-event-03.jpg')}}"
+                                <img class="rounded-border"
+                                     src="{{$events[0]->image_path}}" style="width: 278px; height: 341px"
                                      alt="News & Event"/>
                             </figure>
-                            <div class="content-block bottom-right-rounded">
+                            <div class="content-block bottom-right-rounded" style="height: 302px">
                                 <div class="member-info">
                                     <div class="content_meta_category">
                                         <span class="arrow-right"></span>
-                                        <a href="#" rel="category tag">EVENT</a>
+                                        <a href="{{route('event.grid')}}" rel="category tag">@lang('general.events')</a>
                                     </div>
                                     <ul class="news-event-info">
                                         <li>
                                             <a href="#" target="_blank">
                                                 <i class="fa fa-calendar"></i>
-                                                July 25, 2016
+                                                {{$events[0]->date}}
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#" target="_blank">
-                                                <i class="fa fa-map-marker"></i>
-                                                New York, USA
-                                            </a>
+                                            @foreach($events[0]->areas as $area)
+                                                <a>
+                                                    <i class="fa fa-map-marker"></i>
+                                                    {{$area->city->name}} , {{$area->name}}
+                                                </a>
+                                            @endforeach
                                         </li>
                                     </ul>
-                                    <h3><a href="news-events-detail.html">It uses a dictionary of over 200 Latin
+                                    <h3><a href="{{route('event.page', $events[0]->id)}}">{{$events[0]->title}}
                                             word</a></h3>
-                                    <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution
-                                        of
-                                        letters, as opposed to using 'Content here, content here', </p>
-                                    <a href="news-events-detail.html" style="visibility: hidden"
+                                    <p>{{$events[0]->description}}</p>
+                                    <a href="{{route('event.page', $events[0]->id)}}"
                                        class="btn btn-secondary">Read More</a>
                                 </div>
                             </div>

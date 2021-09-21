@@ -24,7 +24,7 @@
                                 <li><a href="{{route('teacher.about')}}">@lang('general.aboutUs')</a></li>
                                 <li><a href="{{route('teacher.grid')}}">@lang('general.teacher')</a></li>
                                 <li><a href="{{route('teacher.contact.page')}}">@lang('general.contact')</a></li>
-{{--                                <li><a href="">@lang('general.events')</a></li>--}}
+                                <li><a href="{{route('event.grid')}}">@lang('general.events')</a></li>
                                 @if(!auth()->check())
                                     <li><a href="{{route('login')}}">@lang('general.signIn/register')</a></li>
                                 @endif

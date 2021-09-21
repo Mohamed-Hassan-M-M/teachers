@@ -25,18 +25,18 @@
                         <li class="nav-item active">
                             <a class="nav-link" href="{{route('teacher.grid')}}">@lang('general.teachers')</a>
                         </li>
-                        {{--                        <li class="nav-item ">--}}
-                        {{--                            <a class="nav-link" href="{{route('teacher.grid')}}">@lang('general.events')</a>--}}
-                        {{--                        </li>--}}
+                        <li class="nav-item ">
+                            <a class="nav-link" href="{{route('event.grid')}}">@lang('general.events')</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('teacher.contact.page')}}">@lang('general.contact')</a>
                         </li>
                         <li class="nav-item">
                             @if(app()->getLocale() == 'en')
-                                <a class="nav-link" style="text-decoration: underline;text-transform: lowercase"
+                                <a class="nav-link" style="text-decoration: underline;"
                                    href="{{ LaravelLocalization::getLocalizedURL('ar', null, [], true) }}">@lang('general.arabic')</a>
                             @else
-                                <a class="nav-link" style="text-decoration: underline;text-transform: lowercase"
+                                <a class="nav-link" style="text-decoration: underline;"
                                    href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}">@lang('general.english')</a>
                             @endif
 
@@ -73,18 +73,18 @@
                         <li>
                             <a href="{{route('teacher.grid')}}">@lang('general.teachers')</a>
                         </li>
-                        {{--                        <li>--}}
-                        {{--                            <a href="{{route('teacher.grid')}}">@lang('general.events')</a>--}}
-                        {{--                        </li>--}}
+                        <li>
+                            <a href="{{route('event.grid')}}">@lang('general.events')</a>
+                        </li>
                         <li>
                             <a href="{{route('teacher.contact.page')}}">@lang('general.contact')</a>
                         </li>
                         <li>
                             @if(app()->getLocale() == 'en')
-                                <a style="text-decoration: underline;text-transform: lowercase"
+                                <a style="text-decoration: underline;"
                                    href="{{ LaravelLocalization::getLocalizedURL('ar', null, [], true) }}">@lang('general.arabic')</a>
                             @else
-                                <a style="text-decoration: underline;text-transform: lowercase"
+                                <a style="text-decoration: underline;"
                                    href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}">@lang('general.english')</a>
                             @endif
                         </li>
@@ -591,13 +591,13 @@
 
                                 teachers += '</div>';
                                 teachers += '</div>';
-                                teachers += '<h3 class="book-media-title"><a href="#">'
+                                teachers += '<h3 class="book-media-title"><a href="{{url('/') . '/teacher/'}}">'
                                     + item['name_{{app()->getLocale()}}'] + '</a></h3>';
                                 teachers += '<p><strong>@lang('general.phone'):</strong> '
                                     + item['mobile'] + '</p>';
                                 teachers += '<div class="card-links">';
-                                teachers += '<a href="{{url('/' . '/teacher/')}}' + item['id'] + '" class="btn btn-primary"> @lang('general.read_more')</a>';
-                                teachers += '<a href="{{url('/' . '/teacher/')}}' + item['id'] + '" class="read-more"><img src="{{asset('app-assets/images/link-arrow.png')}}" alt=""></a>';
+                                teachers += '<a href="{{url('/') . '/teacher/'}}' + item['id'] + '" class="btn btn-primary"> @lang('general.read_more')</a>';
+                                teachers += '<a href="{{url('/') . '/teacher/'}}' + item['id'] + '" class="read-more"><img src="{{asset('app-assets/images/link-arrow.png')}}" alt=""></a>';
                                 teachers += '</div>';
                                 teachers += '</div>';
                                 teachers += '</div>';
@@ -670,13 +670,13 @@
                                 }
                                 teachers += '</div>';
                                 teachers += '</div>';
-                                teachers += '<h3 class="book-media-title"><a href="#">'
+                                teachers += '<h3 class="book-media-title"><a href="{{url('/') . '/teacher/'}}">'
                                     + item['name_{{app()->getLocale()}}'] + '</a></h3>';
                                 teachers += '<p><strong>@lang('general.phone'):</strong> '
                                     + item['mobile'] + '</p>';
                                 teachers += '<div class="card-links">';
-                                teachers += '<a href="{{url('/' . '/teacher/')}}' + item['id'] + '" class="btn btn-primary"> @lang('general.read_more')</a>';
-                                teachers += '<a href="{{url('/' . '/teacher/')}}' + item['id'] + '" class="read-more"><img src="{{asset('app-assets/images/link-arrow.png')}}" alt=""></a>';
+                                teachers += '<a href="{{url('/') . '/teacher/'}}' + item['id'] + '" class="btn btn-primary"> @lang('general.read_more')</a>';
+                                teachers += '<a href="{{url('/') . '/teacher/'}}' + item['id'] + '" class="read-more"><img src="{{asset('app-assets/images/link-arrow.png')}}" alt=""></a>';
                                 teachers += '</div>';
                                 teachers += '</div>';
                                 teachers += '</div>';

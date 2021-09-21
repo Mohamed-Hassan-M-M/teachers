@@ -40,6 +40,10 @@ Route::group(
     //teacher page
     Route::get('/teacher/{id?}', 'TeacherController@teacherPage')->name('teacher.page');
 
+    //event page
+    Route::get('/event-grid/{id?}', 'EventController@index')->name('event.grid');
+    Route::get('/event/{id}', 'EventController@eventPage')->name('event.page');
+
     //contact page
     Route::get('/contact-us', 'TeacherController@contactPage')->name('teacher.contact.page');
     Route::post('/contact-us', 'TeacherController@contact')->name('teacher.contact');

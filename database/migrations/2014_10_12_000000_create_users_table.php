@@ -28,6 +28,7 @@ class CreateUsersTable extends Migration
             $table->enum('type', ['1', '2', '3'])->comment("[admin, teacher, student]");
             $table->enum('position', ['1', '2', '3', '4'])->nullable()->comment("[junior, senior, expert, great]");
             $table->string('image')->nullable();
+            $table->string('gender')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

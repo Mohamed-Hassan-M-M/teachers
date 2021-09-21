@@ -26,18 +26,18 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('teacher.grid')}}">@lang('general.teachers')</a>
                         </li>
-                        {{--                        <li class="nav-item ">--}}
-                        {{--                            <a class="nav-link" href="{{route('teacher.grid')}}">@lang('general.events')</a>--}}
-                        {{--                        </li>--}}
+                        <li class="nav-item ">
+                            <a class="nav-link" href="{{route('event.grid')}}">@lang('general.events')</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('teacher.contact.page')}}">@lang('general.contact')</a>
                         </li>
                         <li class="nav-item">
                             @if(app()->getLocale() == 'en')
-                                <a class="nav-link" style="text-decoration: underline;text-transform: lowercase"
+                                <a class="nav-link" style="text-decoration: underline;"
                                    href="{{ LaravelLocalization::getLocalizedURL('ar', null, [], true) }}">@lang('general.arabic')</a>
                             @else
-                                <a class="nav-link" style="text-decoration: underline;text-transform: lowercase"
+                                <a class="nav-link" style="text-decoration: underline;"
                                    href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}">@lang('general.english')</a>
                             @endif
 
@@ -74,18 +74,18 @@
                         <li>
                             <a href="{{route('teacher.grid')}}">@lang('general.teachers')</a>
                         </li>
-                        {{--                        <li>--}}
-                        {{--                            <a href="{{route('teacher.grid')}}">@lang('general.events')</a>--}}
-                        {{--                        </li>--}}
+                        <li>
+                            <a href="{{route('event.grid')}}">@lang('general.events')</a>
+                        </li>
                         <li>
                             <a href="{{route('teacher.contact.page')}}">@lang('general.contact')</a>
                         </li>
                         <li>
                             @if(app()->getLocale() == 'en')
-                                <a style="text-decoration: underline;text-transform: lowercase"
+                                <a style="text-decoration: underline;"
                                    href="{{ LaravelLocalization::getLocalizedURL('ar', null, [], true) }}">@lang('general.arabic')</a>
                             @else
-                                <a style="text-decoration: underline;text-transform: lowercase"
+                                <a style="text-decoration: underline;"
                                    href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}">@lang('general.english')</a>
                             @endif
                         </li>
@@ -141,7 +141,7 @@
                                                 <input type="text" class="form-control" id="username" required
                                                        name="username">
                                                 @error('username')
-                                                <span class="invalid-feedback" role="alert">
+                                                <span class="text-danger" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>
                                                 @enderror
@@ -151,20 +151,35 @@
                                                 <input type="number" class="form-control" id="mobile" required
                                                        name="mobile">
                                                 @error('mobile')
-                                                <span class="invalid-feedback" role="alert">
+                                                <span class="text-danger" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>
                                                 @enderror
                                             </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="inputEmail4">@lang('teacher.email')</label>
-                                            <input type="email" class="form-control" id="inputEmail4" name="email">
-                                            @error('email')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                            @enderror
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <label for="inputEmail4">@lang('teacher.email')</label>
+                                                <input type="email" class="form-control" id="inputEmail4" name="email">
+                                                @error('email')
+                                                <span class="text-danger" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
+                                            </div>
+                                            <div class="form-group col-md-6 m-auto text-center">
+
+                                                <input type="radio" value="male" class="" id="inputRadio" name="gender">
+                                                <label for="inputRadio">@lang('general.male')</label>
+
+                                                <input type="radio" value="female" class="" id="inputRadio2" name="gender">
+                                                <label for="inputRadio2">@lang('general.female')</label>
+                                                @error('gender')
+                                                <span class="text-danger" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
+                                            </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
@@ -172,7 +187,7 @@
                                                 <input type="password" class="form-control" id="inputPassword3" required
                                                        name="password">
                                                 @error('password')
-                                                <span class="invalid-feedback" role="alert">
+                                                <span class="text-danger" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>
                                                 @enderror

@@ -370,7 +370,7 @@ $(function () {
       day = hour * 24;
     let birthday = "Sep 30, 2021 00:00:00",
 
-      countDown = new Date(birthday).getTime(),
+      countDown = new Date($('#dateevent').val()).getTime(),
       x = setInterval(function () {
 
         let now = new Date().getTime(),
