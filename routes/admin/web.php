@@ -20,13 +20,15 @@ Route::group(
 
     Route::group(['prefix'=>'admin', 'as'=>'admin.'], function (){
 
-        Route::get('/', 'HomeController@index')->name('home');
+        Route::get('/', 'HomeController@index')->middleware('admin')->name('home');
 
         Route::get('/login', 'Auth\LoginController@showLogin')->name('login');
         Route::post('/login', 'Auth\LoginController@login')->name('doLogin');
         Route::get('/logout', 'Auth\LoginController@logout')->name('logout')->middleware('admin');
 
         Route::resource('cities', CityController::class)->middleware('admin');
+
+        Route::resource('reviews', ReviewController::class)->middleware('admin');
 
         Route::resource('areas', AreaController::class)->middleware('admin');
 

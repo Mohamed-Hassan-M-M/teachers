@@ -301,7 +301,7 @@
                                                             title="Sucks big time - 0.5 stars"></label>
                                                     </fieldset>
                                                     <p class="comment-form-comment">
-                                                        <textarea name="comment" id="comment"
+                                                        <textarea name="message" id="comment"
                                                                   placeholder="Your review" required></textarea>
                                                     </p>
                                                     <input type="hidden" id="rate" name="rate">

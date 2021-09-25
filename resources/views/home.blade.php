@@ -135,11 +135,9 @@
                          src="{{asset('app-assets/images/header-slider/home-v1/header-slide.jpg')}}"/>
                 </figure>
                 <div class="carousel-caption" data-aos="fade-down">
-                    <h3>Find Your teachers Anytime, Anywhere!</h3>
-                    <h2>Discover High Qualified Teachers</h2>
-                    <p @if(app()->getLocale() == 'ar') style="float: right; direction: rtl" @endif >With Mo3allemy, We
-                        can guid you through our Teachers DataBase allover Egypt,To help you find the Good fit teacher
-                        who matches your requirements.</p>
+                    <h3>@lang('general.disslidertit1')</h3>
+                    <h2>@lang('general.disslidertit2')</h2>
+                    <p @if(app()->getLocale() == 'ar') style="float: right; direction: rtl" @endif >@lang('general.disslider')</p>
                     <div class="slide-buttons hidden-sm hidden-xs"
                          @if(app()->getLocale() == 'ar') style="clear: both" @endif >
                         <a href="{{route('register')}}" class="btn btn-primary">Register Now!<span></span></a>
@@ -153,11 +151,9 @@
                          src="{{asset('app-assets/images/header-slider/home-v1/header-slide.jpg')}}"/>
                 </figure>
                 <div class="carousel-caption">
-                    <h3>Online Learning Anytime, Anywhere!</h3>
-                    <h2>Discover Your Roots</h2>
-                    <p @if(app()->getLocale() == 'ar') style="float: right; direction: rtl" @endif >There are many
-                        variations of passages of Lorem Ipsum available, but the majority have suffered alteration in
-                        some form, by injected humor, or randomized words.</p>
+                    <h3>@lang('general.disslidertit1')</h3>
+                    <h2>@lang('general.disslidertit2')</h2>
+                    <p @if(app()->getLocale() == 'ar') style="float: right; direction: rtl" @endif >@lang('general.disslider')</p>
                     <div class="slide-buttons hidden-sm hidden-xs"
                          @if(app()->getLocale() == 'ar') style="clear: both" @endif >
                         <a href="{{route('register')}}" class="btn btn-primary">Register Now!<span></span></a>
@@ -171,11 +167,9 @@
                          src="{{asset('app-assets/images/header-slider/home-v1/header-slide.jpg')}}"/>
                 </figure>
                 <div class="carousel-caption">
-                    <h3>Online Learning Anytime, Anywhere!</h3>
-                    <h2>Discover Your Roots</h2>
-                    <p @if(app()->getLocale() == 'ar') style="float: right; direction: rtl" @endif >There are many
-                        variations of passages of Lorem Ipsum available, but the majority have suffered alteration in
-                        some form, by injected humor, or randomized words.</p>
+                    <h3>@lang('general.disslidertit1')</h3>
+                    <h2>@lang('general.disslidertit2')</h2>
+                    <p @if(app()->getLocale() == 'ar') style="float: right; direction: rtl" @endif >@lang('general.disslider')</p>
                     <div class="slide-buttons hidden-sm hidden-xs"
                          @if(app()->getLocale() == 'ar') style="clear: both" @endif >
                         <a href="{{route('register')}}" class="btn btn-primary">Register Now!<span></span></a>
@@ -213,7 +207,7 @@
             <div class="filter-box">
                 <div class="row align-items-center">
                     <div class="col-md-4 col-sm-12">
-                        <h3>What are you looking for at the SKILLE?</h3>
+                        <h3>@lang('general.searchlookinghome')</h3>
                     </div>
                     <div class="col-md-8 col-sm-12">
                         <form action="{{route('home.search')}}" id="search" method="POST">
@@ -269,8 +263,8 @@
             <div class="title-content text-center" data-aos="fade-up">
                 <div class="row">
                     <div class="col-md-8 mx-auto">
-                        <h6 class="sub-title">Welcome to the skille</h6>
-                        <h2 class="section-title">Your First Choice For Online Education Anywhere,Anytime</h2>
+                        <h6 class="sub-title">@lang('general.aboutwelcomhome')</h6>
+                        <h2 class="section-title">@lang('general.abouttitlehome')</h2>
                     </div>
                 </div>
             </div>
@@ -319,16 +313,7 @@
                     </div>
                     <div class="welcome-wrap" data-aos="fade-down">
                         <div class="welcome-text">
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have
-                                suffered alteration in some form, by injected humor, or randomized words which don't
-                                look even slightly believable. If you are going to use
-                                a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden
-                                in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat
-                                predefined chunks as necessary, making this the
-                                first true generator on the Internet. It uses a dictionary of over 200 Latin words,
-                                combined with a handful of model sentence structures, to generate Lorem Ipsum which
-                                looks reasonable. The generated Lorem Ipsum is therefore
-                                always free from repetition, injected humor, or non-characteristic words etc.</p>
+                            <p>@lang('general.abouthome')</p>
                             <a class="btn btn-primary" href="{{route('register')}}">Free Join Now<span></span></a>
                         </div>
                     </div>
@@ -348,9 +333,8 @@
                             <img src="{{asset('app-assets/images/features/home-v1/books-collection.jpg')}}"
                                  alt="Books Collection"/>
                         </div>
-                        <h3>Collection Of Books</h3>
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a
-                            page when looking at its layout.</p>
+                        <h3>@lang('general.firstservicetitlehome')</h3>
+                        <p>@lang('general.firstservicehome')</p>
                     </div>
                 </li>
                 <li data-aos="fade-down">
@@ -359,9 +343,8 @@
                             <img src="{{asset('app-assets/images/features/home-v1/ebooks.jpg')}}"
                                  alt="Books Collection"/>
                         </div>
-                        <h3>Download or Read eBooks</h3>
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a
-                            page when looking at its layout.</p>
+                        <h3>@lang('general.secondservicetitlehome')</h3>
+                        <p>@lang('general.secondservicehome')</p>
                     </div>
                 </li>
                 <li data-aos="fade-right">
@@ -369,9 +352,8 @@
                         <div class="image">
                             <img src="{{asset('app-assets/images/features/home-v1/dvd.jpg')}}" alt="Books Collection"/>
                         </div>
-                        <h3>Watch and Download DVDs</h3>
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a
-                            page when looking at its layout.</p>
+                        <h3>@lang('general.thirdservicetitlehome')</h3>
+                        <p>@lang('general.thirdservicehome').</p>
                     </div>
                 </li>
                 <li data-aos="fade-left">
@@ -380,9 +362,8 @@
                             <img src="{{asset('app-assets/images/features/home-v1/magazines.jpg')}}"
                                  alt="Books Collection"/>
                         </div>
-                        <h3>Variety of Magazines</h3>
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a
-                            page when looking at its layout.</p>
+                        <h3>@lang('general.fourthservicetitlehome')</h3>
+                        <p>@lang('general.fourthservicehome').</p>
                     </div>
                 </li>
                 <li data-aos="fade-up">
@@ -391,9 +372,8 @@
                             <img src="{{asset('app-assets/images/features/home-v1/audio.jpg')}}"
                                  alt="Books Collection"/>
                         </div>
-                        <h3>Audio for Books & Magazine</h3>
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a
-                            page when looking at its layout.</p>
+                        <h3>@lang('general.fifthservicetitlehome')</h3>
+                        <p>@lang('general.fifthservicehome').</p>
                     </div>
                 </li>
                 <li data-aos="fade-right">
@@ -402,9 +382,8 @@
                             <img src="{{asset('app-assets/images/features/home-v1/eaudio.jpg')}}"
                                  alt="Books Collection"/>
                         </div>
-                        <h3>eAudios</h3>
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a
-                            page when looking at its layout.</p>
+                        <h3>@lang('general.sixthservicetitlehome')</h3>
+                        <p>@lang('general.sixthservicehome').</p>
                     </div>
                 </li>
             </ul>
@@ -551,8 +530,8 @@
             <div class="title-content text-center" data-aos="fade-up">
                 <div class="row">
                     <div class="col-md-8 mx-auto text-center">
-                        <h6 class="sub-title">User Testimonial</h6>
-                        <h2 class="section-title">Words From our Community</h2>
+                        <!--<h6 class="sub-title">User Testimonial</h6>-->
+                        <h2 class="section-title">@lang('general.wordscom')</h2>
                     </div>
                 </div>
             </div>

@@ -8,10 +8,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1">
     <meta name="format-detection" content="telephone=no">
     <!-- Title -->
-    <title>..:: SKILLE - Online Courses and Library ::..</title>
+    <title>Mo3allemy</title>
 
     <!-- Favicon -->
-    <link href="{{asset('app-assets/images/logo.png')}}" rel="icon" type="image/x-icon" />
+    <link href="{{asset('app-assets/images/logofav.png')}}" rel="icon" type="image/x-icon" />
 
     <!-- Fonts -->
     <link href="{{asset('app-assets/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css" />

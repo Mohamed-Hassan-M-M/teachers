@@ -54,7 +54,7 @@
                                                     <td class="center">{{$teacher->name_en}}</td>
                                                     <td class="center">{{$teacher->cities()}}</td>
                                                     <td class="center">{{$teacher->areas->count()}}</td>
-                                                    <td class="center">{{$teacher->rate}}</td>
+                                                    <td class="center"><i class="material-icons" style="font-size: 16px; color: gold">star</i><span>({{$teacher->rating}})</span></td>
                                                     <td class="center">{{$teacher->created_at}}</td>
                                                     <td class="center">
                                                         <a href="{{route('admin.teachers.show',['teacher'=>$teacher->id])}}" class="btn blue gradient-shadow white-text tooltipped animated bounceIn m-1"  data-tooltip="@lang('general.show')!"><i class="material-icons">remove_red_eye</i></a>

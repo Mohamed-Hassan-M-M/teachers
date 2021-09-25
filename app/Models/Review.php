@@ -16,6 +16,22 @@ class Review extends Model
         return Carbon::parse($this->attributes['created_at'])->format('M d, Y');
     }
 
+    public function getStatusAttribute($key)
+    {
+        if($this->attributes['status'] == '0'){
+            return __('review.pending');
+        }
+        elseif($this->attributes['status'] == '1'){
+            return __('review.approved');
+        }
+        elseif($this->attributes['status'] == '2'){
+            return __('review.rejected');
+        }
+        else{
+            return '';
+        }
+    }
+
     /* relations*/
     public function student()
     {

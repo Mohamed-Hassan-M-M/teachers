@@ -38,7 +38,7 @@
                                                     <th class="center">@lang('general.contact') #</th>
                                                     <th class="center">@lang('contact.name')</th>
                                                     <th class="center">@lang('contact.email')</th>
-                                                    <th class="center">@lang('contact.message')</th>
+                                                    <th class="center">@lang('general.date')</th>
                                                     <th class="center">@lang('general.option')</th>
                                                 </tr>
                                             </thead>
@@ -48,16 +48,10 @@
                                                     <td class="center">{{++$index}}</td>
                                                     <td class="center">{{$contact->name}}</td>
                                                     <td class="center">{{$contact->email}}</td>
-                                                    <td class="center">{{$contact->message}}</td>
                                                     <td class="center">{{$contact->created_at}}</td>
                                                     <td class="center">
                                                         <a href="{{route('admin.contacts.show',['contact'=>$contact->id])}}" class="btn blue gradient-shadow white-text tooltipped animated bounceIn m-1"  data-tooltip="@lang('general.show')!"><i class="material-icons">remove_red_eye</i></a>
-                                                        <a href="{{route('admin.contacts.edit',['contact'=>$contact->id])}}" class="btn green gradient-shadow white-text tooltipped animated bounceIn m-1"  data-tooltip="@lang('general.edit')!"><i class="material-icons">edit</i></a>
-                                                        <form action="{{route('admin.contacts.destroy',['contact'=>$contact->id])}}" method="post" class="m-2 display-inline m-1" type="submit">
-                                                            <button type="button" class="removeModule btn red gradient-shadow white-text tooltipped animated bounceIn"  data-tooltip="@lang('general.delete')!"><i class="material-icons">delete</i></button>
-                                                            @method('DELETE')
-                                                            @csrf
-                                                        </form>
+{{--                                                        <a href="{{route('admin.contacts.edit',['contact'=>$contact->id])}}" class="btn green gradient-shadow white-text tooltipped animated bounceIn m-1"  data-tooltip="@lang('general.edit')!"><i class="material-icons">edit</i></a>--}}
                                                     </td>
                                                 </tr>
                                             @endforeach

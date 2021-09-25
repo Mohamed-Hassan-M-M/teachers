@@ -27,6 +27,8 @@
                                 <li><a href="{{route('event.grid')}}">@lang('general.events')</a></li>
                                 @if(!auth()->check())
                                     <li><a href="{{route('login')}}">@lang('general.signIn/register')</a></li>
+                                @else
+                                    <li><a href="{{route('logout')}}">@lang('general.logout')</a></li>
                                 @endif
                             </ul>
                         </div>

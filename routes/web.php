@@ -21,6 +21,8 @@ Route::group(
 
     Auth::routes();
 
+    Route::get('logout', 'Auth\LoginController@logout')->name('logout');
+
     // home
     Route::get('/', 'HomeController@index')->name('home');
 

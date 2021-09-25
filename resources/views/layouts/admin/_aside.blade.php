@@ -7,6 +7,8 @@
         <li class="bold"><a class="waves-effect waves-cyan @if(request()->segment(3) == 'teachers') active @endif " href="{{route('admin.teachers.index')}}"><i class="material-icons">person</i><span class="menu-title" data-i18n="Mail">@lang('general.teachers')</span><span class="badge badge pill pink accent-2 float-right mr-2">{{\App\Models\User::where('type','2')->count()}}</span></a>
         </li>
         <li class="bold"><a class="waves-effect waves-cyan @if(request()->segment(3) == 'students') active @endif " href="{{route('admin.students.index')}}"><i class="material-icons">groups</i><span class="menu-title" data-i18n="Chat">@lang('general.students')</span><span class="badge badge pill pink accent-2 float-right mr-2">{{\App\Models\User::where('type','3')->count()}}</span></a>
+
+        <li class="bold"><a class="waves-effect waves-cyan @if(request()->segment(3) == 'reviews') active @endif " href="{{route('admin.reviews.index')}}"><i class="material-icons">messages</i><span class="menu-title" data-i18n="Chat">@lang('general.reviews')</span><span class="badge badge pill pink accent-2 float-right mr-2">{{\App\Models\Review::count()}}</span></a>
         </li>
         <li class="bold"><a class="waves-effect waves-cyan @if(request()->segment(3) == 'sectors') active @endif " href="{{route('admin.sectors.index')}}"><i class="material-icons">school</i><span class="menu-title" data-i18n="ToDo">@lang('general.sectors')</span><span class="badge badge pill pink accent-2 float-right mr-2">{{\App\Models\Sector::count()}}</span></a>
         </li>
