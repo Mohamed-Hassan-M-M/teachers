@@ -74,6 +74,36 @@
                                 <div class="padding-4">
                                     <div class="row">
                                         <div class="col s7 m7">
+                                            <i class="material-icons background-round mt-5">timeline</i>
+                                            <p>@lang('general.blogs')</p>
+                                        </div>
+                                        <div class="col s5 m5 right-align">
+                                            <h5 class="mb-0 white-text">{{$blogs}}</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col s12 m6 l6 xl3">
+                            <div class="card gradient-45deg-red-pink gradient-shadow min-height-100 white-text animate fadeLeft">
+                                <div class="padding-4">
+                                    <div class="row">
+                                        <div class="col s7 m7">
+                                            <i class="material-icons background-round mt-5">timeline</i>
+                                            <p>@lang('general.books')</p>
+                                        </div>
+                                        <div class="col s5 m5 right-align">
+                                            <h5 class="mb-0 white-text">{{$books}}</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col s12 m6 l6 xl3">
+                            <div class="card gradient-45deg-amber-amber gradient-shadow min-height-100 white-text animate fadeRight">
+                                <div class="padding-4">
+                                    <div class="row">
+                                        <div class="col s7 m7">
                                             <i class="material-icons background-round mt-5">perm_identity</i>
                                             <p>@lang('general.teachers')</p>
                                         </div>
@@ -85,7 +115,7 @@
                             </div>
                         </div>
                         <div class="col s12 m6 l6 xl3">
-                            <div class="card gradient-45deg-red-pink gradient-shadow min-height-100 white-text animate fadeLeft">
+                            <div class="card gradient-45deg-green-teal gradient-shadow min-height-100 white-text animate fadeRight">
                                 <div class="padding-4">
                                     <div class="row">
                                         <div class="col s7 m7">
@@ -102,40 +132,6 @@
                     </div>
                 </div>
                 <!--card stats end-->
-
-                <!-- Current balance & total transactions cards-->
-                <div class="row vertical-modern-dashboard">
-                    <div class="col s12 m4 l4">
-                        <!-- Current Balance -->
-                        <div class="card animate fadeLeft">
-                            <div class="card-content">
-                                <h6 class="mb-0 mt-0 display-flex justify-content-between">Current Balance <i
-                                        class="material-icons float-right">more_vert</i>
-                                </h6>
-                                <p class="medium-small">This billing cycle</p>
-                                <div class="current-balance-container">
-                                    <div id="current-balance-donut-chart" class="current-balance-shadow"></div>
-                                </div>
-                                <h5 class="center-align">$ 50,150.00</h5>
-                                <p class="medium-small center-align">Used balance this billing cycle</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col s12 m8 l8 animate fadeRight">
-                        <!-- Total Transaction -->
-                        <div class="card">
-                            <div class="card-content">
-                                <h4 class="card-title mb-0">Total Transaction <i class="material-icons float-right">more_vert</i>
-                                </h4>
-                                <p class="medium-small">This month transaction</p>
-                                <div class="total-transaction-container">
-                                    <div id="total-transaction-line-chart" class="total-transaction-shadow"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--/ Current balance & total transactions cards-->
 
                 <!-- User statistics & appointment cards-->
                 <div class="row">

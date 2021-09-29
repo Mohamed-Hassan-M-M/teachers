@@ -3,7 +3,7 @@
 @section('content')
 
     <!-- Start: Header Section -->
-    <header id="header" class="inner-navbar-wrapper navbar-wrapper">
+    <header id="header" class="inner-navbar-wrapper navbar-wrapper"><meta charset="windows-1252">
         <button id="myBtn" title="Go to top"><span>&#8593;</span></button>
         <div class="container-fluid">
             <nav @if(app()->getLocale() == 'ar') style="direction: rtl"
@@ -23,10 +23,13 @@
                         <li class="nav-item ">
                             <a class="nav-link" href="{{route('teacher.about')}}">@lang('general.aboutUs')</a>
                         </li>
-                        <li class="nav-item active">
+                        <li class="nav-item">
                             <a class="nav-link active" href="{{route('teacher.grid')}}">@lang('general.teachers')</a>
                         </li>
                         <li class="nav-item ">
+                            <a class="nav-link active" href="{{route('book.grid')}}">@lang('general.books')</a>
+                        </li>
+                        <li class="nav-item active">
                             <a class="nav-link" href="{{route('event.grid')}}">@lang('general.events')</a>
                         </li>
                         <li class="nav-item">
@@ -34,11 +37,11 @@
                         </li>
                         <li class="nav-item">
                             @if(app()->getLocale() == 'en')
-                                <a class="nav-link" style="text-decoration: underline;"
-                                   href="{{ LaravelLocalization::getLocalizedURL('ar', null, [], true) }}">@lang('general.arabic')</a>
+                                <a class="nav-link"
+                                   href="{{ LaravelLocalization::getLocalizedURL('ar', null, [], true) }}"> <i class="flag-icon flag-icon-eg"></i> @lang('general.arabic')</a>
                             @else
-                                <a class="nav-link" style="text-decoration: underline;"
-                                   href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}">@lang('general.english')</a>
+                                <a class="nav-link"
+                                   href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}"> <i class="flag-icon flag-icon-us"></i> @lang('general.english')</a>
                             @endif
 
                         </li>
@@ -51,6 +54,10 @@
                         <div class="header-login-btn">
                             <a href="{{route('login')}}" class="btn btn-light"><i class="fa fa-user"></i>
                                 @lang('general.login')</a>
+                        </div>
+                        <div class="header-login-btn">
+                            <a href="{{route('register')}}" class="btn btn-light"><i class="fa fa-user"></i>
+                                @lang('general.register')</a>
                         </div>
                     @endif
                 </div>
@@ -75,6 +82,9 @@
                             <a href="{{route('teacher.grid')}}">@lang('general.teachers')</a>
                         </li>
                         <li>
+                            <a href="{{route('book.grid')}}">@lang('general.books')</a>
+                        </li>
+                        <li>
                             <a href="{{route('event.grid')}}">@lang('general.events')</a>
                         </li>
                         <li>
@@ -82,11 +92,11 @@
                         </li>
                         <li>
                             @if(app()->getLocale() == 'en')
-                                <a style="text-decoration: underline;"
-                                   href="{{ LaravelLocalization::getLocalizedURL('ar', null, [], true) }}">@lang('general.arabic')</a>
+                                <a
+                                   href="{{ LaravelLocalization::getLocalizedURL('ar', null, [], true) }}"> <i class="flag-icon flag-icon-eg"></i> @lang('general.arabic')</a>
                             @else
-                                <a style="text-decoration: underline;"
-                                   href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}">@lang('general.english')</a>
+                                <a
+                                   href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}"> <i class="flag-icon flag-icon-us"></i> @lang('general.english')</a>
                             @endif
                         </li>
                     </ul>
@@ -132,7 +142,7 @@
                                         </ul>
                                     </div>
                                     <div class="widget widget_blog_post">
-                                        <h3 class="widget-title">@lang('popularEvent')</h3>
+                                        <h3 class="widget-title">@lang('general.popularEvent')</h3>
                                         <ul>
                                             @foreach($populars as $popular)
                                                 <li>
@@ -154,23 +164,23 @@
                                 <div class="news-list-detail">
                                     <div class="event-detail-head">
                                         <figure>
-                                            @if(strtotime($event->date) >= date('now'))
-                                            <div id="countdown">
-                                                <input type="hidden" id="dateevent" value="{{$event->date}}">
-                                                <ul>
-                                                    <li><span id="days"></span>days</li>
-                                                    <li><span id="hours"></span>Hours</li>
-                                                    <li><span id="minutes"></span>Minutes</li>
-                                                    <li><span id="seconds"></span>Seconds</li>
-                                                </ul>
-                                                <div class="message">
-                                                    <div id="contents">
-                                                        <span class="emoji">🥳</span>
-                                                        <span class="emoji">🎉</span>
-                                                        <span class="emoji">🎂</span>
+                                            @if(strtotime($event->date) <= date('now'))
+                                                <div id="countdown">
+                                                    <input type="hidden" id="dateevent" value="{{$event->date}}">
+                                                    <ul>
+                                                        <li><span id="days"></span>days</li>
+                                                        <li><span id="hours"></span>Hours</li>
+                                                        <li><span id="minutes"></span>Minutes</li>
+                                                        <li><span id="seconds"></span>Seconds</li>
+                                                    </ul>
+                                                    <div class="message">
+                                                        <div id="contents">
+                                                            <span class="emoji">ðŸ¥³</span>
+                                                            <span class="emoji">ðŸŽ‰</span>
+                                                            <span class="emoji">ðŸŽ‚</span>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
                                             @endif
                                             <img src="{{$event->image_path}}" alt="News &amp; Event">
                                         </figure>

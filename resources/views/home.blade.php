@@ -59,6 +59,10 @@
                                                href="{{route('teacher.grid')}}">@lang('general.teachers')</a>
                                         </li>
                                         <li class="nav-item ">
+                                            <a class="nav-link"
+                                               href="{{route('book.grid')}}">@lang('general.books')</a>
+                                        </li>
+                                        <li class="nav-item ">
                                             <a class="nav-link" href="{{route('event.grid')}}">@lang('general.events')</a>
                                         </li>
                                         <li class="nav-item">
@@ -69,11 +73,11 @@
                                             @if(app()->getLocale() == 'en')
                                                 <a class="nav-link"
                                                    style="text-decoration: underline;"
-                                                   href="{{ LaravelLocalization::getLocalizedURL('ar', null, [], true) }}">@lang('general.arabic')</a>
+                                                   href="{{ LaravelLocalization::getLocalizedURL('ar', null, [], true) }}"> <i class="flag-icon flag-icon-eg"></i> @lang('general.arabic')</a>
                                             @else
                                                 <a class="nav-link"
                                                    style="text-decoration: underline;"
-                                                   href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}">@lang('general.english')</a>
+                                                   href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}"> <i class="flag-icon flag-icon-us"></i> @lang('general.english')</a>
                                             @endif
 
                                         </li>
@@ -99,6 +103,9 @@
                                         <a href="{{route('teacher.grid')}}">@lang('general.teachers')</a>
                                     </li>
                                     <li>
+                                        <a href="{{route('book.grid')}}">@lang('general.books')</a>
+                                    </li>
+                                    <li>
                                         <a href="{{route('event.grid')}}">@lang('general.events')</a>
                                     </li>
                                     <li>
@@ -106,11 +113,11 @@
                                     </li>
                                     <li>
                                         @if(app()->getLocale() == 'en')
-                                            <a style="text-decoration: underline;"
-                                               href="{{ LaravelLocalization::getLocalizedURL('ar', null, [], true) }}">@lang('general.arabic')</a>
+                                            <a
+                                               href="{{ LaravelLocalization::getLocalizedURL('ar', null, [], true) }}"> <i class="flag-icon flag-icon-eg"></i> @lang('general.arabic')</a>
                                         @else
-                                            <a style="text-decoration: underline;"
-                                               href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}">@lang('general.english')</a>
+                                            <a
+                                               href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}"> <i class="flag-icon flag-icon-us"></i> @lang('general.english')</a>
                                         @endif
 
                                     </li>
@@ -140,8 +147,8 @@
                     <p @if(app()->getLocale() == 'ar') style="float: right; direction: rtl" @endif >@lang('general.disslider')</p>
                     <div class="slide-buttons hidden-sm hidden-xs"
                          @if(app()->getLocale() == 'ar') style="clear: both" @endif >
-                        <a href="{{route('register')}}" class="btn btn-primary">Register Now!<span></span></a>
-                        <a href="{{route('login')}}" class="btn btn-light">Login Now<span></span></a>
+                        <a href="{{route('register')}}" class="btn btn-primary">@lang('general.regnow')<span></span></a>
+                        <a href="{{route('login')}}" class="btn btn-light">@lang('general.lognow')<span></span></a>
                     </div>
                 </div>
             </div>
@@ -156,8 +163,8 @@
                     <p @if(app()->getLocale() == 'ar') style="float: right; direction: rtl" @endif >@lang('general.disslider')</p>
                     <div class="slide-buttons hidden-sm hidden-xs"
                          @if(app()->getLocale() == 'ar') style="clear: both" @endif >
-                        <a href="{{route('register')}}" class="btn btn-primary">Register Now!<span></span></a>
-                        <a href="{{route('login')}}" class="btn btn-light">Login Now<span></span></a>
+                        <a href="{{route('register')}}" class="btn btn-primary">@lang('general.regnow')<span></span></a>
+                        <a href="{{route('login')}}" class="btn btn-light">@lang('general.lognow')<span></span></a>
                     </div>
                 </div>
             </div>
@@ -172,8 +179,8 @@
                     <p @if(app()->getLocale() == 'ar') style="float: right; direction: rtl" @endif >@lang('general.disslider')</p>
                     <div class="slide-buttons hidden-sm hidden-xs"
                          @if(app()->getLocale() == 'ar') style="clear: both" @endif >
-                        <a href="{{route('register')}}" class="btn btn-primary">Register Now!<span></span></a>
-                        <a href="{{route('login')}}" class="btn btn-light">Login Now<span></span></a>
+                        <a href="{{route('register')}}" class="btn btn-primary">@lang('general.regnow')<span></span></a>
+                        <a href="{{route('login')}}" class="btn btn-light">@lang('general.lognow')<span></span></a>
                     </div>
                 </div>
             </div>
@@ -282,7 +289,7 @@
                                     <div class="fact-icon">
                                         <i class="ebook"></i>
                                     </div>
-                                    <span>Books<strong class="fact-counter">45780</strong></span>
+                                    <span> E-Books<strong class="fact-counter">157</strong></span>
                                 </div>
                             </li>
                             <li class="bg-purple">
@@ -290,7 +297,7 @@
                                     <div class="fact-icon">
                                         <i class="eaudio"></i>
                                     </div>
-                                    <span>Audio<strong class="fact-counter">32450</strong></span>
+                                    <span>Audio<strong class="fact-counter">32</strong></span>
                                 </div>
                             </li>
                             <li class="bg-pink">
@@ -298,7 +305,7 @@
                                     <div class="fact-icon">
                                         <i class="videos"></i>
                                     </div>
-                                    <span>Videos<strong class="fact-counter">14450</strong></span>
+                                    <span>Videos<strong class="fact-counter">16</strong></span>
                                 </div>
                             </li>
                             <li class="bg-yellow">
@@ -306,7 +313,7 @@
                                     <div class="fact-icon">
                                         <i class="magazine"></i>
                                     </div>
-                                    <span>Magazines<strong class="fact-counter">32450</strong></span>
+                                    <span>Magazines<strong class="fact-counter">7</strong></span>
                                 </div>
                             </li>
                         </ul>
@@ -314,7 +321,7 @@
                     <div class="welcome-wrap" data-aos="fade-down">
                         <div class="welcome-text">
                             <p>@lang('general.abouthome')</p>
-                            <a class="btn btn-primary" href="{{route('register')}}">Free Join Now<span></span></a>
+                            <a class="btn btn-primary" href="{{route('register')}}">@lang('general.aboutbuttonhome')<span></span></a>
                         </div>
                     </div>
                 </div>
@@ -353,7 +360,7 @@
                             <img src="{{asset('app-assets/images/features/home-v1/dvd.jpg')}}" alt="Books Collection"/>
                         </div>
                         <h3>@lang('general.thirdservicetitlehome')</h3>
-                        <p>@lang('general.thirdservicehome').</p>
+                        <p>@lang('general.thirdservicehome')</p>
                     </div>
                 </li>
                 <li data-aos="fade-left">
@@ -363,7 +370,7 @@
                                  alt="Books Collection"/>
                         </div>
                         <h3>@lang('general.fourthservicetitlehome')</h3>
-                        <p>@lang('general.fourthservicehome').</p>
+                        <p>@lang('general.fourthservicehome')</p>
                     </div>
                 </li>
                 <li data-aos="fade-up">
@@ -373,7 +380,7 @@
                                  alt="Books Collection"/>
                         </div>
                         <h3>@lang('general.fifthservicetitlehome')</h3>
-                        <p>@lang('general.fifthservicehome').</p>
+                        <p>@lang('general.fifthservicehome')</p>
                     </div>
                 </li>
                 <li data-aos="fade-right">
@@ -383,7 +390,7 @@
                                  alt="Books Collection"/>
                         </div>
                         <h3>@lang('general.sixthservicetitlehome')</h3>
-                        <p>@lang('general.sixthservicehome').</p>
+                        <p>@lang('general.sixthservicehome')</p>
                     </div>
                 </li>
             </ul>
@@ -397,8 +404,8 @@
             <div class="title-content text-center" data-aos="fade-up">
                 <div class="row">
                     <div class="col-md-8 mx-auto text-center">
-                        <h6 class="sub-title">New & Events</h6>
-                        <h2 class="section-title">Latest News & Events</h2>
+                        <h6 class="sub-title">@lang('general.eventtitle1')</h6>
+                        <h2 class="section-title">@lang('general.eventtitle2')</h2>
                     </div>
                 </div>
             </div>
@@ -437,7 +444,7 @@
                                             word</a></h3>
                                     <p>{{$events[0]->description}}</p>
                                     <a href="{{route('event.page', $events[0]->id)}}"
-                                       class="btn btn-secondary">Read More</a>
+                                       class="btn btn-secondary">@lang('general.readmore')</a>
                                 </div>
                             </div>
                             <div class="clearfix"></div>
@@ -471,7 +478,7 @@
                                             word</a></h3>
                                     <p>{{$events[0]->description}}</p>
                                     <a href="{{route('event.page', $events[0]->id)}}"
-                                       class="btn btn-secondary">Read More</a>
+                                       class="btn btn-secondary">@lang('general.readmore')</a>
                                 </div>
                             </div>
                             <figure>
@@ -513,7 +520,7 @@
                                             word</a></h3>
                                     <p>{{$events[0]->description}}</p>
                                     <a href="{{route('event.page', $events[0]->id)}}"
-                                       class="btn btn-secondary">Read More</a>
+                                       class="btn btn-secondary">@lang('general.readmore')</a>
                                 </div>
                             </div>
                         </div>
@@ -874,7 +881,7 @@
     {{--                                    malesuada urna. Mauris quis venenatis leo. Proin a malesuada purus. Suspendisse odio--}}
     {{--                                    diam, ornare sit amet interdum ut, vehicula a lorem. Donec a sem erat. Etiam--}}
     {{--                                    condimentum semper mauris vitae porttitor.</p>--}}
-    {{--                                <a href="blog-detail.html" class="btn btn-dark-gray">Read More</a>--}}
+    {{--                                <a href="blog-detail.html" class="btn btn-dark-gray">@lang('general.readmore')</a>--}}
     {{--                            </div>--}}
     {{--                            <figure>--}}
     {{--                                <img src="{{asset('app-assets/images/latest-blog-img-home-v1.jpg')}}" alt="Latest Blog">--}}
@@ -923,7 +930,7 @@
     {{--                                    erat. Etiam condimentum semper mauris vitae porttitor. Etiam posuere ultrices mauris--}}
     {{--                                    vitae tincidunt. Cras lacinia, lectus quis ullamcorper auctor, mauris lacus--}}
     {{--                                    imperdiet turpis, et semper enim massa ut.</p>--}}
-    {{--                                <a href="blog-detail.html" class="btn btn-dark-gray">Read More</a>--}}
+    {{--                                <a href="blog-detail.html" class="btn btn-dark-gray">@lang('general.readmore')</a>--}}
     {{--                            </div>--}}
     {{--                            <figure>--}}
     {{--                                <img src="{{asset('app-assets/images/latest-blog-img-home-v1-2.jpg')}}" alt="Latest Blog">--}}
@@ -972,7 +979,7 @@
     {{--                                    malesuada urna. Mauris quis venenatis leo. Proin a malesuada purus. Suspendisse odio--}}
     {{--                                    diam, ornare sit amet interdum ut, vehicula a lorem. Donec a sem erat. Etiam--}}
     {{--                                    condimentum semper mauris vitae porttitor.</p>--}}
-    {{--                                <a href="blog-detail.html" class="btn btn-dark-gray">Read More</a>--}}
+    {{--                                <a href="blog-detail.html" class="btn btn-dark-gray">@lang('general.readmore')</a>--}}
     {{--                            </div>--}}
     {{--                            <figure>--}}
     {{--                                <img src="{{asset('app-assets/images/latest-blog-img-home-v1.jpg')}}" alt="Latest Blog">--}}
@@ -1021,7 +1028,7 @@
     {{--                                    erat. Etiam condimentum semper mauris vitae porttitor. Etiam posuere ultrices mauris--}}
     {{--                                    vitae tincidunt. Cras lacinia, lectus quis ullamcorper auctor, mauris lacus--}}
     {{--                                    imperdiet turpis, et semper enim massa ut.</p>--}}
-    {{--                                <a href="blog-detail.html" class="btn btn-dark-gray">Read More</a>--}}
+    {{--                                <a href="blog-detail.html" class="btn btn-dark-gray">@lang('general.readmore')</a>--}}
     {{--                            </div>--}}
     {{--                            <figure>--}}
     {{--                                <img src="{{asset('app-assets/images/latest-blog-img-home-v1-2.jpg')}}" alt="Latest Blog">--}}
@@ -1070,7 +1077,7 @@
     {{--                                    malesuada urna. Mauris quis venenatis leo. Proin a malesuada purus. Suspendisse odio--}}
     {{--                                    diam, ornare sit amet interdum ut, vehicula a lorem. Donec a sem erat. Etiam--}}
     {{--                                    condimentum semper mauris vitae porttitor.</p>--}}
-    {{--                                <a href="blog-detail.html" class="btn btn-dark-gray">Read More</a>--}}
+    {{--                                <a href="blog-detail.html" class="btn btn-dark-gray">@lang('general.readmore')</a>--}}
     {{--                            </div>--}}
     {{--                            <figure>--}}
     {{--                                <img src="{{asset('app-assets/images/latest-blog-img-home-v1.jpg')}}" alt="Latest Blog">--}}
@@ -1119,7 +1126,7 @@
     {{--                                    erat. Etiam condimentum semper mauris vitae porttitor. Etiam posuere ultrices mauris--}}
     {{--                                    vitae tincidunt. Cras lacinia, lectus quis ullamcorper auctor, mauris lacus--}}
     {{--                                    imperdiet turpis, et semper enim massa ut.</p>--}}
-    {{--                                <a href="blog-detail.html" class="btn btn-dark-gray">Read More</a>--}}
+    {{--                                <a href="blog-detail.html" class="btn btn-dark-gray">@lang('general.readmore')</a>--}}
     {{--                            </div>--}}
     {{--                            <figure>--}}
     {{--                                <img src="{{asset('app-assets/images/latest-blog-img-home-v1-2.jpg')}}" alt="Latest Blog">--}}
@@ -1145,8 +1152,8 @@
             <div class="title-content text-center" data-aos="fade-up">
                 <div class="row">
                     <div class="col-md-8 mx-auto text-center">
-                        <h6 class="sub-title">Our Social Network</h6>
-                        <h2 class="section-title">Follow Us</h2>
+                        <!--<h6 class="sub-title">Our Social Network</h6>-->
+                        <h2 class="section-title">@lang('general.follow')</h2>
                     </div>
                 </div>
             </div>

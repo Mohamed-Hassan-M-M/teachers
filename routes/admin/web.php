@@ -48,6 +48,12 @@ Route::group(
 
         Route::resource('cat_events', CategoryEventController::class)->middleware('admin');
 
+        Route::resource('books', BookController::class)->middleware('admin');
+
+        Route::get('book-download/{id}', 'BookController@getDownload')->middleware('admin')->name('book.download');
+
+        Route::resource('subject_books', SubjectBookController::class)->middleware('admin');
+
         Route::resource('contacts', ContactUsController::class)->middleware('admin');
 
     });

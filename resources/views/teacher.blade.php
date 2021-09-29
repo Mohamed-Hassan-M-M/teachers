@@ -26,6 +26,9 @@
                         <li class="nav-item active">
                             <a class="nav-link active" href="{{route('teacher.grid')}}">@lang('general.teachers')</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{{route('book.grid')}}">@lang('general.books')</a>
+                        </li>
                         <li class="nav-item ">
                             <a class="nav-link" href="{{route('event.grid')}}">@lang('general.events')</a>
                         </li>
@@ -34,11 +37,11 @@
                         </li>
                         <li class="nav-item">
                             @if(app()->getLocale() == 'en')
-                                <a class="nav-link" style="text-decoration: underline;"
-                                   href="{{ LaravelLocalization::getLocalizedURL('ar', null, [], true) }}">@lang('general.arabic')</a>
+                                <a class="nav-link"
+                                   href="{{ LaravelLocalization::getLocalizedURL('ar', null, [], true) }}"> <i class="flag-icon flag-icon-eg"></i> @lang('general.arabic')</a>
                             @else
-                                <a class="nav-link" style="text-decoration: underline;"
-                                   href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}">@lang('general.english')</a>
+                                <a class="nav-link"
+                                   href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}"> <i class="flag-icon flag-icon-us"></i> @lang('general.english')</a>
                             @endif
 
                         </li>
@@ -51,6 +54,10 @@
                         <div class="header-login-btn">
                             <a href="{{route('login')}}" class="btn btn-light"><i class="fa fa-user"></i>
                                 @lang('general.login')</a>
+                        </div>
+                        <div class="header-login-btn">
+                            <a href="{{route('register')}}" class="btn btn-light"><i class="fa fa-user"></i>
+                                @lang('general.register')</a>
                         </div>
                     @endif
                 </div>
@@ -75,6 +82,9 @@
                             <a href="{{route('teacher.grid')}}">@lang('general.teachers')</a>
                         </li>
                         <li>
+                            <a href="{{route('book.grid')}}">@lang('general.books')</a>
+                        </li>
+                        <li>
                             <a href="{{route('event.grid')}}">@lang('general.events')</a>
                         </li>
                         <li>
@@ -82,11 +92,11 @@
                         </li>
                         <li>
                             @if(app()->getLocale() == 'en')
-                                <a style="text-decoration: underline;"
-                                   href="{{ LaravelLocalization::getLocalizedURL('ar', null, [], true) }}">@lang('general.arabic')</a>
+                                <a
+                                   href="{{ LaravelLocalization::getLocalizedURL('ar', null, [], true) }}"> <i class="flag-icon flag-icon-eg"></i> @lang('general.arabic')</a>
                             @else
-                                <a style="text-decoration: underline;"
-                                   href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}">@lang('general.english')</a>
+                                <a
+                                   href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}"> <i class="flag-icon flag-icon-us"></i> @lang('general.english')</a>
                             @endif
                         </li>
                     </ul>
@@ -213,7 +223,7 @@
                                     @if($teacher->reviews->count() > 0)
                                         <div class="comment-bg">
                                             <small class="comment-small-heading">@lang('general.feedback')</small>
-                                            <h4 class="comments-title">People’s Coments
+                                            <h4 class="comments-title">@lang('general.peocomment')
                                             </h4>
                                             <ol class="comment-list">
                                                 @foreach($teacher->reviews as $review)
@@ -222,7 +232,7 @@
                                                             <div class="comment-author vcard">
                                                                 <img
                                                                     @if($review->student->gender == 'male') src="{{asset('app-assets/images/man.png')}}" @else src="{{asset('app-assets/images/woman.png')}}" @endif
-                                                                    alt="Comment Author">
+                                                                alt="Comment Author">
                                                             </div>
                                                             <footer class="comment-meta">
                                                                 <div class="comment-metadata">
@@ -250,76 +260,76 @@
                                     @endif
                                     @if(auth()->check() && auth()->user()->type == '3')
                                         <div class="comment-respond" id="respond">
-                                        <h4 class="comments-title">Write Your Comment</h4>
-                                        @if (\Session::has('success'))
-                                        <div class="alert alert-success text-center">{!! \Session::get('success') !!}</div>
-                                        @endif
-                                        <form class="comment-form" id="commentform" method="post"
-                                              action="{{route('review')}}">
-                                            @csrf
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <fieldset class="rating" dir="ltr">
-                                                        <input type="radio" id="star5" name="rating" value="5"/>
-                                                        <label class="full" for="star5"
-                                                               title="Awesome - 5 stars"></label>
-                                                        <input type="radio" id="star4half" name="rating"
-                                                               value="4.5"/><label class="half" for="star4half"
-                                                                                   title="Pretty good - 4.5 stars"></label>
-                                                        <input type="radio" id="star4" name="rating" value="4"/><label
-                                                            class="full" for="star4"
-                                                            title="Pretty good - 4 stars"></label> <input type="radio"
-                                                                                                          id="star3half"
-                                                                                                          name="rating"
-                                                                                                          value="3.5"/><label
-                                                            class="half" for="star3half"
-                                                            title="Meh - 3.5 stars"></label> <input type="radio"
-                                                                                                    id="star3"
-                                                                                                    name="rating"
-                                                                                                    value="3"/><label
-                                                            class="full" for="star3" title="Meh - 3 stars"></label>
-                                                        <input type="radio" id="star2half" name="rating"
-                                                               value="2.5"/><label class="half" for="star2half"
-                                                                                   title="Kinda bad - 2.5 stars"></label>
-                                                        <input type="radio" id="star2" name="rating" value="2"/><label
-                                                            class="full" for="star2"
-                                                            title="Kinda bad - 2 stars"></label> <input type="radio"
-                                                                                                        id="star1half"
+                                            <h4 class="comments-title">@lang('general.writecomment')</h4>
+                                            @if (\Session::has('success'))
+                                                <div class="alert alert-success text-center">{!! \Session::get('success') !!}</div>
+                                            @endif
+                                            <form class="comment-form" id="commentform" method="post"
+                                                  action="{{route('review')}}">
+                                                @csrf
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <fieldset class="rating" dir="ltr">
+                                                            <input type="radio" id="star5" name="rating" value="5"/>
+                                                            <label class="full" for="star5"
+                                                                   title="Awesome - 5 stars"></label>
+                                                            <input type="radio" id="star4half" name="rating"
+                                                                   value="4.5"/><label class="half" for="star4half"
+                                                                                       title="Pretty good - 4.5 stars"></label>
+                                                            <input type="radio" id="star4" name="rating" value="4"/><label
+                                                                class="full" for="star4"
+                                                                title="Pretty good - 4 stars"></label> <input type="radio"
+                                                                                                              id="star3half"
+                                                                                                              name="rating"
+                                                                                                              value="3.5"/><label
+                                                                class="half" for="star3half"
+                                                                title="Meh - 3.5 stars"></label> <input type="radio"
+                                                                                                        id="star3"
                                                                                                         name="rating"
-                                                                                                        value="1.5"/><label
-                                                            class="half" for="star1half"
-                                                            title="Meh - 1.5 stars"></label> <input type="radio"
-                                                                                                    id="star1"
-                                                                                                    name="rating"
-                                                                                                    value="1"/><label
-                                                            class="full" for="star1"
-                                                            title="Sucks big time - 1 star"></label> <input type="radio"
-                                                                                                            id="starhalf"
+                                                                                                        value="3"/><label
+                                                                class="full" for="star3" title="Meh - 3 stars"></label>
+                                                            <input type="radio" id="star2half" name="rating"
+                                                                   value="2.5"/><label class="half" for="star2half"
+                                                                                       title="Kinda bad - 2.5 stars"></label>
+                                                            <input type="radio" id="star2" name="rating" value="2"/><label
+                                                                class="full" for="star2"
+                                                                title="Kinda bad - 2 stars"></label> <input type="radio"
+                                                                                                            id="star1half"
                                                                                                             name="rating"
-                                                                                                            value="0.5"/><label
-                                                            class="half" for="starhalf"
-                                                            title="Sucks big time - 0.5 stars"></label>
-                                                    </fieldset>
-                                                    <p class="comment-form-comment">
+                                                                                                            value="1.5"/><label
+                                                                class="half" for="star1half"
+                                                                title="Meh - 1.5 stars"></label> <input type="radio"
+                                                                                                        id="star1"
+                                                                                                        name="rating"
+                                                                                                        value="1"/><label
+                                                                class="full" for="star1"
+                                                                title="Sucks big time - 1 star"></label> <input type="radio"
+                                                                                                                id="starhalf"
+                                                                                                                name="rating"
+                                                                                                                value="0.5"/><label
+                                                                class="half" for="starhalf"
+                                                                title="Sucks big time - 0.5 stars"></label>
+                                                        </fieldset>
+                                                        <p class="comment-form-comment">
                                                         <textarea name="message" id="comment"
-                                                                  placeholder="Your review" required></textarea>
-                                                    </p>
-                                                    <input type="hidden" id="rate" name="rate">
-                                                    <input type="hidden" id="teacher_id" name="teacher_id" value="{{$teacher->id}}">
-                                                    <p class="form-submit d-md-none">
-                                                        <input value="POST YOUR COMMENT" class="submit" id="submit1"
-                                                               name="submit" type="submit">
-                                                    </p>
+                                                                  placeholder="@lang('general.yreview')" required></textarea>
+                                                        </p>
+                                                        <input type="hidden" id="rate" name="rate">
+                                                        <input type="hidden" id="teacher_id" name="teacher_id" value="{{$teacher->id}}">
+                                                        <p class="form-submit d-md-none">
+                                                            <input value="@lang('general.post')" class="submit" id="submit1"
+                                                                   name="submit" type="submit">
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <p class="form-submit d-none d-md-block">
+                                                            <input value="@lang('general.post')" class="submit" id="submit"
+                                                                   name="submit" type="submit">
+                                                        </p>
+                                                    </div>
                                                 </div>
-                                                <div class="col-md-6">
-                                                    <p class="form-submit d-none d-md-block">
-                                                        <input value="POST YOUR COMMENT" class="submit" id="submit"
-                                                               name="submit" type="submit">
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
+                                            </form>
+                                        </div>
                                     @endif
                                 </div>
                             </div>

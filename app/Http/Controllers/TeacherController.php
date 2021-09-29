@@ -48,7 +48,7 @@ class TeacherController extends Controller
     public function teacherPage($id)
     {
         $teacher = User::with(['reviews' => function($query){
-            return $query->where('status', '2');
+            return $query->where('status', '1');
         }])->where('id', $id)->firstOrFail();
         $subjects = Subject::whereIn('id', $teacher->subjects)->distinct()->get();
         $classes = Subject::select('class_id')->whereIn('id', $teacher->subjects->pluck('id'))->groupBy('class_id')->pluck('class_id');

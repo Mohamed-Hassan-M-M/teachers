@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Blog;
+use App\Models\Book;
 use App\Models\Classes;
 use App\Models\Event;
 use App\Models\Sector;
@@ -24,9 +26,11 @@ class HomeController extends Controller
         $sectors = Sector::count();
         $classes = Classes::count();
         $subjects = Subject::count();
+        $blogs = Blog::count();
+        $books = Book::count();
         $teachers = User::where('type', '2')->count();
         $students = User::where('type', '3')->count();
-        return view('admin.home', compact(['teachers', 'students', 'events', 'sectors', 'classes', 'subjects']));
+        return view('admin.home', compact(['teachers', 'students', 'events', 'sectors', 'classes', 'subjects', 'blogs', 'books']));
     }
 
 }

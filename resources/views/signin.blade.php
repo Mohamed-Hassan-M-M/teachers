@@ -26,6 +26,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('teacher.grid')}}">@lang('general.teachers')</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('book.grid')}}">@lang('general.books')</a>
+                        </li>
                         <li class="nav-item ">
                             <a class="nav-link" href="{{route('event.grid')}}">@lang('general.events')</a>
                         </li>
@@ -34,11 +37,11 @@
                         </li>
                         <li class="nav-item">
                             @if(app()->getLocale() == 'en')
-                                <a class="nav-link" style="text-decoration: underline;"
-                                   href="{{ LaravelLocalization::getLocalizedURL('ar', null, [], true) }}">@lang('general.arabic')</a>
+                                <a class="nav-link"
+                                   href="{{ LaravelLocalization::getLocalizedURL('ar', null, [], true) }}"> <i class="flag-icon flag-icon-eg"></i> @lang('general.arabic')</a>
                             @else
-                                <a class="nav-link" style="text-decoration: underline;"
-                                   href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}">@lang('general.english')</a>
+                                <a class="nav-link"
+                                   href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}"> <i class="flag-icon flag-icon-us"></i> @lang('general.english')</a>
                             @endif
 
                         </li>
@@ -51,6 +54,10 @@
                         <div class="header-login-btn">
                             <a href="{{route('login')}}" class="btn btn-light"><i class="fa fa-user"></i>
                                 @lang('general.login')</a>
+                        </div>
+                        <div class="header-login-btn">
+                            <a href="{{route('register')}}" class="btn btn-light"><i class="fa fa-user"></i>
+                                @lang('general.register')</a>
                         </div>
                     @endif
                 </div>
@@ -75,6 +82,9 @@
                             <a href="{{route('teacher.grid')}}">@lang('general.teachers')</a>
                         </li>
                         <li>
+                            <a href="{{route('book.grid')}}">@lang('general.books')</a>
+                        </li>
+                        <li>
                             <a href="{{route('event.grid')}}">@lang('general.events')</a>
                         </li>
                         <li>
@@ -82,11 +92,11 @@
                         </li>
                         <li>
                             @if(app()->getLocale() == 'en')
-                                <a style="text-decoration: underline;"
-                                   href="{{ LaravelLocalization::getLocalizedURL('ar', null, [], true) }}">@lang('general.arabic')</a>
+                                <a
+                                   href="{{ LaravelLocalization::getLocalizedURL('ar', null, [], true) }}"> <i class="flag-icon flag-icon-eg"></i> @lang('general.arabic')</a>
                             @else
-                                <a style="text-decoration: underline;"
-                                   href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}">@lang('general.english')</a>
+                                <a
+                                   href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}"> <i class="flag-icon flag-icon-us"></i> @lang('general.english')</a>
                             @endif
                         </li>
                     </ul>
@@ -127,13 +137,8 @@
                             </div>
                             <div class="col-md-7">
                                 <div class="signin-up-form">
-                                    <h6 class="sub-heading-v2">Welcome Back</h6>
-                                    <h2 class="heading-v2">Welcome to Skille Library and Online Learning Management
-                                        System
-                                    </h2>
-                                    <em class="lead-text">Sed nec fermentum leo. Vestibulum pulvinar, risus quis mollis
-                                        posuere, lorem lectus pretium turpis, non elementum eros metus ut purus. Morbi
-                                        hendrerit molestie augue luctus euismod. </em>
+                                    <h6 class="sub-heading-v2">@lang('general.login1')</h6>
+                                    <h2 class="heading-v2">@lang('general.login2')</h2>
                                     <form method="POST" action="{{ route('login') }}">
                                         @csrf
                                         <div class="form-group">

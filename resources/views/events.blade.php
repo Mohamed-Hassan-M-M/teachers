@@ -23,10 +23,13 @@
                         <li class="nav-item ">
                             <a class="nav-link" href="{{route('teacher.about')}}">@lang('general.aboutUs')</a>
                         </li>
-                        <li class="nav-item active">
-                            <a class="nav-link active" href="{{route('teacher.grid')}}">@lang('general.teachers')</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('teacher.grid')}}">@lang('general.teachers')</a>
                         </li>
-                        <li class="nav-item ">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('book.grid')}}">@lang('general.books')</a>
+                        </li>
+                        <li class="nav-item active">
                             <a class="nav-link" href="{{route('event.grid')}}">@lang('general.events')</a>
                         </li>
                         <li class="nav-item">
@@ -34,11 +37,11 @@
                         </li>
                         <li class="nav-item">
                             @if(app()->getLocale() == 'en')
-                                <a class="nav-link" style="text-decoration: underline;"
-                                   href="{{ LaravelLocalization::getLocalizedURL('ar', null, [], true) }}">@lang('general.arabic')</a>
+                                <a class="nav-link"
+                                   href="{{ LaravelLocalization::getLocalizedURL('ar', null, [], true) }}"> <i class="flag-icon flag-icon-eg"></i> @lang('general.arabic')</a>
                             @else
-                                <a class="nav-link" style="text-decoration: underline;"
-                                   href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}">@lang('general.english')</a>
+                                <a class="nav-link"
+                                   href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}"> <i class="flag-icon flag-icon-us"></i> @lang('general.english')</a>
                             @endif
 
                         </li>
@@ -51,6 +54,10 @@
                         <div class="header-login-btn">
                             <a href="{{route('login')}}" class="btn btn-light"><i class="fa fa-user"></i>
                                 @lang('general.login')</a>
+                        </div>
+                        <div class="header-login-btn">
+                            <a href="{{route('register')}}" class="btn btn-light"><i class="fa fa-user"></i>
+                                @lang('general.register')</a>
                         </div>
                     @endif
                 </div>
@@ -75,6 +82,9 @@
                             <a href="{{route('teacher.grid')}}">@lang('general.teachers')</a>
                         </li>
                         <li>
+                            <a href="{{route('book.grid')}}">@lang('general.books')</a>
+                        </li>
+                        <li>
                             <a href="{{route('event.grid')}}">@lang('general.events')</a>
                         </li>
                         <li>
@@ -82,11 +92,11 @@
                         </li>
                         <li>
                             @if(app()->getLocale() == 'en')
-                                <a style="text-decoration: underline;"
-                                   href="{{ LaravelLocalization::getLocalizedURL('ar', null, [], true) }}">@lang('general.arabic')</a>
+                                <a
+                                   href="{{ LaravelLocalization::getLocalizedURL('ar', null, [], true) }}"> <i class="flag-icon flag-icon-eg"></i> @lang('general.arabic')</a>
                             @else
-                                <a style="text-decoration: underline;"
-                                   href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}">@lang('general.english')</a>
+                                <a
+                                   href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}"> <i class="flag-icon flag-icon-us"></i> @lang('general.english')</a>
                             @endif
                         </li>
                     </ul>
@@ -132,13 +142,13 @@
                                         </ul>
                                     </div>
                                     <div class="widget widget_blog_post">
-                                        <h3 class="widget-title">@lang('popularEvent')</h3>
+                                        <h3 class="widget-title">@lang('general.popularEvent')</h3>
                                         <ul>
                                             @foreach($populars as $popular)
                                                 <li>
                                                     <span class="widget-thumb">
                                                         <a href="{{route('event.page', $popular->id)}}"><img src="{{$popular->image_path}}"
-                                                                                        alt="widget thumb"></a>
+                                                                                                             alt="widget thumb"></a>
                                                     </span>
                                                     <div class="widget-post-data">
                                                         <small>{{$popular->date}}</small>
@@ -154,41 +164,41 @@
                                 <div class="news-list-box">
                                     <div class="row">
                                         @foreach($events as $event)
-                                        <div class="col-md-6">
-                                            <div class="single-news-list">
-                                                <figure>
-                                                    <a href="{{route('event.page', $event->id)}}"><img
-                                                            src="{{$event->image_path}}"
-                                                            alt="News &amp; Event"></a>
-                                                </figure>
-                                                <div class="content-block">
-                                                    <div class="event-detail">
+                                            <div class="col-md-6">
+                                                <div class="single-news-list">
+                                                    <figure>
+                                                        <a href="{{route('event.page', $event->id)}}"><img
+                                                                src="{{$event->image_path}}"
+                                                                alt="News &amp; Event"></a>
+                                                    </figure>
+                                                    <div class="content-block">
+                                                        <div class="event-detail">
                                                         <span class="event-date">
                                                             <strong>{{\Carbon\Carbon::parse($event->date)->format('d')}}</strong>
                                                             {{\Carbon\Carbon::parse($event->date)->format('M')}}
                                                         </span>
-                                                        <div class="news-event-info">
-                                                            <ul>
+                                                            <div class="news-event-info">
+                                                                <ul>
 
-                                                                <li>
-                                                                    @foreach($event->areas as $area)
-                                                                    <a>
-                                                                        <i class="fa fa-map-marker"></i>
-                                                                            {{$area->city->name}} , {{$area->name}}
-                                                                    </a>
-                                                                    @endforeach
-                                                                </li>
+                                                                    <li>
+                                                                        @foreach($event->areas as $area)
+                                                                            <a>
+                                                                                <i class="fa fa-map-marker"></i>
+                                                                                {{$area->city->name}} , {{$area->name}}
+                                                                            </a>
+                                                                        @endforeach
+                                                                    </li>
 
-                                                            </ul>
+                                                                </ul>
+                                                            </div>
                                                         </div>
+                                                        <h3 class="news-event-title"><a href="{{route('event.page', $event->id)}}">{{$event->title}}</a></h3>
+                                                        <p>{{$event->description}}</p>
+                                                        <a class="link" href="{{route('event.page', $event->id)}}"><img
+                                                                src="images/link-arrow.png" alt=""></a>
                                                     </div>
-                                                    <h3 class="news-event-title"><a href="{{route('event.page', $event->id)}}">{{$event->title}}</a></h3>
-                                                    <p>{{$event->description}}</p>
-                                                    <a class="link" href="{{route('event.page', $event->id)}}"><img
-                                                            src="images/link-arrow.png" alt=""></a>
                                                 </div>
                                             </div>
-                                        </div>
                                         @endforeach
                                     </div>
                                     <div id="pagination">{{ $events->links() }}</div>

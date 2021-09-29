@@ -56,5 +56,10 @@ Route::group(
     //about page
     Route::get('/about-us', 'TeacherController@about')->name('teacher.about');
 
+    // book
+    Route::get('/book-grid', 'BookController@index')->name('book.grid');
+    Route::get('/get-book/{subject?}', 'BookController@getbooks');
+    Route::get('/get-book-download/{id}', 'BookController@getDownload')->middleware('auth')->name('download');
+
 
 });

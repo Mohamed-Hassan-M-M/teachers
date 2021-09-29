@@ -11,24 +11,26 @@
                             </a>
                         </div>
                         <div class="textwidget">
-                            @lang('general.textFooter')
+                            @lang('general.abouthome')
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-6 widget-container">
                     <div id="nav_menu-2" class="widget widget_nav_menu">
-                        <h3 class="footer-widget-title">@lang('quickLinks')</h3>
+                        <h3 class="footer-widget-title">@lang('general.quickLinks')</h3>
                         <div class="menu-quick-links-container">
                             <ul id="menu-quick-links" class="menu">
                                 <li><a href="{{route('home')}}">@lang('general.home')</a></li>
                                 <li><a href="{{route('teacher.about')}}">@lang('general.aboutUs')</a></li>
                                 <li><a href="{{route('teacher.grid')}}">@lang('general.teacher')</a></li>
+                                <li><a href="{{route('book.grid')}}">@lang('general.book')</a></li>
                                 <li><a href="{{route('teacher.contact.page')}}">@lang('general.contact')</a></li>
                                 <li><a href="{{route('event.grid')}}">@lang('general.events')</a></li>
-                                @if(!auth()->check())
-                                    <li><a href="{{route('login')}}">@lang('general.signIn/register')</a></li>
-                                @else
+                                @if(auth()->check() && auth()->user()->type == '3')
                                     <li><a href="{{route('logout')}}">@lang('general.logout')</a></li>
+                                @else
+                                    <li><a href="{{route('login')}}">@lang('general.signin')</a></li>
+                                    <li><a href="{{route('register')}}">@lang('general.signup')</a></li>
                                 @endif
                             </ul>
                         </div>
@@ -36,10 +38,9 @@
                 </div>
                 <div class="col-lg-2 col-md-6 widget-container">
                     <div id="text-4" class="widget widget_text">
-                        <h3 class="footer-widget-title">Timing</h3>
+                        <h3 class="footer-widget-title">@lang('general.timing')</h3>
                         <div class="timming-text-widget">
-                            <time datetime="">@lang('general.sun') - @lang('general.thu'): 9 @lang('general.am') - 9 @lang('general.pm')</time>
-                            <time datetime="">@lang('general.fri') - @lang('general.sat'): @lang('general.close')</time>
+                            <time datetime="">@lang('general.sat') - @lang('general.fri'): 24 / @lang('general.day')</time>
                         </div>
                     </div>
                 </div>

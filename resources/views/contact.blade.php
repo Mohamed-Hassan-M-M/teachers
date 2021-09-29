@@ -26,6 +26,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('teacher.grid')}}">@lang('general.teachers')</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('book.grid')}}">@lang('general.books')</a>
+                        </li>
                         <li class="nav-item ">
                             <a class="nav-link" href="{{route('event.grid')}}">@lang('general.events')</a>
                         </li>
@@ -34,11 +37,11 @@
                         </li>
                         <li class="nav-item">
                             @if(app()->getLocale() == 'en')
-                                <a class="nav-link" style="text-decoration: underline;"
-                                   href="{{ LaravelLocalization::getLocalizedURL('ar', null, [], true) }}">@lang('general.arabic')</a>
+                                <a class="nav-link"
+                                   href="{{ LaravelLocalization::getLocalizedURL('ar', null, [], true) }}"> <i class="flag-icon flag-icon-eg"></i> @lang('general.arabic')</a>
                             @else
-                                <a class="nav-link" style="text-decoration: underline;"
-                                   href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}">@lang('general.english')</a>
+                                <a class="nav-link"
+                                   href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}"> <i class="flag-icon flag-icon-us"></i> @lang('general.english')</a>
                             @endif
 
                         </li>
@@ -51,6 +54,10 @@
                         <div class="header-login-btn">
                             <a href="{{route('login')}}" class="btn btn-light"><i class="fa fa-user"></i>
                                 @lang('general.login')</a>
+                        </div>
+                        <div class="header-login-btn">
+                            <a href="{{route('register')}}" class="btn btn-light"><i class="fa fa-user"></i>
+                                @lang('general.register')</a>
                         </div>
                     @endif
                 </div>
@@ -75,6 +82,9 @@
                             <a href="{{route('teacher.grid')}}">@lang('general.teachers')</a>
                         </li>
                         <li>
+                            <a href="{{route('book.grid')}}">@lang('general.books')</a>
+                        </li>
+                        <li>
                             <a href="{{route('event.grid')}}">@lang('general.events')</a>
                         </li>
                         <li>
@@ -82,11 +92,11 @@
                         </li>
                         <li>
                             @if(app()->getLocale() == 'en')
-                                <a style="text-decoration: underline;"
-                                   href="{{ LaravelLocalization::getLocalizedURL('ar', null, [], true) }}">@lang('general.arabic')</a>
+                                <a
+                                   href="{{ LaravelLocalization::getLocalizedURL('ar', null, [], true) }}"> <i class="flag-icon flag-icon-eg"></i> @lang('general.arabic')</a>
                             @else
-                                <a style="text-decoration: underline;"
-                                   href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}">@lang('general.english')</a>
+                                <a
+                                   href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}"> <i class="flag-icon flag-icon-us"></i> @lang('general.english')</a>
                             @endif
                         </li>
                     </ul>
@@ -107,7 +117,7 @@
             <ul>
                 <li>
                     <img src="{{asset('app-assets/images/icons/location-icon.png')}}" alt="">
-                    <h6>Our Location</h6>
+                    <h6>@lang('general.location')</h6>
                     <ol>
                         <li>Obour Buildings, Salah Salem Street</li>
                         <li>Nasr City, Cairo</li>
@@ -115,26 +125,22 @@
                 </li>
                 <li>
                     <img src="{{asset('app-assets/images/icons/phone-icon.png')}}" alt="">
-                    <h6>Phone and Fax</h6>
+                    <h6>@lang('general.phoneFax')</h6>
                     <ol>
                         <li><a href="tel:+20222611181"><em>Mobile:</em> +202-266-11181</a></li>
-                        <li><a href="tel:+20222611181"><em>Phone:</em> +202-266-11181</a></li>
                     </ol>
                 </li>
                 <li>
                     <img src="{{asset('app-assets/images/icons/email-website-icon.png')}}" alt="">
-                    <h6>Email Address</h6>
+                    <h6>@lang('general.emailFront')</h6>
                     <ol>
-                        <li><a href="http://212solutions.net/">www.212solutions.net </a></li>
-                        <li><a href="mailto:info@212solutions.net">info@212solutions.net</a></li>
                         <li><a href="mailto:info@212solutions.net">info@212solutions.net</a></li>
                     </ol>
                 </li>
                 <li>
                     <img src="{{asset('app-assets/images/icons/timming-icon.png')}}" alt=""/>
-                    <h6>Our Timings</h6>
-                    <p>@lang('general.sun') - @lang('general.thu'): 9 @lang('general.am') - 9 @lang('general.pm')</p>
-                    <p>@lang('general.fri') - @lang('general.sat'): @lang('general.close')</p>
+                    <h6>@lang('general.timing')</h6>
+                    <p>@lang('general.sat') - @lang('general.fri'): 24 / @lang('general.day')</p>
                 </li>
             </ul>
         </div>
@@ -147,11 +153,9 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-8">
-                                <h6 class="sub-heading-v2">Get In Touch</h6>
-                                <h2 class="heading-v2">Send Us A Message</h2>
-                                <p class="lead-text">Sed nec fermentum leo. Vestibulum pulvinar, risus quis mollis
-                                    posuere, lorem lectus pretium turpis, non elementum eros metus ut purus. Morbi
-                                    hendrerit molestie augue luctus euismod. </p>
+                                <h6 class="sub-heading-v2">@lang('general.contactpage1')</h6>
+                                <h2 class="heading-v2">@lang('general.contactpage2')</h2>
+                                <p class="lead-text">@lang('general.contactpage3')</p>
                             </div>
                             <div class="col-md-12">
                                 <div class="contact-form">
@@ -161,7 +165,7 @@
                                         <div class="row">
                                             <div class="col-md-6 col-sm-6">
                                                 <div class="form-group">
-                                                    <input class="form-control" type="text" placeholder="Full Name"
+                                                    <input class="form-control" type="text" placeholder="@lang('general.name')"
                                                            name="name" id="first-name" size="30" value=""
                                                            aria-required="true"/>
                                                 </div>
@@ -170,13 +174,13 @@
                                                 <div class="form-group">
                                                     <input class="form-control" type="email"
                                                            pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$"
-                                                           placeholder="Email" name="email" id="email" size="30"
+                                                           placeholder="@lang('general.email')" name="email" id="email" size="30"
                                                            value="" aria-required="true"/>
                                                 </div>
                                             </div>
                                             <div class="col-sm-12">
                                                 <div class="form-group">
-                                                    <textarea class="form-control" placeholder="Write Your Message ..."
+                                                    <textarea class="form-control" placeholder="@lang('general.message')"
                                                               id="message" aria-required="true"
                                                               name="message"></textarea>
                                                     <div class="clearfix"></div>
@@ -185,7 +189,7 @@
                                             <div class="col-sm-12">
                                                 <div class="form-group form-submit">
                                                     <input class="btn btn-secondary" id="submit-contact-form"
-                                                           type="submit" name="submit" value="Send Message"/>
+                                                           type="submit" name="submit" value="@lang('general.send')"/>
                                                 </div>
                                             </div>
                                             <div id="success" class="d-none">
