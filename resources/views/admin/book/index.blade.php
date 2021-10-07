@@ -39,7 +39,7 @@
                                                     <th class="center">@lang('general.book') #</th>
                                                     <th class="center">@lang('book.name') (@lang('general.ar'))</th>
                                                     <th class="center">@lang('book.name') (@lang('general.en'))</th>
-                                                    <th class="center">@lang('general.cat_book')</th>
+                                                    <th class="center">@lang('general.subcat_book')</th>
                                                     <th class="center">@lang('book.date')</th>
                                                     <th class="center">@lang('general.option')</th>
                                                 </tr>
@@ -50,7 +50,7 @@
                                                     <td class="center">{{++$index}}</td>
                                                     <td class="center">{{$book->title_ar}}</td>
                                                     <td class="center">{{$book->title_en}}</td>
-                                                    <td class="center">{{$book->subject->name}}</td>
+                                                    <td class="center">{{$book->subSubject->name}}</td>
                                                     <td class="center">{{$book->date}}</td>
                                                     <td class="center">
                                                         <a href="{{route('admin.books.show',['book'=>$book->id])}}" class="btn blue gradient-shadow white-text tooltipped animated bounceIn m-1"  data-tooltip="@lang('general.show')!"><i class="material-icons">remove_red_eye</i></a>

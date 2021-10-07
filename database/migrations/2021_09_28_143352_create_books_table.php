@@ -15,8 +15,8 @@ class CreateBooksTable extends Migration
     {
         Schema::create('books', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('subject_id')
-                ->constrained("book_subjects")
+            $table->foreignId('subSubject_id')
+                ->constrained("book_sub_subjects")
                 ->onDelete('cascade');
             $table->string('title_ar');
             $table->string('title_en');

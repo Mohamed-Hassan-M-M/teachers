@@ -24,10 +24,10 @@
                             <a class="nav-link" href="{{route('teacher.about')}}">@lang('general.aboutUs')</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="{{route('teacher.grid')}}">@lang('general.teachers')</a>
+                            <a class="nav-link" href="{{route('teacher.grid')}}">@lang('general.teachers')</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link active" href="{{route('book.grid')}}">@lang('general.books')</a>
+                            <a class="nav-link" href="{{route('book.grid')}}">@lang('general.books')</a>
                         </li>
                         <li class="nav-item active">
                             <a class="nav-link" href="{{route('event.grid')}}">@lang('general.events')</a>
@@ -182,7 +182,7 @@
                                                     </div>
                                                 </div>
                                             @endif
-                                            <img src="{{$event->image_path}}" alt="News &amp; Event">
+                                            <img src="{{$event->image_path}}" alt="News &amp; Event" style="height: 450px;">
                                         </figure>
                                         <div class="content-block">
                                             <div class="member-info">

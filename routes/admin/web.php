@@ -54,6 +54,8 @@ Route::group(
 
         Route::resource('subject_books', SubjectBookController::class)->middleware('admin');
 
+        Route::resource('subsubject_books', SubSubjectBookController::class)->middleware('admin');
+
         Route::resource('contacts', ContactUsController::class)->middleware('admin');
 
     });

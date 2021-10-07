@@ -26,9 +26,9 @@ class BookSubject extends Model
     }
 
     /* relations*/
-    public function books()
+    public function subSubjects()
     {
-        return $this->hasMany(Book::class, 'subject_id', 'id');
+        return $this->hasMany(BookSubSubject::class, 'subject_id', 'id');
     }
 
 }

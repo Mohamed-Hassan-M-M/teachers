@@ -42,16 +42,16 @@
                                         @csrf
                                         <div class="row">
                                             <div class="col s6">
-                                                <label for="subject_id">@lang('general.cat_book')</label>
-                                                <select id="subject_id" name="subject_id" required>
-                                                    <option value="" disabled selected>@lang('general.choose') @lang('general.cat_book')</option>
+                                                <label for="subSubject_id">@lang('general.subcat_book')</label>
+                                                <select id="subSubject_id" name="subSubject_id" required>
+                                                    <option value="" disabled selected>@lang('general.choose') @lang('general.subcat_book')</option>
                                                     @foreach($categories as $category)
                                                         <option value="{{$category->id}}">{{$category->name}}</option>
                                                     @endforeach
                                                 </select>
                                                 <div class="input-field">
                                                 </div>
-                                                @error('subject_id')
+                                                @error('subSubject_id')
                                                 <span class="red-text" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>

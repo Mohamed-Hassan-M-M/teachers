@@ -40,9 +40,9 @@
                                 <div id="html-view-validations">
                                     <div class="row">
                                         <div class="col s6">
-                                            <label for="category_id">@lang('general.cat_book')</label>
-                                            <select id="category_id" name="category_id" disabled>
-                                                <option value="" selected>{{$book->subject->name}}</option>
+                                            <label for="subSubject_id">@lang('general.subcat_book')</label>
+                                            <select id="subSubject_id" name="subSubject_id" disabled>
+                                                <option value="" selected>{{$book->subSubject->name}}</option>
                                             </select>
                                             <div class="input-field">
                                             </div>

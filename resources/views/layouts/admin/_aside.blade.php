@@ -26,6 +26,8 @@
         </li>
         <li class="bold"><a class="waves-effect waves-cyan @if(request()->segment(3) == 'subject_books') active @endif " href="{{route('admin.subject_books.index')}}"><i class="material-icons">books</i><span class="menu-title" data-i18n="Calendar">@lang('general.cat_books')</span><span class="badge badge pill pink accent-2 float-right mr-2">{{\App\Models\BookSubject::count()}}</span></a>
         </li>
+        <li class="bold"><a class="waves-effect waves-cyan @if(request()->segment(3) == 'subsubject_books') active @endif " href="{{route('admin.subsubject_books.index')}}"><i class="material-icons">books</i><span class="menu-title" data-i18n="Calendar">@lang('general.subcat_books')</span><span class="badge badge pill pink accent-2 float-right mr-2">{{\App\Models\BookSubSubject::count()}}</span></a>
+        </li>
         <li class="bold"><a class="waves-effect waves-cyan @if(request()->segment(3) == 'books') active @endif " href="{{route('admin.books.index')}}"><i class="material-icons">books</i><span class="menu-title" data-i18n="Calendar">@lang('general.books')</span><span class="badge badge pill pink accent-2 float-right mr-2">{{\App\Models\Book::count()}}</span></a>
         </li>
         <li class="bold"><a class="waves-effect waves-cyan @if(request()->segment(3) == 'blogs') active @endif " href="{{route('admin.blogs.index')}}"><i class="material-icons">burst_mode</i><span class="menu-title" data-i18n="Calendar">@lang('general.blogs')</span><span class="badge badge pill pink accent-2 float-right mr-2">{{\App\Models\Blog::count()}}</span></a>

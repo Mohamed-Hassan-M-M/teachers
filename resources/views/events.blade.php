@@ -168,7 +168,7 @@
                                                 <div class="single-news-list">
                                                     <figure>
                                                         <a href="{{route('event.page', $event->id)}}"><img
-                                                                src="{{$event->image_path}}"
+                                                                src="{{$event->image_path}}" style="height: 378px;"
                                                                 alt="News &amp; Event"></a>
                                                     </figure>
                                                     <div class="content-block">

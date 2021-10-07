@@ -24,7 +24,7 @@ class SubjectBookController extends Controller
      */
     public function index()
     {
-        $categories = BookSubject::with('books')->orderBy('created_at')->get();
+        $categories = BookSubject::with('subSubjects')->orderBy('created_at')->get();
         return view('admin.subBook.index', compact(['categories']));
     }
 

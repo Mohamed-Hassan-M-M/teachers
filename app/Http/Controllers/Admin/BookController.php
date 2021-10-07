@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Book;
-use App\Models\BookSubject;
+use App\Models\BookSubSubject;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -23,7 +23,7 @@ class BookController extends Controller
      */
     public function index()
     {
-        $books = Book::with(['subject'])->orderBy('created_at')->get();
+        $books = Book::with(['subSubject'])->orderBy('created_at')->get();
         return view('admin.book.index', compact(['books']));
     }
 
@@ -34,7 +34,7 @@ class BookController extends Controller
      */
     public function create()
     {
-        $categories = BookSubject::orderBy('created_at')->get();
+        $categories = BookSubSubject::orderBy('created_at')->get();
         return view('admin.book.create', compact(['categories']));
     }
 
@@ -82,7 +82,7 @@ class BookController extends Controller
      */
     public function edit($id)
     {
-        $categories = BookSubject::orderBy('created_at')->get();
+        $categories = BookSubSubject::orderBy('created_at')->get();
         $book = Book::findOrFail($id);
         return view('admin.book.edit', compact(['book','categories']));
     }

@@ -36,11 +36,11 @@
                         </li>
                         <li class="nav-item">
                             @if(app()->getLocale() == 'en')
-                                <a class="nav-link" style="text-decoration: underline;"
+                                <a class="nav-link"
                                    href="{{ LaravelLocalization::getLocalizedURL('ar', null, [], true) }}"> <i class="flag-icon flag-icon-eg"></i> @lang('general.arabic')</a>
                             @else
-                                <a class="nav-link" style="text-decoration: underline;"
-                                   href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}"> <i class="flag-icon flag-icon-eg"></i> @lang('general.english')</a>
+                                <a class="nav-link"
+                                   href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}"> <i class="flag-icon flag-icon-us"></i> @lang('general.english')</a>
                             @endif
 
                         </li>
@@ -91,11 +91,11 @@
                         </li>
                         <li>
                             @if(app()->getLocale() == 'en')
-                                <a style="text-decoration: underline;"
-                                   href="{{ LaravelLocalization::getLocalizedURL('ar', null, [], true) }}"> <i class="flag-icon flag-icon-eg"></i> @lang('general.arabic')</a>
+                                <a
+                                    href="{{ LaravelLocalization::getLocalizedURL('ar', null, [], true) }}"> <i class="flag-icon flag-icon-eg"></i> @lang('general.arabic')</a>
                             @else
-                                <a style="text-decoration: underline;"
-                                   href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}"> <i class="flag-icon flag-icon-eg"></i> @lang('general.english')</a>
+                                <a
+                                    href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}"> <i class="flag-icon flag-icon-us"></i> @lang('general.english')</a>
                             @endif
                         </li>
                     </ul>
@@ -143,12 +143,20 @@
                                                 <div class="widget_checkbox_list" data-content>
                                                     @foreach($subjects as $subject)
                                                         <div class="form-group">
-                                                            <input value="{{$subject->id}}" type="checkbox" id="subject{{$subject->id}}"
-                                                                   class="form-check-input subject">
+                                                            <input value="{{$subject->id}}" type="checkbox" id="subsubject{{$subject->id}}"
+                                                                   class="form-check-input subsubject">
                                                             <label class="form-check-label"
-                                                                   for="subject{{$subject->id}}">{{$subject->name}}</label>
+                                                                   for="subsubject{{$subject->id}}">{{$subject->name}}</label>
                                                         </div>
                                                     @endforeach
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+
+                                            <div class="single-data-accordion" data-accordion>
+                                                <h5 class="widget-sub-title" data-control>@lang('general.subcat_book')</h5>
+                                                <div class="widget_checkbox_list" data-content id="subcat">
+
                                                 </div>
                                                 <div class="clearfix"></div>
                                             </div>
@@ -177,8 +185,10 @@
                                                                 </li>
                                                             </ul>
                                                         </div>
-                                                        <p @if(app()->getLocale() == 'ar') style="font-size: 20px;display: -webkit-box;-webkit-line-clamp: 4;-webkit-box-orient: vertical;overflow: hidden;" @endif>{{$book->description}} </p>
+                                                        <p style="min-height: 100px; display: -webkit-box;-webkit-line-clamp: 4;-webkit-box-orient: vertical;overflow: hidden; @if(app()->getLocale() == 'ar') font-size: 20px;display: -webkit-box;-webkit-line-clamp: 4;-webkit-box-orient: vertical;overflow: hidden; @endif " >{{$book->description}} </p>
                                                         <div class="card-links">
+                                                            <a href="{{route('preview', $book->id)}}" class="btn btn-secondary">@lang('general.preview')</a>
+
                                                             <a href="{{route('download', $book->id)}}" class="btn btn-light"> @lang('general.download')</a>
                                                         </div>
                                                     </div>
@@ -203,6 +213,46 @@
     <script>
 
         $(document).ready(function () {
+
+            //get subSubject
+            $('body').on('change', '.subsubject', function () {
+
+                var recordIds = [];
+                $.each($(".subsubject:checked"), function () {
+                    recordIds.push($(this).val());
+                });
+                if (recordIds.length > 0) {
+                    recordIds = JSON.stringify(recordIds);
+                } else {
+                    recordIds = 'empty'
+                }
+                var subcat = '';
+                $.ajax({
+                    url: "{{url('/') . '/get-subbook/'}}" + recordIds,
+                    type: 'GET',
+                    dataType: "json",
+                    data: {},
+                    success: function (data) {
+                        data = data.data;
+                        if (data.length != 0) {
+                            for (var x = 0; x < data.length; x++) {
+                                subcat += '<div class="form-group">';
+                                subcat += '<input value="' + data[x]['id'] + '" type="checkbox" id="subject' + data[x]['id'] + '" class="form-check-input subject">';
+                                subcat += '<label class="form-check-label" for="subject' + data[x]['id'] + '">' + data[x]['name'] + '</label>';
+                                subcat += '</div>';
+                            }
+                            $("#subcat").html('');
+                            $("#subcat").append(subcat);
+                        } else {
+                            $("#subcat").html('');
+                        }
+                    },
+                    error: function (reject) {
+                        console.log(reject);
+                    }
+                });
+
+            });
 
             //get books
             $('body').on('change', '.subject', function () {
@@ -243,8 +293,9 @@
                                 books += '</li>';
                                 books += '</ul>';
                                 books += '</div>';
-                                books += '<p @if(app()->getLocale() == 'ar') style="font-size: 20px;display: -webkit-box;-webkit-line-clamp: 4;-webkit-box-orient: vertical;overflow: hidden;" @endif>' + data[x]['description'] + ' </p>';
+                                books += '<p style="min-height: 100px; display: -webkit-box;-webkit-line-clamp: 4;-webkit-box-orient: vertical;overflow: hidden; @if(app()->getLocale() == "ar") font-size: 20px;display: -webkit-box;-webkit-line-clamp: 4;-webkit-box-orient: vertical;overflow: hidden; @endif " >' + data[x]['description'] + ' </p>';
                                 books += '<div class="card-links">';
+                                books += '<a href="{{url('/') . '/get-book-preview/'}}' + data[x]['id'] + '" class="btn btn-secondary">@lang('general.preview')</a>';
                                 books += '<a href="{{url('/') . '/get-book-download/'}}' + data[x]['id'] + '" class="btn btn-light"> @lang('general.download')</a>';
                                 books += '</div>';
                                 books += '</div>';

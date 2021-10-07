@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -59,7 +60,9 @@ Route::group(
     // book
     Route::get('/book-grid', 'BookController@index')->name('book.grid');
     Route::get('/get-book/{subject?}', 'BookController@getbooks');
+    Route::get('/get-subbook/{subject?}', 'BookController@getSubBooks');
     Route::get('/get-book-download/{id}', 'BookController@getDownload')->middleware('auth')->name('download');
+    Route::get('/get-book-preview/{id}', 'BookController@getPreview')->middleware('auth')->name('preview');
 
 
 });

@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Storage;
 class Book extends Model
 {
     protected $fillable = [
-        'title_ar', 'title_en', 'subject_id', 'description_ar', 'description_en', 'image', 'date', 'author', 'content'
+        'title_ar', 'title_en', 'subSubject_id', 'description_ar', 'description_en', 'image', 'date', 'author', 'content'
     ];
 
     protected $appends = [
@@ -43,8 +43,8 @@ class Book extends Model
     }
 
     /* relations*/
-    public function subject()
+    public function subSubject()
     {
-        return $this->belongsTo(BookSubject::class, 'subject_id', 'id');
+        return $this->belongsTo(BookSubSubject::class, 'subSubject_id', 'id');
     }
 }
